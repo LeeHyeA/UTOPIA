@@ -1,0 +1,39 @@
+﻿{
+  "Item": [
+    {
+      "Item_Number":0,
+      "Item_Name":"Circle",
+      "Item_Place":"Stage1-1",
+      "Item_Image":"1_1Circle",
+      "Item_Text":"드림캐쳐 뼈대"
+    },
+    {
+      "Item_Number":1,
+      "Item_Name":"Feather",
+      "Item_Place":"Stage1-1",
+      "Item_Image":"1_1Feather",
+      "Item_Text":"드림캐쳐 재료(깃털)"
+    },
+    {
+      "Item_Number":2,
+      "Item_Name":"SpiderWeb",
+      "Item_Place":"Stage1-1",
+      "Item_Image":"1_1SpiderWeb",
+      "Item_Text":"드림캐쳐 재료(거미줄)"
+    },
+    {
+      "Item_Number":3,
+      "Item_Name":"StarPowder",
+      "Item_Place":"Stage1-1",
+      "Item_Image":"1_1StarPowder",
+      "Item_Text":"드림캐쳐 재료(별가루)"
+    },
+    {
+      "Item_Number":4,
+      "Item_Name":"StarPowder",
+      "Item_Place":"Stage1-1",
+      "Item_Image":"b",
+      "Item_Text":"모이"
+    }
+  ]
+}
