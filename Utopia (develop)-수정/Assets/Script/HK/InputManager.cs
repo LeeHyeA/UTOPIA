@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     private GameObject draggedObject;           // 드래그되고있는 객체의 참조를 보관,유지
     private Vector2 touchOffset;                // 잡고난 후 플레이어의 터치위치
     public GameObject Inventory;
+    public GameObject HeadGear;
     //   public AudioSource audioSource;
 
     void Update()
@@ -131,6 +132,21 @@ public class InputManager : MonoBehaviour
         if(Coliision("0_player", "Col"))
         {
             Debug.Log("오브젝트 접촉");
+        }
+
+        if (Coliision("2_Main_HeadGear", "HeadGearCollision"))
+        {
+            HeadGear.SetActive(true);
+        }
+
+        if (Coliision("4_Main_SmallCable1", "2_SmallCode"))
+        {
+            HeadGear.transform.Find("4_SmallCable").gameObject.SetActive(true);
+        }
+
+        if (Coliision("5_Main_BigCable2", "3_BigCode"))
+        {
+            HeadGear.transform.Find("5_BigCable").gameObject.SetActive(true);
         }
     }
 
