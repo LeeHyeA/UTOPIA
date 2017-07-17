@@ -1,77 +1,67 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Circle_Puzzle_Tile : MonoBehaviour {
 
-    Transform Tf;
-    bool turning = false;
+    Circle_Puzzle CP;
+
+    public Circle_Puzzle_Tile CPT1;
+    public Circle_Puzzle_Tile CPT2;
+
+    public Image Ima;
+
+    public bool clicked = false;
+
+    Color origin_color;
+
     public int ID;
-    public int Index=0;
-    public bool direction;
+
 	// Use this for initialization
 	void Start ()
     {
-        Tf = GetComponent<Transform>();
+        CP = FindObjectOfType<Circle_Puzzle>();
+        Ima = GetComponent<Image>();
+        origin_color = Ima.color;
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        Turn(direction);
-	}
-    public void Turn(bool direction)
-    {
-        if (turning)
-        {
-            if (!direction)
-            {
-                if (Index < 45)
-                {
-                    Tf.Rotate(0, 0, 1);
-                    Index++;
-                    return;
-                }
-                else
-                {
-                    Index = 0;
-                    turning = false;
-                    return;
-                }
-            }
-            else
-            {
-                if (Index < 45)
-                {
-                    Tf.Rotate(0, 0, -1);
-                    Index++;
-                    return;
-                }
-                else
-                {
-                    Index = 0;
-                    turning = false;
-                    return;
-                }
-            }
-        }
-        return;
 
-    }
-    public void Turn_Left()
+
+    // Update is called once per frame
+
+    private void Update()
     {
-        direction = false;
-        turning = true;
-        return;
     }
-    public void Turn_Right()
-    {
-        direction = true;
-        turning = true;
-        return;
-    }
+
     private void OnMouseDown()
     {
+        if (CP.turning)
+            return;
+        CP.Selected_Piece = GameObject.Find("Circle_Tile" + ID.ToString());
+        Ima.color = new Color(0, 144, 60);
+        clicked = true;
+        CPT1.clicked = false;
+        CPT1.clear_color();
+        CPT2.clicked = false;
+        CPT2.clear_color();
         Debug.Log(ID);
+    }
+    private void OnMouseEnter()
+    {
+        Ima.color = new Color(0, 144, 60);
+        Debug.Log("Enter");
+        return;
+    }
+    private void OnMouseExit()
+    {
+        if(!clicked)
+            clear_color();
+        Debug.Log("EXit");
+        return;
+    }
+    public void clear_color()
+    {
+        Ima.color = origin_color;
+        return;
     }
 }
