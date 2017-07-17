@@ -209,7 +209,7 @@ public class InputManager : MonoBehaviour
                 ///hit.transform.GetComponent<AudioSource>().Play();
                 //Debug.Log("오브젝트 접촉완료");
                 Destroy(obj.transform.gameObject);
-                //Destroy(hit.transform.gameObject);
+                Destroy(hit.transform.gameObject);
                 return true;
             }
 
