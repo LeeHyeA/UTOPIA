@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
     private Vector2 touchOffset;                // 잡고난 후 플레이어의 터치위치
     public GameObject Inventory;
     public GameObject HeadGear;
+    public GameObject BridCage;
     //   public AudioSource audioSource;
 
     void Update()
@@ -147,6 +148,12 @@ public class InputManager : MonoBehaviour
         if (Coliision("5_Main_BigCable2", "3_BigCode"))
         {
             HeadGear.transform.Find("5_BigCable").gameObject.SetActive(true);
+        }
+
+        if(Coliision("4_1_1BirdFeed","BridCageEmpty"))
+        {
+            Debug.Log("드래그앤드롭");
+            BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
         }
     }
 

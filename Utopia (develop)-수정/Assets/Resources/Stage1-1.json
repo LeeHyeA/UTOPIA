@@ -30,10 +30,10 @@
     },
     {
       "Item_Number":4,
-      "Item_Name":"StarPowder",
+      "Item_Name":"BirdFeed",
       "Item_Place":"Stage1-1",
-      "Item_Image":"b",
-      "Item_Text":"모이"
+      "Item_Image":"1_1BirdFeed",
+      "Item_Text":"새모이"
     }
   ]
 }
