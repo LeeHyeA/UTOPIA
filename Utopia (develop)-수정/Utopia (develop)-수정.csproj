@@ -98,6 +98,8 @@
     <Compile Include="Assets\Script\HK\UIManager.cs" />
     <Compile Include="Assets\Script\HK\VideoStream.cs" />
     <Compile Include="Assets\Script\JY\ActiveDialogue.cs" />
+    <Compile Include="Assets\Script\JY\Circle_Puzzle.cs" />
+    <Compile Include="Assets\Script\JY\Circle_Puzzle_Tile.cs" />
     <Compile Include="Assets\Script\JY\ControlDialogue.cs" />
     <Compile Include="Assets\Script\JY\EventManager.cs" />
     <Compile Include="Assets\Script\JY\KeyPad_Puz.cs" />

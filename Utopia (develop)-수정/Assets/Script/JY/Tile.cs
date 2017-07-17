@@ -8,11 +8,13 @@ public class Tile : MonoBehaviour {
     public bool is_Cliked = false;
 
     Image Tile_Image;
+    LogicPuzzle LP;
 
 	// Use this for initialization
 	void Start ()
     {
         Tile_Image = GetComponent<Image>();
+        LP = FindObjectOfType<LogicPuzzle>();
 	}
 	
 	// Update is called once per frame
@@ -28,6 +30,8 @@ public class Tile : MonoBehaviour {
 
     public void Clik()
     {
-        is_Cliked = !is_Cliked;
+        if(!LP.Answerd)
+            is_Cliked = !is_Cliked;
+        return;
     }
 }
