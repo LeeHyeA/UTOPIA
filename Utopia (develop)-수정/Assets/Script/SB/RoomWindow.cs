@@ -9,6 +9,7 @@ public class RoomWindow : MonoBehaviour
     public GameObject DarkWindow;
     public GameObject CurtainClose;
     public GameObject StarPowder;
+    public GameObject SpiderWeb;
     //커튼 상태 : 1.닫혀있음, 2.열려있음
     public int Curtain_State = 1;
 
@@ -23,6 +24,8 @@ public class RoomWindow : MonoBehaviour
     //모이를 채운 새장을 놓음:1, 안놓은상태:2
     //public int PutBirdcage = 2;
 
+    //거미줄을 얻음을 확인하는 변수
+    public bool IsGetSpiderWeb = false;
 
     public void Window_State_Change()
     {
@@ -43,7 +46,6 @@ public class RoomWindow : MonoBehaviour
         {
             Curtain_State = 1;
         }
-
     }
     //깃털 얻기 이벤트
     //조건 : 맑은날, 새모이를 채운 새장을 놓음
@@ -98,6 +100,17 @@ public class RoomWindow : MonoBehaviour
         if()
     }
     */
+    void CheckGetSpiderWeb()
+    {
+        //거미줄 얻음
+        if (IsGetSpiderWeb == true)
+            SpiderWeb.SetActive(false);
+    }
+    public void GetSpiderWeb()
+    {
+        IsGetSpiderWeb = true;
+    }
+
 
     void WindowSetActive()
     {
@@ -152,5 +165,6 @@ public class RoomWindow : MonoBehaviour
     {
         WindowSetActive();
         CheckStarPowderGet();
+        CheckGetSpiderWeb();
     }
 }
