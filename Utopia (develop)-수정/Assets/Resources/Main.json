@@ -41,6 +41,13 @@
       "Item_Place":"Main",
       "Item_Image":"Main_BigCable2",
       "Item_Text":"헤드기어에 연결할 큰 2번 케이블"
+    },
+    {
+      "Item_Number":6,
+      "Item_Name":"FinishedHeadGear",
+      "Item_Place":"Main",
+      "Item_Image":"Main_FinishHeadGear",
+      "Item_Text":"완성된 헤드기어"
     }
   ]
 }

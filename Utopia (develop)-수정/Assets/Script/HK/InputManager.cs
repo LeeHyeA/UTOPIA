@@ -10,9 +10,18 @@ public class InputManager : MonoBehaviour
     private GameObject draggedObject;           // 드래그되고있는 객체의 참조를 보관,유지
     private Vector2 touchOffset;                // 잡고난 후 플레이어의 터치위치
     public GameObject Inventory;
-    public GameObject HeadGear;
+    public Transform MainStage;
     public GameObject BridCage;
     //   public AudioSource audioSource;
+
+    GameObject HeadGear;
+    //Transform Grid;
+
+    void Start()
+    {
+        HeadGear = MainStage.Find("HeadGear").gameObject;
+        //Grid = Inventory.transform.Find("2_Grid").transform;
+    }
 
     void Update()
     {
@@ -130,39 +139,52 @@ public class InputManager : MonoBehaviour
             touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
             */
 
-        if(Coliision("0_player", "Col"))
-        {
-            Debug.Log("오브젝트 접촉");
-        }
+        //if(Collision("0_player", "Col"))
+        //{
+        //    Debug.Log("오브젝트 접촉");
+        //}
 
-        if (Coliision("2_Main_HeadGear", "HeadGearCollision"))
+        if (Collision("2_Main_HeadGear", "HeadGearCollision"))
         {
             HeadGear.SetActive(true);
         }
 
-        if (Coliision("4_Main_SmallCable1", "2_SmallCode"))
+        if (Collision("4_Main_SmallCable1", "2_SmallCode"))
         {
+            //Destroy(Grid.Find("4_Main_SmallCable1").gameObject);
             HeadGear.transform.Find("4_SmallCable").gameObject.SetActive(true);
         }
 
-        if (Coliision("5_Main_BigCable2", "3_BigCode"))
+        if (Collision("5_Main_BigCable2", "3_BigCode"))
         {
             HeadGear.transform.Find("5_BigCable").gameObject.SetActive(true);
         }
 
-        if(Coliision("4_1_1BirdFeed","BridCageEmpty"))
+        if(Collision("4_1_1BirdFeed","BridCageEmpty"))
         {
             Debug.Log("드래그앤드롭");
             BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
         }
+
+        if (Collision("6_Main_FinishHeadGear", "HeadGearCollision"))
+        {
+            Transform Click = MainStage.Find("ClickObject").transform;
+            Click.Find("7_Moniter").gameObject.SetActive(true);
+        }
     }
 
     
-    bool Coliision(string ClickObjName, string CollisionObjName)
+    bool Collision(string ClickObjName, string CollisionObjName)
     {
         RaycastHit2D[] touches = Physics2D.RaycastAll(CurrentTouchPosition, CurrentTouchPosition, 0.5f);
 
-        if (touches.Length > 1)
+        if (touches.Length == 1)
+        {
+            if(touches[0].transform.name != CollisionObjName)
+                touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
+        }
+
+        else if (touches.Length > 1)
         {
             var obj = touches[0];
             var hit = touches[1];
@@ -173,14 +195,14 @@ public class InputManager : MonoBehaviour
             {
                 ///hit.transform.GetComponent<AudioSource>().Play();
                 //Debug.Log("오브젝트 접촉완료");
-                Destroy(obj.collider.gameObject);
+                Destroy(obj.transform.gameObject);
+                Destroy(hit.transform.gameObject);
                 return true;
             }
+
+            //else
+            //    touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
         }
-
-        else if (touches.Length <= 1)
-            touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
-
 
         return false;
     }

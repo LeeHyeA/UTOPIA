@@ -10,10 +10,10 @@ public class Item : MonoBehaviour
 
     TextAsset data;
     JsonData ItemData;
-    JsonData SaveData;
+    //JsonData SaveData;
     GameObject obj;
 
-    public Data[] saveDate;
+    //public Data[] saveDate;
 
     public GameObject ItemClone;
 
