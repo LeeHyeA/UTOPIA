@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 4}
-  m_MinSize: {x: 950, y: 492}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -92,7 +92,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1118
-  m_MinSize: {x: 950, y: 492}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &5
 MonoBehaviour:
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 442}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 9
+  controlID: 21
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 10
+  controlID: 22
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -364,9 +364,9 @@ MonoBehaviour:
     height: 526
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ba320000
-    m_LastClickedID: 12986
-    m_ExpandedIDs: c2fbffff000000009e2b0000702f0000023100002a330000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 60fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -459,19 +459,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Script/HK
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Script/HK
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: "C:\\Users\\B408-12\\Desktop\\NEW\\Utopia (develop)-\uC218\uC815"
+  m_LastProjectPath: "C:\\Users\\B408-11\\Desktop\\Newwork\\Utopia (develop)-\uC218\uC815"
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a4260000
-    m_LastClickedID: 9892
-    m_ExpandedIDs: 000000006c2500009c250000782600005627000086270000f6270000f2330000f433000000ca9a3bffffff7f
+    m_SelectedIDs: 52280000
+    m_LastClickedID: 10322
+    m_ExpandedIDs: 00000000522800008228000056290000202a00004c2a0000b02a00003a3600003c36000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -499,7 +499,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006c2500009c250000782600005627000086270000f6270000f2330000f4330000
+    m_ExpandedIDs: 00000000522800008228000056290000202a00004c2a0000b02a00003a3600003c360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
