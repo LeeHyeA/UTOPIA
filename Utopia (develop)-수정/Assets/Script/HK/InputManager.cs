@@ -160,7 +160,7 @@ public class InputManager : MonoBehaviour
             HeadGear.transform.Find("5_BigCable").gameObject.SetActive(true);
         }
 
-        if(Collision("4_1_1BirdFeed","BridCageEmpty"))
+        if (Collision("4_1_1BirdFeed", "BridCageEmpty"))
         {
             Debug.Log("드래그앤드롭");
             BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
@@ -171,16 +171,29 @@ public class InputManager : MonoBehaviour
             Transform Click = MainStage.Find("ClickObject").transform;
             Click.Find("7_Moniter").gameObject.SetActive(true);
         }
+
+        if (Collision("4_1_1BirdFeed", "BirdCageEmptyCol"))
+        {
+            Debug.Log("드래그앤드롭");
+            BridCage.transform.Find("BirdCageEmpty").gameObject.SetActive(false);
+            BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
+            //Destroy
+        }
+        if (Collision("5_1_1BirdCagePutFeed", "2_CleanWindow"))
+        {
+            Debug.Log("드래그앤드롭");
+            BridCage.transform.Find("BirdCageFull").gameObject.SetActive(true);
+        }
     }
 
-    
+
     bool Collision(string ClickObjName, string CollisionObjName)
     {
         RaycastHit2D[] touches = Physics2D.RaycastAll(CurrentTouchPosition, CurrentTouchPosition, 0.5f);
 
         if (touches.Length == 1)
         {
-            if(touches[0].transform.name != CollisionObjName)
+            if (touches[0].transform.name != CollisionObjName)
                 touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
         }
 
@@ -196,7 +209,7 @@ public class InputManager : MonoBehaviour
                 ///hit.transform.GetComponent<AudioSource>().Play();
                 //Debug.Log("오브젝트 접촉완료");
                 Destroy(obj.transform.gameObject);
-                Destroy(hit.transform.gameObject);
+                //Destroy(hit.transform.gameObject);
                 return true;
             }
 

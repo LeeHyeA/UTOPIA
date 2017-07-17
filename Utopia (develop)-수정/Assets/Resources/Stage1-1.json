@@ -34,6 +34,20 @@
       "Item_Place":"Stage1-1",
       "Item_Image":"1_1BirdFeed",
       "Item_Text":"새모이"
+    },
+    {
+      "Item_Number":5,
+      "Item_Name":"BirdCagePutFeed",
+      "Item_Place":"Stage1-1",
+      "Item_Image":"1_1BirdCagePutFeed",
+      "Item_Text":"새모이를채운 새장"
+    },
+    {
+      "Item_Number":6,
+      "Item_Name":"Feather",
+      "Item_Place":"Stage1-1",
+      "Item_Image":"1_1Feather",
+      "Item_Text":"드림캐쳐 재료(깃털)"
     }
   ]
 }
