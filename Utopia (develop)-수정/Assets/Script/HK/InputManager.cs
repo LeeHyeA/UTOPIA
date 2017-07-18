@@ -12,6 +12,7 @@ public class InputManager : MonoBehaviour
     public GameObject Inventory;
     public Transform MainStage;
     public GameObject BridCage;
+    public GameObject AcquirableItem;
     //   public AudioSource audioSource;
 
     GameObject HeadGear;
@@ -202,6 +203,28 @@ public class InputManager : MonoBehaviour
                 BridCage.transform.Find("BirdCageFull").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
+
+            if(obj.transform.name == "2-1_1SpiderWeb" && hit.transform.name == "1_RainWindow")
+            {
+                Debug.Log("거미줄 비오는날 창문에 접촉");
+                AcquirableItem.transform.Find("SpiderJem").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+            //DreamCatcher
+            if (obj.transform.name == "7-1_1SpiderJem" && hit.transform.name == "EnterDreamCatcher")
+            {
+                Debug.Log("거미줄완성을 드림캐쳐에 붙임");
+                AcquirableItem.transform.Find("SpiderJem").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "2-1_1SpiderWeb" && hit.transform.name == "EnterDreamCatcher")
+            {
+                Debug.Log("거미줄 비오는날 창문에 접촉");
+                AcquirableItem.transform.Find("SpiderJem").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
         }
 
         else if (touches.Length == 1)
