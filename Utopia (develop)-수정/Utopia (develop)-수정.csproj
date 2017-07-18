@@ -89,9 +89,6 @@
     <Compile Include="Assets\Script\HK\HintManager.cs" />
     <Compile Include="Assets\Script\HK\InputFieldManager.cs" />
     <Compile Include="Assets\Script\HK\InputManager.cs" />
-    <Compile Include="Assets\Script\HK\Inventory.cs" />
-    <Compile Include="Assets\Script\HK\InventoryControl.cs" />
-    <Compile Include="Assets\Script\HK\InventoryJson.cs" />
     <Compile Include="Assets\Script\HK\Item.cs" />
     <Compile Include="Assets\Script\HK\MainScript.cs" />
     <Compile Include="Assets\Script\HK\MouseCursor.cs" />
