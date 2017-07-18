@@ -45,7 +45,7 @@ public class Item : MonoBehaviour
     {
         if (ItemNumber >= 0 && ItemStage != "")
         {
-            data = Resources.Load<TextAsset>(ItemStage);
+            data = Resources.Load<TextAsset>(ItemStage + "/" + ItemStage);
             ItemData = JsonMapper.ToObject(data.text);
 
             ImageString = ItemData["Item"][ItemNumber]["Item_Image"].ToString();
@@ -56,9 +56,9 @@ public class Item : MonoBehaviour
                 obj = Instantiate(ItemClone, Vector3.zero, Quaternion.identity) as GameObject;
                 obj.transform.SetParent(transform.Find("1_ObjectSet").transform);
                 obj.transform.localScale = Vector3.one;
-                obj.transform.name = ItemNumber.ToString() + "_" + ImageString;
+                obj.transform.name = ItemNumber.ToString() + "-" + ImageString;
             }
-            obj.GetComponent<Image>().sprite = Resources.Load<Sprite>(ImageString);
+            obj.GetComponent<Image>().sprite = Resources.Load<Sprite>(ItemStage + "/" + ImageString);
             obj.GetComponent<Image>().color = new Color(obj.GetComponent<Image>().color.r, obj.GetComponent<Image>().color.g, obj.GetComponent<Image>().color.b, 255);
 
             obj.transform.SetParent(transform.Find("2_Grid").transform);

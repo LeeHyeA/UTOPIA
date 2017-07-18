@@ -12,6 +12,7 @@ public class InputManager : MonoBehaviour
     public GameObject Inventory;
     public Transform MainStage;
     public GameObject BridCage;
+    public GameObject AcquirableItem;
     //   public AudioSource audioSource;
 
     GameObject HeadGear;
@@ -21,6 +22,9 @@ public class InputManager : MonoBehaviour
     {
         HeadGear = MainStage.Find("HeadGear").gameObject;
         //Grid = Inventory.transform.Find("2_Grid").transform;
+
+        Transform Click = MainStage.Find("ClickObject").transform;
+        Click.Find("7_Moniter").gameObject.SetActive(false);
     }
 
     void Update()
@@ -117,7 +121,7 @@ public class InputManager : MonoBehaviour
     // 스테이지마다 구분 필요할 듯 (if가 너무 많아짐)
     void RayCollision()
     {
-        /*
+
         RaycastHit2D[] touches = Physics2D.RaycastAll(CurrentTouchPosition, CurrentTouchPosition, 0.5f);
 
         if (touches.Length > 1)
@@ -125,65 +129,91 @@ public class InputManager : MonoBehaviour
             var obj = touches[0];
             var hit = touches[1];
 
-            ChangeName("0_player", "Col");
+            // Example
+            //if (obj.transform.name == "" && hit.transform.name == "")
+            //{
+            //    Destroy(obj.transform.gameObject);
+            //}
 
-            if (obj.transform.name == ClickName && hit.collider.name == CollisionName)
+            // Main
+            if (obj.transform.name == "2-HeadGear" && hit.transform.name == "HeadGearCollision")
             {
-                ///hit.transform.GetComponent<AudioSource>().Play();
-                Debug.Log("오브젝트 접촉완료");
-                Destroy(obj.collider.gameObject);
+                HeadGear.SetActive(true);
+                Destroy(obj.transform.gameObject);
             }
+
+            if (obj.transform.name == "4-SmallCable1" && hit.transform.name == "2_SmallCode")
+            {
+                HeadGear.transform.Find("4_SmallCable").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject); 
+            }
+
+            if (obj.transform.name == "5-BigCable2" && hit.transform.name == "3_BigCode")
+            {
+                HeadGear.transform.Find("5_BigCable").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "6-FinishHeadGear" && hit.transform.name == "HeadGearCollision")
+            {
+                Transform Click = MainStage.Find("ClickObject").transform;
+                Click.Find("7_Moniter").gameObject.SetActive(true);
+                MainStage.Find("Computer").gameObject.SetActive(true);
+
+                if (Inventory.gameObject.activeSelf)
+                    Inventory.gameObject.SetActive(false);
+
+                Destroy(obj.transform.gameObject);
+            }
+
+
+
+            // 1 Stage
+            if (obj.transform.name == "4-1_1BirdFeed" && hit.transform.name == "BridCageEmpty")
+            {
+                BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "4-1_1BirdFeed" && hit.transform.name == "BirdCageEmptyCol")
+            {
+                BridCage.transform.Find("BirdCageEmpty").gameObject.SetActive(false);
+                BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "5-1_1BirdCagePutFeed" && hit.transform.name == "2_CleanWindow")
+            {
+                BridCage.transform.Find("BirdCageFull").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
+            if(obj.transform.name == "2-1_1SpiderWeb" && hit.transform.name == "1_RainWindow")
+            {
+                Debug.Log("거미줄 비오는날 창문에 접촉");
+                AcquirableItem.transform.Find("SpiderJem").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+            //DreamCatcher
+            if (obj.transform.name == "7-1_1SpiderJem" && hit.transform.name == "EnterDreamCatcher")
+            {
+                Debug.Log("거미줄완성을 드림캐쳐에 붙임");
+                AcquirableItem.transform.Find("SpiderJem").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "2-1_1SpiderWeb" && hit.transform.name == "EnterDreamCatcher")
+            {
+                Debug.Log("거미줄 비오는날 창문에 접촉");
+                AcquirableItem.transform.Find("SpiderJem").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
         }
 
-        else if (touches.Length <= 1)
+        else if (touches.Length == 1)
             touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
-            */
 
-        //if(Collision("0_player", "Col"))
-        //{
-        //    Debug.Log("오브젝트 접촉");
-        //}
-
-        if (Collision("2_Main_HeadGear", "HeadGearCollision"))
-        {
-            HeadGear.SetActive(true);
-        }
-
-        if (Collision("4_Main_SmallCable1", "2_SmallCode"))
-        {
-            //Destroy(Grid.Find("4_Main_SmallCable1").gameObject);
-            HeadGear.transform.Find("4_SmallCable").gameObject.SetActive(true);
-        }
-
-        if (Collision("5_Main_BigCable2", "3_BigCode"))
-        {
-            HeadGear.transform.Find("5_BigCable").gameObject.SetActive(true);
-        }
-
-        if (Collision("4_1_1BirdFeed", "BridCageEmpty"))
-        {
-            Debug.Log("드래그앤드롭");
-            BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
-        }
-
-        if (Collision("6_Main_FinishHeadGear", "HeadGearCollision"))
-        {
-            Transform Click = MainStage.Find("ClickObject").transform;
-            Click.Find("7_Moniter").gameObject.SetActive(true);
-        }
-
-        if (Collision("4_1_1BirdFeed", "BirdCageEmptyCol"))
-        {
-            Debug.Log("드래그앤드롭");
-            BridCage.transform.Find("BirdCageEmpty").gameObject.SetActive(false);
-            BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
-            //Destroy
-        }
-        if (Collision("5_1_1BirdCagePutFeed", "2_CleanWindow"))
-        {
-            Debug.Log("드래그앤드롭");
-            BridCage.transform.Find("BirdCageFull").gameObject.SetActive(true);
-        }
     }
 
 
