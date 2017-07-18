@@ -105,6 +105,8 @@ public class RoomWindow : MonoBehaviour
         //거미줄 얻음
         if (IsGetSpiderWeb == true)
             SpiderWeb.SetActive(false);
+       // else if (IsGetSpiderWeb == false)
+       //     SpiderWeb.SetActive(true);
     }
     public void GetSpiderWeb()
     {
@@ -134,6 +136,7 @@ public class RoomWindow : MonoBehaviour
                 RainWindow.SetActive(false);
                 CleanWindow.SetActive(false);
                 DarkWindow.SetActive(true);
+                //CheckGetSpiderWeb();
                 break;
             default:
                 break;
