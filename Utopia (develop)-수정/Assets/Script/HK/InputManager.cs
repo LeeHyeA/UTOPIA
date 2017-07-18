@@ -134,7 +134,6 @@ public class InputManager : MonoBehaviour
             // Main
             if (obj.transform.name == "2_Main_HeadGear" && hit.transform.name == "HeadGearCollision")
             {
-                Debug.Log("오브젝트 접촉완료");
                 HeadGear.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
@@ -155,6 +154,11 @@ public class InputManager : MonoBehaviour
             {
                 Transform Click = MainStage.Find("ClickObject").transform;
                 Click.Find("7_Moniter").gameObject.SetActive(true);
+                MainStage.Find("Computer").gameObject.SetActive(true);
+
+                if (Inventory.gameObject.activeSelf)
+                    Inventory.gameObject.SetActive(false);
+
                 Destroy(obj.transform.gameObject);
             }
 
