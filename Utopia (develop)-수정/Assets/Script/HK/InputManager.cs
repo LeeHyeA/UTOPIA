@@ -25,6 +25,7 @@ public class InputManager : MonoBehaviour
 
         Transform Click = MainStage.Find("ClickObject").transform;
         Click.Find("7_Moniter").gameObject.SetActive(false);
+        //Click.Find("6_DeskMemo+대사창").gameObject.SetActive(false);
     }
 
     void Update()
@@ -45,8 +46,22 @@ public class InputManager : MonoBehaviour
             }
         }
 
-        //     if (!audioSource.isPlaying && Interaction)
-        //       UnityEngine.SceneManagement.SceneManager.LoadScene("End");
+        if(Input.GetMouseButton(1))
+        {
+            RaycastHit2D[] touches = Physics2D.RaycastAll(CurrentTouchPosition, CurrentTouchPosition, 0.5f);
+
+            var obj = touches[0];
+
+            if(obj.transform.name == "0-Letter")
+            {
+                // 레터 창 트루
+            }
+
+            if (obj.transform.name == "3-HeadGearManual")
+            {
+                // 헤드기어 설명서 창 트루
+            }
+        }
     }
 
 
@@ -158,6 +173,7 @@ public class InputManager : MonoBehaviour
             {
                 Transform Click = MainStage.Find("ClickObject").transform;
                 Click.Find("7_Moniter").gameObject.SetActive(true);
+                //Click.Find("6_DeskMemo+대사창").gameObject.SetActive(true);
                 MainStage.Find("Computer").gameObject.SetActive(true);
 
                 if (Inventory.gameObject.activeSelf)
