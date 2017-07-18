@@ -3159,7 +3159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6, y: -367.49973}
+  m_AnchoredPosition: {x: 6, y: -367.49976}
   m_SizeDelta: {x: 13, y: -735}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &245219872
@@ -5303,6 +5303,7 @@ MonoBehaviour:
   CPT2: {fileID: 564733944}
   Ima: {fileID: 0}
   clicked: 0
+  tile_stats: 1
   ID: 3
 --- !u!1 &468511970
 GameObject:
@@ -6713,6 +6714,7 @@ MonoBehaviour:
   CPT2: {fileID: 441703142}
   Ima: {fileID: 0}
   clicked: 0
+  tile_stats: 3
   ID: 1
 --- !u!114 &564733945
 MonoBehaviour:
@@ -13997,8 +13999,13 @@ MonoBehaviour:
   turning: 0
   direction: 0
   Activated: 0
+  Answerd: 0
   Selected_Piece: {fileID: 0}
   Circle_Puzzle_Control: {fileID: 1313027486}
+  CPT:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1102667133
 GameObject:
   m_ObjectHideFlags: 0
@@ -18740,6 +18747,7 @@ MonoBehaviour:
   CPT2: {fileID: 441703142}
   Ima: {fileID: 0}
   clicked: 0
+  tile_stats: 2
   ID: 2
 --- !u!1 &1481064232
 GameObject:
@@ -24791,7 +24799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1792837922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25481,7 +25489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1824654921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30097,7 +30105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -237.00017, y: -77.7}
+  m_AnchoredPosition: {x: -237.00018, y: -77.7}
   m_SizeDelta: {x: 137, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2095767462

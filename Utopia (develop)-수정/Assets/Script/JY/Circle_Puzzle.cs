@@ -9,10 +9,14 @@ public class Circle_Puzzle : MonoBehaviour {
     public bool direction = false;
     public bool Activated = false;
 
+    public bool Answerd = false;
+
     int index = 0;
 
     public GameObject Selected_Piece;
     public GameObject Circle_Puzzle_Control;
+
+    public GameObject[] CPT = new GameObject[3];
 
     // Use this for initialization
     void Start ()
@@ -20,20 +24,27 @@ public class Circle_Puzzle : MonoBehaviour {
         Circle_Puzzle_Control.SetActive(true);
         Selected_Piece = GameObject.Find("Circle_Tile1");
         Circle_Puzzle_Control = GameObject.Find("Circle_Puzzle_Control");
+        for (int i = 0; i < 3; i++)
+        {
+            CPT[i] = GameObject.Find("Circle_Tile"+(i+1).ToString());
+        }
         Circle_Puzzle_Control.SetActive(false);
+
+        
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (!Activated)
+        if (!Activated||Answerd)
             return;
         Turn(direction);
+        Check();
     }
 
     void Turn(bool direction)
     {
-       if (!turning)
+       if (!turning||Answerd)
             return;
 
        if(direction)
@@ -48,7 +59,9 @@ public class Circle_Puzzle : MonoBehaviour {
            {
                index = 0;
                turning = false;
-               return;
+               Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats - 1) % 8;
+
+                return;
            }
 
        }
@@ -64,7 +77,9 @@ public class Circle_Puzzle : MonoBehaviour {
            {
                index = 0;
                turning = false;
-               return;
+               Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats + 1) % 8;
+
+                return;
            }
        }
    }
@@ -91,5 +106,17 @@ public class Circle_Puzzle : MonoBehaviour {
         Activated = !Activated;
         Circle_Puzzle_Control.SetActive(Activated);
         return;
+    }
+    void Check()
+    {
+        if (Answerd)
+            return;
+        for(int i = 0;i<3;i++)
+        {
+            if (CPT[i].GetComponent<Circle_Puzzle_Tile>().tile_stats != 0)
+                return;
+        }
+
+        Answerd = true;
     }
 }
