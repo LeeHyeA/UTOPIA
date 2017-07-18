@@ -51,30 +51,33 @@
      <Compile Include="Assets\Script\HK\HintManager.cs" />
      <Compile Include="Assets\Script\HK\InputFieldManager.cs" />
      <Compile Include="Assets\Script\HK\InputManager.cs" />
-     <Compile Include="Assets\Script\HK\Inventory.cs" />
-     <Compile Include="Assets\Script\HK\InventoryControl.cs" />
-     <Compile Include="Assets\Script\HK\InventoryJson.cs" />
      <Compile Include="Assets\Script\HK\Item.cs" />
      <Compile Include="Assets\Script\HK\MainScript.cs" />
      <Compile Include="Assets\Script\HK\MouseCursor.cs" />
      <Compile Include="Assets\Script\HK\UIManager.cs" />
      <Compile Include="Assets\Script\HK\VideoStream.cs" />
      <Compile Include="Assets\Script\JY\ActiveDialogue.cs" />
+     <Compile Include="Assets\Script\JY\Circle_Puzzle.cs" />
+     <Compile Include="Assets\Script\JY\Circle_Puzzle_Tile.cs" />
      <Compile Include="Assets\Script\JY\ControlDialogue.cs" />
      <Compile Include="Assets\Script\JY\EventManager.cs" />
      <Compile Include="Assets\Script\JY\KeyPad_Puz.cs" />
      <Compile Include="Assets\Script\JY\Keypad.cs" />
+     <Compile Include="Assets\Script\JY\LogicPuzzle.cs" />
      <Compile Include="Assets\Script\JY\MouseSetup.cs" />
+     <Compile Include="Assets\Script\JY\Tile.cs" />
      <Compile Include="Assets\Script\JY\Trigger_Keypad.cs" />
      <Compile Include="Assets\Script\SB\CameraFollow.cs" />
+     <Compile Include="Assets\Script\SB\ChangeStage1_1.cs" />
      <Compile Include="Assets\Script\SB\Data.cs" />
+     <Compile Include="Assets\Script\SB\DreamCatcher.cs" />
      <Compile Include="Assets\Script\SB\MazePlayerMovement.cs" />
      <Compile Include="Assets\Script\SB\PlayerControl.cs" />
      <Compile Include="Assets\Script\SB\RoomWindow.cs" />
      <Compile Include="Assets\Script\SB\ScreenFader.cs" />
      <Compile Include="Assets\Script\SB\Warp.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>D:/homeES12work/Utopia (develop)-수정/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>D:/HomeWork0718/Utopia (develop)-수정/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -98,7 +101,7 @@
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>D:/homeES12work/Utopia (develop)-수정/Assets/Resources/LitJson.dll</HintPath>
+ <HintPath>D:/HomeWork0718/Utopia (develop)-수정/Assets/Resources/LitJson.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

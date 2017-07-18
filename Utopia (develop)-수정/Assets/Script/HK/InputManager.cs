@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     public Transform MainStage;
     public GameObject BridCage;
     public GameObject AcquirableItem;
+    public GameObject DreamCatcher;
     //   public AudioSource audioSource;
 
     GameObject HeadGear;
@@ -169,44 +170,86 @@ public class InputManager : MonoBehaviour
 
 
             // 1 Stage
-            if (obj.transform.name == "4-1_1BirdFeed" && hit.transform.name == "BridCageEmpty")
-            {
-                BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
-                Destroy(obj.transform.gameObject);
-            }
-
+            //모이를 빈새장으로
             if (obj.transform.name == "4-1_1BirdFeed" && hit.transform.name == "BirdCageEmptyCol")
             {
                 BridCage.transform.Find("BirdCageEmpty").gameObject.SetActive(false);
                 BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
-
+            
+            //모이가 들어있는 새장을 맑은날창문으로
             if (obj.transform.name == "5-1_1BirdCagePutFeed" && hit.transform.name == "2_CleanWindow")
             {
                 BridCage.transform.Find("BirdCageFull").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
-
+            //거미줄을 비오는날 창문으로
             if(obj.transform.name == "2-1_1SpiderWeb" && hit.transform.name == "1_RainWindow")
             {
                 Debug.Log("거미줄 비오는날 창문에 접촉");
                 AcquirableItem.transform.Find("SpiderJem").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
-            //DreamCatcher
-            if (obj.transform.name == "7-1_1SpiderJem" && hit.transform.name == "EnterDreamCatcher")
+            //DreamCatcher(SpiderJem)
+            if (obj.transform.name == "7-1_1SpiderJem" && hit.transform.name == "DreamCatcherCol")
             {
-                Debug.Log("거미줄완성을 드림캐쳐에 붙임");
-                AcquirableItem.transform.Find("SpiderJem").gameObject.SetActive(true);
-                Destroy(obj.transform.gameObject);
+                int tempNum = GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState;
+                //기본(0)상태에서 거미줄보석 붙일때
+                if (tempNum == 0)
+                {
+                    Debug.Log("거미줄+보석완성을 드림캐쳐 기본 상태에 붙임");
+                    //상태를 기본+거미줄보석(2)로 바꿈
+                    GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 2;
+                    GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
+                    Destroy(obj.transform.gameObject);
+                }
+                //기본+깃털상태(1)에서 거미줄보석 붙일때
+                else if (tempNum == 1)
+                {
+                    Debug.Log("거미줄+보석완성을 드림캐쳐 기본+깃털 상태에 붙임");
+                    //상태를 기본+깃털+거미줄보석(3)로 바꿈
+                    GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 3;
+                    GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
+                    Destroy(obj.transform.gameObject);
+                }
             }
-
-            if (obj.transform.name == "2-1_1SpiderWeb" && hit.transform.name == "EnterDreamCatcher")
+            //DreamCatcher(Feather)
+            if (obj.transform.name == "6-1_1Feather" && hit.transform.name == "DreamCatcherCol")
             {
-                Debug.Log("거미줄 비오는날 창문에 접촉");
-                AcquirableItem.transform.Find("SpiderJem").gameObject.SetActive(true);
-                Destroy(obj.transform.gameObject);
+                int tempNum2 = GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState;
+                //기본(0)상태에서 깃털 붙일때
+                if (tempNum2 == 0)
+                {
+                    Debug.Log("깃털을 드림캐쳐 기본 상태에 붙임");
+                    //상태를 기본+깃털(1)로 바꿈
+                    GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 1;
+                    GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
+                    Destroy(obj.transform.gameObject);
+                }
+                //기본+거미줄보석(2)상태에서 깃털 붙일때
+                else if(tempNum2 == 2)
+                {
+                    Debug.Log("깃털을 드림캐쳐 기본+거미줄 상태에 붙임");
+                    //상태를 기본+깃털+거미줄보석(3)로 바꿈
+                    GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 3;
+                    GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
+                    Destroy(obj.transform.gameObject);
+                }
+            }
+            //DreamCatcher(StarPowder)
+            if(obj.transform.name == "3-1_1StarPowder" && hit.transform.name == "DreamCatcherCol")
+            {
+                int tempNum3 = GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState;
+                //기본+깃털+거미줄보석(3) 상태 일때만 접촉후 변하게함
+                if (tempNum3 == 3)
+                {
+                    Debug.Log("별가루를 드림캐쳐 기본+깃털+거미줄 상태에 붙임");
+                    //상태를 드림캐쳐 최종형태(4)로 바꿈
+                    GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 4;
+                    GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
+                    Destroy(obj.transform.gameObject);
+                }
             }
 
         }
