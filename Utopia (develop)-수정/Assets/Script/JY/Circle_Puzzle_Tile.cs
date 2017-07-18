@@ -14,6 +14,9 @@ public class Circle_Puzzle_Tile : MonoBehaviour {
 
     public bool clicked = false;
 
+    Transform T;
+    public int tile_stats;
+
     Color origin_color;
 
     public int ID;
@@ -21,21 +24,29 @@ public class Circle_Puzzle_Tile : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        T = GetComponent<Transform>();
         CP = FindObjectOfType<Circle_Puzzle>();
         Ima = GetComponent<Image>();
         origin_color = Ima.color;
-	}
+
+        T.Rotate(0, 0, -(tile_stats * 45));
+    }
 
 
     // Update is called once per frame
 
     private void Update()
     {
+        if(CP.Answerd)
+        {
+            CPT1.Ima.color = origin_color;
+            CPT2.Ima.color = origin_color;
+        }
     }
 
     private void OnMouseDown()
     {
-        if (CP.turning)
+        if (CP.turning||CP.Answerd)
             return;
         CP.Selected_Piece = GameObject.Find("Circle_Tile" + ID.ToString());
         Ima.color = new Color(0, 144, 60);
@@ -48,6 +59,8 @@ public class Circle_Puzzle_Tile : MonoBehaviour {
     }
     private void OnMouseEnter()
     {
+        if (CP.Answerd)
+            return;
         Ima.color = new Color(0, 144, 60);
         Debug.Log("Enter");
         return;
@@ -56,11 +69,15 @@ public class Circle_Puzzle_Tile : MonoBehaviour {
     {
         if(!clicked)
             clear_color();
+        if (CP.Answerd)
+            return;
         Debug.Log("EXit");
         return;
     }
     public void clear_color()
     {
+        if (CP.Answerd)
+            return;
         Ima.color = origin_color;
         return;
     }
