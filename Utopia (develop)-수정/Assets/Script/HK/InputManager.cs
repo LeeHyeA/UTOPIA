@@ -21,6 +21,9 @@ public class InputManager : MonoBehaviour
     {
         HeadGear = MainStage.Find("HeadGear").gameObject;
         //Grid = Inventory.transform.Find("2_Grid").transform;
+
+        Transform Click = MainStage.Find("ClickObject").transform;
+        Click.Find("7_Moniter").gameObject.SetActive(false);
     }
 
     void Update()
