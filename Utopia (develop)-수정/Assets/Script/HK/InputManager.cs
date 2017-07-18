@@ -135,25 +135,25 @@ public class InputManager : MonoBehaviour
             //}
 
             // Main
-            if (obj.transform.name == "2_Main_HeadGear" && hit.transform.name == "HeadGearCollision")
+            if (obj.transform.name == "2-HeadGear" && hit.transform.name == "HeadGearCollision")
             {
                 HeadGear.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
 
-            if (obj.transform.name == "4_Main_SmallCable1" && hit.transform.name == "2_SmallCode")
+            if (obj.transform.name == "4-SmallCable1" && hit.transform.name == "2_SmallCode")
             {
                 HeadGear.transform.Find("4_SmallCable").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject); 
             }
 
-            if (obj.transform.name == "5_Main_BigCable2" && hit.transform.name == "3_BigCode")
+            if (obj.transform.name == "5-BigCable2" && hit.transform.name == "3_BigCode")
             {
                 HeadGear.transform.Find("5_BigCable").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
 
-            if (obj.transform.name == "6_Main_FinishHeadGear" && hit.transform.name == "HeadGearCollision")
+            if (obj.transform.name == "6-FinishHeadGear" && hit.transform.name == "HeadGearCollision")
             {
                 Transform Click = MainStage.Find("ClickObject").transform;
                 Click.Find("7_Moniter").gameObject.SetActive(true);
