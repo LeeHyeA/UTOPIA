@@ -15,21 +15,17 @@ public class RoomWindow : MonoBehaviour
 
     //새장이 놓였음을 확인하는 변수
     bool PutBirdcage = false;
-
     //드림캐쳐가 놓였음을 확인하는 변수
     bool PutDreamCatcher = false;
-
     //창문 상태 : 1.비오는날, 2.맑은날, 3.커튼을 걷음(밤)
     public int Window_State = 1;
-
     //별가루를 얻음:1, 아직못얻음:2
     public int GetStarPowder = 2;
-
     //모이를 채운 새장을 놓음:1, 안놓은상태:2
     //public int PutBirdcage = 2;
 
-    //거미줄을 얻음:1, 아직못얻음:2
-    public int IsGetSpiderWeb = 2;
+    //거미줄을 얻음을 확인하는 변수
+    public bool IsGetSpiderWeb = false;
 
     public void Window_State_Change()
     {
@@ -104,43 +100,17 @@ public class RoomWindow : MonoBehaviour
         if()
     }
     */
-    
     void CheckGetSpiderWeb()
     {
-            //거미줄 얻음
-            if (IsGetSpiderWeb == 1)
-                SpiderWeb.SetActive(false);
-            //거미줄 못 얻음
-            // else if (IsGetSpiderWeb == 2)
-            //     SpiderWeb.SetActive(true);
-        //거미줄 못얻음
-        else if (IsGetSpiderWeb == 2)
-        {
-            if (Curtain_State == 2)
-                SpiderWeb.SetActive(true);
-            else if (Curtain_State == 1)
-                SpiderWeb.SetActive(false);
-            /*
-            Debug.Log("거미줄 못얻음상태");
-            if (Window_State == 1)
-              {
-                SpiderWeb.SetActive(false);
-              }
-            else if (Window_State == 2)
-            {
-                SpiderWeb.SetActive(false);
-            }
-            else if (Window_State == 3)
-            {
-                SpiderWeb.SetActive(true);
-            }
-            */
-        }
+        //거미줄 얻음
+        if (IsGetSpiderWeb == true)
+            SpiderWeb.SetActive(false);
+       // else if (IsGetSpiderWeb == false)
+       //     SpiderWeb.SetActive(true);
     }
-    
     public void GetSpiderWeb()
     {
-        IsGetSpiderWeb = 1;
+        IsGetSpiderWeb = true;
     }
 
 
@@ -166,8 +136,7 @@ public class RoomWindow : MonoBehaviour
                 RainWindow.SetActive(false);
                 CleanWindow.SetActive(false);
                 DarkWindow.SetActive(true);
-                //SpiderWeb.SetActive(true);
-                CheckGetSpiderWeb();
+                //CheckGetSpiderWeb();
                 break;
             default:
                 break;
@@ -197,8 +166,8 @@ public class RoomWindow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CheckGetSpiderWeb();
         WindowSetActive();
         CheckStarPowderGet();
+        CheckGetSpiderWeb();
     }
 }

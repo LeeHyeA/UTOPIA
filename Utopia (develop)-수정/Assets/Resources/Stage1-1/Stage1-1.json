@@ -48,13 +48,6 @@
       "Item_Place":"Stage1-1",
       "Item_Image":"1_1Feather",
       "Item_Text":"드림캐쳐 재료(깃털)"
-    },
-    {
-      "Item_Number":7,
-      "Item_Name":"SpiderJem",
-      "Item_Place":"Stage1-1",
-      "Item_Image":"1_1SpiderJem",
-      "Item_Text":"드림캐쳐 재료(거미줄+빗물보석)"
     }
   ]
 }
