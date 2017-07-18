@@ -168,20 +168,20 @@ public class InputManager : MonoBehaviour
 
 
             // 1 Stage
-            if (obj.transform.name == "4_1_1BirdFeed" && hit.transform.name == "BridCageEmpty")
+            if (obj.transform.name == "4-1_1BirdFeed" && hit.transform.name == "BridCageEmpty")
             {
                 BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
 
-            if (obj.transform.name == "4_1_1BirdFeed" && hit.transform.name == "BirdCageEmptyCol")
+            if (obj.transform.name == "4-1_1BirdFeed" && hit.transform.name == "BirdCageEmptyCol")
             {
                 BridCage.transform.Find("BirdCageEmpty").gameObject.SetActive(false);
                 BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
 
-            if (obj.transform.name == "5_1_1BirdCagePutFeed" && hit.transform.name == "2_CleanWindow")
+            if (obj.transform.name == "5-1_1BirdCagePutFeed" && hit.transform.name == "2_CleanWindow")
             {
                 BridCage.transform.Find("BirdCageFull").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
