@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
     private bool draggingItem = false;          // 드래그되었는지 유무
     private GameObject draggedObject;           // 드래그되고있는 객체의 참조를 보관,유지
     private Vector2 touchOffset;                // 잡고난 후 플레이어의 터치위치
-    public GameObject Inventory;
+    public Transform UICanvas;
     public Transform MainStage;
     public GameObject BridCage;
     public GameObject AcquirableItem;
@@ -17,12 +17,16 @@ public class InputManager : MonoBehaviour
     //   public AudioSource audioSource;
 
     GameObject HeadGear;
+    GameObject Inventory;
+    GameObject Hint;
     //Transform Grid;
 
     void Start()
     {
         HeadGear = MainStage.Find("HeadGear").gameObject;
-        //Grid = Inventory.transform.Find("2_Grid").transform;
+        Inventory = UICanvas.Find("2_Inventory").gameObject;
+        Hint = UICanvas.Find("3_Hint").gameObject;
+
 
         Transform Click = MainStage.Find("ClickObject").transform;
         Click.Find("7_Moniter").gameObject.SetActive(false);
@@ -46,8 +50,19 @@ public class InputManager : MonoBehaviour
             }
         }
 
-        //     if (!audioSource.isPlaying && Interaction)
-        //       UnityEngine.SceneManagement.SceneManager.LoadScene("End");
+        if(Input.GetMouseButton(1))
+        {
+            RaycastHit2D[] touches = Physics2D.RaycastAll(CurrentTouchPosition, CurrentTouchPosition, 0.5f);
+
+            var obj = touches[0];
+
+            if(obj.transform.name == "0-Letter")
+            {
+                Hint.SetActive(true);
+                PlayerPrefs.SetInt("Hint", 1);
+                
+            }
+        }
     }
 
 
@@ -259,37 +274,4 @@ public class InputManager : MonoBehaviour
 
     }
 
-
-    bool Collision(string ClickObjName, string CollisionObjName)
-    {
-        RaycastHit2D[] touches = Physics2D.RaycastAll(CurrentTouchPosition, CurrentTouchPosition, 0.5f);
-
-        if (touches.Length == 1)
-        {
-            if (touches[0].transform.name != CollisionObjName)
-                touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
-        }
-
-        else if (touches.Length > 1)
-        {
-            var obj = touches[0];
-            var hit = touches[1];
-
-            //ChangeName("0_player", "Col");
-
-            if (obj.transform.name == ClickObjName && hit.collider.name == CollisionObjName)
-            {
-                ///hit.transform.GetComponent<AudioSource>().Play();
-                //Debug.Log("오브젝트 접촉완료");
-                Destroy(obj.transform.gameObject);
-                Destroy(hit.transform.gameObject);
-                return true;
-            }
-
-            //else
-            //    touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
-        }
-
-        return false;
-    }
 }

@@ -5,92 +5,77 @@ using UnityEngine;
 public class HintManager : MonoBehaviour
 {
 
-    public Transform HintSet;
-    int index;
+    Transform HintSet;
+    Transform Hint;
+    int index = 0;
+    int index_Max = 0;
 
     // Use this for initialization
     void Start()
     {
-        //HintSet = gameObject.transform.Find("4_HintSet");
-
-        if (PlayerPrefs.GetInt("Pamphlet", 0) > 0)
-            index = 2;
-        if (PlayerPrefs.GetInt("Memo", 0) > 0)
-            index = 1;
-
+        HintSet = transform.Find("3_HintSet");
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //IndexCheck(index);
-        Debug.Log("index" + index.ToString());
+        
+
+        if (PlayerPrefs.GetInt("Hint", 0) > 0)
+            HintCheck();
+
     }
 
-    public void IndexCheck()
+    void HintCheck()
     {
-        switch (index)
+        switch (PlayerPrefs.GetInt("Hint", 0))
         {
             case 1:
-                if (PlayerPrefs.GetInt("Memo", 0) > 0)
-                {
-                    HintSet.Find("0_Memo").gameObject.SetActive(true);
-                    HintSet.Find("1_Pamphlet").gameObject.SetActive(false);
-                }
-                break;
+                Hint = HintSet.Find("0_Letter");
+                Hint.gameObject.SetActive(true);
+                Hint.Find("0_Text").gameObject.SetActive(true);
 
-            case 2:
-                if (PlayerPrefs.GetInt("Pamphlet", 0) > 0)
-                {
-                    HintSet.Find("0_Memo").gameObject.SetActive(false);
-                    HintSet.Find("1_Pamphlet").gameObject.SetActive(true);
-                }
+                index = 1;
+                index_Max = Hint.childCount;
+                PlayerPrefs.SetInt("Hint", 0);
+
+                Debug.Log(index_Max.ToString());
                 break;
 
             default:
-                HintSet.Find("0_Memo").gameObject.SetActive(false);
-                HintSet.Find("1_Pamphlet").gameObject.SetActive(false);
                 break;
 
         }
     }
 
-    public void PlusIndex(int i)
+    public void RightButton()
     {
-        index += i;
-
-        if (index >= 2)
-            index = 2;
-
-        if (index <= 1)
-            index = 1;
-
-        IndexCheck();
-    }
-
-    public void SetIndex(int i)
-    {
-        index = i;
-
-        IndexCheck();
-    }
-
-    public void rightButton()
-    {
-        if (PlayerPrefs.GetInt("Pamphlet", 0) > 0)
+        if (Hint.childCount > 0)
         {
-            HintSet.Find("0_Memo").gameObject.SetActive(false);
-            HintSet.Find("1_Pamphlet").gameObject.SetActive(true);
+            if (index < index_Max)
+            {
+                Debug.Log("index" + index.ToString());
+                Hint.GetChild(index).gameObject.SetActive(false);
+                index++;
+                Debug.Log("index" + index.ToString());
+                Hint.GetChild(index).gameObject.SetActive(true);
+            }
         }
     }
 
-    public void leftButtom()
+    public void LeftButtom()
     {
-        if (PlayerPrefs.GetInt("Memo", 0) > 0)
+        if (Hint.childCount > 0)
         {
-            HintSet.Find("0_Memo").gameObject.SetActive(true);
-            HintSet.Find("1_Pamphlet").gameObject.SetActive(false);
+            if (1 < index)
+            {
+                Debug.Log("index" + index.ToString());
+                Hint.GetChild(index).gameObject.SetActive(false);
+                index--;
+                Debug.Log("index" + index.ToString());
+                Hint.GetChild(index).gameObject.SetActive(true);
+            }
         }
     }
 }
