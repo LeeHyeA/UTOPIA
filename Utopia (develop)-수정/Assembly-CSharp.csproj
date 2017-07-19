@@ -61,6 +61,7 @@
      <Compile Include="Assets\Script\JY\Circle_Puzzle_Tile.cs" />
      <Compile Include="Assets\Script\JY\ControlDialogue.cs" />
      <Compile Include="Assets\Script\JY\EventManager.cs" />
+     <Compile Include="Assets\Script\JY\HangedMan.cs" />
      <Compile Include="Assets\Script\JY\KeyPad_Puz.cs" />
      <Compile Include="Assets\Script\JY\Keypad.cs" />
      <Compile Include="Assets\Script\JY\LogicPuzzle.cs" />

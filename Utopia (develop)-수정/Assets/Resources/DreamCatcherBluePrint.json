@@ -1,0 +1,10 @@
+{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"드림캐쳐의 설계도가 적혀있다."
+    }
+  ]
+}

@@ -23,8 +23,14 @@ public class EventManager : MonoBehaviour
 
     public bool Doing_Event=false;
 
-	// Use this for initialization
-	void Start ()
+    //SB꺼
+    public GameObject Panel1_1_defalut;
+    public GameObject Panel1_1;
+    public GameObject BirdCage;
+    public GameObject Window;
+
+    // Use this for initialization
+    void Start ()
     {
 	}
 	
@@ -72,6 +78,23 @@ public class EventManager : MonoBehaviour
         {
             switch (Event_Number)
             {
+                //100~102 1에서 아버지편지읽고 1-1로 넘어가는 이벤트
+                case 100:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/ReadFathersLetter");                     //예시
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LodaJSON(Json_Data);
+                    break;
+                case 101:
+                    Fade(true, 1.5f);
+                    break;
+                case 102:
+                    Panel1_1_defalut.SetActive(false);
+                    Panel1_1.SetActive(true);
+                    BirdCage.SetActive(true);
+                    Window.SetActive(true);
+                    Fade(false, 1.5f);
+                    break;
+
                 case 200:
                     StartCoroutine("WaitASecond", 2);               //이벤트 대기시키기 / 오른쪽 숫자가 초
                     break;
@@ -101,6 +124,12 @@ public class EventManager : MonoBehaviour
         Event_Number++;
         Debug.Log("코루틴끝");
 
+    }
+
+    //이벤트숫자 받아서 변경해주는 함수
+    public void EventnumberSet(int num)
+    {
+        Event_Number = num;
     }
 
 }
