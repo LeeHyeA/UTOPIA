@@ -30,6 +30,8 @@ public class Circle_Puzzle_Tile : MonoBehaviour {
         origin_color = Ima.color;
 
         T.Rotate(0, 0, -(tile_stats * 45));
+
+        GameObject.Find("AA").transform.FindChild("BB").gameObject;
     }
 
 

@@ -16,6 +16,10 @@ public class Circle_Puzzle : MonoBehaviour {
     public GameObject Selected_Piece;
     public GameObject Circle_Puzzle_Control;
 
+    public GameObject Left_Button;
+    public GameObject Right_Button;
+    public GameObject Rope;
+
     public GameObject[] CPT = new GameObject[3];
 
     EventManager EM;
@@ -32,13 +36,14 @@ public class Circle_Puzzle : MonoBehaviour {
         }
         Circle_Puzzle_Control.SetActive(false);
 
-        
+        EM = FindObjectOfType<EventManager>();
+
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
-        if (!Activated || Answerd || EM.Doing_Event) 
+        if (!Activated || Answerd) 
             return;
         Turn(direction);
         Check();    
@@ -121,5 +126,10 @@ public class Circle_Puzzle : MonoBehaviour {
         }
 
         Answerd = true;
+        Rope.SetActive(true);
+        Destroy(Left_Button);
+        Destroy(Right_Button);
+        EM.Event_Number = 200;
+        return;
     }
 }

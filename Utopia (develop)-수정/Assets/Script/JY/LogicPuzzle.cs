@@ -17,6 +17,7 @@ public class LogicPuzzle : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        EM = FindObjectOfType<EventManager>();
         LogicPuzControl.SetActive(true);
         for (int i = 0; i < 100; i++)
         {
@@ -70,8 +71,6 @@ public class LogicPuzzle : MonoBehaviour
     {
         Activated = !Activated;
         LogicPuzControl.SetActive(Activated);
-        EM.Doing_Event = Activated;
-
         return;
     }
     public void Clear_Tile()

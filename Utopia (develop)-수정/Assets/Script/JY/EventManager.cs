@@ -72,11 +72,11 @@ public class EventManager : MonoBehaviour
         {
             switch (Event_Number)
             {
-                case 0:
-                    Fade(false, 1.5f);
+                case 200:
+                    StartCoroutine("WaitASecond", 2);               //이벤트 대기시키기 / 오른쪽 숫자가 초
                     break;
-                case 1:
-                    Text_Data = Resources.Load<TextAsset>("A");                     //예시
+                case 201:
+                    Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Get_Rope");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LodaJSON(Json_Data);
                     break;
@@ -86,4 +86,21 @@ public class EventManager : MonoBehaviour
             Event_Number_1 = Event_Number;
         }
     }
+
+    IEnumerator WaitASecond(int sec)                //  이벤트 대기시키기
+    {
+        if (Doing_Event)
+            yield break ;
+        Debug.Log("코루틴시작");
+        for(int i=0;i< sec; i++)
+        {
+            Debug.Log("코루틴수행중");
+
+            yield return new WaitForSeconds(1f);
+        }
+        Event_Number++;
+        Debug.Log("코루틴끝");
+
+    }
+
 }
