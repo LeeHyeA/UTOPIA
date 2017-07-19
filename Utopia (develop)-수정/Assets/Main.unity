@@ -6281,7 +6281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30268b28a6106424caa53593ae65b4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UICanvas: {fileID: 0}
+  UICanvas: {fileID: 1481064236}
   MainStage: {fileID: 597955293}
   BridCage: {fileID: 595867115}
   AcquirableItem: {fileID: 1880788821}
@@ -24076,7 +24076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1727733816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26571,7 +26571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1824654921
 MonoBehaviour:
   m_ObjectHideFlags: 0
