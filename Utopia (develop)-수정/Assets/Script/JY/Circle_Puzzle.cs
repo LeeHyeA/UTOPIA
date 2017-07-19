@@ -22,7 +22,7 @@ public class Circle_Puzzle : MonoBehaviour {
 
     public GameObject[] CPT = new GameObject[3];
 
-    EventManager EM;
+    public EventManager EM;
 
     // Use this for initialization
     void Start ()

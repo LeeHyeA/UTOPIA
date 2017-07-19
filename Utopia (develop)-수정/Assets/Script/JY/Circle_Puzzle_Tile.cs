@@ -31,7 +31,6 @@ public class Circle_Puzzle_Tile : MonoBehaviour {
 
         T.Rotate(0, 0, -(tile_stats * 45));
 
-        GameObject.Find("AA").transform.FindChild("BB").gameObject;
     }
 
 
