@@ -72,7 +72,14 @@ public class EventManager : MonoBehaviour
         {
             switch (Event_Number)
             {
-
+                case 0:
+                    Fade(false, 1.5f);
+                    break;
+                case 1:
+                    Text_Data = Resources.Load<TextAsset>("A");                     //예시
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LodaJSON(Json_Data);
+                    break;
                 default:
                     break;
             }

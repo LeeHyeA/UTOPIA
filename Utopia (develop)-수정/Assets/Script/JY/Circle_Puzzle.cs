@@ -18,6 +18,8 @@ public class Circle_Puzzle : MonoBehaviour {
 
     public GameObject[] CPT = new GameObject[3];
 
+    EventManager EM;
+
     // Use this for initialization
     void Start ()
     {
@@ -36,10 +38,10 @@ public class Circle_Puzzle : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (!Activated||Answerd)
+        if (!Activated || Answerd || EM.Doing_Event) 
             return;
         Turn(direction);
-        Check();
+        Check();    
     }
 
     void Turn(bool direction)
@@ -105,6 +107,7 @@ public class Circle_Puzzle : MonoBehaviour {
     {
         Activated = !Activated;
         Circle_Puzzle_Control.SetActive(Activated);
+        EM.Doing_Event = Activated;
         return;
     }
     void Check()

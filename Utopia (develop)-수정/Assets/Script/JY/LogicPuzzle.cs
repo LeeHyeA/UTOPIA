@@ -8,6 +8,8 @@ public class LogicPuzzle : MonoBehaviour
     GameObject[] Tile_Obj = new GameObject[100];
     public Tile[] t = new Tile[100];
 
+    EventManager EM;
+
     public GameObject LogicPuzControl;
     public bool Activated = false;
     public bool Answerd = false;
@@ -28,7 +30,7 @@ public class LogicPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Activated)
+        if (!Activated||Answerd||EM.Doing_Event)
         {
             return;
         }
@@ -68,6 +70,8 @@ public class LogicPuzzle : MonoBehaviour
     {
         Activated = !Activated;
         LogicPuzControl.SetActive(Activated);
+        EM.Doing_Event = Activated;
+
         return;
     }
     public void Clear_Tile()
