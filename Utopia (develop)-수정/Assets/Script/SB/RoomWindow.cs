@@ -35,7 +35,7 @@ public class RoomWindow : MonoBehaviour
     {
         if (Curtain_State == 1)
         {
-            if (Window_State >= 3)
+            if (Window_State >= 2)
             {
                 Window_State = 1;
                 Curtain_State = 2;

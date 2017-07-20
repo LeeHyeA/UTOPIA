@@ -114,6 +114,7 @@ public class EventManager : MonoBehaviour
                     Panel1_1.SetActive(false);
                     BirdCage.SetActive(false);
                     Panel1_2.SetActive(true);
+                    Window.SetActive(false);
                     Fade(false, 1.5f);
                     break;
 

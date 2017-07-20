@@ -13,7 +13,7 @@ public class ChangeStage1_1 : MonoBehaviour
     {
         //맨처음 방배경 상태(맑은날)
         Stage1_1Background.sprite = Resources.Load<Sprite>("Stage1-1/1_RosaNight");
-        Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/1_RosaNight");
+        Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/MonggoalDefault");
     }
 
     void Update()
@@ -33,13 +33,13 @@ public class ChangeStage1_1 : MonoBehaviour
             if (WindowStateTemp == 2)
             {
                 Stage1_1Background.sprite = Resources.Load<Sprite>("Stage1-1/1_RosaDay");
-                Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/1_MonggoalDay");
+                //Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/1_MonggoalDay");
             }
             //if(비오는날)//1
             else if (WindowStateTemp == 1)
             {
                 Stage1_1Background.sprite = Resources.Load<Sprite>("Stage1-1/1_RosaRainy");
-                Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/1_MonggoalRainy");
+                //Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/1_MonggoalRainy");
             }
             /*
             //if(밤) //3
@@ -53,7 +53,7 @@ public class ChangeStage1_1 : MonoBehaviour
         else if (CurtainStateTemp == 1)
         {
             Stage1_1Background.sprite = Resources.Load<Sprite>("Stage1-1/1_RosaNight");
-            Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/1_MonggoalRosaNight");
+            //Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/1_MonggoalRosaNight");
         }
     }
 }
