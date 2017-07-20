@@ -65,9 +65,9 @@ public class Circle_Puzzle : MonoBehaviour {
         turning = true;
         Debug.Log("코루틴시작");
 
-        for (int i = 0; i < 45; i++) 
+        for (int i = 0; i < 15; i++) 
         {
-            Selected_Piece.transform.Rotate(0, 0, 1);
+            Selected_Piece.transform.Rotate(0, 0, 3);
             Debug.Log("중");
             yield return new WaitForSeconds(0.01f);
         }
@@ -81,9 +81,9 @@ public class Circle_Puzzle : MonoBehaviour {
 
         Debug.Log("코루틴시작");
 
-        for (int i = 0; i < 45; i++)
+        for (int i = 0; i < 15; i++)
         {
-            Selected_Piece.transform.Rotate(0, 0, -1);
+            Selected_Piece.transform.Rotate(0, 0, -3);
             Debug.Log("중");
             yield return new WaitForSeconds(0.01f);
         }
