@@ -36,11 +36,10 @@ public class HintManager : MonoBehaviour
                 Hint.gameObject.SetActive(true);
                 Hint.Find("1_Text").gameObject.SetActive(true);
 
-                index = 1;
+                index = 0;
                 index_Max = Hint.childCount;
                 PlayerPrefs.SetInt("Hint", 0);
 
-                Debug.Log(index_Max.ToString());
                 break;
 
             default:
@@ -51,31 +50,23 @@ public class HintManager : MonoBehaviour
 
     public void RightButton()
     {
-        if (Hint.childCount >= index)
+        if (index_Max > index + 1)
         {
-            if (index < index_Max)
-            {
-                Debug.Log("index" + index.ToString());
-                Hint.GetChild(index - 1).gameObject.SetActive(false);
-                index++;
-                Debug.Log("index" + index.ToString());
-                
-                Hint.GetChild(index).gameObject.SetActive(true);
-            }
+            Hint.GetChild(index).gameObject.SetActive(false);
+            index++;
+            Hint.GetChild(index).gameObject.SetActive(true);
+            
         }
     }
 
     public void LeftButtom()
     {
-        if (Hint.childCount >= index)
+        if (1 <= index)
         {
-            if (1 < index)
+            if (index_Max > index - 1) 
             {
-                Debug.Log("index" + index.ToString());
                 Hint.GetChild(index).gameObject.SetActive(false);
                 index--;
-                Debug.Log("index" + index.ToString());
-                
                 Hint.GetChild(index).gameObject.SetActive(true);
             }
         }
