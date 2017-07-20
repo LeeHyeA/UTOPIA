@@ -26,8 +26,11 @@ public class EventManager : MonoBehaviour
     //SB꺼
     public GameObject Panel1_1_defalut;
     public GameObject Panel1_1;
+    public GameObject Panel1_2;
     public GameObject BirdCage;
     public GameObject Window;
+    public GameObject inventory;
+    public bool MakeDreamCatcher = false;
 
     // Use this for initialization
     void Start ()
@@ -97,6 +100,22 @@ public class EventManager : MonoBehaviour
                     Window.SetActive(true);
                     Fade(false, 1.5f);
                     break;
+                //104~106 1-1에서 드림캐쳐를 완성하고 난후 x버튼으로 나오면 1-2로 넘어가는 이벤트
+                case 104:
+                    inventory.SetActive(false);
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteDreamCatcher");                     //예시
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LodaJSON(Json_Data);
+                    break;
+                case 105:
+                    Fade(true, 1.5f);
+                    break;
+                case 106:
+                    Panel1_1.SetActive(false);
+                    BirdCage.SetActive(false);
+                    Panel1_2.SetActive(true);
+                    Fade(false, 1.5f);
+                    break;
 
                 // 200~299 2Stage
                 case 200:
@@ -132,7 +151,20 @@ public class EventManager : MonoBehaviour
     //이벤트숫자 받아서 변경해주는 함수
     public void EventnumberSet(int num)
     {
+        //드림캐처를 완성했을시 자동으로 완성이벤트로 이동
+        if (num == 104)
+        {
+            if (MakeDreamCatcher == true)
+            {
+                Event_Number = num;
+                return;
+            }
+            else if (MakeDreamCatcher == false)
+                return;
+        }
+
         Event_Number = num;
     }
+
 
 }
