@@ -78,6 +78,9 @@ public class EventManager : MonoBehaviour
         {
             switch (Event_Number)
             {
+                // 0~100 Main
+                    
+                // 100~199 1Stage
                 //100~102 1에서 아버지편지읽고 1-1로 넘어가는 이벤트
                 case 100:
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/ReadFathersLetter");                     //예시
@@ -95,6 +98,7 @@ public class EventManager : MonoBehaviour
                     Fade(false, 1.5f);
                     break;
 
+                // 200~299 2Stage
                 case 200:
                     StartCoroutine("WaitASecond", 2);               //이벤트 대기시키기 / 오른쪽 숫자가 초
                     break;
