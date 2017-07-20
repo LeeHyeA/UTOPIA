@@ -6,6 +6,10 @@ public class HangedMan : MonoBehaviour {
 
     // Use this for initialization
     Transform Tf;
+    public bool is_Turning=false;
+
+    public int stat=0;
+
 	void Start ()
     {
         Tf = GetComponent<Transform>();
@@ -13,15 +17,28 @@ public class HangedMan : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
 
+
+    }
+
+    public void Turning()
+    {
+        if(!is_Turning)
+            StartCoroutine("Rot");
+        return;
+    }
     IEnumerator Rot()
     {
-        for (int i = 0; i < 10; i++)
+        Debug.Log("코루틴시작");
+
+        for (int i = 0; i < 45; i++)
         {
-            if (Tf.rotation.z > 10)
-            yield return new WaitForSeconds(1f);
+            Tf.Rotate(0, 0, 4);
+            Debug.Log("중");
+            yield return new WaitForSeconds(0.01f);
         }
+        Debug.Log("코루틴끝");
+        stat = (stat + 1) % 8;
     }
+    
 }

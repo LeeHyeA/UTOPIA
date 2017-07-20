@@ -112,8 +112,7 @@ public class EventManager : MonoBehaviour
 
     IEnumerator WaitASecond(int sec)                //  이벤트 대기시키기
     {
-        if (Doing_Event)
-            yield break ;
+        
         Debug.Log("코루틴시작");
         for(int i=0;i< sec; i++)
         {
