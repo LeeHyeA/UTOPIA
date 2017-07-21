@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlowerpotControl : MonoBehaviour {
-    public GameObject FlowerpotParent;
+    public GameObject FlowerLayer;
 
     // PSO : PlantStateObject
     public GameObject PSO_Carrot;
@@ -44,7 +44,7 @@ public class FlowerpotControl : MonoBehaviour {
 
     public void ShowFlowerpot()
     {
-        FlowerpotParent.SetActive(true);
+        FlowerLayer.SetActive(true);
         if(IsPlantCarrot)
         {
             //심어진 작물(당근)을 제외한 다른 작물은 해제상태로
@@ -95,7 +95,10 @@ public class FlowerpotControl : MonoBehaviour {
             PSO_Bean.SetActive(true);
             return;
         }
+    }
 
-
+    public void ExitFlowerpot()
+    {
+        FlowerLayer.SetActive(false);
     }
 }
