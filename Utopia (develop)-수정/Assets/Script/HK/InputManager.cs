@@ -11,9 +11,13 @@ public class InputManager : MonoBehaviour
     private Vector2 touchOffset;                // 잡고난 후 플레이어의 터치위치
     public Transform UICanvas;
     public Transform MainStage;
+    
+    //1-1
     public GameObject BridCage;
     public GameObject AcquirableItem;
-    public GameObject DreamCatcher;
+    //public GameObject DreamCatcher;
+
+    //1-2
 
 
     HangedMan HM;
@@ -275,7 +279,48 @@ public class InputManager : MonoBehaviour
                 }
             }
 
-            if(obj.transform.name== "2-Rope" && hit.transform.name=="Hanged_Man")
+            // 1Stage (1-2)
+
+            //빈우유병을 염소에 놓아 채우기
+            if(obj.transform.name == "3-Ingredient(EmptyMilk)" && hit.transform.name == "Taxidermied_Goat")
+            {
+                Debug.Log("빈우유병 채우기 완료");
+
+                //AnimalControl의 빈우유병을 놓았음을 알려주는 변수를 참으로
+                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().PutEmptyMilk = true;
+                //그후 다시 갱신해서 보여줌
+                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().ShowGoat();
+                //빈우유병 삭제
+                Destroy(obj.transform.gameObject);
+            }
+
+            //칼을 양에 놓아 고기얻기
+            if(obj.transform.name == "0-Knife" && hit.transform.name == "Taxidermied_Sheep(Before)")
+            {
+                Debug.Log("칼로 고기얻기 완료");
+
+                //AnimalControl의 칼을 놓았음을 알려주는 변수를 참으로
+                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().PutKnife = true;
+                //그후 다시 갱신해서 보여줌
+                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().ShowSheep();
+                //칼은 제자리로...(해결해야됨)
+
+            }
+            //빈 물뿌리개를 하마에 놓아 물채우기
+            if(obj.transform.name == "1-EmptyWateringCan" && hit.transform.name == "Taxidermied_Hippopotamus(Before)")
+            {
+                Debug.Log("하마에 빈물뿌리개 놓기 완료");
+
+                //AnimalControl의 물뿌리개를 놓았음을 알려주는 변수를 참으로
+                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().PutWateringCan = true;
+                //그후 다시 갱신해서 보여줌
+                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().ShowHippo();
+                //빈물뿌리개 삭제
+                Destroy(obj.transform.gameObject);
+            }
+
+
+            if (obj.transform.name== "2-Rope" && hit.transform.name=="Hanged_Man")
             {
                 Debug.Log("밧줄맨");
                 HM.Answer();
