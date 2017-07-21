@@ -54,6 +54,7 @@
      <Compile Include="Assets\Script\HK\Item.cs" />
      <Compile Include="Assets\Script\HK\MainScript.cs" />
      <Compile Include="Assets\Script\HK\MouseCursor.cs" />
+     <Compile Include="Assets\Script\HK\RButtonInput.cs" />
      <Compile Include="Assets\Script\HK\UIManager.cs" />
      <Compile Include="Assets\Script\HK\VideoStream.cs" />
      <Compile Include="Assets\Script\JY\ActiveDialogue.cs" />
@@ -61,6 +62,7 @@
      <Compile Include="Assets\Script\JY\Circle_Puzzle_Tile.cs" />
      <Compile Include="Assets\Script\JY\ControlDialogue.cs" />
      <Compile Include="Assets\Script\JY\EventManager.cs" />
+     <Compile Include="Assets\Script\JY\Ganges_River.cs" />
      <Compile Include="Assets\Script\JY\HangedMan.cs" />
      <Compile Include="Assets\Script\JY\KeyPad_Puz.cs" />
      <Compile Include="Assets\Script\JY\Keypad.cs" />
@@ -75,6 +77,7 @@
      <Compile Include="Assets\Script\SB\DreamCatcher.cs" />
      <Compile Include="Assets\Script\SB\FlowerpotControl.cs" />
      <Compile Include="Assets\Script\SB\MazePlayerMovement.cs" />
+     <Compile Include="Assets\Script\SB\PictureControl.cs" />
      <Compile Include="Assets\Script\SB\PlayerControl.cs" />
      <Compile Include="Assets\Script\SB\RoomWindow.cs" />
      <Compile Include="Assets\Script\SB\ScreenFader.cs" />

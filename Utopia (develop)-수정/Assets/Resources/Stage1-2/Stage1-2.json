@@ -2,9 +2,9 @@
   "Item": [
     {
       "Item_Number": 0,
-      "Item_Name": "Knife",
-      "Item_Place": "Stage1-2",
-      "Item_Image": "Knife",
+      "Item_Name":"Knife",
+      "Item_Place":"Stage1-2",
+      "Item_Image":"Knife",
       "Item_Text": "몽골스테이지 나이프"
     },
     {

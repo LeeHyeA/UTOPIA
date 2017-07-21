@@ -236,7 +236,7 @@ public class InputManager : MonoBehaviour
                 }
             }
             //DreamCatcher(Feather)
-            if (obj.transform.name == "6-1_1Feather" && hit.transform.name == "!")
+            if (obj.transform.name == "6-1_1Feather" && hit.transform.name == "DreamCatcherCol")
             {
                 int tempNum2 = GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState;
                 //기본(0)상태에서 깃털 붙일때
