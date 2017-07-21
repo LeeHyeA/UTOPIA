@@ -184,7 +184,7 @@ public class InputManager : MonoBehaviour
 
 
 
-            // 1 Stage
+            // 1 Stage(1-1)
             //모이를 빈새장으로
             if (obj.transform.name == "4-1_1BirdFeed" && hit.transform.name == "BirdCageEmptyCol")
             {
@@ -263,6 +263,8 @@ public class InputManager : MonoBehaviour
                     //상태를 드림캐쳐 최종형태(4)로 바꿈
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 4;
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
+                    //Event_Manager의 드림캐처 얻은 후 이벤트 발생시키는 변수를 true로
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().MakeDreamCatcher = true;
                     Destroy(obj.transform.gameObject);
                 }
             }

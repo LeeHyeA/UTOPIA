@@ -11,8 +11,6 @@ public class Circle_Puzzle : MonoBehaviour {
 
     public bool Answerd = false;
 
-    int index = 0;
-
     public GameObject Selected_Piece;
     public GameObject Circle_Puzzle_Control;
 
@@ -45,69 +43,55 @@ public class Circle_Puzzle : MonoBehaviour {
     {
         if (!Activated || Answerd) 
             return;
-        Turn(direction);
         Check();    
     }
 
-    void Turn(bool direction)
+    public void Leftbutton()
     {
-       if (!turning||Answerd)
-            return;
-
-       if(direction)
-       {
-           if(index<45)
-           {
-               Selected_Piece.transform.Rotate(0, 0, 1);
-               index++;
-               return;
-           }
-           else
-           {
-               index = 0;
-               turning = false;
-               Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats - 1) % 8;
-
-                return;
-           }
-
-       }
-       else
-       {
-           if (index < 45)
-           {
-               Selected_Piece.transform.Rotate(0, 0, -1);
-               index++;
-               return;
-           }
-           else
-           {
-               index = 0;
-               turning = false;
-               Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats + 1) % 8;
-
-                return;
-           }
-       }
-   }
-
-
-    public void Turn_Left()
-    {
-        if (turning)
-            return;
-        direction = false;
-        turning = true;
+        if(!turning)
+            StartCoroutine("RotLeft");
         return;
     }
-    public void Turn_Right()
+    public void Rightbtton()
     {
-        if (turning)
-            return;
-        direction = true;
-        turning = true;
+        if(!turning)
+            StartCoroutine("RotRight");
+
         return;
     }
+
+    IEnumerator RotLeft()
+    {
+        turning = true;
+        Debug.Log("코루틴시작");
+
+        for (int i = 0; i < 15; i++) 
+        {
+            Selected_Piece.transform.Rotate(0, 0, 3);
+            Debug.Log("중");
+            yield return new WaitForSeconds(0.01f);
+        }
+        Debug.Log("코루틴끝");
+        turning = false;
+        Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats - 1) % 8;
+    }
+    IEnumerator RotRight()
+    {
+        turning = true;
+
+        Debug.Log("코루틴시작");
+
+        for (int i = 0; i < 15; i++)
+        {
+            Selected_Piece.transform.Rotate(0, 0, -3);
+            Debug.Log("중");
+            yield return new WaitForSeconds(0.01f);
+        }
+        Debug.Log("코루틴끝");
+        turning = false;
+        Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats + 1) % 8;
+    }
+
     public void On_Off()
     {
         Activated = !Activated;

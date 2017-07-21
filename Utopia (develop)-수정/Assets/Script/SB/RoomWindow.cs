@@ -35,7 +35,7 @@ public class RoomWindow : MonoBehaviour
     {
         if (Curtain_State == 1)
         {
-            if (Window_State >= 3)
+            if (Window_State >= 2)
             {
                 Window_State = 1;
                 Curtain_State = 2;
@@ -87,9 +87,18 @@ public class RoomWindow : MonoBehaviour
         //별가루 못 얻음
         else if (GetStarPowder == 2)
         {
+            //커튼이 닫혀있을때 활성화
             if (Curtain_State == 1)
+            {
                 StarPowder.SetActive(true);
-            else if (Curtain_State == 2)
+                /*
+                if (Curtain_State == 1)
+                    StarPowder.SetActive(true);
+                else if (Curtain_State == 2)
+                    StarPowder.SetActive(false);
+                */
+            }
+            else
                 StarPowder.SetActive(false);
         }
     }
@@ -107,37 +116,26 @@ public class RoomWindow : MonoBehaviour
     
     void CheckGetSpiderWeb()
     {
-            //거미줄 얻음
-            if (IsGetSpiderWeb == 1)
-                SpiderWeb.SetActive(false);
-            //거미줄 못 얻음
-            // else if (IsGetSpiderWeb == 2)
-            //     SpiderWeb.SetActive(true);
+        //거미줄 얻음
+        if (IsGetSpiderWeb == 1)
+            SpiderWeb.SetActive(false);
+        else
+            SpiderWeb.SetActive(true);
+        //거미줄 못 얻음
+        // else if (IsGetSpiderWeb == 2)
+        //     SpiderWeb.SetActive(true);
         //거미줄 못얻음
+        /*
         else if (IsGetSpiderWeb == 2)
         {
             if (Curtain_State == 2)
                 SpiderWeb.SetActive(true);
             else if (Curtain_State == 1)
                 SpiderWeb.SetActive(false);
-            /*
-            Debug.Log("거미줄 못얻음상태");
-            if (Window_State == 1)
-              {
-                SpiderWeb.SetActive(false);
-              }
-            else if (Window_State == 2)
-            {
-                SpiderWeb.SetActive(false);
-            }
-            else if (Window_State == 3)
-            {
-                SpiderWeb.SetActive(true);
-            }
-            */
         }
+        */
     }
-    
+
     public void GetSpiderWeb()
     {
         IsGetSpiderWeb = 1;
@@ -162,6 +160,7 @@ public class RoomWindow : MonoBehaviour
                 DarkWindow.SetActive(false);
                 break;
             //밤
+            /*
             case 3:
                 RainWindow.SetActive(false);
                 CleanWindow.SetActive(false);
@@ -169,6 +168,7 @@ public class RoomWindow : MonoBehaviour
                 //SpiderWeb.SetActive(true);
                 CheckGetSpiderWeb();
                 break;
+            */
             default:
                 break;
         }
@@ -200,5 +200,6 @@ public class RoomWindow : MonoBehaviour
         //CheckGetSpiderWeb();
         WindowSetActive();
         CheckStarPowderGet();
+        CheckGetSpiderWeb();
     }
 }
