@@ -18,18 +18,12 @@ public class InputManager : MonoBehaviour
 
     GameObject HeadGear;
     GameObject Inventory;
-    GameObject Hint;
     //Transform Grid;
 
     void Start()
     {
         HeadGear = MainStage.Find("HeadGear").gameObject;
         Inventory = UICanvas.Find("2_Inventory").gameObject;
-        Hint = UICanvas.Find("3_Hint").gameObject;
-
-
-        Transform Click = MainStage.Find("ClickObject").transform;
-        Click.Find("7_Moniter").gameObject.SetActive(false);
     }
 
     void Update()
@@ -50,19 +44,7 @@ public class InputManager : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButton(1))
-        {
-            RaycastHit2D[] touches = Physics2D.RaycastAll(CurrentTouchPosition, CurrentTouchPosition, 0.5f);
-
-            var obj = touches[0];
-
-            if(obj.transform.name == "0-Letter")
-            {
-                Hint.SetActive(true);
-                PlayerPrefs.SetInt("Hint", 1);
-                
-            }
-        }
+        
     }
 
 
@@ -171,10 +153,12 @@ public class InputManager : MonoBehaviour
             }
 
             if (obj.transform.name == "6-FinishHeadGear" && hit.transform.name == "HeadGearCollision")
-            {
-                Transform Click = MainStage.Find("ClickObject").transform;
-                Click.Find("7_Moniter").gameObject.SetActive(true);
+            {                
                 MainStage.Find("Computer").gameObject.SetActive(true);
+                Transform Com = MainStage.Find("Computer");
+                Com.Find("9_CodeInput").gameObject.SetActive(true);
+                Com.Find("5_AccessButton(NoHG)").gameObject.SetActive(false);
+                Com.Find("4_AccessButton(Before)").gameObject.SetActive(true);
 
                 if (Inventory.gameObject.activeSelf)
                     Inventory.gameObject.SetActive(false);

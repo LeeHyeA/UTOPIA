@@ -8,14 +8,17 @@ public class MainScript : MonoBehaviour
 
     public GameObject Inventory;
     Item item;
+    public EventManager Event;
 
     // Use this for initialization
     void Start()
     {
+        //PlayerPrefs.DeleteAll();
         if (PlayerPrefs.GetInt("StartMain", 0) == 1)
         {
             this.gameObject.transform.Find("Panel(Start)").gameObject.SetActive(false);
             this.gameObject.transform.Find("Panel").gameObject.SetActive(true);
+            Event.EventnumberSet(5);
         }
     }
 
