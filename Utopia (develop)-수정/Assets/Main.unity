@@ -4486,6 +4486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29dca532ca875645a0b58f27819f3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Main: {fileID: 0}
   Stage1: {fileID: 1792837921}
 --- !u!1 &320623454
 GameObject:
@@ -5442,6 +5443,7 @@ MonoBehaviour:
   End_of_Line: 0
   isActive: 0
   currentIndex: 0
+  Empty: {fileID: 0}
 --- !u!4 &406895586
 Transform:
   m_ObjectHideFlags: 0
@@ -16231,6 +16233,7 @@ MonoBehaviour:
   Event_Number: 0
   Event_Number_1: 1
   Doing_Event: 0
+  Main: {fileID: 0}
   Panel1_1_defalut: {fileID: 1666662362}
   Panel1_1: {fileID: 1598981191}
   Panel1_2: {fileID: 1051750038}
@@ -28406,6 +28409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: {fileID: 2044830646}
+  Event: {fileID: 0}
 --- !u!1 &1727772250
 GameObject:
   m_ObjectHideFlags: 0
