@@ -1,8 +1,22 @@
 ﻿{
   "Item": [
-    {
+   {
       "Item_Number":0,
-      "Item_Name":"Rope",
+      "Item_Name":"2-0_Color_red",
+      "Item_Place":"Stage2",
+      "Item_Image":"Red_Color",
+      "Item_Text":"빨간색"
+    },
+	{
+      "Item_Number":1,
+      "Item_Name":"2-1_Color_blue",
+      "Item_Place":"Stage2",
+      "Item_Image":"Blue_Color",
+      "Item_Text":"파란색"
+    },
+    {
+      "Item_Number":2,
+      "Item_Name":"2-2_Rope",
       "Item_Place":"Stage2",
       "Item_Image":"Rope",
       "Item_Text":"로프"

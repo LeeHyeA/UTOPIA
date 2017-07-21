@@ -12,6 +12,7 @@ public class Circle_Puzzle : MonoBehaviour {
     public bool Answerd = false;
 
     public GameObject Selected_Piece;
+
     public GameObject Circle_Puzzle_Control;
 
     public GameObject Left_Button;
@@ -48,13 +49,13 @@ public class Circle_Puzzle : MonoBehaviour {
 
     public void Leftbutton()
     {
-        if(!turning)
+       // if(!turning)
             StartCoroutine("RotLeft");
         return;
     }
     public void Rightbtton()
     {
-        if(!turning)
+        //if(!turning)
             StartCoroutine("RotRight");
 
         return;
@@ -62,22 +63,23 @@ public class Circle_Puzzle : MonoBehaviour {
 
     IEnumerator RotLeft()
     {
-        turning = true;
+        GameObject TurningObj = Selected_Piece;
+
         Debug.Log("코루틴시작");
 
         for (int i = 0; i < 15; i++) 
         {
-            Selected_Piece.transform.Rotate(0, 0, 3);
+            TurningObj.transform.Rotate(0, 0, 3);
             Debug.Log("중");
             yield return new WaitForSeconds(0.01f);
         }
         Debug.Log("코루틴끝");
-        turning = false;
-        Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats - 1) % 8;
+        //     turning = false;
+        TurningObj.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats - 1) % 8;
     }
     IEnumerator RotRight()
     {
-        turning = true;
+        GameObject TurningObj = Selected_Piece;
 
         Debug.Log("코루틴시작");
 
@@ -88,8 +90,8 @@ public class Circle_Puzzle : MonoBehaviour {
             yield return new WaitForSeconds(0.01f);
         }
         Debug.Log("코루틴끝");
-        turning = false;
-        Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats + 1) % 8;
+        //        turning = false;
+        TurningObj.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats + 1) % 8;
     }
 
     public void On_Off()

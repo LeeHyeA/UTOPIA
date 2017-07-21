@@ -8,6 +8,7 @@ public class LogicPuzzle : MonoBehaviour
     GameObject[] Tile_Obj = new GameObject[100];
     public Tile[] t = new Tile[100];
 
+    public GameObject trigger_answer_obj;
     EventManager EM;
 
     public GameObject LogicPuzControl;
@@ -63,6 +64,7 @@ public class LogicPuzzle : MonoBehaviour
             Debug.Log("정답");
             Answerd = true;
 
+            trigger_answer_obj.SetActive(true);
             return;
         }
     }

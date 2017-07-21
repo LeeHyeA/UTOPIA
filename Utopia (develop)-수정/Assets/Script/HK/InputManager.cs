@@ -14,6 +14,10 @@ public class InputManager : MonoBehaviour
     public GameObject BridCage;
     public GameObject AcquirableItem;
     public GameObject DreamCatcher;
+
+
+    HangedMan HM;
+
     //   public AudioSource audioSource;
 
     GameObject HeadGear;
@@ -30,6 +34,8 @@ public class InputManager : MonoBehaviour
 
         Transform Click = MainStage.Find("ClickObject").transform;
         Click.Find("7_Moniter").gameObject.SetActive(false);
+
+        HM = GameObject.Find("Hanged_Man").GetComponent<HangedMan>();
     }
 
     void Update()
@@ -230,7 +236,7 @@ public class InputManager : MonoBehaviour
                 }
             }
             //DreamCatcher(Feather)
-            if (obj.transform.name == "6-1_1Feather" && hit.transform.name == "DreamCatcherCol")
+            if (obj.transform.name == "6-1_1Feather" && hit.transform.name == "!")
             {
                 int tempNum2 = GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState;
                 //기본(0)상태에서 깃털 붙일때
@@ -267,6 +273,14 @@ public class InputManager : MonoBehaviour
                     GameObject.Find("Event_Manager").GetComponent<EventManager>().MakeDreamCatcher = true;
                     Destroy(obj.transform.gameObject);
                 }
+            }
+
+            if(obj.transform.name== "2-Rope" && hit.transform.name=="Hanged_Man")
+            {
+                Debug.Log("밧줄맨");
+                HM.Answer();
+                Destroy(obj.transform.gameObject);
+
             }
 
         }
