@@ -38,6 +38,7 @@ public class ControlDialogue : MonoBehaviour
     public JsonData ConvertedData;          //Json의 객체로, 캐릭터의 이름, 대사, 이미지의 상태 정보
 
     public int currentIndex;
+    public GameObject Empty;
 
     EventManager EM;
 
@@ -65,6 +66,7 @@ public class ControlDialogue : MonoBehaviour
                 Debug.Log("끝");
                 EM.Event_Number++;
                 EM.Doing_Event = false;
+                Empty.SetActive(false);
                 return;
             }
             else
@@ -144,6 +146,7 @@ public class ControlDialogue : MonoBehaviour
         Dialogue_Text.text = "";
 
         End_of_Line = ConvertedData["dialogues"].Count - 1;
+        Empty.SetActive(true);
 
         Debug.Log(currentIndex);
     }

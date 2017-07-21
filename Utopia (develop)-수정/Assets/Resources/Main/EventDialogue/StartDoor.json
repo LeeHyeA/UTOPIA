@@ -1,28 +1,28 @@
-{
+ï»¿{
   "dialogues": [
     {
       "characterType":0,
       "character_name":"???",
       "standImage_Name":"Nothing",
-      "script_Text":"ÀÌ°Ç.. ³ªÀÎ°¡?"
+      "script_Text":"ì´ê±´.. ë‚˜ì¸ê°€?"
     },
     {
       "characterType":0,
       "character_name":"???",
       "standImage_Name":"Nothing",
-      "script_Text":"³ª´Â.. ´©±¸Áö..."
+      "script_Text":"ë‚˜ëŠ”.. ëˆ„êµ¬ì§€..."
     },
     {
       "characterType":0,
       "character_name":"???",
       "standImage_Name":"Nothing",
-      "script_Text":"¾Æ¹«°Íµµ ±â¾ï³ªÁö¾Ê¾Æ."
+      "script_Text":"ì•„ë¬´ê²ƒë„ ê¸°ì–µë‚˜ì§€ì•Šì•„."
     },
     {
       "characterType":0,
       "character_name":"???",
       "standImage_Name":"Nothing",
-      "script_Text":"³­..."
+      "script_Text":"ë‚œ..."
     }
   ]
 }

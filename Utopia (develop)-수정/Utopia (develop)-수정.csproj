@@ -92,6 +92,7 @@
     <Compile Include="Assets\Script\HK\Item.cs" />
     <Compile Include="Assets\Script\HK\MainScript.cs" />
     <Compile Include="Assets\Script\HK\MouseCursor.cs" />
+    <Compile Include="Assets\Script\HK\RButtonInput.cs" />
     <Compile Include="Assets\Script\HK\UIManager.cs" />
     <Compile Include="Assets\Script\HK\VideoStream.cs" />
     <Compile Include="Assets\Script\JY\ActiveDialogue.cs" />

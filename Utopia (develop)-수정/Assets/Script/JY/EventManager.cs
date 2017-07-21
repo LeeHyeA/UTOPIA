@@ -23,6 +23,9 @@ public class EventManager : MonoBehaviour
 
     public bool Doing_Event=false;
 
+    // 현경
+    public Transform Main;
+
     //SB꺼
     public GameObject Panel1_1_defalut;
     public GameObject Panel1_1;
@@ -82,7 +85,48 @@ public class EventManager : MonoBehaviour
             switch (Event_Number)
             {
                 // 0~100 Main
-                    
+                case 0:
+                    Text_Data = Resources.Load<TextAsset>("Main/EventDialogue/Start");                     
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LodaJSON(Json_Data);
+                    break;
+
+
+                case 2:
+                    Text_Data = Resources.Load<TextAsset>("Main/EventDialogue/StartDoor");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LodaJSON(Json_Data);
+                    break;
+
+                case 3:
+                    Main.Find("Panel(Start)").Find("Mirror").gameObject.SetActive(false);
+                    Main.Find("Panel(Start)").Find("Door").gameObject.SetActive(true);
+                    break;
+
+                // ****************************************************************************
+
+                case 5:
+                    Fade(true, 1.0f);
+                    break;
+                case 6:
+                    Fade(false, 1.5f);
+                    break;
+                case 7:
+                    Fade(true, 1.5f);
+                    break;
+                case 8:
+                    Fade(false, 2.0f);
+                    break;
+                case 9:
+                    Text_Data = Resources.Load<TextAsset>("Main/EventDialogue/Main");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LodaJSON(Json_Data);
+                    break;
+
+                case 10:
+
+                    break;
+
                 // 100~199 1Stage
                 //100~102 1에서 아버지편지읽고 1-1로 넘어가는 이벤트
                 case 100:

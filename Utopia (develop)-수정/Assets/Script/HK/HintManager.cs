@@ -20,8 +20,6 @@ public class HintManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if (PlayerPrefs.GetInt("Hint", 0) > 0)
             HintCheck();
 
@@ -34,12 +32,23 @@ public class HintManager : MonoBehaviour
             case 1:
                 Hint = HintSet.Find("0_Letter");
                 Hint.gameObject.SetActive(true);
-                Hint.Find("1_Text").gameObject.SetActive(true);
+                Hint.Find("0_Text").gameObject.SetActive(true);
+
+                index = 0;
+                index_Max = Hint.childCount;
+                PlayerPrefs.SetString("Letter", "true");
+                PlayerPrefs.SetInt("Hint", 0);
+
+                break;
+
+            case 2:
+                Hint = HintSet.Find("1_HeadGearMenual");
+                Hint.gameObject.SetActive(true);
+                Hint.Find("0_Text").gameObject.SetActive(true);
 
                 index = 0;
                 index_Max = Hint.childCount;
                 PlayerPrefs.SetInt("Hint", 0);
-
                 break;
 
             default:

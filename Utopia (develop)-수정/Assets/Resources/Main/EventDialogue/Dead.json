@@ -1,40 +1,40 @@
-{
+ï»¿{
   "dialogues": [
     {
       "characterType":0,
       "character_name":"???",
       "standImage_Name":"Nothing",
-      "script_Text":"½ÃÃ¼... ¿ÊÀ» º¸¸é ÀÌ°÷¿¡¼­ ÀÏÇÏ´ø ¿¬±¸ÀÚÀÏ±î?"
+      "script_Text":"ì‹œì²´... ì˜·ì„ ë³´ë©´ ì´ê³³ì—ì„œ ì¼í•˜ë˜ ì—°êµ¬ìì¼ê¹Œ?"
     },
     {
       "characterType":0,
       "character_name":"???",
       "standImage_Name":"Nothing",
-      "script_Text":"...ÃÑÀ¸·Î °üÀÚ³îÀÌ¸¦ ½ú¾î."
+      "script_Text":"...ì´ìœ¼ë¡œ ê´€ìë†€ì´ë¥¼ ìˆì–´."
     },
     {
       "characterType":0,
       "character_name":"???",
       "standImage_Name":"Nothing",
-      "script_Text":"ÀÌ »ç¶÷Àº ¿Ö ¿©±â¼­ ÀÌ·¸°Ô Á×¾î ÀÖ´Â °É±î."
+      "script_Text":"ì´ ì‚¬ëŒì€ ì™œ ì—¬ê¸°ì„œ ì´ë ‡ê²Œ ì£½ì–´ ìˆëŠ” ê±¸ê¹Œ."
     },
     {
       "characterType":0,
       "character_name":"???",
       "standImage_Name":"Nothing",
-      "script_Text":"ÀÌÇØ°¡Áö ¾Ê´Â °Í Åõ¼ºÀÌ¾ß... ÀÌ ½ÃÃ¼µµ, ÀÌ ¹æµµ..."
+      "script_Text":"ì´í•´ê°€ì§€ ì•ŠëŠ” ê²ƒ íˆ¬ì„±ì´ì•¼... ì´ ì‹œì²´ë„, ì´ ë°©ë„..."
     },
     {
       "characterType":0,
       "character_name":"???",
       "standImage_Name":"Nothing",
-      "script_Text":"¾Ñ, ÀÌ°Ç..."
+      "script_Text":"ì•—, ì´ê±´..."
     },
     {
       "characterType":0,
       "character_name":"???",
       "standImage_Name":"Nothing",
-      "script_Text":"Ç°¾È¿¡ ÂÊÁö°¡ ÀÖ¾î..."
+      "script_Text":"í’ˆì•ˆì— ìª½ì§€ê°€ ìˆì–´..."
     }
   ]
 }
