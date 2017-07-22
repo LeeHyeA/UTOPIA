@@ -11665,8 +11665,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 760, y: 50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 880, y: 0}
+  m_SizeDelta: {x: 144, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &734114730
 MonoBehaviour:
@@ -11687,7 +11687,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1fa7b39e551b8ed42a23f51cc167e2f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45fe62de433712d4b9ab77c175abe5c0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16742,7 +16742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1051750039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18713,6 +18713,7 @@ GameObject:
   - component: {fileID: 1149359720}
   - component: {fileID: 1149359722}
   - component: {fileID: 1149359721}
+  - component: {fileID: 1149359723}
   m_Layer: 5
   m_Name: Picture3(bonfire)
   m_TagString: Untagged
@@ -18771,6 +18772,31 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1149359719}
+--- !u!61 &1149359723
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149359719}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 800, y: 800}
+  m_EdgeRadius: 0
 --- !u!1 &1151189345
 GameObject:
   m_ObjectHideFlags: 0
@@ -20071,7 +20097,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 620, y: 60}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 244, y: 78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208530427
 MonoBehaviour:
@@ -20092,7 +20118,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c5668a3e59b83964bba1e4d2061ac9d6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b03fe6f586394f646bd2aece99cbc812, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28235,7 +28261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1666662363
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28274,7 +28300,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ed4f4a9758f750446be265fe3b514e1c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3baae50fc2ae77d4b8c4efa2368308ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29341,6 +29367,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1702599931}
+        m_MethodName: CheckGetHotStone
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1697032980
@@ -29582,6 +29619,15 @@ MonoBehaviour:
   Table_Defalut: {fileID: 1936104929}
   Ocean_Layer: {fileID: 1073841714}
   Bonfire_Layer: {fileID: 1635314151}
+  HotStone: {fileID: 1695056664}
+  PutStone: 0
+  GetHotStone: 0
+  PutHotStone: 0
+  PutCarrot: 0
+  PutMeat: 0
+  PutPotato: 0
+  PutSteam: 0
+  PutMilkBottle: 0
 --- !u!4 &1702599932
 Transform:
   m_ObjectHideFlags: 0
@@ -35774,6 +35820,7 @@ GameObject:
   - component: {fileID: 1936104930}
   - component: {fileID: 1936104932}
   - component: {fileID: 1936104931}
+  - component: {fileID: 1936104933}
   m_Layer: 5
   m_Name: TableDefalut
   m_TagString: Untagged
@@ -35838,6 +35885,31 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1936104929}
+--- !u!61 &1936104933
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936104929}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 700, y: 700}
+  m_EdgeRadius: 0
 --- !u!1 &1957013687
 GameObject:
   m_ObjectHideFlags: 0

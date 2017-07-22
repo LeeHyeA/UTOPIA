@@ -18,7 +18,8 @@ public class InputManager : MonoBehaviour
     //public GameObject DreamCatcher;
 
     //1-2
-
+    //쓸모없는 곳과 아이템이 충돌했을때
+    //public bool nothing = true;
 
     HangedMan HM;
 
@@ -122,6 +123,7 @@ public class InputManager : MonoBehaviour
                     draggedObject.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);     // 드래그 중일때 오브젝트 확대
                 }
             }
+
         }
     }
 
@@ -150,10 +152,13 @@ public class InputManager : MonoBehaviour
 
         RaycastHit2D[] touches = Physics2D.RaycastAll(CurrentTouchPosition, CurrentTouchPosition, 0.5f);
 
+
         if (touches.Length > 1)
         {
             var obj = touches[0];
             var hit = touches[1];
+
+
 
             // Example
             //if (obj.transform.name == "" && hit.transform.name == "")
@@ -281,6 +286,8 @@ public class InputManager : MonoBehaviour
 
             // 1Stage (1-2)
 
+            //--음식재료 얻기--//
+
             //빈우유병을 염소에 놓아 채우기
             if(obj.transform.name == "3-Ingredient(EmptyMilk)" && hit.transform.name == "Taxidermied_Goat")
             {
@@ -318,6 +325,44 @@ public class InputManager : MonoBehaviour
                 //빈물뿌리개 삭제
                 Destroy(obj.transform.gameObject);
             }
+            //돌을 모닥불에 옮겨 달군돌 얻기
+            if(obj.transform.name == "8-Ingredient(Stone)" && hit.transform.name == "Picture3(bonfire)")
+            {
+                Debug.Log("달군돌 얻기 완료");
+                
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutStone = true;
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowBonfire();
+                Destroy(obj.transform.gameObject);
+            }
+
+            //--테이블에서 음식 만들기--//
+            //달군돌을 테이블에 놓기
+            if(obj.transform.name == "9-Ingredient(HotStone)" && hit.transform.name == "TableDefalut")
+            {
+                Debug.Log("달군돌 놓기 완료");
+
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutHotStone = true;
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowTable();
+                Destroy(obj.transform.gameObject);
+            }
+            //고기를 테이블에 놓기
+            if(obj.transform.name == "7-Ingredient(Meat)" && hit.transform.name == "TableDefalut")
+            {
+                Debug.Log("고기 놓기 완료");
+
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutMeat = true;
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowTable();
+                Destroy(obj.transform.gameObject);
+            }
+            //우유를 테이블에 놓기
+            if(obj.transform.name == "4-Ingredient(Milk)" && hit.transform.name == "TableDefalut")
+            {
+                Debug.Log("우유 놓기 완료");
+
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutMilkBottle = true;
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowTable();
+                Destroy(obj.transform.gameObject);
+            }
 
 
             if (obj.transform.name== "2-Rope" && hit.transform.name=="Hanged_Man")
@@ -327,6 +372,7 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
 
             }
+
 
         }
 
