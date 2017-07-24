@@ -115,6 +115,7 @@
     <Compile Include="Assets\Script\SB\DreamCatcher.cs" />
     <Compile Include="Assets\Script\SB\FlowerpotControl.cs" />
     <Compile Include="Assets\Script\SB\MazePlayerMovement.cs" />
+    <Compile Include="Assets\Script\SB\PictureControl.cs" />
     <Compile Include="Assets\Script\SB\PlayerControl.cs" />
     <Compile Include="Assets\Script\SB\RoomWindow.cs" />
     <Compile Include="Assets\Script\SB\ScreenFader.cs" />

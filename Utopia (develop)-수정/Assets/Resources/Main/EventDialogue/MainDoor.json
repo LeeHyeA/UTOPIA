@@ -3,25 +3,25 @@
     {
       "characterType":0,
       "character_name":"???",
-      "standImage_Name":"Nothing",
+      "standImage_Name":"R_4",
       "script_Text":"열리지 않아. 이 문... "
     },
     {
       "characterType":0,
       "character_name":"???",
-      "standImage_Name":"Nothing",
+      "standImage_Name":"R_1",
       "script_Text":"....비밀번호."
     },
     {
       "characterType":0,
       "character_name":"???",
-      "standImage_Name":"Nothing",
+      "standImage_Name":"R_1",
       "script_Text":"이 문을 열려면 비밀번호가 필요해. 그런 기억이 있어."
     },
     {
       "characterType":0,
       "character_name":"???",
-      "standImage_Name":"Nothing",
+      "standImage_Name":"R_5",
       "script_Text":"나는 이걸 왜 알고 있는거지..."
     }
   ]

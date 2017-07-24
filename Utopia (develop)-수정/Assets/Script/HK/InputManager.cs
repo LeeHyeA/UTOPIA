@@ -40,7 +40,7 @@ public class InputManager : MonoBehaviour
         Transform Click = MainStage.Find("ClickObject").transform;
         Click.Find("7_Moniter").gameObject.SetActive(false);
 
-        HM = GameObject.Find("Hanged_Man").GetComponent<HangedMan>();
+        //HM = GameObject.Find("Hanged_Man").GetComponent<HangedMan>();
     }
 
     void Update()

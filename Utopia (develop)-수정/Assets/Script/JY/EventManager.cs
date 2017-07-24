@@ -100,7 +100,7 @@ public class EventManager : MonoBehaviour
 
                 case 3:
                     Main.Find("Panel(Start)").Find("Mirror").gameObject.SetActive(false);
-                    Main.Find("Panel(Start)").Find("Door").gameObject.SetActive(true);
+                    Main.Find("Panel(Start)").Find("PrologueButton").gameObject.SetActive(true);
                     break;
 
                 // ****************************************************************************
