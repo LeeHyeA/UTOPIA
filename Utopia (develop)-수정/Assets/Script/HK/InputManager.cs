@@ -229,15 +229,21 @@ public class InputManager : MonoBehaviour
             {
                 BridCage.transform.Find("BirdCageEmpty").gameObject.SetActive(false);
                 BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
+                GameObject.Find("WindowButton").GetComponent<RoomWindow>().SetPutFeedToBirdCage();
                 Destroy(obj.transform.gameObject);
+
             }
             
+            //일단 보류
+            /*
             //모이가 들어있는 새장을 맑은날창문으로
             if (obj.transform.name == "5-1_1BirdCagePutFeed" && hit.transform.name == "2_CleanWindow")
             {
                 BridCage.transform.Find("BirdCageFull").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
+            */
+
             //거미줄을 비오는날 창문으로
             if(obj.transform.name == "2-1_1SpiderWeb" && hit.transform.name == "1_RainWindow")
             {

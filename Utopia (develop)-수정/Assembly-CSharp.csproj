@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\HK\BGM.cs" />
-     <Compile Include="Assets\Script\HK\EndManager.cs" />
      <Compile Include="Assets\Script\HK\HintManager.cs" />
      <Compile Include="Assets\Script\HK\InputFieldManager.cs" />
      <Compile Include="Assets\Script\HK\InputManager.cs" />

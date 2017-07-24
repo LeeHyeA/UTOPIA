@@ -10,11 +10,24 @@ public class RoomWindow : MonoBehaviour
     public GameObject CurtainClose;
     public GameObject StarPowder;
     public GameObject SpiderWeb;
+    
+    //EventManager 객체
+    EventManager EventNum;
+
+    //방안상태가 한번 변했음을 확인해주는 변수
+    public bool ChangeRoomState = false;
+
     //커튼 상태 : 1.닫혀있음, 2.열려있음
     public int Curtain_State = 1;
 
     //새장이 놓였음을 확인하는 변수
     bool PutBirdcage = false;
+
+    //새장에 모이를 놓았음을 확인하는 변수
+    bool PutFeedToBirdCage = false;
+
+    //새장에 새가 들어오는 이벤트 발생 변수
+    bool ActiveComeBirdEvent = false;
 
     //드림캐쳐가 놓였음을 확인하는 변수
     bool PutDreamCatcher = false;
@@ -28,6 +41,28 @@ public class RoomWindow : MonoBehaviour
     //모이를 채운 새장을 놓음:1, 안놓은상태:2
     //public int PutBirdcage = 2;
 
+    public void SetPutFeedToBirdCage()
+    {
+        PutFeedToBirdCage = true;
+    }
+
+    public void CheckPutFeedToBirdCage()
+    {
+        //맑은날이면서 커튼이 열릴때
+        if (Window_State == 2 && Curtain_State == 2)
+        {
+            //새장이 놓여있으면
+            if (PutFeedToBirdCage)
+            {
+                //108번 이벤트 발생
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 108;
+                //EventNum.EventnumberSet(108);
+                //EventNum.Event_Number = 108;
+                PutFeedToBirdCage = false;
+            }
+        }
+    }
+
     //거미줄을 얻음:1, 아직못얻음:2
     public int IsGetSpiderWeb = 2;
 
@@ -39,6 +74,7 @@ public class RoomWindow : MonoBehaviour
             {
                 Window_State = 1;
                 Curtain_State = 2;
+
             }
             else
             {
@@ -158,6 +194,7 @@ public class RoomWindow : MonoBehaviour
                 RainWindow.SetActive(false);
                 CleanWindow.SetActive(true);
                 DarkWindow.SetActive(false);
+                //CheckPutFeedToBirdCage();
                 break;
             //밤
             /*
@@ -178,6 +215,8 @@ public class RoomWindow : MonoBehaviour
             //커튼 닫힘
             case 1:
                 CurtainClose.SetActive(true);
+                RainWindow.SetActive(false);
+                CleanWindow.SetActive(false);
                 //StarPowder.SetActive(true);
                 break;
             //커튼 열림

@@ -143,7 +143,7 @@ public class EventManager : MonoBehaviour
                 // 100~199 1Stage
                 //100~102 1에서 아버지편지읽고 1-1로 넘어가는 이벤트
                 case 100:
-                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/ReadFathersLetter");                     //예시
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/ReadFathersLetter");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LodaJSON(Json_Data);
                     break;
@@ -160,7 +160,7 @@ public class EventManager : MonoBehaviour
                 //104~106 1-1에서 드림캐쳐를 완성하고 난후 x버튼으로 나오면 1-2로 넘어가는 이벤트
                 case 104:
                     inventory.SetActive(false);
-                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteDreamCatcher");                     //예시
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteDreamCatcher");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LodaJSON(Json_Data);
                     break;
@@ -174,6 +174,20 @@ public class EventManager : MonoBehaviour
                     Window.SetActive(false);
                     Fade(false, 1.5f);
                     break;
+                //새장에 모이를 두고난 후 창문상태가 변할때 맑은날이면 새가 들어오는 이벤트
+                case 108:
+                    inventory.SetActive(false);
+                    GameObject BirdCagePutFeed = BirdCage.transform.Find("BirdCagePutFeed").gameObject;
+                    BirdCagePutFeed.SetActive(false);
+                    GameObject BirdCageFull = BirdCage.transform.Find("BirdCageFull").gameObject;
+                    BirdCageFull.SetActive(true);
+                    //대사진행
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteBirdCage");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LodaJSON(Json_Data);
+                    break;
+                
+                    
 
                 // 200~299 2Stage
                 case 200:

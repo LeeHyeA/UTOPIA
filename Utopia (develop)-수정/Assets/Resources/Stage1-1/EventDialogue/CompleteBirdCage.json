@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"새장에 모이넣고 맑은날 다시 되니 새가 들어오는 이벤트...."
+    }
+  ]
+}
