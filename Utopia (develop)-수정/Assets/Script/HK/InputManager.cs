@@ -174,6 +174,22 @@ public class InputManager : MonoBehaviour
             //    Destroy(obj.transform.gameObject);
             //}
 
+            // 예외처리
+            if (obj.transform.tag == "Item" && hit.transform.tag == "Item")
+            {
+                obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
+            }
+
+            if (obj.transform.tag == "Item" && hit.transform.tag == "Grid")
+            {
+                obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
+            }
+
+            if (obj.transform.tag == "Item" && hit.transform.tag == "Collision")
+            {
+                obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
+            }
+
             // Main
             if (obj.transform.name == "2-HeadGear" && hit.transform.name == "HeadGearCollision")
             {

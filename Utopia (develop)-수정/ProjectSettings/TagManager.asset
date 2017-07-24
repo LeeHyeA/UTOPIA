@@ -11,6 +11,7 @@ TagManager:
   - MazeMap
   - MazeMapGoal
   - Tile
+  - Grid
   layers:
   - Default
   - TransparentFX

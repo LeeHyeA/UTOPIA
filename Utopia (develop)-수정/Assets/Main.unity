@@ -15708,7 +15708,7 @@ GameObject:
   - component: {fileID: 978161117}
   m_Layer: 5
   m_Name: 0_InventoryBG
-  m_TagString: Untagged
+  m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18282,7 +18282,7 @@ GameObject:
   - component: {fileID: 1107839555}
   m_Layer: 5
   m_Name: 2_Grid
-  m_TagString: Untagged
+  m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26605,7 +26605,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40.00243}
+  m_AnchoredPosition: {x: 0, y: -40.002426}
   m_SizeDelta: {x: 500, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1529188904
@@ -38982,7 +38982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2044830647
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40156,7 +40156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40.002445}
+  m_AnchoredPosition: {x: 0, y: -40.00244}
   m_SizeDelta: {x: 500, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084147326
@@ -40406,7 +40406,7 @@ GameObject:
   - component: {fileID: 2098579967}
   m_Layer: 5
   m_Name: HeadGearCollision
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
