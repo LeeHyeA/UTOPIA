@@ -15,6 +15,7 @@ public class EventManager : MonoBehaviour
     private float duration;
 
     public ControlDialogue CD;
+    ActiveDialogue AD;
     private TextAsset Text_Data;
     private JsonData Json_Data;
 
@@ -25,6 +26,7 @@ public class EventManager : MonoBehaviour
 
     // 현경
     public Transform Main;
+    Transform Click;
 
     //SB꺼
     public GameObject Panel1_1_defalut;
@@ -34,6 +36,7 @@ public class EventManager : MonoBehaviour
     public GameObject Window;
     public GameObject inventory;
     public bool MakeDreamCatcher = false;
+
 
     // Use this for initialization
     void Start ()
@@ -123,8 +126,18 @@ public class EventManager : MonoBehaviour
                     CD.LodaJSON(Json_Data);
                     break;
 
-                case 10:
+                case 11:
+                    Click = Main.Find("Panel").Find("ClickObject");
 
+                    Click.Find("2_Gun(After)").gameObject.SetActive(true);
+                    Click.Find("5_BrainSystem(After)").gameObject.SetActive(true);
+
+                    Click.Find("2_Gun(Before)").gameObject.SetActive(false);
+                    Click.Find("5_BrainSystem(Before)").gameObject.SetActive(false);
+
+                    Text_Data = Resources.Load<TextAsset>("Main/EventDialogue/Dead");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LodaJSON(Json_Data);
                     break;
 
                 // 100~199 1Stage
@@ -185,7 +198,8 @@ public class EventManager : MonoBehaviour
 
         yield return new WaitForSeconds(sec);
 
-        Event_Number++;
+        if (!AD.NotNum)
+            Event_Number++;
         Debug.Log("코루틴끝");
 
     }

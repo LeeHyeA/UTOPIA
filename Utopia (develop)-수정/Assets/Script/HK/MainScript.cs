@@ -9,6 +9,7 @@ public class MainScript : MonoBehaviour
     public GameObject Inventory;
     Item item;
     public EventManager Event;
+    
 
     // Use this for initialization
     void Start()
@@ -19,7 +20,10 @@ public class MainScript : MonoBehaviour
             this.gameObject.transform.Find("Panel(Start)").gameObject.SetActive(false);
             this.gameObject.transform.Find("Panel").gameObject.SetActive(true);
             Event.EventnumberSet(5);
+            
         }
+
+        
     }
 
     // Update is called once per frame
@@ -50,4 +54,5 @@ public class MainScript : MonoBehaviour
             item.LoadJson("Main");
         }
     }
+
 }

@@ -7,7 +7,7 @@ public class InputFieldManager : MonoBehaviour
 {
 
     InputField field;
-    int stage = 0;
+    int stage = -1;
     public GameObject Main;
     public GameObject Stage1;
 
@@ -18,6 +18,7 @@ public class InputFieldManager : MonoBehaviour
         GameObject inputObj = GameObject.Find("0_InputField");
 
         field = inputObj.GetComponent<InputField>();
+
         
 
         field.onValidateInput += delegate (string text, int charIndex, char addedChar)
@@ -72,23 +73,30 @@ public class InputFieldManager : MonoBehaviour
         Transform computer = Main.transform.Find("Computer");
         switch (stage)
         {
-            case 0:            
+            case 0:
+                this.gameObject.SetActive(false);
+                field.text = "";
+
                 computer.Find("3_AccessButton").gameObject.SetActive(true);
                 computer.Find("4_AccessButton(Before)").gameObject.SetActive(false);
-                this.gameObject.SetActive(false);
+                
                 computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
 
 
                 break;
             case 1:
                 this.gameObject.SetActive(false);
-                computer.Find("8_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+                field.text = "";
+
+                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
                 Stage1.SetActive(true);
                 break;
 
             default:
                 this.gameObject.SetActive(false);
-                computer.Find("8_Result").transform.Find("3_WrongPassword").gameObject.SetActive(true);
+                field.text = "";
+
+                computer.Find("7_Result").transform.Find("3_WrongPassword").gameObject.SetActive(true);
                 break;
         }
     }

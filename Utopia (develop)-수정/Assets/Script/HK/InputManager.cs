@@ -37,8 +37,8 @@ public class InputManager : MonoBehaviour
         Hint = UICanvas.Find("3_Hint").gameObject;
 
 
-        Transform Click = MainStage.Find("ClickObject").transform;
-        Click.Find("7_Moniter").gameObject.SetActive(false);
+        //Transform Click = MainStage.Find("ClickObject").transform;
+        //Click.Find("7_Moniter").gameObject.SetActive(false);
 
         //HM = GameObject.Find("Hanged_Man").GetComponent<HangedMan>();
     }
@@ -65,13 +65,21 @@ public class InputManager : MonoBehaviour
         {
             RaycastHit2D[] touches = Physics2D.RaycastAll(CurrentTouchPosition, CurrentTouchPosition, 0.5f);
 
-            var obj = touches[0];
-
-            if(obj.transform.name == "0-Letter")
+            if (touches.Length > 0)
             {
-                Hint.SetActive(true);
-                PlayerPrefs.SetInt("Hint", 1);
-                
+                var obj = touches[0];
+
+                if (obj.transform.name == "0-Letter")
+                {
+                    Hint.SetActive(true);
+                    PlayerPrefs.SetInt("Hint", 1);
+                }
+
+                if (obj.transform.name == "3-Menual")
+                {
+                    Hint.SetActive(true);
+                    PlayerPrefs.SetInt("Hint", 2);
+                }
             }
         }
     }
@@ -187,8 +195,8 @@ public class InputManager : MonoBehaviour
 
             if (obj.transform.name == "6-FinishHeadGear" && hit.transform.name == "HeadGearCollision")
             {
-                Transform Click = MainStage.Find("ClickObject").transform;
-                Click.Find("7_Moniter").gameObject.SetActive(true);
+                //Transform Click = MainStage.Find("ClickObject").transform;
+                //Click.Find("7_Moniter").gameObject.SetActive(true);
                 MainStage.Find("Computer").gameObject.SetActive(true);
 
                 if (Inventory.gameObject.activeSelf)

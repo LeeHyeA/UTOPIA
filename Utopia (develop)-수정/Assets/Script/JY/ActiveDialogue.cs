@@ -14,7 +14,7 @@ public class ActiveDialogue : MonoBehaviour
     public bool DestroyActivated;           //1번 실행하고 오브젝트를 지울것인지의 여부
     public bool WaitForClick;                       //버튼을 눌러 대화를 시작하는지의 여부  / false이면 자동(강제이벤트라던가) true이면 직접 다가가서 상호작용
     public bool isUpade;                        //업데이트 되었는지
-
+    public bool NotNum = true;
     ControlDialogue control;                //대화창 제어
 
     JsonData ConvertedData;                 //data로 읽어들인 텍스트를 객체로 변환하여 저장
@@ -39,10 +39,14 @@ public class ActiveDialogue : MonoBehaviour
         {
             if (control.isActive == false)                            //충돌처리 구현필요
             {
+                NotNum = true;
                 control.LodaJSON(ConvertedData, WaitForClick, DestroyActivated);
+                
+
                 if (DestroyActivated)
                     Destroy(gameObject);
             }
+
             else
                 return;
         }

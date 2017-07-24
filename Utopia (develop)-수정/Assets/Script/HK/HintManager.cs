@@ -36,7 +36,6 @@ public class HintManager : MonoBehaviour
 
                 index = 0;
                 index_Max = Hint.childCount;
-                PlayerPrefs.SetString("Letter", "true");
                 PlayerPrefs.SetInt("Hint", 0);
 
                 break;
