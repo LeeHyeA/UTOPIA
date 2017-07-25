@@ -8,8 +8,6 @@ using UnityEngine.UI;
 
 public class ControlDialogue : MonoBehaviour
 {
-
-
     // private string script_text;
     //   private string character_name;
     //  private string Imagename;
@@ -41,7 +39,8 @@ public class ControlDialogue : MonoBehaviour
     public GameObject Empty;
 
     EventManager EM;
-    ActiveDialogue AD;
+
+    bool is_event_plus = false;
 
 
     // Use this for initialization
@@ -50,7 +49,6 @@ public class ControlDialogue : MonoBehaviour
     void Start()
     {
         EM = FindObjectOfType<EventManager>();
-        AD = FindObjectOfType<ActiveDialogue>();
         cntForAnimate = 0;
     }
 
@@ -67,13 +65,10 @@ public class ControlDialogue : MonoBehaviour
                 isActive = false;
                 Debug.Log("끝");
 
-                if(!AD.NotNum)
-                    EM.Event_Number++;
-
                 EM.Doing_Event = false;
                 Empty.SetActive(false);
-
-                AD.NotNum = false;
+                if (is_event_plus)
+                    EM.Event_Number++;
                 return;
             }
             else
@@ -134,12 +129,11 @@ public class ControlDialogue : MonoBehaviour
             Name_Text.text = "";
             currentIndex = 0;
             cntForAnimate = 0;
-
         }
 
     }
 
-    public void LodaJSON(JsonData ConvertedData_of_Object, bool WaitForClick, bool DestroyActivated)                                  //객체와 상호작용할때마다 호출되는 함수 (해당 객체의 JSON을 로드함)
+    public void LoadJSON(JsonData ConvertedData_of_Object, bool WaitForClick)   //객체와 상호작용할때마다 호출되는 함수 (해당 객체의 JSON을 로드함) **단순상호작용**
     {
         currentIndex = 0;
 
@@ -155,9 +149,10 @@ public class ControlDialogue : MonoBehaviour
         End_of_Line = ConvertedData["dialogues"].Count - 1;
         Empty.SetActive(true);
 
+        is_event_plus = false;
         Debug.Log(currentIndex);
     }
-    public void LodaJSON(JsonData ConvertedData_of_Object)                                  //객체와 상호작용할때마다 호출되는 함수 (해당 객체의 JSON을 로드함)
+    public void LoadJSON(JsonData ConvertedData_of_Object)         //객체와 상호작용할때마다 호출되는 함수 (해당 객체의 JSON을 로드함)  **이벤트넘버올릴때**
     {
         currentIndex = 0;
 
@@ -172,6 +167,7 @@ public class ControlDialogue : MonoBehaviour
 
         End_of_Line = ConvertedData["dialogues"].Count - 1;
 
+        is_event_plus = true;
         Debug.Log(currentIndex);
     }
 }

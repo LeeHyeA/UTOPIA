@@ -91,14 +91,14 @@ public class EventManager : MonoBehaviour
                 case 0:
                     Text_Data = Resources.Load<TextAsset>("Main/EventDialogue/Start");                     
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
-                    CD.LodaJSON(Json_Data);
+                    CD.LoadJSON(Json_Data);
                     break;
 
 
                 case 2:
                     Text_Data = Resources.Load<TextAsset>("Main/EventDialogue/StartDoor");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
-                    CD.LodaJSON(Json_Data);
+                    CD.LoadJSON(Json_Data);
                     break;
 
                 case 3:
@@ -123,7 +123,7 @@ public class EventManager : MonoBehaviour
                 case 9:
                     Text_Data = Resources.Load<TextAsset>("Main/EventDialogue/Main");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
-                    CD.LodaJSON(Json_Data);
+                    CD.LoadJSON(Json_Data);
                     break;
 
                 case 11:
@@ -137,7 +137,7 @@ public class EventManager : MonoBehaviour
 
                     Text_Data = Resources.Load<TextAsset>("Main/EventDialogue/Dead");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
-                    CD.LodaJSON(Json_Data);
+                    CD.LoadJSON(Json_Data);
                     break;
 
                 // 100~199 1Stage
@@ -145,7 +145,7 @@ public class EventManager : MonoBehaviour
                 case 100:
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/ReadFathersLetter");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
-                    CD.LodaJSON(Json_Data);
+                    CD.LoadJSON(Json_Data);
                     break;
                 case 101:
                     Fade(true, 1.5f);
@@ -162,7 +162,7 @@ public class EventManager : MonoBehaviour
                     inventory.SetActive(false);
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteDreamCatcher");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
-                    CD.LodaJSON(Json_Data);
+                    CD.LoadJSON(Json_Data);
                     break;
                 case 105:
                     Fade(true, 1.5f);
@@ -184,7 +184,7 @@ public class EventManager : MonoBehaviour
                     //대사진행
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteBirdCage");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
-                    CD.LodaJSON(Json_Data);
+                    CD.LoadJSON(Json_Data);
                     break;
                 
                     
@@ -196,7 +196,7 @@ public class EventManager : MonoBehaviour
                 case 201:
                     Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Get_Rope");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
-                    CD.LodaJSON(Json_Data);
+                    CD.LoadJSON(Json_Data);
                     break;
                 default:
                     break;
