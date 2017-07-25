@@ -15,7 +15,6 @@ public class EventManager : MonoBehaviour
     private float duration;
 
     public ControlDialogue CD;
-    ActiveDialogue AD;
     private TextAsset Text_Data;
     private JsonData Json_Data;
 
@@ -212,8 +211,8 @@ public class EventManager : MonoBehaviour
 
         yield return new WaitForSeconds(sec);
 
-        if (!AD.NotNum)
-            Event_Number++;
+ 
+        Event_Number++;
         Debug.Log("코루틴끝");
 
     }
