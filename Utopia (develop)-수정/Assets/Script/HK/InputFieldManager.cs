@@ -62,6 +62,11 @@ public class InputFieldManager : MonoBehaviour
                 stage = 0;
                 break;
 
+            case "A001":
+                if(PlayerPrefs.GetString("'HeadGear", "false") == "true")
+                    stage = 1;
+                break;
+
             default:
                 stage = -1;
                 break;
