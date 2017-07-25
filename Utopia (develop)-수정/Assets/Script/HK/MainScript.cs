@@ -46,6 +46,7 @@ public class MainScript : MonoBehaviour
         {
             item.GetNumber(6);
             item.LoadJson("Main");
+            
         }
 
         else

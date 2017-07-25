@@ -220,6 +220,8 @@ public class InputManager : MonoBehaviour
                     Inventory.gameObject.SetActive(false);
 
                 Destroy(obj.transform.gameObject);
+
+                PlayerPrefs.SetString("HeadGear", "true");
             }
 
 
