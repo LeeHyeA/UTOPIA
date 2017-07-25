@@ -41,7 +41,7 @@ public class ControlDialogue : MonoBehaviour
     public GameObject Empty;
 
     EventManager EM;
-    ActiveDialogue AD;
+    //ActiveDialogue AD;
 
 
     // Use this for initialization
@@ -50,7 +50,7 @@ public class ControlDialogue : MonoBehaviour
     void Start()
     {
         EM = FindObjectOfType<EventManager>();
-        AD = FindObjectOfType<ActiveDialogue>();
+        //AD = FindObjectOfType<ActiveDialogue>();
         cntForAnimate = 0;
     }
 
@@ -67,13 +67,13 @@ public class ControlDialogue : MonoBehaviour
                 isActive = false;
                 Debug.Log("끝");
 
-                if(!AD.NotNum)
-                    EM.Event_Number++;
+                //if(!AD.NotNum)
+                //    EM.Event_Number++;
 
                 EM.Doing_Event = false;
                 Empty.SetActive(false);
 
-                AD.NotNum = false;
+                //AD.NotNum = false;
                 return;
             }
             else
