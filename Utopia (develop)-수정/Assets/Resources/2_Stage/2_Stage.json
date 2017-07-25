@@ -20,6 +20,13 @@
       "Item_Place":"Stage2",
       "Item_Image":"Rope",
       "Item_Text":"로프"
+    },
+    {
+      "Item_Number":3,
+      "Item_Name":"2-3_Color_Yellow",
+      "Item_Place":"Stage2",
+      "Item_Image":"Yellow_Color",
+      "Item_Text":"노란색"
     }
   ]
 }

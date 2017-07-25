@@ -22,7 +22,7 @@ public class InputManager : MonoBehaviour
     //public bool nothing = true;
 
     HangedMan HM;
-
+    GangesRiver GR;
     //   public AudioSource audioSource;
 
     GameObject HeadGear;
@@ -40,7 +40,8 @@ public class InputManager : MonoBehaviour
         //Transform Click = MainStage.Find("ClickObject").transform;
         //Click.Find("7_Moniter").gameObject.SetActive(false);
 
-        //HM = GameObject.Find("Hanged_Man").GetComponent<HangedMan>();
+        HM = GameObject.Find("Hanged_Man").GetComponent<HangedMan>();
+        GR = GameObject.Find("Ganges_river").GetComponent<GangesRiver>();
     }
 
     void Update()
@@ -394,14 +395,32 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
             }
 
+            //2스테이지
 
             if (obj.transform.name== "2-Rope" && hit.transform.name=="Hanged_Man")
             {
                 Debug.Log("밧줄맨");
                 HM.Answer();
                 Destroy(obj.transform.gameObject);
+            }
+            if (obj.transform.name == "0-Red_Color" && hit.transform.name == "Ganges_river")
+            {
+                GR.On_Red();
+                Destroy(obj.transform.gameObject);
 
             }
+            if (obj.transform.name == "1-Blue_Color" && hit.transform.name == "Ganges_river")
+            {
+                GR.On_Blue();
+                Destroy(obj.transform.gameObject);
+
+            }
+            if (obj.transform.name == "3-Yellow_Color" && hit.transform.name == "Ganges_river")
+            {
+                GR.On_Yellow();
+                Destroy(obj.transform.gameObject);
+            }
+
 
 
         }

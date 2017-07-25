@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ganges_River : MonoBehaviour {
+public class PuzzleManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
