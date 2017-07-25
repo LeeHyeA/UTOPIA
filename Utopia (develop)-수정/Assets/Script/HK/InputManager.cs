@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     //1-1
     public GameObject BridCage;
     public GameObject AcquirableItem;
+    public GameObject CleanWindowOBJ;
     //public GameObject DreamCatcher;
 
     //1-2
@@ -236,7 +237,7 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
 
             }
-            
+
             //일단 보류
             /*
             //모이가 들어있는 새장을 맑은날창문으로
@@ -247,6 +248,16 @@ public class InputManager : MonoBehaviour
             }
             */
 
+            //얻은 거미줄을 맑은날 창문으로
+            if (obj.transform.name == "2-1_1SpiderWeb" && hit.transform.name == "2_CleanWindow")
+            {
+                CleanWindowOBJ.transform.Find("PutSpiderWeb").gameObject.SetActive(true);
+                GameObject.Find("WindowButton").GetComponent<RoomWindow>().SetPutSpiderWeb();
+                Destroy(obj.transform.gameObject);
+            }
+
+            //일단 보류
+            /*
             //거미줄을 비오는날 창문으로
             if(obj.transform.name == "2-1_1SpiderWeb" && hit.transform.name == "1_RainWindow")
             {
@@ -254,6 +265,7 @@ public class InputManager : MonoBehaviour
                 AcquirableItem.transform.Find("SpiderJem").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
+            */
             //DreamCatcher(SpiderJem)
             if (obj.transform.name == "7-1_1SpiderJem" && hit.transform.name == "DreamCatcherCol")
             {

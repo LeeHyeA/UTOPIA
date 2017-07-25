@@ -10,7 +10,8 @@ public class RoomWindow : MonoBehaviour
     public GameObject CurtainClose;
     public GameObject StarPowder;
     public GameObject SpiderWeb;
-    
+    public GameObject SpiderJem;
+
     //EventManager 객체
     EventManager EventNum;
 
@@ -41,6 +42,30 @@ public class RoomWindow : MonoBehaviour
     //모이를 채운 새장을 놓음:1, 안놓은상태:2
     //public int PutBirdcage = 2;
 
+    //맑은날 창문에 거미줄이 놓였음을 확인하는 변수
+    bool PutSpiderWeb = false;
+
+
+    public void SetPutSpiderWeb()
+    {
+        PutSpiderWeb = true;
+    }
+
+    public void CheckPutSpiderWeb()
+    {
+        //비오는 날이면서 커튼이 열릴때
+        if (Window_State == 1 && Curtain_State == 2)
+        {
+            //거미줄이 놓여있으면
+            if (PutSpiderWeb)
+            {
+                //111번 이벤트 발생
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 111;
+                PutSpiderWeb = false;
+            }
+        }
+    }
+
     public void SetPutFeedToBirdCage()
     {
         PutFeedToBirdCage = true;
@@ -54,8 +79,8 @@ public class RoomWindow : MonoBehaviour
             //새장이 놓여있으면
             if (PutFeedToBirdCage)
             {
-                //108번 이벤트 발생
-                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 108;
+                //109번 이벤트 발생
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 109;
                 //EventNum.EventnumberSet(108);
                 //EventNum.Event_Number = 108;
                 PutFeedToBirdCage = false;
@@ -118,7 +143,8 @@ public class RoomWindow : MonoBehaviour
         //별가루 얻음
         if (GetStarPowder == 1)
         {
-            StarPowder.SetActive(false);
+            return;
+            //StarPowder.SetActive(false);
         }
         //별가루 못 얻음
         else if (GetStarPowder == 2)
@@ -149,9 +175,11 @@ public class RoomWindow : MonoBehaviour
         if()
     }
     */
-    
+
     void CheckGetSpiderWeb()
     {
+
+
         //거미줄 얻음
         if (IsGetSpiderWeb == 1)
             SpiderWeb.SetActive(false);
@@ -168,6 +196,42 @@ public class RoomWindow : MonoBehaviour
                 SpiderWeb.SetActive(true);
             else if (Curtain_State == 1)
                 SpiderWeb.SetActive(false);
+        }
+        */
+    }
+
+    public bool IsSpiderJemEvent = false;
+
+    public bool IsSpiderJemGet = false;
+
+    public void setIsSpiderJemGet(bool set)
+    {
+        IsSpiderJemGet = set;
+    }
+    void CheckGetSpiderJem()
+    {
+        //
+        if (IsSpiderJemGet)
+        {
+            return;
+        }
+
+        if (IsSpiderJemEvent)
+        {
+            if (Curtain_State == 1)
+                SpiderJem.SetActive(false);
+            else
+                SpiderJem.SetActive(true);
+        }
+        /*
+        //커튼이 닫혀있을때
+        if (Curtain_State == 1)
+        {
+            //빗물보석을 얻음
+            if (IsGetSpiderJem)
+                SpiderJem.SetActive(false);
+            else
+                SpiderJem.SetActive(true);
         }
         */
     }
@@ -236,9 +300,9 @@ public class RoomWindow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CheckGetSpiderWeb();
         WindowSetActive();
         CheckStarPowderGet();
         CheckGetSpiderWeb();
+        CheckGetSpiderJem();
     }
 }

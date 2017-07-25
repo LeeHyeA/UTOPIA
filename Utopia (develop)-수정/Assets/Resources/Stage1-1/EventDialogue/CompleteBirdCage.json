@@ -4,7 +4,49 @@
       "characterType":0,
       "character_name":"알렉스",
       "standImage_Name":"Nothing",
-      "script_Text":"새장에 모이넣고 맑은날 다시 되니 새가 들어오는 이벤트...."
+      "script_Text":"새를 한 마리 키웠던 적이 있다. 예쁜 분홍 깃털을 가진 귀여운 새였다."
+    },
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"그 새는 본래 숲 속에 살던 것을 사로잡아 가둔 것이라고 했다."
+    },
+	{
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"나는 그 새를 열심히 키워보려고 애썼으나, 그 새는 밥도 먹지 않은 채 내 새장 속에서 시름시름 앓아갔다."
+    },
+	{
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"어리고 어리석었던 나는 이유를 알 수 없어서 며칠 동안 그 새를 바라보았다."
+    },
+	{
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"그것은 하염없이 하늘을 보고 있었다. 창밖의 눈부신 하늘을... 혹은 그 너머 자신이 살고 있었던 숲을..."
+    },
+	{
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"오만했다. 자유를 빼앗아놓고 그것을 온전히 가지려 하다니..."
+    },
+	{
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"나는 이윽고 그 새를 창문가에 놓아 주었다. 새는 몇 분간 나를 바라보더니 그의 하늘로 훨훨 날아갔다."
+    },
+	{
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"그걸로 됬다고 나는 생각했다."
     }
   ]
 }

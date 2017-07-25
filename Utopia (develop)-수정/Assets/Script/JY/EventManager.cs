@@ -34,6 +34,7 @@ public class EventManager : MonoBehaviour
     public GameObject BirdCage;
     public GameObject Window;
     public GameObject inventory;
+    public GameObject SpiderJem;
     public bool MakeDreamCatcher = false;
 
 
@@ -140,6 +141,7 @@ public class EventManager : MonoBehaviour
                     break;
 
                 // 100~199 1Stage
+
                 //100~102 1에서 아버지편지읽고 1-1로 넘어가는 이벤트
                 case 100:
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/ReadFathersLetter");
@@ -156,25 +158,34 @@ public class EventManager : MonoBehaviour
                     Window.SetActive(true);
                     Fade(false, 1.5f);
                     break;
-                //104~106 1-1에서 드림캐쳐를 완성하고 난후 x버튼으로 나오면 1-2로 넘어가는 이벤트
-                case 104:
+                case 103:
+                    //1-1 시작시 혼잣말
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/StartBrazilStage");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
+                //105~107 1-1에서 드림캐쳐를 완성하고 난후 x버튼으로 나오면 1-2로 넘어가는 이벤트
+                case 105:
                     inventory.SetActive(false);
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteDreamCatcher");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
-                case 105:
+                case 106:
                     Fade(true, 1.5f);
                     break;
-                case 106:
+                case 107:
                     Panel1_1.SetActive(false);
                     BirdCage.SetActive(false);
                     Panel1_2.SetActive(true);
                     Window.SetActive(false);
                     Fade(false, 1.5f);
+                    //몽골스테이지 첫대사 발생
+                    Event_Number = 115;
                     break;
                 //새장에 모이를 두고난 후 창문상태가 변할때 맑은날이면 새가 들어오는 이벤트
-                case 108:
+                case 109:
                     inventory.SetActive(false);
                     GameObject BirdCagePutFeed = BirdCage.transform.Find("BirdCagePutFeed").gameObject;
                     BirdCagePutFeed.SetActive(false);
@@ -185,8 +196,31 @@ public class EventManager : MonoBehaviour
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
-                
-                    
+                //거미줄로 빗물보석 얻기 이벤트    
+                case 111:
+                    inventory.SetActive(false);
+                    Window.transform.Find("2_CleanWindow").Find("PutSpiderWeb").gameObject.SetActive(false);
+                    SpiderJem.SetActive(true);
+                    GameObject.Find("WindowButton").GetComponent<RoomWindow>().IsSpiderJemEvent = true;
+                    /*
+                    int CurtainStateTempNum = GameObject.Find("WindowButton").GetComponent<RoomWindow>().Curtain_State;
+                    if(CurtainStateTempNum == 2)
+                        SpiderJem.SetActive(true);
+                    */
+                    //대사진행
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteSpiderJem");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
+                //몽골스테이지(1-2)
+                //몽골 되고나서 첫대사(116-117)
+                case 116:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/StartMongGoalStage");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
 
                 // 200~299 2Stage
                 case 200:
@@ -221,7 +255,7 @@ public class EventManager : MonoBehaviour
     public void EventnumberSet(int num)
     {
         //드림캐처를 완성했을시 자동으로 완성이벤트로 이동
-        if (num == 104)
+        if (num == 105)
         {
             if (MakeDreamCatcher == true)
             {

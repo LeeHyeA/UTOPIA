@@ -1,0 +1,52 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"비 오는 날은 별로 좋아하지 않는다."
+    },
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"어릴 적에도 그랬다. 일단 그 꿉꿉하고 눅눅한 느낌이 싫었고... 밖에 나가 아이들과 놀지도 못했으니까 말이다."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"그러던 어느 날, 거미가 내 방 창문에 거미줄을 쳐놓은 것을 보게 되었다. 주인은 사냥을 갔는지 보이지 않았지만."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"나는 거미줄에 맺혀 반짝이는 빗물이 꼭 보석 같다고 생각했다. 은은하게 빛나는 예쁘고 투명한 수정..."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"나는 그것을 톡 건드려 보았으나 그것은 곧 스러져 사라졌다."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"아, 너는 시간처럼 덧없구나. 그러나 그렇기에 그것은 아마 이 세상 어떤 보석보다 더 귀할 것이다."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"나는 그것을 한참 바라보다가 잠들었다. 후에 날이 개었고 나는 거미줄의 존재를 잊어버렸다."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"한참 후에 다시 거미줄을 찾았을 때, 거미줄은 사라져 있었다. 아마 어디 이사라도 간 모양이었다. 이 세상에서 가장 귀한 보석을 지고..."
+	}
+  ]
+}
