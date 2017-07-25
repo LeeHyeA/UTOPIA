@@ -40,7 +40,7 @@ public class ActiveDialogue : MonoBehaviour
             if (control.isActive == false)                            //충돌처리 구현필요
             {
                 NotNum = true;
-                control.LodaJSON(ConvertedData, WaitForClick, DestroyActivated);
+                control.LoadJSON(ConvertedData, WaitForClick);
                 
 
                 if (DestroyActivated)
@@ -62,7 +62,7 @@ public class ActiveDialogue : MonoBehaviour
         {
             if (other.name == "2_Player")
             {
-                control.LodaJSON(ConvertedData, WaitForClick, DestroyActivated);
+                control.LoadJSON(ConvertedData, WaitForClick);
                 if (DestroyActivated)
                       Destroy(gameObject);
             }
