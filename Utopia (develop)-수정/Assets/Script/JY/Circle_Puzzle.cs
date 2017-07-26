@@ -94,11 +94,20 @@ public class Circle_Puzzle : MonoBehaviour {
         TurningObj.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats + 1) % 8;
     }
 
-    public void On_Off()
+    public void Turn_ON()
     {
-        Activated = !Activated;
+        if (EM.Doing_Event)
+            return;
+        Activated = true;
         Circle_Puzzle_Control.SetActive(Activated);
-        EM.Doing_Event = Activated;
+        EM.Doing_Event = true;
+        return;
+    }
+    public void Turn_OFF()
+    {
+        Activated = false;
+        Circle_Puzzle_Control.SetActive(Activated);
+        EM.Doing_Event = false;
         return;
     }
     void Check()

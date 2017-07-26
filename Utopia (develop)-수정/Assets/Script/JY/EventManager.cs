@@ -93,8 +93,6 @@ public class EventManager : MonoBehaviour
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
-
-
                 case 2:
                     Text_Data = Resources.Load<TextAsset>("Main/EventDialogue/StartDoor");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
@@ -229,7 +227,25 @@ public class EventManager : MonoBehaviour
                 case 201:
                     Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Get_Rope");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data,false);
+                    break;
+                case 202:
+                    StartCoroutine(Fadeing(true, 1.0f));
+                    Debug.Log("문이똭!");
+                    break;
+                case 203:
+                    StartCoroutine("WaitASecond", 1.0);
+                    GameObject.Find("Ganges_river").GetComponent<GangesRiver>().Activate_Door();
+                    break;
+                case 204:
+                    StartCoroutine(Fadeing(false, 1.5f));
+                    break;
+                case 205:
+                    Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Door");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
+                    break;
+                case 206:
                     break;
                 default:
                     break;
@@ -251,6 +267,37 @@ public class EventManager : MonoBehaviour
 
     }
 
+    IEnumerator Fadeing(bool Showing, float duration)
+    {
+        if (!isInTransition)
+        {
+            isInTransition = true;
+            transition = (Showing) ? 0 : 1;
+            while (isInTransition)
+            {
+                fadeImage_.SetActive(true);
+                transition += (Showing) ? Time.deltaTime * (1 / duration) : -Time.deltaTime * (1 / duration);
+                fadeImage.color = Color.Lerp(new Color(0, 0, 0, 0), Color.black, transition);
+
+                if (transition > 1 || transition < 0)
+                {
+                    isInTransition = false;
+                    Event_Number++;
+                    Doing_Event = false;
+                    if (!Showing)
+                        fadeImage_.SetActive(false);
+                    Debug.Log("페이드끄읕");
+                    yield break;
+                }
+                yield return new WaitForSeconds(0.001f);
+                Debug.Log("페이드중");
+            }
+
+        }
+        Debug.Log("코루틴끝");
+        yield break;
+
+    }
     //이벤트숫자 받아서 변경해주는 함수
     public void EventnumberSet(int num)
     {
