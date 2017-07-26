@@ -11,7 +11,9 @@ public class InputManager : MonoBehaviour
     private Vector2 touchOffset;                // 잡고난 후 플레이어의 터치위치
     public Transform UICanvas;
     public Transform MainStage;
-    
+    public Transform Stage3;
+    Item item;
+
     //1-1
     public GameObject BridCage;
     public GameObject AcquirableItem;
@@ -21,6 +23,7 @@ public class InputManager : MonoBehaviour
     //1-2
     //쓸모없는 곳과 아이템이 충돌했을때
     //public bool nothing = true;
+    public GameObject FlowerPotPlantState;
 
     public HangedMan HM;
     public GangesRiver GR;
@@ -82,6 +85,8 @@ public class InputManager : MonoBehaviour
                 }
             }
         }
+
+        item = Inventory.GetComponent<Item>();
     }
 
 
@@ -406,6 +411,69 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowTable();
                 Destroy(obj.transform.gameObject);
             }
+            //감자를 테이블에 놓기
+            if(obj.transform.name == "6-Ingredient(Potato)" && hit.transform.name == "TableDefalut")
+            {
+                Debug.Log("감자 놓기 완료");
+
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutPotato = true;
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowTable();
+                Destroy(obj.transform.gameObject);
+            }
+
+            //당근을 테이블에 놓기
+            if (obj.transform.name == "5-Ingredient(Carrot)" && hit.transform.name == "TableDefalut")
+            {
+                Debug.Log("당근 놓기 완료");
+
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutCarrot = true;
+                GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowTable();
+                Destroy(obj.transform.gameObject);
+            }
+
+            //채운 물뿌리개로 화분에 물뿌리기
+            if (obj.transform.name == "2-FullWateringCan" && hit.transform.name =="Flowerpot")
+            {
+                Debug.Log("물뿌리기 완료");
+                bool TempCarrotState = GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantCarrot;
+                bool TempFoxTailState = GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantFoxtail;
+                bool TempPotatoState = GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantPotato;
+                bool TempBeanState = GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantBean;
+                //if 당근이 심어져있을때, if강아지풀, if감자
+                if(TempCarrotState)
+                {
+                    FlowerPotPlantState.transform.Find("Carrot").gameObject.SetActive(true);
+                    obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
+                }
+                if(TempPotatoState)
+                {
+                    FlowerPotPlantState.transform.Find("Potato").gameObject.SetActive(true);
+                    obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
+                }
+                if(TempFoxTailState)
+                {
+                    FlowerPotPlantState.transform.Find("Foxtail").gameObject.SetActive(true);
+                    obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
+                }
+                if(TempBeanState)
+                {
+                    FlowerPotPlantState.transform.Find("Bean").gameObject.SetActive(true);
+                    obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
+                }
+            }
+            //잘못심은 작물 칼로 자르기 (강아지풀,콩)
+            if(obj.transform.name == "0-Knife" && hit.transform.name == "Foxtail")
+            {
+                FlowerPotPlantState.transform.Find("Foxtail").gameObject.SetActive(false);
+                GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlanted = false;
+                GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantFoxtail = false;
+            }
+            if (obj.transform.name == "0-Knife" && hit.transform.name == "Bean")
+            {
+                FlowerPotPlantState.transform.Find("Bean").gameObject.SetActive(false);
+                GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlanted = false;
+                GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantBean = false;
+            }
 
             //2스테이지
 
@@ -433,7 +501,28 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
             }
 
+            // 3Stage
+            if (obj.transform.name == "3-FishFeed" && hit.transform.name == "SeaCollision")
+            {
+                item.GetNumber(4);
+                item.LoadJson("3Stage");
+                Destroy(obj.transform.gameObject);
+            }
 
+            if (obj.transform.name == "2-Camera" && hit.transform.name == "SunCollision")
+            {
+                item.GetNumber(5);
+                item.LoadJson("3Stage");
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "5-Sunset" && hit.transform.name == "Picture")
+            {
+                Stage3.Find("Image").gameObject.SetActive(true);
+                Stage3.Find("Change").Find("Garden").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+                Debug.Log("오디가떠");
+            }
 
         }
 

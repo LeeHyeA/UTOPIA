@@ -1,0 +1,53 @@
+﻿{
+  "Item": [
+    {
+      "Item_Number":0,
+      "Item_Name":"Ring",
+      "Item_Place":"3Stage-1",
+      "Item_Image":"Ring",
+      "Item_Text":"석상이 끼고있는 반지"
+    },
+    {
+      "Item_Number":1,
+      "Item_Name":"Seed",
+      "Item_Place":"3Stage-1",
+      "Item_Image":"Seed",
+      "Item_Text":"피아노에서 얻은 씨앗"
+    },
+    {
+      "Item_Number":2,
+      "Item_Name":"Camera",
+      "Item_Place":"3Stage-1",
+      "Item_Image":"Camera",
+      "Item_Text":"벽난로 위 카메라"
+    },
+    {
+      "Item_Number":3,
+      "Item_Name":"FishFeed",
+      "Item_Place":"3Stage-1",
+      "Item_Image":"FishFeed",
+      "Item_Text":"탁자위 물고기 먹이"
+    },
+    {
+      "Item_Number":4,
+      "Item_Name":"Shell",
+      "Item_Place":"3Stage-1",
+      "Item_Image":"Shell",
+      "Item_Text":"물고기 먹이를 줘서 얻은 소라 브로치"
+    },
+    {
+      "Item_Number":5,
+      "Item_Name":"Sunset",
+      "Item_Place":"3Stage-1",
+      "Item_Image":"Sunset",
+      "Item_Text":"카메라로 찍은 석양 사진"
+    },
+    {
+      "Item_Number":6,
+      "Item_Name":"FlowerRing",
+      "Item_Place":"3Stage-1",
+      "Item_Image":"FlowerRing",
+      "Item_Text":"꽃반지"
+    }
+  ]
+}
