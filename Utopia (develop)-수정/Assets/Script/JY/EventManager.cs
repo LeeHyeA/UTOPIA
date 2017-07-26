@@ -89,7 +89,7 @@ public class EventManager : MonoBehaviour
             {
                 // 0~100 Main
                 case 0:
-                    StartCoroutine(Fadeing(true, 1.5f));
+                    //StartCoroutine(Fadeing(true, 1.5f));
                     //Text_Data = Resources.Load<TextAsset>("Main/EventDialogue/Start");                     
                     //Json_Data = JsonMapper.ToObject(Text_Data.text);
                     //CD.LoadJSON(Json_Data);
@@ -148,14 +148,15 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
                 case 101:
-                    Fade(true, 1.5f);
+                    StartCoroutine(Fadeing(true, 1.5f));
+                    //Fade(true, 1.5f);
                     break;
                 case 102:
                     Panel1_1_defalut.SetActive(false);
                     Panel1_1.SetActive(true);
                     BirdCage.SetActive(true);
                     Window.SetActive(true);
-                    Fade(false, 1.5f);
+                    StartCoroutine(Fadeing(false, 1.5f));
                     break;
                 case 103:
                     //1-1 시작시 혼잣말
@@ -172,14 +173,14 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
                 case 106:
-                    Fade(true, 1.5f);
+                    StartCoroutine(Fadeing(true, 1.5f));
                     break;
                 case 107:
                     Panel1_1.SetActive(false);
                     BirdCage.SetActive(false);
                     Panel1_2.SetActive(true);
                     Window.SetActive(false);
-                    Fade(false, 1.5f);
+                    StartCoroutine(Fadeing(false, 1.5f));
                     //몽골스테이지 첫대사 발생
                     Event_Number = 115;
                     break;
