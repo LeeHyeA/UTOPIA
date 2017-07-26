@@ -13,6 +13,7 @@ public class HangedMan : MonoBehaviour {
     public GameObject HangedMan_Control;
     public GameObject Answerd_obj;
     EventManager EM;
+    public GameObject Exit_Button;
     public int stat=0;
 
     public bool Answerd=false;
@@ -26,12 +27,17 @@ public class HangedMan : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        if (stat==0)
+        if (stat==0||Answerd)
         {
             GetComponent<BoxCollider2D>().enabled = false;
         }
         else
             GetComponent<BoxCollider2D>().enabled = true;
+
+        if (Activated)
+            Exit_Button.SetActive(true);
+        else
+            Exit_Button.SetActive(false);
 
     }
 
@@ -56,11 +62,20 @@ public class HangedMan : MonoBehaviour {
         Debug.Log("코루틴끝");
         stat = (stat + 1) % 2;
     }
-    public void On_Off()
+    public void Turn_ON()
     {
-        Activated = !Activated;
+        if (EM.Doing_Event)
+            return;
+        Activated = true;
         HangedMan_Control.SetActive(Activated);
-        EM.Doing_Event = Activated;
+        EM.Doing_Event = true;
+        return;
+    }
+    public void Turn_OFF()
+    {
+        Activated = false;
+        HangedMan_Control.SetActive(Activated);
+        EM.Doing_Event = false;
         return;
     }
 

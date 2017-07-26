@@ -22,8 +22,8 @@ public class InputManager : MonoBehaviour
     //쓸모없는 곳과 아이템이 충돌했을때
     //public bool nothing = true;
 
-    HangedMan HM;
-    GangesRiver GR;
+    public HangedMan HM;
+    public GangesRiver GR;
     //   public AudioSource audioSource;
 
     GameObject HeadGear;
@@ -41,8 +41,6 @@ public class InputManager : MonoBehaviour
         //Transform Click = MainStage.Find("ClickObject").transform;
         //Click.Find("7_Moniter").gameObject.SetActive(false);
 
-        HM = GameObject.Find("Hanged_Man").GetComponent<HangedMan>();
-        GR = GameObject.Find("Ganges_river").GetComponent<GangesRiver>();
     }
 
     void Update()

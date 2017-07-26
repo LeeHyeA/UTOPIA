@@ -32,7 +32,7 @@ public class LogicPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Activated||Answerd||EM.Doing_Event)
+        if (!Activated||Answerd)
         {
             return;
         }
@@ -69,12 +69,23 @@ public class LogicPuzzle : MonoBehaviour
         }
     }
 
-    public void On_Off()
+    public void Turn_ON()
     {
-        Activated = !Activated;
+        if (EM.Doing_Event)
+            return;
+        Activated = true;
         LogicPuzControl.SetActive(Activated);
+        EM.Doing_Event = true;
         return;
     }
+    public void Turn_OFF()
+    {
+        Activated = false;
+        LogicPuzControl.SetActive(Activated);
+        EM.Doing_Event = false;
+        return;
+    }
+
     public void Clear_Tile()
     {
         if (!Answerd)
