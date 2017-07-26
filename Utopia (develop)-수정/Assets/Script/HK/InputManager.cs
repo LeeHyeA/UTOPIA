@@ -11,7 +11,9 @@ public class InputManager : MonoBehaviour
     private Vector2 touchOffset;                // 잡고난 후 플레이어의 터치위치
     public Transform UICanvas;
     public Transform MainStage;
-    
+    public Transform Stage3;
+    Item item;
+
     //1-1
     public GameObject BridCage;
     public GameObject AcquirableItem;
@@ -84,6 +86,8 @@ public class InputManager : MonoBehaviour
                 }
             }
         }
+
+        item = Inventory.GetComponent<Item>();
     }
 
 
@@ -435,7 +439,28 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
             }
 
+            // 3Stage
+            if (obj.transform.name == "3-FishFeed" && hit.transform.name == "SeaCollision")
+            {
+                item.GetNumber(4);
+                item.LoadJson("3Stage");
+                Destroy(obj.transform.gameObject);
+            }
 
+            if (obj.transform.name == "2-Camera" && hit.transform.name == "SunCollision")
+            {
+                item.GetNumber(5);
+                item.LoadJson("3Stage");
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "5-Sunset" && hit.transform.name == "Picture")
+            {
+                Stage3.Find("Image").gameObject.SetActive(true);
+                Stage3.Find("Change").Find("Garden").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+                Debug.Log("오디가떠");
+            }
 
         }
 
