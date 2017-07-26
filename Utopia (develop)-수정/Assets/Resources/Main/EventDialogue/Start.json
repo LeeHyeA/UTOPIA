@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"R_3",
+      "script_Text":"여긴.. 어디지?"
+    }
+  ]
+}
