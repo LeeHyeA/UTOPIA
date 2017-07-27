@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"새를 풀어준 후 남아있던 자리에서 깃털을 얻었다."
+    }
+  ]
+}

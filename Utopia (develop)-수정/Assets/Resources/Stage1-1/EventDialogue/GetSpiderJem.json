@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"빗물을 머금은 반짝이는 거미줄을 얻었다."
+    }
+  ]
+}

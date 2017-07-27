@@ -10,6 +10,8 @@ public class ChangeStage1_1 : MonoBehaviour
     public Image Stage1_1Background;
     public Image Stage1_2Background;
     public Image Stage1_1WindowPanel;
+    //public Image FlowerPotState;
+
     void Start()
     {
         //맨처음 방배경 상태(밤)
@@ -18,12 +20,52 @@ public class ChangeStage1_1 : MonoBehaviour
         Stage1_1WindowPanel.sprite = Resources.Load<Sprite>("Stage1-1/Window/NothingImage");
 
         Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/MonggoalDefault");
+
+        //맨처음 화분상태(아무것도 안심음)
+        //FlowerPotState.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/FlowerPot");
+
     }
 
     void Update()
     {
-
+        //ChangeFlowerPotState();
     }
+
+    /*
+    public void ChangeFlowerPotState()
+    {
+        //당근(토끼)
+        bool PotRabbitTemp = GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantCarrot;
+        if(PotRabbitTemp)
+        {
+            FlowerPotState.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotRabbit");
+            return;
+        }
+        //감자(돼지)
+        bool PotPigTemp = GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantPotato;
+        if(PotPigTemp)
+        {
+            FlowerPotState.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotPig");
+            return;
+        }
+        //콩(새)
+        bool PotBirdTemp = GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantBean;
+        if(PotBirdTemp)
+        {
+            FlowerPotState.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotBird");
+            return;
+        }
+        //강아지풀(강아지)
+        bool PotDogTemp = GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantFoxtail;
+        if(PotDogTemp)
+        {
+            FlowerPotState.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotDog");
+            return;
+        }
+        //아무상것도 안심어져있으면 
+        FlowerPotState.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/FlowerPot");
+    }
+    */
 
     public void ChangeBackground()
     {
