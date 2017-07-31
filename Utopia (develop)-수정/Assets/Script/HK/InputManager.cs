@@ -562,6 +562,38 @@ public class InputManager : MonoBehaviour
                 Check();
             }
 
+            //*****************************************************************************
+
+            if (obj.transform.name == "7-MedicalCertificate1" && hit.transform.name == "Basic")
+            {
+                Stage3.Find("2Round").Find("Medical").Find("Piece1").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "8-MedicalCertificate2" && hit.transform.name == "Basic")
+            {
+                Stage3.Find("2Round").Find("Medical").Find("Piece2").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "9-MedicalCertificate3" && hit.transform.name == "Basic")
+            {
+                Stage3.Find("2Round").Find("Medical").Find("Piece3").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "10-MedicalCertificate4" && hit.transform.name == "Basic")
+            {
+                Stage3.Find("2Round").Find("Medical").Find("Piece4").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "11-MedicalCertificate5" && hit.transform.name == "Basic")
+            {
+                Stage3.Find("2Round").Find("Medical").Find("Piece5").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
             else if (touches.Length == 1)
                 touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
 
