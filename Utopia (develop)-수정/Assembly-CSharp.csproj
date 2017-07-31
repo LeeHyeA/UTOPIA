@@ -93,6 +93,9 @@
      <Compile Include="Assets\Script\SB\Warp.cs" />
      <None Include="Assets\RainMaker\Prefab\RainShader.shader" />
      <None Include="Assets\RainMaker\Readme.txt" />
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>C:/Users/B408-12/Desktop/NEW/Utopia (develop)-수정/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
