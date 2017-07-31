@@ -7,8 +7,7 @@ public class Circle_Puzzle_Tile : MonoBehaviour {
 
     Circle_Puzzle CP;
 
-    public Circle_Puzzle_Tile CPT1;
-    public Circle_Puzzle_Tile CPT2;
+    public Circle_Puzzle_Tile[] CPT = new Circle_Puzzle_Tile[5];
 
     public Image Ima;
 
@@ -40,8 +39,10 @@ public class Circle_Puzzle_Tile : MonoBehaviour {
     {
         if(CP.Answerd)
         {
-            CPT1.Ima.color = origin_color;
-            CPT2.Ima.color = origin_color;
+            for(int i=0;i<5;i++)
+            {
+                CPT[i].Ima.color = origin_color;
+            }
         }
     }
 
@@ -49,13 +50,14 @@ public class Circle_Puzzle_Tile : MonoBehaviour {
     {
         if (CP.turning||CP.Answerd)
             return;
-        CP.Selected_Piece = GameObject.Find("Circle_Tile" + ID.ToString());
+        CP.Selected_Piece = gameObject;
         Ima.color = new Color(0, 144, 60);
         clicked = true;
-        CPT1.clicked = false;
-        CPT1.clear_color();
-        CPT2.clicked = false;
-        CPT2.clear_color();
+        for(int i=0;i<5;i++)
+        {
+            CPT[i].clicked = false;
+            CPT[i].clear_color();
+        }
         Debug.Log(ID);
     }
     private void OnMouseEnter()
