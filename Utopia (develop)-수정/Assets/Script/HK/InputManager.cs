@@ -34,8 +34,12 @@ public class InputManager : MonoBehaviour
     GameObject Hint;
     //Transform Grid;
 
+    bool FlowerRing = false;
+    bool Shell = false;
+
     void Start()
     {
+        PlayerPrefs.DeleteAll();
         HeadGear = MainStage.Find("HeadGear").gameObject;
         Inventory = UICanvas.Find("2_Inventory").gameObject;
         Hint = UICanvas.Find("3_Hint").gameObject;
@@ -207,7 +211,7 @@ public class InputManager : MonoBehaviour
             if (obj.transform.name == "4-SmallCable1" && hit.transform.name == "2_SmallCode")
             {
                 HeadGear.transform.Find("4_SmallCable").gameObject.SetActive(true);
-                Destroy(obj.transform.gameObject); 
+                Destroy(obj.transform.gameObject);
             }
 
             if (obj.transform.name == "5-BigCable2" && hit.transform.name == "3_BigCode")
@@ -308,7 +312,7 @@ public class InputManager : MonoBehaviour
                     Destroy(obj.transform.gameObject);
                 }
                 //기본+거미줄보석(2)상태에서 깃털 붙일때
-                else if(tempNum2 == 2)
+                else if (tempNum2 == 2)
                 {
                     Debug.Log("깃털을 드림캐쳐 기본+거미줄 상태에 붙임");
                     //상태를 기본+깃털+거미줄보석(3)로 바꿈
@@ -318,7 +322,7 @@ public class InputManager : MonoBehaviour
                 }
             }
             //DreamCatcher(StarPowder)
-            if(obj.transform.name == "3-1_1StarPowder" && hit.transform.name == "DreamCatcherCol")
+            if (obj.transform.name == "3-1_1StarPowder" && hit.transform.name == "DreamCatcherCol")
             {
                 int tempNum3 = GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState;
                 //기본+깃털+거미줄보석(3) 상태 일때만 접촉후 변하게함
@@ -339,7 +343,7 @@ public class InputManager : MonoBehaviour
             //--음식재료 얻기--//
 
             //빈우유병을 염소에 놓아 채우기
-            if(obj.transform.name == "3-Ingredient(EmptyMilk)" && hit.transform.name == "Taxidermied_Goat")
+            if (obj.transform.name == "3-Ingredient(EmptyMilk)" && hit.transform.name == "Taxidermied_Goat")
             {
                 Debug.Log("빈우유병 채우기 완료");
 
@@ -352,7 +356,7 @@ public class InputManager : MonoBehaviour
             }
 
             //칼을 양에 놓아 고기얻기
-            if(obj.transform.name == "0-Knife" && hit.transform.name == "Taxidermied_Sheep(Before)")
+            if (obj.transform.name == "0-Knife" && hit.transform.name == "Taxidermied_Sheep(Before)")
             {
                 Debug.Log("칼로 고기얻기 완료");
 
@@ -364,7 +368,7 @@ public class InputManager : MonoBehaviour
 
             }
             //빈 물뿌리개를 하마에 놓아 물채우기
-            if(obj.transform.name == "1-EmptyWateringCan" && hit.transform.name == "Taxidermied_Hippopotamus(Before)")
+            if (obj.transform.name == "1-EmptyWateringCan" && hit.transform.name == "Taxidermied_Hippopotamus(Before)")
             {
                 Debug.Log("하마에 빈물뿌리개 놓기 완료");
 
@@ -376,10 +380,10 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
             }
             //돌을 모닥불에 옮겨 달군돌 얻기
-            if(obj.transform.name == "8-Ingredient(Stone)" && hit.transform.name == "Picture3(bonfire)")
+            if (obj.transform.name == "8-Ingredient(Stone)" && hit.transform.name == "Picture3(bonfire)")
             {
                 Debug.Log("달군돌 얻기 완료");
-                
+
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutStone = true;
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowBonfire();
                 Destroy(obj.transform.gameObject);
@@ -387,7 +391,7 @@ public class InputManager : MonoBehaviour
 
             //--테이블에서 음식 만들기--//
             //달군돌을 테이블에 놓기
-            if(obj.transform.name == "9-Ingredient(HotStone)" && hit.transform.name == "TableDefalut")
+            if (obj.transform.name == "9-Ingredient(HotStone)" && hit.transform.name == "TableDefalut")
             {
                 Debug.Log("달군돌 놓기 완료");
 
@@ -396,7 +400,7 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
             }
             //고기를 테이블에 놓기
-            if(obj.transform.name == "7-Ingredient(Meat)" && hit.transform.name == "TableDefalut")
+            if (obj.transform.name == "7-Ingredient(Meat)" && hit.transform.name == "TableDefalut")
             {
                 Debug.Log("고기 놓기 완료");
 
@@ -405,7 +409,7 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
             }
             //우유를 테이블에 놓기
-            if(obj.transform.name == "4-Ingredient(Milk)" && hit.transform.name == "TableDefalut")
+            if (obj.transform.name == "4-Ingredient(Milk)" && hit.transform.name == "TableDefalut")
             {
                 Debug.Log("우유 놓기 완료");
 
@@ -414,7 +418,7 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
             }
             //감자를 테이블에 놓기
-            if(obj.transform.name == "6-Ingredient(Potato)" && hit.transform.name == "TableDefalut")
+            if (obj.transform.name == "6-Ingredient(Potato)" && hit.transform.name == "TableDefalut")
             {
                 Debug.Log("감자 놓기 완료");
 
@@ -434,7 +438,7 @@ public class InputManager : MonoBehaviour
             }
 
             //채운 물뿌리개로 화분에 물뿌리기
-            if (obj.transform.name == "2-FullWateringCan" && hit.transform.name =="Flowerpot")
+            if (obj.transform.name == "2-FullWateringCan" && hit.transform.name == "Flowerpot")
             {
                 Debug.Log("물뿌리기 완료");
                 bool TempCarrotState = GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantCarrot;
@@ -442,29 +446,29 @@ public class InputManager : MonoBehaviour
                 bool TempPotatoState = GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantPotato;
                 bool TempBeanState = GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantBean;
                 //if 당근이 심어져있을때, if강아지풀, if감자
-                if(TempCarrotState)
+                if (TempCarrotState)
                 {
                     FlowerPotPlantState.transform.Find("Carrot").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                 }
-                if(TempPotatoState)
+                if (TempPotatoState)
                 {
                     FlowerPotPlantState.transform.Find("Potato").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                 }
-                if(TempFoxTailState)
+                if (TempFoxTailState)
                 {
                     FlowerPotPlantState.transform.Find("Foxtail").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                 }
-                if(TempBeanState)
+                if (TempBeanState)
                 {
                     FlowerPotPlantState.transform.Find("Bean").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                 }
             }
             //잘못심은 작물 칼로 자르기 (강아지풀,콩)
-            if(obj.transform.name == "0-Knife" && hit.transform.name == "Foxtail")
+            if (obj.transform.name == "0-Knife" && hit.transform.name == "Foxtail")
             {
                 FlowerPotPlantState.transform.Find("Foxtail").gameObject.SetActive(false);
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlanted = false;
@@ -479,7 +483,7 @@ public class InputManager : MonoBehaviour
 
             //2스테이지
 
-            if (obj.transform.name== "2-Rope" && hit.transform.name=="Hanged_Man")
+            if (obj.transform.name == "2-Rope" && hit.transform.name == "Hanged_Man")
             {
                 Debug.Log("밧줄맨");
                 HM.Answer();
@@ -504,6 +508,8 @@ public class InputManager : MonoBehaviour
             }
 
             // 3Stage
+            
+
             if (obj.transform.name == "3-FishFeed" && hit.transform.name == "SeaCollision")
             {
                 item.GetNumber(4);
@@ -520,17 +526,55 @@ public class InputManager : MonoBehaviour
 
             if (obj.transform.name == "5-Sunset" && hit.transform.name == "Picture")
             {
-                Stage3.Find("Image").gameObject.SetActive(true);
-                Stage3.Find("Change").Find("Garden").gameObject.SetActive(true);
+                Transform Round1 = Stage3.Find("1Round");
+                Round1.Find("Image").gameObject.SetActive(true);
+                Round1.Find("Change").Find("Garden").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
-                Debug.Log("오디가떠");
             }
 
+            if (obj.transform.name == "1-Seed" && hit.transform.name == "Grass")
+            {
+                PlayerPrefs.SetString("Seed", "true");
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "0-Ring" && hit.transform.name == "Flower")
+            {
+                Transform Garden = Stage3.Find("1Round").Find("Change").Find("Garden");
+                Garden.Find("Flower").gameObject.SetActive(false);
+
+                item.GetNumber(6);
+                item.LoadJson("3Stage");
+                Destroy(obj.transform.gameObject);
+            }
+
+            if (obj.transform.name == "6-FlowerRing" && hit.transform.name == "Statuette")
+            {
+                FlowerRing = true;
+                Destroy(obj.transform.gameObject);
+                Check();
+            }
+
+            if (obj.transform.name == "4-Shell" && hit.transform.name == "Statuette")
+            {
+                Shell = true;
+                Destroy(obj.transform.gameObject);
+                Check();
+            }
+
+            else if (touches.Length == 1)
+                touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
+
         }
-
-        else if (touches.Length == 1)
-            touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
-
     }
 
+    void Check()
+    {
+        if (FlowerRing == true && Shell == true)
+        {
+            Stage3.Find("1Round").gameObject.SetActive(false);
+            Stage3.Find("2Round").gameObject.SetActive(true);
+            Inventory.gameObject.SetActive(false);
+        }
+    }
 }
