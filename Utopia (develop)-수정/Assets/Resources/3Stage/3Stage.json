@@ -48,6 +48,41 @@
       "Item_Place":"3Stage-1",
       "Item_Image":"FlowerRing",
       "Item_Text":"꽃반지"
+    },
+    {
+      "Item_Number":7,
+      "Item_Name":"MedicalCertificate",
+      "Item_Place":"3Stage-2",
+      "Item_Image":"MedicalCertificate1",
+      "Item_Text":"진단서 조각 1"
+    },
+    {
+      "Item_Number":8,
+      "Item_Name":"MedicalCertificate",
+      "Item_Place":"3Stage-2",
+      "Item_Image":"MedicalCertificate2",
+      "Item_Text":"진단서 조각 2"
+    },
+    {
+      "Item_Number":9,
+      "Item_Name":"MedicalCertificate",
+      "Item_Place":"3Stage-2",
+      "Item_Image":"MedicalCertificate3",
+      "Item_Text":"진단서 조각 3"
+    },
+    {
+      "Item_Number":10,
+      "Item_Name":"MedicalCertificate",
+      "Item_Place":"3Stage-2",
+      "Item_Image":"MedicalCertificate4",
+      "Item_Text":"진단서 조각 4"
+    },
+    {
+      "Item_Number":11,
+      "Item_Name":"MedicalCertificate",
+      "Item_Place":"3Stage-2",
+      "Item_Image":"MedicalCertificate5",
+      "Item_Text":"진단서 조각 5"
     }
   ]
 }
