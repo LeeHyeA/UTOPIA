@@ -21,7 +21,7 @@ public class Circle_Puzzle : MonoBehaviour {
 
     public GameObject[] CPT1 = new GameObject[5];
     
-    public EventManager EM;
+    EventManager EM;
 
     // Use this for initialization
     void Start ()
@@ -120,7 +120,7 @@ public class Circle_Puzzle : MonoBehaviour {
         }
 
         Answerd = true;
-        Rope.SetActive(true);
+        
         Destroy(Left_Button);
         Destroy(Right_Button);
         EM.Event_Number = 200;
