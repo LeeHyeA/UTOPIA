@@ -25,6 +25,9 @@ public class InputManager : MonoBehaviour
     //public bool nothing = true;
     public GameObject FlowerPotPlantState;
 
+    //1-3
+    public GameObject GoldNeedle;
+
     HangedMan HM;
     GangesRiver GR;
     //   public AudioSource audioSource;
@@ -481,9 +484,20 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantBean = false;
             }
 
+
+            // 1Stage (1-3)
+
+            //망치를 금시계에 놓기
+            if(obj.transform.name == "1-Hammer" && hit.transform.name == "GoldClock")
+            {
+                GoldNeedle.gameObject.SetActive(true);
+                Destroy(hit.transform.gameObject);
+                obj.transform.SetParent(Inventory.transform.Find("2_Grid")); //제자리로!
+            }
+
             //2스테이지
 
-            if (obj.transform.name == "2-Rope" && hit.transform.name == "Hanged_Man")
+                if (obj.transform.name == "2-Rope" && hit.transform.name == "Hanged_Man")
             {
                 Debug.Log("밧줄맨");
                 HM.Answer();

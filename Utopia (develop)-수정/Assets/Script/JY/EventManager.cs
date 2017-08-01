@@ -221,6 +221,31 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
 
+                //(1-3)
+                //디폴트방에서 대사 넘기기
+                case 150:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/StartFairyTale");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 151:
+                    StartCoroutine(Fadeing(true, 1.5f));
+                    break;
+                case 152:
+                    //패널1-3디폴트 비활성화 시킴
+                    //패널1-3 활성화시킴
+                    StartCoroutine(Fadeing(false, 1.5f));
+                    break;
+                /*
+                //망치로 금시계에서 금침을 획득했을시 (154-155)
+                case 154:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/GetGoldNeedle");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                */
+
+
 
                 // 200~299 2Stage
                 case 200:
