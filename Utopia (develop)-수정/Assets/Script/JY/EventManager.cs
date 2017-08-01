@@ -36,7 +36,7 @@ public class EventManager : MonoBehaviour
     public GameObject inventory;
     public GameObject SpiderJem;
     public bool MakeDreamCatcher = false;
-
+    public GameObject Owl_Cage;
 
     // Use this for initialization
     void Start ()
@@ -244,6 +244,19 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
                 */
+
+                //맑은날 부엉이를 얻음(154-155)
+                case 154:
+                    inventory.SetActive(false);
+                    GameObject OwlCageFeed = Owl_Cage.transform.Find("OwlCageFeed").gameObject;
+                    OwlCageFeed.SetActive(false);
+                    GameObject OwlCageFull = Owl_Cage.transform.Find("OwlCageFull").gameObject;
+                    OwlCageFull.SetActive(true);
+                    //대사진행
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/OwlEnterCage");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
 
 
 

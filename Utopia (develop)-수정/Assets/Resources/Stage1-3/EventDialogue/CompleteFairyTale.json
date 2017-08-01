@@ -1,0 +1,58 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"부모님은 내가 18살 때 교통사고로 돌아가셨다."
+    },
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"모든 게 거짓말 같았다. 이제 부모님을 볼 수 없다는 게 믿기지 않았다."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"나는 장례식 이후 누구와도 만나지 않은 채 집에 틀어박혀 아무것도 하지 않았다. 그냥 정말 가만히 누워있었다. 가만히..."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"내 세상은 산산이 부서졌고 남은 것은 텅 비어버린 집과 이 동화책... 내가 유치하다고 했던 그 동화책이었다."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"나는 홀린 듯이 그 동화책만 읽었다. 하루 종인 아무것도 하지 않은 채."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"이름조차 없던 소녀가 자신의 의미를 찾아가는 이야기..."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"그는 그저 내게 얘기하고 싶었던 것이다. 너를 잃지 않은 채 내가 옳다고 생각하는 대로 행복하게 살라고.."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"아버지는 죽어서도 날 일으켜 세웠다. 그리고 계속 살아가라고 내 등을 떠밀었다."
+	},
+	{
+	  "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"그래서 나는 그렇게 살기 위해 노력했다. 당신을 위해. 나를 위해."
+	}
+  ]
+}

@@ -23,31 +23,31 @@
     },
     {
       "Item_Number":3,
-      "Item_Name":"Ingredient(EmptyMilk)",
-      "Item_Place":"Stage1-2",
-      "Item_Image":"Ingredient(EmptyMilk)",
-      "Item_Text":"음식 재료(빈우유병)"
+      "Item_Name":"TreeSeed",
+      "Item_Place":"Stage1-3",
+      "Item_Image":"TreeSeed",
+      "Item_Text":"나무 씨앗"
     },
     {
       "Item_Number":4,
-      "Item_Name":"Ingredient(Milk)",
-      "Item_Place":"Stage1-2",
-      "Item_Image":"Ingredient(Milk)",
-      "Item_Text":"음식 재료(채워진 우유병)"
+      "Item_Name":"RoseSeed",
+      "Item_Place":"Stage1-3",
+      "Item_Image":"RoseSeed",
+      "Item_Text":"장미 씨앗"
     },
     {
       "Item_Number":5,
-      "Item_Name":"Ingredient(Carrot)",
-      "Item_Place":"Stage1-2",
-      "Item_Image":"Ingredient(Carrot)",
-      "Item_Text":"음식 재료(당근)"
+      "Item_Name":"OwlName",
+      "Item_Place":"Stage1-3",
+      "Item_Image":"OwlName",
+      "Item_Text":"올빼미 이름표"
     },
     {
       "Item_Number":6,
-      "Item_Name":"Ingredient(Potato)",
-      "Item_Place":"Stage1-2",
-      "Item_Image":"Ingredient(Potato)",
-      "Item_Text":"음식 재료(감자)"
+      "Item_Name":"RoseName",
+      "Item_Place":"Stage1-3",
+      "Item_Image":"RoseName",
+      "Item_Text":"장미 이름표"
     },
     {
       "Item_Number": 7,

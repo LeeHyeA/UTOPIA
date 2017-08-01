@@ -27,6 +27,7 @@ public class InputManager : MonoBehaviour
 
     //1-3
     public GameObject GoldNeedle;
+    public GameObject OwlCage;
 
     HangedMan HM;
     GangesRiver GR;
@@ -495,6 +496,14 @@ public class InputManager : MonoBehaviour
                 obj.transform.SetParent(Inventory.transform.Find("2_Grid")); //제자리로!
             }
 
+            //육포를 새장에 놓기
+            if(obj.transform.name == "0-OwlFeed" &&hit.transform.name == "OwlCageEmpty")
+            {
+                OwlCage.transform.Find("OwlCageEmpty").gameObject.SetActive(false);
+                OwlCage.transform.Find("OwlCageFeed").gameObject.SetActive(true);
+                GameObject.Find("WindowButton1-3").GetComponent<RoomWindow2>().SetPutFeedToOwlCage();
+                Destroy(obj.transform.gameObject);
+            }
             //2스테이지
 
                 if (obj.transform.name == "2-Rope" && hit.transform.name == "Hanged_Man")
