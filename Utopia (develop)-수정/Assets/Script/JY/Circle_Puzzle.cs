@@ -19,7 +19,7 @@ public class Circle_Puzzle : MonoBehaviour {
     public GameObject Right_Button;
     public GameObject Rope;
 
-    public GameObject[] CPT1 = new GameObject[5];
+    public GameObject[] CPT = new GameObject[6];
     
     EventManager EM;
 
@@ -29,9 +29,9 @@ public class Circle_Puzzle : MonoBehaviour {
         Circle_Puzzle_Control.SetActive(true);
         Selected_Piece = GameObject.Find("Circle_Tile1");
         Circle_Puzzle_Control = GameObject.Find("Circle_Puzzle_Control");
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 6; i++)
         {
-            CPT1[i] = GameObject.Find("Circle_Tile (" + (i+1).ToString()+")");
+            CPT[i] = GameObject.Find("Circle_Tile (" + (i+1).ToString()+")");
         }
         Circle_Puzzle_Control.SetActive(false);
 
@@ -113,9 +113,9 @@ public class Circle_Puzzle : MonoBehaviour {
     {
         if (Answerd)
             return;
-        for(int i = 0;i<5;i++)
+        for(int i = 0;i<6;i++)
         {
-            if (CPT1[i].GetComponent<Circle_Puzzle_Tile>().tile_stats != 0)
+            if (CPT[i].GetComponent<Circle_Puzzle_Tile>().tile_stats != 0)
                 return;
         }
 

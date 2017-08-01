@@ -252,7 +252,7 @@ public class EventManager : MonoBehaviour
                     StartCoroutine("WaitASecond", 1.25);               //이벤트 대기시키기 / 오른쪽 숫자가 초
                     break;
                 case 201:
-                    GameObject.Find("Circle_Puzzle_Control").transform.GetChild(8).gameObject.SetActive(true);
+                    GameObject.Find("Circle_Puzzle_Control").transform.GetChild(9).gameObject.SetActive(true);
                     Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Get_Rope");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data,false);
