@@ -28,6 +28,7 @@ public class InputManager : MonoBehaviour
     //1-3
     public GameObject GoldNeedle;
     public GameObject OwlCage;
+    public GameObject PotState;
 
     HangedMan HM;
     GangesRiver GR;
@@ -493,7 +494,8 @@ public class InputManager : MonoBehaviour
             {
                 GoldNeedle.gameObject.SetActive(true);
                 Destroy(hit.transform.gameObject);
-                obj.transform.SetParent(Inventory.transform.Find("2_Grid")); //제자리로!
+                Destroy(obj.transform.gameObject);
+               // obj.transform.SetParent(Inventory.transform.Find("2_Grid")); //제자리로!
             }
 
             //육포를 새장에 놓기
@@ -504,7 +506,32 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("WindowButton1-3").GetComponent<RoomWindow2>().SetPutFeedToOwlCage();
                 Destroy(obj.transform.gameObject);
             }
-            //2스테이지
+
+            //장미씨앗을 화분에 놓기
+            if(obj.transform.name == "4-RoseSeed" && hit.transform.name == "Pot")
+            {
+                Debug.Log("장미씨앗 심기완료");
+                //장미활성화
+                PotState.transform.Find("Rose").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+
+            //화분에 나무 심기
+            if(obj.transform.name == "3-TreeSeed" && hit.transform.name == "Pot")
+            {
+                Debug.Log("나무심기 완료");
+                PotState.transform.Find("Tree(before)").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+            //심어진 나무에 금침 놓기
+            if(obj.transform.name == "2-GoldNeedle" && hit.transform.name =="Tree(before)")
+            {
+                Debug.Log("심은 나무에 금침놓기");
+                PotState.transform.Find("Tree(before)").gameObject.SetActive(false);
+                PotState.transform.Find("Tree(after)").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+            }
+                //2스테이지
 
                 if (obj.transform.name == "2-Rope" && hit.transform.name == "Hanged_Man")
             {
