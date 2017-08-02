@@ -29,7 +29,7 @@ public class MoveManager : MonoBehaviour {
         float rate = 1.0f / Mathf.Abs(distance) * speed;
         float t = 0.0f;
 
-        while(t < 0.01247f)
+        while(t < 1.0f)
         {
             t += Time.deltaTime * rate;
             Vector3 pos = thisTransform.position;
@@ -46,8 +46,8 @@ public class MoveManager : MonoBehaviour {
         //if(BG.position.x >= 480.0f)
         //StartCoroutine(Move(BG, -480.0f, 1.0f));
 
-        control = StartCoroutine(Move(BG, -480.0f, 1.5f));
-        coroutine = Move(BG, -480.0f, 1.5f);
+        control = StartCoroutine(Move(BG, -480.0f, 1.0f));
+        coroutine = Move(BG, -480.0f, 1.0f);
         StartCoroutine(coroutine);
     }
 
