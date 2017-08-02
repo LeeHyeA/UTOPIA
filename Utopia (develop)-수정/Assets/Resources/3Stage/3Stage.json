@@ -83,6 +83,41 @@
       "Item_Place":"3Stage-2",
       "Item_Image":"MedicalCertificate5",
       "Item_Text":"진단서 조각 5"
+    },
+    {
+      "Item_Number":12,
+      "Item_Name":"WateringCan",
+      "Item_Place":"3Stage-3",
+      "Item_Image":"WateringCan",
+      "Item_Text":"서랍에서 얻은 물뿌리개"
+    },
+    {
+      "Item_Number":13,
+      "Item_Name":"Earthworm",
+      "Item_Place":"3Stage-3",
+      "Item_Image":"Earthworm",
+      "Item_Text":"화분에서 얻은 지렁이"
+    },
+    {
+      "Item_Number":14,
+      "Item_Name":"Feather",
+      "Item_Place":"3Stage-3",
+      "Item_Image":"Feather",
+      "Item_Text":"새에게 지렁이를 주고 얻은 깃털"
+    },
+    {
+      "Item_Number":15,
+      "Item_Name":"Seed",
+      "Item_Place":"3Stage-3",
+      "Item_Image":"Seed",
+      "Item_Text":"장미에서 얻은 씨앗"
+    },
+    {
+      "Item_Number":16,
+      "Item_Name":"Carrier",
+      "Item_Place":"3Stage-3",
+      "Item_Image":"Carrier",
+      "Item_Text":"모든 것을 담은 캐리어"
     }
   ]
 }

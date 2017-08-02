@@ -10,6 +10,7 @@ public class InputFieldManager : MonoBehaviour
     int stage = -1;
     public GameObject Main;
     public GameObject Stage1;
+    public GameObject Stage3;
 
     // Use this for initialization
     void Start()
@@ -67,6 +68,10 @@ public class InputFieldManager : MonoBehaviour
                     stage = 1;
                 break;
 
+            case "523":
+                stage = 99;
+                break;
+
             default:
                 stage = -1;
                 break;
@@ -95,6 +100,12 @@ public class InputFieldManager : MonoBehaviour
 
                 computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
                 Stage1.SetActive(true);
+                break;
+
+            case 99:
+                // 창끄기
+                Stage3.transform.Find("3Round").Find("BG").Find("Lock").gameObject.SetActive(false);
+                Debug.Log("물뿌리개 획득");
                 break;
 
             default:
