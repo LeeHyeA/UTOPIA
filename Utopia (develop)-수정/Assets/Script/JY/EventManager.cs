@@ -38,6 +38,9 @@ public class EventManager : MonoBehaviour
     public bool MakeDreamCatcher = false;
     public GameObject Owl_Cage;
 
+
+
+
     // Use this for initialization
     void Start ()
     {
@@ -154,8 +157,8 @@ public class EventManager : MonoBehaviour
                 case 102:
                     Panel1_1_defalut.SetActive(false);
                     Panel1_1.SetActive(true);
-                    BirdCage.SetActive(true);
-                    Window.SetActive(true);
+                    //BirdCage.SetActive(true);
+                    //Window.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.5f));
                     break;
                 case 103:

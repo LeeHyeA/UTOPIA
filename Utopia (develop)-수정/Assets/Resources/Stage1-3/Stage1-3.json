@@ -50,25 +50,11 @@
       "Item_Text":"장미 이름표"
     },
     {
-      "Item_Number": 7,
-      "Item_Name": "Ingredient(Meat)",
-      "Item_Place": "Stage1-2",
-      "Item_Image": "Ingredient(Meat)",
-      "Item_Text": "음식 재료(양고기)"
-    },
-    {
-      "Item_Number":8,
-      "Item_Name":"Ingredient(Stone)",
-      "Item_Place":"Stage1-2",
-      "Item_Image":"Ingredient(Stone)",
-      "Item_Text":"음식 재료(돌)"
-    },
-    {
-      "Item_Number":9,
-      "Item_Name":"Ingredient(HotStone)",
-      "Item_Place":"Stage1-2",
-      "Item_Image":"Ingredient(HotStone)",
-      "Item_Text":"음식 재료(달궈진돌)"
+      "Item_Number":7,
+      "Item_Name":"TreeName",
+      "Item_Place":"Stage1-3",
+      "Item_Image":"TreeName",
+      "Item_Text":"나무 이름표"
     }
   ]
 }
