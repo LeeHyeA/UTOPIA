@@ -261,6 +261,19 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
 
+                //동화책을 완성했을시
+                case 160:
+                    inventory.SetActive(false);
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/CompleteFairyTale");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 161:
+                    StartCoroutine(Fadeing(true, 1.5f));
+                    break;
+                case 162:
+                    StartCoroutine(Fadeing(false, 1.5f));
+                    break;
 
 
                 // 200~299 2Stage

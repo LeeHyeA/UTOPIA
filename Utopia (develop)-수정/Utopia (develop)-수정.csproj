@@ -124,6 +124,7 @@
     <Compile Include="Assets\Script\SB\ChangeStage1_1.cs" />
     <Compile Include="Assets\Script\SB\Data.cs" />
     <Compile Include="Assets\Script\SB\DreamCatcher.cs" />
+    <Compile Include="Assets\Script\SB\FairtTaleController.cs" />
     <Compile Include="Assets\Script\SB\FlowerpotControl.cs" />
     <Compile Include="Assets\Script\SB\MazePlayerMovement.cs" />
     <Compile Include="Assets\Script\SB\PictureControl.cs" />

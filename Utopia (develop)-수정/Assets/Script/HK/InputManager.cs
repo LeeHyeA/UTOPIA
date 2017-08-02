@@ -29,6 +29,7 @@ public class InputManager : MonoBehaviour
     public GameObject GoldNeedle;
     public GameObject OwlCage;
     public GameObject PotState;
+    public GameObject FairyTale;
 
     HangedMan HM;
     GangesRiver GR;
@@ -531,9 +532,33 @@ public class InputManager : MonoBehaviour
                 PotState.transform.Find("Tree(after)").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
-                //2스테이지
+            //동화책에 이름표 놓기
+            //올빼미
+            if(obj.transform.name == "5-OwlName" && hit.transform.name == "OwlNameCol")
+            {
+                FairyTale.transform.Find("AddOwlName").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+                Destroy(hit.transform.gameObject);
+            }
+            //나무
+            if (obj.transform.name == "7-TreeName" && hit.transform.name == "TreeNameCol")
+            {
+                FairyTale.transform.Find("AddTreeName").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+                Destroy(hit.transform.gameObject);
+            }
+            //장미
+            if (obj.transform.name == "6-RoseName" && hit.transform.name == "RoseNameCol")
+            {
+                FairyTale.transform.Find("AddRoseName").gameObject.SetActive(true);
+                Destroy(obj.transform.gameObject);
+                Destroy(hit.transform.gameObject);
+            }
+            
 
-                if (obj.transform.name == "2-Rope" && hit.transform.name == "Hanged_Man")
+            //2스테이지
+
+            if (obj.transform.name == "2-Rope" && hit.transform.name == "Hanged_Man")
             {
                 Debug.Log("밧줄맨");
                 HM.Answer();
