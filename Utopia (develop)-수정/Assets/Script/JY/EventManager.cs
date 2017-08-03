@@ -304,30 +304,36 @@ public class EventManager : MonoBehaviour
                 case 200:
                     StartCoroutine("WaitASecond", 1.25);               //이벤트 대기시키기 / 오른쪽 숫자가 초
                     break;
-                case 201:
+                case 201:                                               //로프획득
                     GameObject.Find("Circle_Puzzle_Control").transform.GetChild(9).gameObject.SetActive(true);
                     Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Get_Rope");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data,false);
                     break;
                 case 202:
+                    StartCoroutine(WaitASecond(1.0f));
+                    break;
+                case 203:
                     StartCoroutine(Fadeing(true, 1.0f));
                     Debug.Log("문이똭!");
                     break;
-                case 203:
+                case 204:
                     StartCoroutine("WaitASecond", 1.0);
                     GameObject.Find("Ganges_river").GetComponent<GangesRiver>().Activate_Door();
                     break;
-                case 204:
-                    StartCoroutine(Fadeing(false, 1.5f));
-                    break;
                 case 205:
-                    Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Door");
+                    Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Artrium_Script");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
                 case 206:
+                    StartCoroutine(Fadeing(false, 1.0f));
                     break;
+                case 207:
+                    Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Door");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;      
                 default:
                     break;
             }
