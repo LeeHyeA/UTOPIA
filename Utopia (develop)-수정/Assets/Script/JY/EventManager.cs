@@ -30,6 +30,7 @@ public class EventManager : MonoBehaviour
     //SB꺼
     public GameObject Panel1_1_defalut;
     public GameObject Panel1_1;
+    public GameObject Panel1_2_defalut;
     public GameObject Panel1_2;
     public GameObject BirdCage;
     public GameObject Window;
@@ -219,6 +220,22 @@ public class EventManager : MonoBehaviour
                     break;
 
                 //몽골스테이지(1-2)
+                //몽골 디폴트방에서 로잘린 편지 읽고 넘어가기
+                case 113:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/ReadRoJalLetter");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 114:
+                    StartCoroutine(Fadeing(true, 1.5f));
+                    //Fade(true, 1.5f);
+                    break;
+                case 115:
+                    Panel1_2_defalut.SetActive(false);
+                    Panel1_2.SetActive(true);
+                    StartCoroutine(Fadeing(false, 1.5f));
+                    break;
+
                 //몽골 되고나서 첫대사(116-117)
                 case 116:
                     Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/StartMongGoalStage");
