@@ -184,7 +184,7 @@ public class EventManager : MonoBehaviour
                 case 107:
                     Panel1_1.SetActive(false);
                     BirdCage.SetActive(false);
-                    Panel1_2.SetActive(true);
+                    Panel1_2_defalut.SetActive(true);
                     Window.SetActive(false);
                     StartCoroutine(Fadeing(false, 1.5f));
                     //몽골스테이지 첫대사 발생
@@ -242,6 +242,26 @@ public class EventManager : MonoBehaviour
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
+
+                    /*
+                //허르헉을 완성시 대사후 1-3 디폴트방으로 이동 (118-121)
+                case 118:
+                    inventory.SetActive(false);
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteTable");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 119:
+                    StartCoroutine(Fadeing(true, 1.5f));
+                    break;
+                case 120:
+                    Panel1_2.SetActive(false);
+                    Window.SetActive(false);
+                    StartCoroutine(Fadeing(false, 1.5f));
+                    //몽골스테이지 첫대사 발생
+                    Event_Number = 115;
+                    break;
+                    */
 
                 //(1-3)
                 //디폴트방에서 대사 넘기기

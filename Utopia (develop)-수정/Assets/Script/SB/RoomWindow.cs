@@ -19,7 +19,7 @@ public class RoomWindow : MonoBehaviour
     public bool ChangeRoomState = false;
 
     //커튼 상태 : 1.닫혀있음, 2.열려있음
-    public int Curtain_State = 1;
+    public int Curtain_State = 2;
 
     //새장이 놓였음을 확인하는 변수
     bool PutBirdcage = false;
@@ -34,7 +34,7 @@ public class RoomWindow : MonoBehaviour
     bool PutDreamCatcher = false;
 
     //창문 상태 : 1.비오는날, 2.맑은날, 3.커튼을 걷음(밤)
-    public int Window_State = 1;
+    public int Window_State = 2;
 
     //별가루를 얻음:1, 아직못얻음:2
     public int GetStarPowder = 2;
