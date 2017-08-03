@@ -3510,7 +3510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &148924649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7499,7 +7499,7 @@ RectTransform:
   - {fileID: 494898481}
   - {fileID: 2017808266}
   m_Father: {fileID: 1481064236}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9778,7 +9778,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 150
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11920,7 +11920,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1481064236}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -24673,6 +24673,8 @@ MonoBehaviour:
   SpiderJem: {fileID: 914187315}
   MakeDreamCatcher: 0
   Owl_Cage: {fileID: 1331249353}
+  Panel1_3_defalut: {fileID: 148924648}
+  Panel1_3: {fileID: 7266057}
 --- !u!4 &1056820455
 Transform:
   m_ObjectHideFlags: 0
@@ -34973,9 +34975,9 @@ RectTransform:
   - {fileID: 1874954062}
   - {fileID: 56298544}
   - {fileID: 2044830647}
+  - {fileID: 550297421}
   - {fileID: 1984484139}
   - {fileID: 376895357}
-  - {fileID: 550297421}
   - {fileID: 2003591019}
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -51693,7 +51695,7 @@ RectTransform:
   - {fileID: 683675691}
   - {fileID: 2139383460}
   m_Father: {fileID: 1481064236}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -52507,17 +52509,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1056820454}
-        m_MethodName: EventnumberSet
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 100
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 479545425}
         m_MethodName: PointerChange
         m_Mode: 6

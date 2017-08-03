@@ -37,6 +37,8 @@ public class EventManager : MonoBehaviour
     public GameObject SpiderJem;
     public bool MakeDreamCatcher = false;
     public GameObject Owl_Cage;
+    public GameObject Panel1_3_defalut;
+    public GameObject Panel1_3;
 
 
 
@@ -236,9 +238,13 @@ public class EventManager : MonoBehaviour
                     break;
                 case 152:
                     //패널1-3디폴트 비활성화 시킴
+                    Panel1_3_defalut.SetActive(false);
                     //패널1-3 활성화시킴
+                    Panel1_3.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.5f));
                     break;
+
+                
                 /*
                 //망치로 금시계에서 금침을 획득했을시 (154-155)
                 case 154:
@@ -263,13 +269,14 @@ public class EventManager : MonoBehaviour
 
                 //동화책을 완성했을시
                 case 160:
+                    StartCoroutine(Fadeing(true, 1.5f));
+                    break;
+                case 161:
                     inventory.SetActive(false);
                     Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/CompleteFairyTale");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
-                    break;
-                case 161:
-                    StartCoroutine(Fadeing(true, 1.5f));
+                    //StartCoroutine(Fadeing(true, 1.5f));
                     break;
                 case 162:
                     StartCoroutine(Fadeing(false, 1.5f));
