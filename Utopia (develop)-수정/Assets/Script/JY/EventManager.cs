@@ -30,6 +30,7 @@ public class EventManager : MonoBehaviour
     //SB꺼
     public GameObject Panel1_1_defalut;
     public GameObject Panel1_1;
+    public GameObject Panel1_2_defalut;
     public GameObject Panel1_2;
     public GameObject BirdCage;
     public GameObject Window;
@@ -37,6 +38,8 @@ public class EventManager : MonoBehaviour
     public GameObject SpiderJem;
     public bool MakeDreamCatcher = false;
     public GameObject Owl_Cage;
+    public GameObject Panel1_3_defalut;
+    public GameObject Panel1_3;
 
 
 
@@ -181,7 +184,7 @@ public class EventManager : MonoBehaviour
                 case 107:
                     Panel1_1.SetActive(false);
                     BirdCage.SetActive(false);
-                    Panel1_2.SetActive(true);
+                    Panel1_2_defalut.SetActive(true);
                     Window.SetActive(false);
                     StartCoroutine(Fadeing(false, 1.5f));
                     //몽골스테이지 첫대사 발생
@@ -217,12 +220,48 @@ public class EventManager : MonoBehaviour
                     break;
 
                 //몽골스테이지(1-2)
+                //몽골 디폴트방에서 로잘린 편지 읽고 넘어가기
+                case 113:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/ReadRoJalLetter");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 114:
+                    StartCoroutine(Fadeing(true, 1.5f));
+                    //Fade(true, 1.5f);
+                    break;
+                case 115:
+                    Panel1_2_defalut.SetActive(false);
+                    Panel1_2.SetActive(true);
+                    StartCoroutine(Fadeing(false, 1.5f));
+                    break;
+
                 //몽골 되고나서 첫대사(116-117)
                 case 116:
                     Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/StartMongGoalStage");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
+
+                    /*
+                //허르헉을 완성시 대사후 1-3 디폴트방으로 이동 (118-121)
+                case 118:
+                    inventory.SetActive(false);
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteTable");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 119:
+                    StartCoroutine(Fadeing(true, 1.5f));
+                    break;
+                case 120:
+                    Panel1_2.SetActive(false);
+                    Window.SetActive(false);
+                    StartCoroutine(Fadeing(false, 1.5f));
+                    //몽골스테이지 첫대사 발생
+                    Event_Number = 115;
+                    break;
+                    */
 
                 //(1-3)
                 //디폴트방에서 대사 넘기기
@@ -236,9 +275,13 @@ public class EventManager : MonoBehaviour
                     break;
                 case 152:
                     //패널1-3디폴트 비활성화 시킴
+                    Panel1_3_defalut.SetActive(false);
                     //패널1-3 활성화시킴
+                    Panel1_3.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.5f));
                     break;
+
+                
                 /*
                 //망치로 금시계에서 금침을 획득했을시 (154-155)
                 case 154:
@@ -263,13 +306,14 @@ public class EventManager : MonoBehaviour
 
                 //동화책을 완성했을시
                 case 160:
+                    StartCoroutine(Fadeing(true, 1.5f));
+                    break;
+                case 161:
                     inventory.SetActive(false);
                     Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/CompleteFairyTale");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
-                    break;
-                case 161:
-                    StartCoroutine(Fadeing(true, 1.5f));
+                    //StartCoroutine(Fadeing(true, 1.5f));
                     break;
                 case 162:
                     StartCoroutine(Fadeing(false, 1.5f));
@@ -280,30 +324,36 @@ public class EventManager : MonoBehaviour
                 case 200:
                     StartCoroutine("WaitASecond", 1.25);               //이벤트 대기시키기 / 오른쪽 숫자가 초
                     break;
-                case 201:
+                case 201:                                               //로프획득
                     GameObject.Find("Circle_Puzzle_Control").transform.GetChild(9).gameObject.SetActive(true);
                     Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Get_Rope");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data,false);
                     break;
                 case 202:
+                    StartCoroutine(WaitASecond(1.0f));
+                    break;
+                case 203:
                     StartCoroutine(Fadeing(true, 1.0f));
                     Debug.Log("문이똭!");
                     break;
-                case 203:
+                case 204:
                     StartCoroutine("WaitASecond", 1.0);
                     GameObject.Find("Ganges_river").GetComponent<GangesRiver>().Activate_Door();
                     break;
-                case 204:
-                    StartCoroutine(Fadeing(false, 1.5f));
-                    break;
                 case 205:
-                    Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Door");
+                    Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Artrium_Script");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
                 case 206:
+                    StartCoroutine(Fadeing(false, 1.0f));
                     break;
+                case 207:
+                    Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Door");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;      
                 default:
                     break;
             }

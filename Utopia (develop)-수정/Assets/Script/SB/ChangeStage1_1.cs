@@ -14,10 +14,10 @@ public class ChangeStage1_1 : MonoBehaviour
 
     void Start()
     {
-        //맨처음 방배경 상태(밤)
-        Stage1_1Background.sprite = Resources.Load<Sprite>("Stage1-1/1_RosaNight");
+        //맨처음 방배경 상태(낮)
+        Stage1_1Background.sprite = Resources.Load<Sprite>("Stage1-1/1_RosaDay");
         //맨처음 커튼패널 상태(투명)
-        Stage1_1WindowPanel.sprite = Resources.Load<Sprite>("Stage1-1/Window/NothingImage");
+        Stage1_1WindowPanel.sprite = Resources.Load<Sprite>("Stage1-1/Window/CurtainOpen");
 
         Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/MonggoalDefault");
 
