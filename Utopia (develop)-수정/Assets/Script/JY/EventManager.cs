@@ -243,11 +243,11 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
 
-                    /*
+                    
                 //허르헉을 완성시 대사후 1-3 디폴트방으로 이동 (118-121)
                 case 118:
                     inventory.SetActive(false);
-                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteTable");
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/CompleteTable");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
@@ -256,12 +256,10 @@ public class EventManager : MonoBehaviour
                     break;
                 case 120:
                     Panel1_2.SetActive(false);
-                    Window.SetActive(false);
+                    Panel1_3_defalut.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.5f));
-                    //몽골스테이지 첫대사 발생
-                    Event_Number = 115;
                     break;
-                    */
+                    
 
                 //(1-3)
                 //디폴트방에서 대사 넘기기

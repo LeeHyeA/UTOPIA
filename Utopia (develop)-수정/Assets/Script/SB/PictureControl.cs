@@ -36,6 +36,14 @@ public class PictureControl : MonoBehaviour {
 		
 	}
 
+    public void CheckCompleteTable()
+    {
+        if(PutHotStone && PutCarrot && PutMeat && PutPotato && PutMilkBottle)
+        {
+            GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 118;
+        }
+    }
+
     public void ShowTable()
     {
         Table_Layer.SetActive(true);
