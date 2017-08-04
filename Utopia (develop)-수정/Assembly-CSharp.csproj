@@ -60,7 +60,9 @@
      <Compile Include="Assets\Script\HK\Item.cs" />
      <Compile Include="Assets\Script\HK\MainScript.cs" />
      <Compile Include="Assets\Script\HK\MouseCursor.cs" />
+     <Compile Include="Assets\Script\HK\MoveManager.cs" />
      <Compile Include="Assets\Script\HK\RButtonInput.cs" />
+     <Compile Include="Assets\Script\HK\Stage3.cs" />
      <Compile Include="Assets\Script\HK\UIManager.cs" />
      <Compile Include="Assets\Script\HK\VideoStream.cs" />
      <Compile Include="Assets\Script\JY\ActiveDialogue.cs" />
@@ -77,6 +79,7 @@
      <Compile Include="Assets\Script\JY\LogicPuzzle.cs" />
      <Compile Include="Assets\Script\JY\MouseSetup.cs" />
      <Compile Include="Assets\Script\JY\PuzzleManager.cs" />
+     <Compile Include="Assets\Script\JY\SaveNLoad.cs" />
      <Compile Include="Assets\Script\JY\Tile.cs" />
      <Compile Include="Assets\Script\JY\Trigger_Keypad.cs" />
      <Compile Include="Assets\Script\SB\AnimalContol.cs" />
@@ -84,11 +87,13 @@
      <Compile Include="Assets\Script\SB\ChangeStage1_1.cs" />
      <Compile Include="Assets\Script\SB\Data.cs" />
      <Compile Include="Assets\Script\SB\DreamCatcher.cs" />
+     <Compile Include="Assets\Script\SB\FairtTaleController.cs" />
      <Compile Include="Assets\Script\SB\FlowerpotControl.cs" />
      <Compile Include="Assets\Script\SB\MazePlayerMovement.cs" />
      <Compile Include="Assets\Script\SB\PictureControl.cs" />
      <Compile Include="Assets\Script\SB\PlayerControl.cs" />
      <Compile Include="Assets\Script\SB\RoomWindow.cs" />
+     <Compile Include="Assets\Script\SB\RoomWindow2.cs" />
      <Compile Include="Assets\Script\SB\ScreenFader.cs" />
      <Compile Include="Assets\Script\SB\Warp.cs" />
      <None Include="Assets\RainMaker\Prefab\RainShader.shader" />
