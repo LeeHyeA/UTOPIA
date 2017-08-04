@@ -370,7 +370,7 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().PutKnife = true;
                 //그후 다시 갱신해서 보여줌
                 GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().ShowSheep();
-                //칼은 제자리로...(해결해야됨)
+                obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
 
             }
             //빈 물뿌리개를 하마에 놓아 물채우기
@@ -479,12 +479,14 @@ public class InputManager : MonoBehaviour
                 FlowerPotPlantState.transform.Find("Foxtail").gameObject.SetActive(false);
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlanted = false;
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantFoxtail = false;
+                obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
             }
             if (obj.transform.name == "0-Knife" && hit.transform.name == "Bean")
             {
                 FlowerPotPlantState.transform.Find("Bean").gameObject.SetActive(false);
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlanted = false;
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantBean = false;
+                obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
             }
 
 
