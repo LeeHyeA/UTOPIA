@@ -64,7 +64,7 @@ public class InputFieldManager : MonoBehaviour
                 break;
 
             case "A001":
-                if(PlayerPrefs.GetString("'HeadGear", "false") == "true")
+                if(PlayerPrefs.GetString("HeadGear", "false") == "true")
                     stage = 1;
                 break;
 
@@ -104,7 +104,10 @@ public class InputFieldManager : MonoBehaviour
 
             case 99:
                 // 창끄기
-                Stage3.transform.Find("3Round").Find("BG").Find("Lock").gameObject.SetActive(false);
+				Transform BG = Stage3.transform.Find("3Round").Find("BG");
+                BG.Find("Lock").gameObject.SetActive(false);
+				BG.Find("ClickObject").Find("Drawer(lock)").gameObject.SetActive(false);
+				BG.Find("ClickObject").Find("Drawer(open)").gameObject.SetActive(true);
                 Debug.Log("물뿌리개 획득");
                 break;
 

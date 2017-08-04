@@ -42,6 +42,7 @@ public class InputManager : MonoBehaviour
 
     bool FlowerRing = false;
     bool Shell = false;
+	bool RoseSeed = false;
 
     void Start()
     {
@@ -585,7 +586,7 @@ public class InputManager : MonoBehaviour
             }
 
             // 3Stage
-            
+            // ***************************************************************************** 1Round
 
             if (obj.transform.name == "3-FishFeed" && hit.transform.name == "SeaCollision")
             {
@@ -639,7 +640,7 @@ public class InputManager : MonoBehaviour
                 Check();
             }
 
-            //*****************************************************************************
+            // ***************************************************************************** 2Round
 
             if (obj.transform.name == "7-MedicalCertificate1" && hit.transform.name == "Basic")
             {
@@ -670,9 +671,54 @@ public class InputManager : MonoBehaviour
                 Stage3.Find("2Round").Find("Medical").Find("Piece5").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
             }
+				
+			// ******************************************************************************** 3Round
 
-            else if (touches.Length == 1)
-                touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
+			if (obj.transform.name == "13-Feed" && hit.transform.name == "Bird")
+			{
+				item.GetNumber(14);
+				item.LoadJson("3Stage");
+
+				Destroy(obj.transform.gameObject);
+			}
+
+			if (obj.transform.name == "14-Feather" && hit.transform.name == "Dreamcatcher")
+			{
+				Stage3.Find("3Round").Find("ClickObject").Find("Dreamcatcher").gameObject.SetActive(true);
+				Destroy(obj.transform.gameObject);
+			}
+
+			if (obj.transform.name == "12-WaterinfCan" && hit.transform.parent.name == "Sea")
+			{
+				item.GetNumber(15);
+				item.LoadJson("3Stage");
+
+				Destroy(obj.transform.gameObject);
+			}
+
+			if (obj.transform.name == "15-FullWaterinfCan" && hit.transform.parent.name == "Rose")
+			{
+				Stage3.Find("3Round").Find("ClickObject").Find("Rose").gameObject.SetActive(true);
+			}
+
+			if (obj.transform.name == "17-Seed" && hit.transform.parent.name == "Orgel")
+			{
+				RoseSeed = true;
+				Destroy(obj.transform.gameObject);
+			}
+
+			if (obj.transform.name == "15-FullWaterinfCan" && hit.transform.parent.name == "Orgel")
+			{
+				if (RoseSeed) 
+				{
+					Destroy (obj.transform.gameObject);
+					// 음악 들리고
+					// 재규어 잠듦
+				}
+			}
+
+			else if (touches.Length == 1)
+				touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
 
         }
     }
