@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class LogicPuzzle : MonoBehaviour
@@ -12,6 +13,7 @@ public class LogicPuzzle : MonoBehaviour
     EventManager EM;
 
     public GameObject LogicPuzControl;
+    public GameObject Button;
     public bool Activated = false;
     public bool Answerd = false;
 
@@ -63,8 +65,15 @@ public class LogicPuzzle : MonoBehaviour
             }
             Debug.Log("정답");
             Answerd = true;
+            for(int i=0;i<100;i++)
+            {
+                Tile_Obj[i].SetActive(false);
+            }
+            gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("2_Stage/Logic_Answerd");
+            Button.SetActive(false);
 
             trigger_answer_obj.SetActive(true);
+
             return;
         }
     }
