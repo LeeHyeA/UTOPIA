@@ -170,6 +170,8 @@ public class InputManager : MonoBehaviour
     {
         draggingItem = false;
         draggedObject.transform.localScale = new Vector3(1, 1, 1);         // 드래그가 끝났으니 원래대로 스케일 변경
+        //드래그 끝날때 인벤토리로 돌아옴
+        draggedObject.transform.SetParent(Inventory.transform.Find("2_Grid"));
     }
 
     // 스테이지마다 구분 필요할 듯 (if가 너무 많아짐)
@@ -204,6 +206,11 @@ public class InputManager : MonoBehaviour
             }
 
             if (obj.transform.tag == "Item" && hit.transform.tag == "Collision")
+            {
+                obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
+            }
+
+            if(obj.transform.tag == "Item" && hit.transform.tag == "Untagged")
             {
                 obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
             }
