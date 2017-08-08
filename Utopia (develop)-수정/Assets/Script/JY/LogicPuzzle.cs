@@ -16,10 +16,14 @@ public class LogicPuzzle : MonoBehaviour
     public GameObject Button;
     public bool Activated = false;
     public bool Answerd = false;
-
+    public GameObject BackImage;
+    Color BackImageColor;
     // Use this for initialization
     void Start()
     {
+        BackImageColor = BackImage.GetComponent<Image>().color;
+        Debug.Log(BackImageColor.a);
+
         EM = FindObjectOfType<EventManager>();
         LogicPuzControl.SetActive(true);
         for (int i = 0; i < 100; i++)
@@ -34,23 +38,23 @@ public class LogicPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Activated||Answerd)
+        if (!Activated || Answerd)
         {
             return;
         }
 
 
-        if (t[2].is_Cliked && t[3].is_Cliked && t[4].is_Cliked && t[5].is_Cliked && t[6].is_Cliked && t[7].is_Cliked 
+        if (t[2].is_Cliked && t[3].is_Cliked && t[4].is_Cliked && t[5].is_Cliked && t[6].is_Cliked && t[7].is_Cliked
             && t[11].is_Cliked && t[12].is_Cliked && t[13].is_Cliked && t[14].is_Cliked && t[15].is_Cliked && t[16].is_Cliked && t[17].is_Cliked && t[18].is_Cliked
-            && t[21].is_Cliked&& t[24].is_Cliked && t[25].is_Cliked && t[26].is_Cliked && t[27].is_Cliked && t[28].is_Cliked && t[29].is_Cliked
-            && t[30].is_Cliked && t[31].is_Cliked && t[32].is_Cliked && t[33].is_Cliked && t[34].is_Cliked && t[38].is_Cliked 
+            && t[21].is_Cliked && t[24].is_Cliked && t[25].is_Cliked && t[26].is_Cliked && t[27].is_Cliked && t[28].is_Cliked && t[29].is_Cliked
+            && t[30].is_Cliked && t[31].is_Cliked && t[32].is_Cliked && t[33].is_Cliked && t[34].is_Cliked && t[38].is_Cliked
             && t[40].is_Cliked && t[42].is_Cliked && t[45].is_Cliked && t[46].is_Cliked && t[47].is_Cliked && t[48].is_Cliked && t[49].is_Cliked
-            && t[50].is_Cliked && t[51].is_Cliked && t[52].is_Cliked && t[53].is_Cliked && t[54].is_Cliked && t[59].is_Cliked 
+            && t[50].is_Cliked && t[51].is_Cliked && t[52].is_Cliked && t[53].is_Cliked && t[54].is_Cliked && t[59].is_Cliked
             && t[60].is_Cliked && t[61].is_Cliked && t[64].is_Cliked && t[66].is_Cliked && t[67].is_Cliked && t[68].is_Cliked
             && t[72].is_Cliked && t[79].is_Cliked && t[80].is_Cliked && t[81].is_Cliked && t[82].is_Cliked && t[86].is_Cliked
             && t[93].is_Cliked && t[96].is_Cliked)
         {
-            if(t[0].is_Cliked || t[1].is_Cliked || t[8].is_Cliked || t[9].is_Cliked
+            if (t[0].is_Cliked || t[1].is_Cliked || t[8].is_Cliked || t[9].is_Cliked
                 || t[10].is_Cliked || t[19].is_Cliked
                 || t[20].is_Cliked || t[22].is_Cliked || t[23].is_Cliked
                 || t[35].is_Cliked || t[36].is_Cliked || t[37].is_Cliked || t[39].is_Cliked
@@ -65,13 +69,11 @@ public class LogicPuzzle : MonoBehaviour
             }
             Debug.Log("정답");
             Answerd = true;
-            for(int i=0;i<100;i++)
-            {
-                Tile_Obj[i].SetActive(false);
-            }
-            gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("2_Stage/Logic_Answerd");
+
+            //gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("2_Stage/Logic_Answerd");
             Button.SetActive(false);
 
+            StartCoroutine(Fading());
             trigger_answer_obj.SetActive(true);
 
             return;
@@ -105,5 +107,24 @@ public class LogicPuzzle : MonoBehaviour
             }
         }
         return;
+    }
+
+    IEnumerator Fading()
+    {
+        BackImage.SetActive(true);
+
+        Debug.Log(BackImageColor.a);
+        while (BackImageColor.a<1)
+        {
+            Debug.Log("진행");
+            BackImageColor.a = BackImageColor.a + 0.1f;
+            Debug.Log(BackImageColor.a);
+
+            BackImage.GetComponent<Image>().color = BackImageColor;
+            
+            yield return new WaitForSeconds(0.05f);
+        }
+        Debug.Log("종료");
+        yield break;
     }
 }
