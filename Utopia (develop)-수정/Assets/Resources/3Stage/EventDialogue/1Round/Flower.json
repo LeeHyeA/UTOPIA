@@ -1,0 +1,70 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":""꽃밭을 만들고 싶소." 어느 날 그가 문득 말했다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"순간 당황했지만, 곧 함께 마당에 나갔다. 내가 구멍을 내고 씨를 심으면 그가 삽으로 흙을 덮고 물을 주었다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"그 일련의 일이 다 끝난 것은 저녁 어스름이었다. 우리는 마당에 아무렇게나 앉아서 같이 석양이 지는 것을 바라보았다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":""갑자기 무슨 바람이에요?" 내가 웃으면서 물었다. 그는 언제나 합리적인 사람이었기 때문에 이런 뜬금없는 일을 벌인 것은 처음이었다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":""나는.. 그저... 이 집이 꽃으로 가득 찼으면 좋겠다고 생각했습니다." 그가 말했다. 이유도 참 뜬금없었다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"고개를 갸웃거리며 바라보고 있으니 그가 나지막이 덧붙였다. "당신이 내게 그래 주었던 것처럼...""
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"윽, 지금 생각해도 그 표정과 그 대사는 정말... 반칙이었다. 나는 괜히 부끄러워져서 고개를 푹 숙였다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"정작 그 말을 꺼낸 당사자는 실없이 미소 짓고 있었다. 그의 등 뒤에서 노을이 은은하게 빛났다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"아... 나는 역시 그가 좋았다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"그가 행복하게 살아오지 않았다는 것 정도는 안다. 하지만 나는 역시... 아니, 그래서 더욱 그가 행복해졌으면 좋겠다고 생각했다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"그가 자신이 있으므로 행복해한다면 언제까지라도 그의 곁에 있어 주리라 그렇게 생각했다."
+    }
+  ]
+}

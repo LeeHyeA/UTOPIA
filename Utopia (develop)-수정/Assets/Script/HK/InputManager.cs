@@ -689,13 +689,13 @@ public class InputManager : MonoBehaviour
 				Destroy(obj.transform.gameObject);
 			}
 
-			if (obj.transform.name == "14-Feather" && hit.transform.name == "Dreamcatcher")
+			if (obj.transform.name == "14-Feather" && hit.transform.name == "DreamcatcherC")
 			{
-				Stage3.Find("3Round").Find("ClickObject").Find("Dreamcatcher").gameObject.SetActive(true);
+				Stage3.Find("3Round").Find("BG").Find("ClickObject").Find("Dreamcatcher").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
 			}
 
-			if (obj.transform.name == "12-WaterinfCan" && hit.transform.parent.name == "Sea")
+			if (obj.transform.name == "12-WateringCan" && hit.transform.parent.name == "SeaC")
 			{
 				item.GetNumber(15);
 				item.LoadJson("3Stage");
@@ -703,18 +703,18 @@ public class InputManager : MonoBehaviour
 				Destroy(obj.transform.gameObject);
 			}
 
-			if (obj.transform.name == "15-FullWaterinfCan" && hit.transform.parent.name == "Rose")
+			if (obj.transform.name == "15-FullWateringCan" && hit.transform.name == "RoseC")
 			{
-				Stage3.Find("3Round").Find("ClickObject").Find("Rose").gameObject.SetActive(true);
+				Stage3.Find("3Round").Find("BG").Find("ClickObject").Find("Rose").gameObject.SetActive(true);
 			}
 
-			if (obj.transform.name == "17-Seed" && hit.transform.parent.name == "Orgel")
+			if (obj.transform.name == "17-Seed" && hit.transform.name == "Orgel")
 			{
 				RoseSeed = true;
 				Destroy(obj.transform.gameObject);
 			}
 
-			if (obj.transform.name == "15-FullWaterinfCan" && hit.transform.parent.name == "Orgel")
+			if (obj.transform.name == "15-FullWateringCan" && hit.transform.name == "Orgel")
 			{
 				if (RoseSeed) 
 				{
