@@ -17,11 +17,17 @@ public class LogicPuzzle : MonoBehaviour
     public bool Activated = false;
     public bool Answerd = false;
     public GameObject BackImage;
+    public GameObject BackImage2;
+
     Color BackImageColor;
+    Color BackImageColor2;
+
     // Use this for initialization
     void Start()
     {
         BackImageColor = BackImage.GetComponent<Image>().color;
+        BackImageColor2 = BackImage2.GetComponent<Image>().color;
+
         Debug.Log(BackImageColor.a);
 
         EM = FindObjectOfType<EventManager>();
@@ -118,10 +124,11 @@ public class LogicPuzzle : MonoBehaviour
         {
             Debug.Log("진행");
             BackImageColor.a = BackImageColor.a + 0.1f;
-            Debug.Log(BackImageColor.a);
+            BackImageColor2.a = BackImageColor2.a - 0.1f;
 
             BackImage.GetComponent<Image>().color = BackImageColor;
-            
+            BackImage2.GetComponent<Image>().color = BackImageColor2;
+
             yield return new WaitForSeconds(0.05f);
         }
         Debug.Log("종료");
