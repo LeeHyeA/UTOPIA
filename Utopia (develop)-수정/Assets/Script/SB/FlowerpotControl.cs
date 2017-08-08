@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlowerpotControl : MonoBehaviour {
     public GameObject FlowerLayer;
@@ -32,10 +33,13 @@ public class FlowerpotControl : MonoBehaviour {
     public bool PotatoSeedUse = false;
     public bool BeanSeedUse = false;
 
+    //배경 화분 이미지
+    public Image FlowerEnter2;
+
 
     void Start()
     {
-
+        
     }
 
 
@@ -86,11 +90,13 @@ public class FlowerpotControl : MonoBehaviour {
     {
         IsPlantCarrot = false;
         IsPlanted = false;
+        FlowerEnter2.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/Pot01");
     }
     public void GetPotato()
     {
         IsPlantPotato = false;
         IsPlanted = false;
+        FlowerEnter2.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/Pot01");
     }
     public void CutFoxtail()
     {
