@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoomWindow : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class RoomWindow : MonoBehaviour
     public GameObject SpiderWeb;
     public GameObject SpiderJem;
 
+    public Image DreamEnter;
+    public Image BirdCageEmptyImage;
+    public Image BirdFeedImage;
+    public Image BirdCagePutFeed;
+    public Image BirdCageFull;
+    public Image SpiderImage;
     //EventManager 객체
     EventManager EventNum;
 
@@ -252,12 +259,24 @@ public class RoomWindow : MonoBehaviour
                 RainWindow.SetActive(true);
                 CleanWindow.SetActive(false);
                 DarkWindow.SetActive(false);
+                DreamEnter.color = new Color32(148, 148, 148, 255);
+                BirdCageEmptyImage.color = new Color32(148, 148, 148, 255);
+                BirdFeedImage.color = new Color32(148, 148, 148, 255);
+                SpiderImage.color = new Color32(148, 148, 148, 255);
+                BirdCagePutFeed.color = new Color32(148, 148, 148, 255);
+                BirdCageFull.color = new Color32(148, 148, 148, 255);
                 break;
             //맑은날
             case 2:
                 RainWindow.SetActive(false);
                 CleanWindow.SetActive(true);
                 DarkWindow.SetActive(false);
+                DreamEnter.color = new Color32(255, 255, 255, 255);
+                BirdCageEmptyImage.color = new Color32(255, 255, 255, 255);
+                BirdFeedImage.color = new Color32(255, 255, 255, 255);
+                SpiderImage.color = new Color32(255, 255, 255, 255);
+                BirdCagePutFeed.color = new Color32(255, 255, 255, 255);
+                BirdCageFull.color = new Color32(255, 255, 255, 255);
                 //CheckPutFeedToBirdCage();
                 break;
             //밤
@@ -281,6 +300,12 @@ public class RoomWindow : MonoBehaviour
                 CurtainClose.SetActive(true);
                 RainWindow.SetActive(false);
                 CleanWindow.SetActive(false);
+                DreamEnter.color = new Color32(99, 99, 99, 255);
+                BirdCageEmptyImage.color = new Color32(99, 99, 99, 255);
+                BirdFeedImage.color = new Color32(99, 99, 99, 255);
+                SpiderImage.color = new Color32(99, 99, 99, 255);
+                BirdCagePutFeed.color = new Color32(99, 99, 99, 255);
+                BirdCageFull.color = new Color32(99, 99, 99, 255);
                 //StarPowder.SetActive(true);
                 break;
             //커튼 열림
@@ -289,6 +314,17 @@ public class RoomWindow : MonoBehaviour
                 //StarPowder.SetActive(false);
                 break;
         }
+        /*
+        if(Window_State == 2 && Curtain_State ==1)
+        {
+
+        }
+        else if(Window_State == 2 && Curtain_State ==2)
+        {
+
+        }
+        */
+
     }
 
     // Use this for initialization
