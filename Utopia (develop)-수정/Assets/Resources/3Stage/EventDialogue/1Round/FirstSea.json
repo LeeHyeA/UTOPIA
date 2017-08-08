@@ -1,0 +1,46 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"결혼 후에 먼 곳으로 같이 나간 적이 없음을 문득 알게 되어, 어느 결혼 기념일 날, 우리는 바다로 갔다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"바다는 예전에 보았던 것처럼 청명하고 드넓었다. 관광지도 관광 철도 아니었기에 사람은 없었다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"나는 그와 함께 모래사장을 걸었다. 사실 내가 졸라서 오자고 한 바다지만 그는 별 감흥이 없어 보였다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"아니, 사실 그는 모든 일에 감흥이 없어 보였다. 어떤 것을 보던, 하던, 듣던... 나 이외에는."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"마치 이 세상에서 즐거운 것이 나밖에 없는 것처럼. 그건 기쁘지만 기쁘지 않은 일이었다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"그때도 그는 바다에 와서 좋은 것이 아니라 다만 나와 함께 걷는다는 사실이 좋은 것 같았다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"무엇이 그를 이토록 외로운 사람으로 만든 걸까."
+    }
+  ]
+}

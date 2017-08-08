@@ -1,0 +1,34 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"아무 의미도 없는 인생이 지나간다. 가물은 땅이 매마르듯 한 인생이. 바스라지고 바스라진다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"남은 것은 죽은 풀과 잿빛 하늘과 서릿날보다 차가운 모래바람이다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"그러다가 너를 만났다."
+    },
+    {
+      "characterType":0,
+      "character_name":"Hint",
+      "standImage_Name":"Nothing",
+      "script_Text":"너는 마치 비처럼 내게 온다. 와서 매마른 내 땅을 적시고 꽃을 피우고 짐승들을 뛰어놀게 한다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"너를 만나고 나는 비로소 살아 숨쉬게 됐다."
+    }
+  ]
+}

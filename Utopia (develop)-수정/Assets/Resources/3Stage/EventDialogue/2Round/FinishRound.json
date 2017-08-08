@@ -1,0 +1,58 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"처음에는 의사를 죽이고 싶었다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"나을 수 없는 병이라고 말하는 그 입을 찢어놓아서, 네가 살 수 있다면 몇 번이라도 그렇게 했을 것이다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"의사의 힘으로 어쩔 도리가 없음을 알았을 땐, 신을 죽이고 싶었다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"신은 믿지 않지만, 정말로 신이 있다면 그는 어째서 내게 있어 세상에 단 하나뿐인 것을 빼앗아가는가?"
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"그 뜻에 어떤 고고한 의지와 사명과 명분이 있었다고 해도 나에겐 그저 변명이다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"그녀만 있다면 세상이 어찌되든 좋았다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"권력과 부를 잃고, 입은 옷을 뺏기고, 내 양팔과 다리를 자르고 자유를 빼앗은 뒤, 마지막의 마지막에 결국 내 두 눈을 파낸대도 그녀만 있다면..."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"그녀가 없다면 내겐 삶도, 이 세상도 전부 의미 없다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"그래... 전부."
+    }
+  ]
+}
