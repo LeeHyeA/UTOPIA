@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DreamCatcher : MonoBehaviour {
     public GameObject DreamCatcherCore;
@@ -10,6 +11,9 @@ public class DreamCatcher : MonoBehaviour {
     public GameObject Upgrade2;
     public GameObject Final;
     public GameObject ExitButton;
+
+    public Image DreamCatcherEnter;
+
     //public bool IsZoomIn=false;
 
     //드림캐쳐 단계별 상태
@@ -28,6 +32,7 @@ public class DreamCatcher : MonoBehaviour {
     public void ShowDreamCatcher()
     {
         DreamCatcherCore.SetActive(true);
+        //기본
         if (DreamCatcherState == 0)
         {
             Defalut.SetActive(true);
@@ -36,8 +41,10 @@ public class DreamCatcher : MonoBehaviour {
             Upgrade2.SetActive(false);
             Final.SetActive(false);
             ExitButton.SetActive(true);
+            DreamCatcherEnter.sprite = Resources.Load<Sprite>("Stage1-1/EnterDreamCatcher/DreamCapture01");
             return;
         }
+        //기본+깃털
         else if (DreamCatcherState == 1)
         {
             Defalut.SetActive(false);
@@ -46,8 +53,10 @@ public class DreamCatcher : MonoBehaviour {
             Upgrade2.SetActive(false);
             Final.SetActive(false);
             ExitButton.SetActive(true);
+            DreamCatcherEnter.sprite = Resources.Load<Sprite>("Stage1-1/EnterDreamCatcher/DreamCapture02");
             return;
         }
+        //기본+거미줄
         else if (DreamCatcherState == 2)
         {
             Defalut.SetActive(false);
@@ -56,8 +65,10 @@ public class DreamCatcher : MonoBehaviour {
             Upgrade2.SetActive(false);
             Final.SetActive(false);
             ExitButton.SetActive(true);
+            DreamCatcherEnter.sprite = Resources.Load<Sprite>("Stage1-1/EnterDreamCatcher/DreamCapture03");
             return;
         }
+        //기본+깃털+거미줄
         else if (DreamCatcherState == 3)
         {
             Defalut.SetActive(false);
@@ -66,8 +77,10 @@ public class DreamCatcher : MonoBehaviour {
             Upgrade2.SetActive(true);
             Final.SetActive(false);
             ExitButton.SetActive(true);
+            DreamCatcherEnter.sprite = Resources.Load<Sprite>("Stage1-1/EnterDreamCatcher/DreamCapture04");
             return;
         }
+        //기본+깃털+거미줄+별가루
         else if (DreamCatcherState == 4)
         {
             Defalut.SetActive(true);
@@ -76,6 +89,7 @@ public class DreamCatcher : MonoBehaviour {
             Upgrade2.SetActive(false);
             Final.SetActive(true);
             ExitButton.SetActive(true);
+            DreamCatcherEnter.sprite = Resources.Load<Sprite>("Stage1-1/EnterDreamCatcher/DreamCapture05");
             return;
         }
 
