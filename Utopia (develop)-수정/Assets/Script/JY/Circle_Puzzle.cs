@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Circle_Puzzle : MonoBehaviour {
 
-
+    AudioManager AM;
+    AudioClip AC;
     public bool turning = false;
     public bool direction = false;
     public bool Activated = false;
@@ -34,8 +35,9 @@ public class Circle_Puzzle : MonoBehaviour {
             CPT[i] = GameObject.Find("Circle_Tile (" + (i+1).ToString()+")");
         }
         Circle_Puzzle_Control.SetActive(false);
-
+        AC = Resources.Load<AudioClip>("Sound/GetRope");
         EM = FindObjectOfType<EventManager>();
+        AM = FindObjectOfType<AudioManager>();
 
     }
 
@@ -62,6 +64,8 @@ public class Circle_Puzzle : MonoBehaviour {
 
     IEnumerator RotLeft()
     {
+        AM.PlaySound(AC);
+
         GameObject TurningObj = Selected_Piece;
 
         Debug.Log("코루틴시작");
@@ -78,6 +82,8 @@ public class Circle_Puzzle : MonoBehaviour {
     }
     IEnumerator RotRight()
     {
+        AM.PlaySound(AC);
+
         GameObject TurningObj = Selected_Piece;
 
         Debug.Log("코루틴시작");
