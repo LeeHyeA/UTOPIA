@@ -644,6 +644,7 @@ public class InputManager : MonoBehaviour
             if (obj.transform.name == "6-FlowerRing" && hit.transform.name == "Statuette")
             {
                 FlowerRing = true;
+				Stage3.Find ("1Round").Find ("FlowerRing").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
                 Check();
             }
@@ -651,6 +652,7 @@ public class InputManager : MonoBehaviour
             if (obj.transform.name == "4-Shell" && hit.transform.name == "Statuette")
             {
                 Shell = true;
+				Stage3.Find ("1Round").Find ("Shell").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
                 Check();
             }
