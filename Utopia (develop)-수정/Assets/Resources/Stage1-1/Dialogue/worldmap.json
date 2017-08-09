@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"세계지도. 가고 싶은 곳이 표시되어 있다."
+    }
+  ]
+}
