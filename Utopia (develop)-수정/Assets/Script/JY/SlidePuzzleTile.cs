@@ -26,7 +26,10 @@ public class SlidePuzzleTile : MonoBehaviour {
     }
     private void OnMouseDown()
     {
+        Debug.Log(Ver);
+        Debug.Log(Hor);
         SP.CheckDirection(this);
+        return;
     }
 
     public void triggerMoving(int dir)
@@ -34,6 +37,7 @@ public class SlidePuzzleTile : MonoBehaviour {
         direction = dir;
         StartCoroutine(moving(direction));
     }
+
     IEnumerator moving(int direction)
     {
         int i = 0;
@@ -42,41 +46,47 @@ public class SlidePuzzleTile : MonoBehaviour {
             case 0:
                 for (i = 0; i < 190; i++)
                 {
-                    Vector3 Vec = gameObject.transform.position;
-                    Vec.x = Vec.x -1;
-                    gameObject.transform.position = Vec;
-
+                    Vector3 Vec = gameObject.transform.localPosition;
+                    Vec.x = Vec.x - 1f;
+                    gameObject.transform.localPosition = Vec;
+                    Debug.Log(i);
                     yield return new WaitForSeconds(0.1f);
                 }
                 break;
             case 1:
-                for (i = 0; i < 206; i++)
+                for (i = 0; i < 103; i++)
                 {
-                    Vector3 Vec = gameObject.transform.position;
-                    Vec.y = Vec.y + 1;
-                    gameObject.transform.position = Vec;
+                    Vector3 Vec = gameObject.transform.localPosition;
+                    Vec.y = Vec.y + 1f;
+                    gameObject.transform.localPosition = Vec;
 
-                    yield return new WaitForSeconds(0.1f);
+                    Debug.Log(i);
+
+                    yield return new WaitForSeconds(0.01f);
                 }
                 break;
             case 2:
                 for (i = 0; i < 190; i++)
                 {
-                    Vector3 Vec = gameObject.transform.position;
-                    Vec.x = Vec.x + 1;
-                    gameObject.transform.position = Vec;
+                    Vector3 Vec = gameObject.transform.localPosition;
+                    Vec.x = Vec.x + 1f;
 
-                    yield return new WaitForSeconds(0.1f);
+                    Debug.Log(Vec.x-gameObject.transform.position.x);
+
+                    gameObject.transform.localPosition = Vec;
+
+                    yield return new WaitForSeconds(0.01f);
                 }
                 break;
             case 3:
-                for (i = 0; i < 206; i++)
+                for (i = 0; i < 103; i++)
                 {
-                    Vector3 Vec = gameObject.transform.position;
-                    Vec.y = Vec.y - 1;
-                    gameObject.transform.position = Vec;
+                    Vector3 Vec = gameObject.transform.localPosition;
+                    Vec.y = Vec.y - 1f;
+                    gameObject.transform.localPosition = Vec;
+                    Debug.Log(i);
 
-                    yield return new WaitForSeconds(0.1f);
+                    yield return new WaitForSeconds(0.01f);
                 }
                 break;
         }

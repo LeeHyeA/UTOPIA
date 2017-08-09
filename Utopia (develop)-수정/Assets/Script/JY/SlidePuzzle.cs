@@ -47,16 +47,35 @@ public class SlidePuzzle : MonoBehaviour {
         if (SPT.Ver == blank_Tile.Ver && SPT.Hor == blank_Tile.Hor)
             return;
 
+        Debug.Log(SPT.Ver);
+        Debug.Log(SPT.Hor);
         if (blank_Tile.Ver == SPT.Ver)
         {
             if (blank_Tile.Hor - SPT.Hor == 1)
             {
-                SPT.triggerMoving(0);
+                SPT.triggerMoving(3);
             }
-            if (SPT.Hor - blank_Tile.Hor == 1)
+            else if (SPT.Hor - blank_Tile.Hor == 1)
+            {
+                SPT.triggerMoving(1);
+            }
+            else
+                return;
+        }
+
+        if(blank_Tile.Hor==SPT.Hor)
+        {
+            if (blank_Tile.Ver - SPT.Ver == 1)
             {
                 SPT.triggerMoving(2);
             }
+            else if (SPT.Hor - blank_Tile.Hor == 1)
+            {
+                SPT.triggerMoving(0);
+            }
+            else
+                return;
         }
+        return;
     }
 }

@@ -5615,6 +5615,7 @@ GameObject:
   - component: {fileID: 192408990}
   - component: {fileID: 192408989}
   - component: {fileID: 192408991}
+  - component: {fileID: 192408992}
   m_Layer: 5
   m_Name: piece0
   m_TagString: Untagged
@@ -5687,6 +5688,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &192408992
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192408987}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &193560536
 GameObject:
   m_ObjectHideFlags: 0
@@ -10895,6 +10921,7 @@ GameObject:
   - component: {fileID: 416200543}
   - component: {fileID: 416200542}
   - component: {fileID: 416200544}
+  - component: {fileID: 416200545}
   m_Layer: 5
   m_Name: piece6
   m_TagString: Untagged
@@ -10967,6 +10994,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &416200545
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416200540}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &418643225
 GameObject:
   m_ObjectHideFlags: 0
@@ -15087,6 +15139,7 @@ GameObject:
   - component: {fileID: 554760085}
   - component: {fileID: 554760084}
   - component: {fileID: 554760086}
+  - component: {fileID: 554760087}
   m_Layer: 5
   m_Name: piece7
   m_TagString: Untagged
@@ -15159,6 +15212,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &554760087
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554760082}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &558137827
 GameObject:
   m_ObjectHideFlags: 0
@@ -16143,6 +16221,7 @@ GameObject:
   - component: {fileID: 584647193}
   - component: {fileID: 584647192}
   - component: {fileID: 584647194}
+  - component: {fileID: 584647195}
   m_Layer: 5
   m_Name: piece11
   m_TagString: Untagged
@@ -16215,6 +16294,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &584647195
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584647190}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &585841937
 GameObject:
   m_ObjectHideFlags: 0
@@ -19534,6 +19638,7 @@ GameObject:
   - component: {fileID: 684216396}
   - component: {fileID: 684216395}
   - component: {fileID: 684216397}
+  - component: {fileID: 684216398}
   m_Layer: 5
   m_Name: piece2
   m_TagString: Untagged
@@ -19606,6 +19711,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &684216398
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684216393}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &689869611
 GameObject:
   m_ObjectHideFlags: 0
@@ -25090,6 +25220,7 @@ GameObject:
   - component: {fileID: 873801268}
   - component: {fileID: 873801267}
   - component: {fileID: 873801269}
+  - component: {fileID: 873801270}
   m_Layer: 5
   m_Name: piece5
   m_TagString: Untagged
@@ -25162,6 +25293,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &873801270
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873801265}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &879322010
 GameObject:
   m_ObjectHideFlags: 0
@@ -25578,6 +25734,7 @@ GameObject:
   - component: {fileID: 905039826}
   - component: {fileID: 905039825}
   - component: {fileID: 905039827}
+  - component: {fileID: 905039828}
   m_Layer: 5
   m_Name: piece1
   m_TagString: Untagged
@@ -25650,6 +25807,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &905039828
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 905039823}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &912774081
 GameObject:
   m_ObjectHideFlags: 0
@@ -33995,6 +34177,7 @@ GameObject:
   - component: {fileID: 1171352571}
   - component: {fileID: 1171352570}
   - component: {fileID: 1171352572}
+  - component: {fileID: 1171352573}
   m_Layer: 5
   m_Name: piece3
   m_TagString: Untagged
@@ -34067,6 +34250,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &1171352573
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171352568}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &1174789789
 GameObject:
   m_ObjectHideFlags: 0
@@ -37400,6 +37608,7 @@ GameObject:
   - component: {fileID: 1270060355}
   - component: {fileID: 1270060354}
   - component: {fileID: 1270060356}
+  - component: {fileID: 1270060357}
   m_Layer: 5
   m_Name: piece8
   m_TagString: Untagged
@@ -37472,6 +37681,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &1270060357
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1270060352}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &1271205365
 GameObject:
   m_ObjectHideFlags: 0
@@ -49549,6 +49783,7 @@ GameObject:
   - component: {fileID: 1666956393}
   - component: {fileID: 1666956392}
   - component: {fileID: 1666956394}
+  - component: {fileID: 1666956395}
   m_Layer: 5
   m_Name: piece4
   m_TagString: Untagged
@@ -49621,6 +49856,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &1666956395
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666956390}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &1669494736
 GameObject:
   m_ObjectHideFlags: 0
@@ -54844,7 +55104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1792837922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56040,7 +56300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1824654921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62919,6 +63179,7 @@ GameObject:
   - component: {fileID: 1998286228}
   - component: {fileID: 1998286227}
   - component: {fileID: 1998286229}
+  - component: {fileID: 1998286230}
   m_Layer: 5
   m_Name: piece9
   m_TagString: Untagged
@@ -62991,6 +63252,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &1998286230
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1998286225}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &2000276447
 GameObject:
   m_ObjectHideFlags: 0
@@ -63002,6 +63288,7 @@ GameObject:
   - component: {fileID: 2000276450}
   - component: {fileID: 2000276449}
   - component: {fileID: 2000276451}
+  - component: {fileID: 2000276452}
   m_Layer: 5
   m_Name: piece10
   m_TagString: Untagged
@@ -63074,6 +63361,31 @@ MonoBehaviour:
   Hor: 0
   Ver: 0
   is_blank: 0
+--- !u!61 &2000276452
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2000276447}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 191, y: 206}
+  m_EdgeRadius: 0
 --- !u!1 &2003591018
 GameObject:
   m_ObjectHideFlags: 0
