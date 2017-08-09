@@ -342,6 +342,17 @@ namespace DigitalRuby.RainMaker
                 AudioSource.Stop();
             }
         }
+		/*
+		public void FalseRain()
+		{
+			RainIntensity = 0.0f;
+		}
+
+		public void TrueRain()
+		{
+			RainIntensity = 1.0f;
+		}
+		*/
     }
 
 }
