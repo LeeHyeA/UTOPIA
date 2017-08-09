@@ -259,7 +259,24 @@ public class EventManager : MonoBehaviour
                     Panel1_3_defalut.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.5f));
                     break;
-                    
+
+                case 122:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/Getmeat");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
+                case 124:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/Getmilk");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
+                case 126:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/GetWater");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
 
                 //(1-3)
                 //디폴트방에서 대사 넘기기

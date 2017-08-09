@@ -359,41 +359,46 @@ public class InputManager : MonoBehaviour
             //--음식재료 얻기--//
 
             //빈우유병을 염소에 놓아 채우기
-            if (obj.transform.name == "3-Ingredient(EmptyMilk)" && hit.transform.name == "Taxidermied_Goat")
+            if (obj.transform.name == "3-Ingredient(EmptyMilk)" && hit.transform.name == "goat")
             {
                 Debug.Log("빈우유병 채우기 완료");
 
                 //AnimalControl의 빈우유병을 놓았음을 알려주는 변수를 참으로
                 GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().PutEmptyMilk = true;
                 //그후 다시 갱신해서 보여줌
-                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().ShowGoat();
+                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().GoatComplete();
                 //빈우유병 삭제
                 Destroy(obj.transform.gameObject);
+
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 124;
             }
 
             //칼을 양에 놓아 고기얻기
-            if (obj.transform.name == "0-Knife" && hit.transform.name == "Taxidermied_Sheep(Before)")
+            if (obj.transform.name == "0-Knife" && hit.transform.name == "sheep")
             {
                 Debug.Log("칼로 고기얻기 완료");
 
                 //AnimalControl의 칼을 놓았음을 알려주는 변수를 참으로
                 GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().PutKnife = true;
                 //그후 다시 갱신해서 보여줌
-                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().ShowSheep();
+                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().SheepComplete();
                 obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 122;
 
             }
             //빈 물뿌리개를 하마에 놓아 물채우기
-            if (obj.transform.name == "1-EmptyWateringCan" && hit.transform.name == "Taxidermied_Hippopotamus(Before)")
+            if (obj.transform.name == "1-EmptyWateringCan" && hit.transform.name == "hippo")
             {
                 Debug.Log("하마에 빈물뿌리개 놓기 완료");
 
                 //AnimalControl의 물뿌리개를 놓았음을 알려주는 변수를 참으로
                 GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().PutWateringCan = true;
                 //그후 다시 갱신해서 보여줌
-                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().ShowHippo();
+                GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().HippoComplete();
                 //빈물뿌리개 삭제
                 Destroy(obj.transform.gameObject);
+
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 126;
             }
             //돌을 모닥불에 옮겨 달군돌 얻기
             if (obj.transform.name == "8-Ingredient(Stone)" && hit.transform.name == "Picture3(bonfire)")
