@@ -121,9 +121,9 @@
     },
     {
       "Item_Number":17,
-      "Item_Name":"Seed",
+      "Item_Name":"RoseSeed",
       "Item_Place":"3Stage-3",
-      "Item_Image":"Seed",
+      "Item_Image":"RoseSeed",
       "Item_Text":"장미에서 얻은 씨앗"
     },
     {
@@ -135,6 +135,13 @@
     },
     {
       "Item_Number":19,
+      "Item_Name":"Orgel",
+      "Item_Place":"3Stage-3",
+      "Item_Image":"Orgel",
+      "Item_Text":"재규어를 잠재울 추억의 오르골"
+    },
+    {
+      "Item_Number":20,
       "Item_Name":"Carrier",
       "Item_Place":"3Stage-3",
       "Item_Image":"Carrier",
