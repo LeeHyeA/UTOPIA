@@ -81,6 +81,8 @@
      <Compile Include="Assets\Script\JY\MouseSetup.cs" />
      <Compile Include="Assets\Script\JY\PuzzleManager.cs" />
      <Compile Include="Assets\Script\JY\SaveNLoad.cs" />
+     <Compile Include="Assets\Script\JY\SlidePuzzle.cs" />
+     <Compile Include="Assets\Script\JY\SlidePuzzleTile.cs" />
      <Compile Include="Assets\Script\JY\Tile.cs" />
      <Compile Include="Assets\Script\JY\Trigger_Keypad.cs" />
      <Compile Include="Assets\Script\SB\AnimalContol.cs" />
