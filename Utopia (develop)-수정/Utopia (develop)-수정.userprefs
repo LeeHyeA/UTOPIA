@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\HK\InputFieldManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\HK\InputManager.cs">
     <Files>
       <File FileName="Assets\Script\HK\VideoStream.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\HK\MainScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\HK\InputManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\HK\InputManager.cs" Line="653" Column="14" />
       <File FileName="Assets\Script\HK\MoveManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\HK\InputFieldManager.cs" Line="118" Column="67" />
+      <File FileName="Assets\Script\HK\InputFieldManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
