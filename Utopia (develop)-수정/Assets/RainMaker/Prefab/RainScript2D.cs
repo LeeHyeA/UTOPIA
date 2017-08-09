@@ -213,5 +213,15 @@ namespace DigitalRuby.RainMaker
                 return false;
             }
         }
+
+		public void RainTrue()
+		{
+			RainIntensity = 1.0f;
+		}
+
+		public void RainFalse()
+		{
+			RainIntensity = 0.0f;
+		}
     }
 }

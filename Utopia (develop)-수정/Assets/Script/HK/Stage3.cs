@@ -20,7 +20,15 @@ public class Stage3 : MonoBehaviour {
 		
 	}
 
-    public void Rain()
+	public void TrueRain()
+	{
+	}
+
+	public void FalseRain()
+	{
+	}
+
+    public void FlowerRain()
     {
         if(PlayerPrefs.GetString("Seed", "false") == "true")
         {
