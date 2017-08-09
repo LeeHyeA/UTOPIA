@@ -80,7 +80,6 @@ public class LogicPuzzle : MonoBehaviour
             Button.SetActive(false);
 
             StartCoroutine(Fading());
-            trigger_answer_obj.SetActive(true);
 
             return;
         }
@@ -132,6 +131,8 @@ public class LogicPuzzle : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
         Debug.Log("종료");
+        trigger_answer_obj.SetActive(true);
+
         yield break;
     }
 }
