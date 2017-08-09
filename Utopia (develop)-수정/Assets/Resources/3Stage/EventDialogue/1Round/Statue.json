@@ -1,0 +1,16 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"여인의 형상을 한 조각품. 뒷부분에 이렇게 쓰여있다."
+    },
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"여인은 사랑과 추억을 원한다."
+    }
+  ]
+}

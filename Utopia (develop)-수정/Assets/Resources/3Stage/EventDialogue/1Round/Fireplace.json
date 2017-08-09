@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"벽난로이다. 여름이라 불을 때지 않았다."
+    }
+  ]
+}
