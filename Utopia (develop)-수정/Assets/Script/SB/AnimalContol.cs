@@ -44,6 +44,34 @@ public class AnimalContol : MonoBehaviour {
         //Sheep_Layer.transform.FindChild("Taxidermied_Sheep(Before)");
     }
 
+    public void SheepComplete()
+    {
+        if (PutKnife)
+        {
+            //재료(고기) 활성화
+            if (GetMeat)
+                Ingredient_Meat.SetActive(false);
+            else
+                Ingredient_Meat.SetActive(true);
+        }
+    }
+    public void GoatComplete()
+    {
+        if (PutEmptyMilk)
+        {
+            //우유병을 가져다 놨을 경우 채워진 우유병 보여줌
+            //GameObject FullMilk = Goat_Layer.transform.Find("Ingredient(Milk)").gameObject;
+            Ingredient_Milk.SetActive(true);
+        }
+    }
+    public void HippoComplete()
+    {
+        if (GetWateringCan)
+            Ingredient_FullWateringCan.SetActive(false);
+        else
+            Ingredient_FullWateringCan.SetActive(true);
+    }
+
     public void ShowSheep()
     {
         //레이어는 기본적으로 킴
