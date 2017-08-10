@@ -341,6 +341,7 @@ public class EventManager : MonoBehaviour
                     break;
                 case 201:                                               //로프획득
                     GameObject.Find("Circle_Puzzle_Control").transform.GetChild(9).gameObject.SetActive(true);
+                    GameObject.Find("Circle_Puzzle_Control").transform.GetChild(9).gameObject.GetComponent<Fade>().StartFade();
                     Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Get_Rope");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data,false);

@@ -111,6 +111,7 @@
     <Compile Include="Assets\Script\JY\Door.cs" />
     <Compile Include="Assets\Script\JY\Dragon.cs" />
     <Compile Include="Assets\Script\JY\EventManager.cs" />
+    <Compile Include="Assets\Script\JY\Fade.cs" />
     <Compile Include="Assets\Script\JY\GangesRiver.cs" />
     <Compile Include="Assets\Script\JY\HangedMan.cs" />
     <Compile Include="Assets\Script\JY\KeyPad_Puz.cs" />

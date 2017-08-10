@@ -84,7 +84,7 @@ public class HangedMan : MonoBehaviour {
         Debug.Log("밧줄콱");
         HangedMan_Control.GetComponent<Image>().sprite = Resources.Load<Sprite>("2_Stage/Hanged_Man_with_Rope");
         Answerd_obj.SetActive(true);
-
+        Answerd_obj.GetComponent<Fade>().StartFade();
         Answerd = true;
     }
 }

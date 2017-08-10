@@ -16,20 +16,13 @@ public class LogicPuzzle : MonoBehaviour
     public GameObject Button;
     public bool Activated = false;
     public bool Answerd = false;
-    public GameObject BackImage;
-    public GameObject BackImage2;
-
-    Color BackImageColor;
-    Color BackImageColor2;
+    public GameObject AnswerdImage;
+    public GameObject PanelImage;
+   
 
     // Use this for initialization
     void Start()
     {
-        BackImageColor = BackImage.GetComponent<Image>().color;
-        BackImageColor2 = BackImage2.GetComponent<Image>().color;
-
-        Debug.Log(BackImageColor.a);
-
         EM = FindObjectOfType<EventManager>();
         LogicPuzControl.SetActive(true);
         for (int i = 0; i < 100; i++)
@@ -116,23 +109,30 @@ public class LogicPuzzle : MonoBehaviour
 
     IEnumerator Fading()
     {
-        BackImage.SetActive(true);
+        AnswerdImage.SetActive(true);
 
-        Debug.Log(BackImageColor.a);
-        while (BackImageColor.a<1)
+        for(float i=0;i<=1;i+=0.01f)
         {
-            Debug.Log("진행");
-            BackImageColor.a = BackImageColor.a + 0.1f;
-            BackImageColor2.a = BackImageColor2.a - 0.1f;
-
-            BackImage.GetComponent<Image>().color = BackImageColor;
-            BackImage2.GetComponent<Image>().color = BackImageColor2;
-
-            yield return new WaitForSeconds(0.05f);
+            AnswerdImage.GetComponent<Image>().color = new Color(AnswerdImage.GetComponent<Image>().color.r, AnswerdImage.GetComponent<Image>().color.g, AnswerdImage.GetComponent<Image>().color.b, i);
+            PanelImage.GetComponent<Image>().color = new Color(PanelImage.GetComponent<Image>().color.r, PanelImage.GetComponent<Image>().color.g, PanelImage.GetComponent<Image>().color.b, PanelImage.GetComponent<Image>().color.a-0.01f);
+            yield return new WaitForSeconds(0.01f);
         }
+
         Debug.Log("종료");
         trigger_answer_obj.SetActive(true);
-
+        trigger_answer_obj.GetComponent<Fade>().StartFade();
         yield break;
+    }
+    public void Cheat()
+    {
+        t[2].is_Cliked = t[3].is_Cliked = t[4].is_Cliked = t[5].is_Cliked = t[6].is_Cliked = t[7].is_Cliked
+            = t[11].is_Cliked = t[12].is_Cliked = t[13].is_Cliked = t[14].is_Cliked = t[15].is_Cliked = t[16].is_Cliked = t[17].is_Cliked = t[18].is_Cliked
+            = t[21].is_Cliked = t[24].is_Cliked = t[25].is_Cliked = t[26].is_Cliked = t[27].is_Cliked = t[28].is_Cliked = t[29].is_Cliked
+            = t[30].is_Cliked = t[31].is_Cliked = t[32].is_Cliked = t[33].is_Cliked = t[34].is_Cliked = t[38].is_Cliked
+            = t[40].is_Cliked = t[42].is_Cliked = t[45].is_Cliked = t[46].is_Cliked = t[47].is_Cliked = t[48].is_Cliked = t[49].is_Cliked
+            = t[50].is_Cliked = t[51].is_Cliked = t[52].is_Cliked = t[53].is_Cliked = t[54].is_Cliked = t[59].is_Cliked
+            = t[60].is_Cliked = t[61].is_Cliked = t[64].is_Cliked = t[66].is_Cliked = t[67].is_Cliked = t[68].is_Cliked
+            = t[72].is_Cliked = t[79].is_Cliked = t[80].is_Cliked = t[81].is_Cliked = t[82].is_Cliked = t[86].is_Cliked
+            = t[93].is_Cliked = t[96].is_Cliked = true;
     }
 }
