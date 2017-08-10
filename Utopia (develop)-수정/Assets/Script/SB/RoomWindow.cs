@@ -32,7 +32,7 @@ public class RoomWindow : MonoBehaviour
     bool PutBirdcage = false;
 
     //새장에 모이를 놓았음을 확인하는 변수
-    bool PutFeedToBirdCage = false;
+    public bool PutFeedToBirdCage = false;
 
     //새장에 새가 들어오는 이벤트 발생 변수
     bool ActiveComeBirdEvent = false;
@@ -50,7 +50,7 @@ public class RoomWindow : MonoBehaviour
     //public int PutBirdcage = 2;
 
     //맑은날 창문에 거미줄이 놓였음을 확인하는 변수
-    bool PutSpiderWeb = false;
+    public bool PutSpiderWeb = false;
 
 
     public void SetPutSpiderWeb()
@@ -68,7 +68,7 @@ public class RoomWindow : MonoBehaviour
             {
                 //111번 이벤트 발생
                 GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 111;
-                PutSpiderWeb = false;
+                //PutSpiderWeb = false;
             }
         }
     }
@@ -90,7 +90,7 @@ public class RoomWindow : MonoBehaviour
                 GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 109;
                 //EventNum.EventnumberSet(108);
                 //EventNum.Event_Number = 108;
-                PutFeedToBirdCage = false;
+                //PutFeedToBirdCage = false;
             }
         }
     }
@@ -186,12 +186,13 @@ public class RoomWindow : MonoBehaviour
     void CheckGetSpiderWeb()
     {
 
-
+        /*
         //거미줄 얻음
         if (IsGetSpiderWeb == 1)
             SpiderWeb.SetActive(false);
         else
             SpiderWeb.SetActive(true);
+        */
         //거미줄 못 얻음
         // else if (IsGetSpiderWeb == 2)
         //     SpiderWeb.SetActive(true);
@@ -249,7 +250,7 @@ public class RoomWindow : MonoBehaviour
     }
 
 
-    void WindowSetActive()
+    public void WindowSetActive()
     {
 
         switch (Window_State)
@@ -265,6 +266,8 @@ public class RoomWindow : MonoBehaviour
                 SpiderImage.color = new Color32(148, 148, 148, 255);
                 BirdCagePutFeed.color = new Color32(148, 148, 148, 255);
                 BirdCageFull.color = new Color32(148, 148, 148, 255);
+                if (!PutSpiderWeb)
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 94;
                 break;
             //맑은날
             case 2:
@@ -277,6 +280,8 @@ public class RoomWindow : MonoBehaviour
                 SpiderImage.color = new Color32(255, 255, 255, 255);
                 BirdCagePutFeed.color = new Color32(255, 255, 255, 255);
                 BirdCageFull.color = new Color32(255, 255, 255, 255);
+                if (!PutFeedToBirdCage)
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 90;
                 //CheckPutFeedToBirdCage();
                 break;
             //밤
@@ -306,6 +311,7 @@ public class RoomWindow : MonoBehaviour
                 SpiderImage.color = new Color32(99, 99, 99, 255);
                 BirdCagePutFeed.color = new Color32(99, 99, 99, 255);
                 BirdCageFull.color = new Color32(99, 99, 99, 255);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 92;
                 //StarPowder.SetActive(true);
                 break;
             //커튼 열림
@@ -336,7 +342,7 @@ public class RoomWindow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WindowSetActive();
+        // WindowSetActive();
         CheckStarPowderGet();
         CheckGetSpiderWeb();
         CheckGetSpiderJem();

@@ -44,7 +44,9 @@ public class EventManager : MonoBehaviour
     public GameObject Panel1_3_defalut;
     public GameObject Panel1_3;
 
-
+    int FirstDay = 1;
+    bool FirstRain = false;
+    bool FirstNight = false;
 
 
     // Use this for initialization
@@ -148,8 +150,28 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
 
-                // 100~199 1Stage
+                // 90번부터 쓸게 미안 ㅜ
+                case 90:
+                    FirstDay += 1;
+                    if (FirstDay >= 2)
+                    {
+                        Text_Data = Resources.Load<TextAsset>("Stage1-1/Dialogue/Day");
+                        Json_Data = JsonMapper.ToObject(Text_Data.text);
+                        CD.LoadJSON(Json_Data);
+                    }
+                    break;
+                case 92:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/Dialogue/Night");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 94:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/Dialogue/Rain");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
 
+                // 100~199 1Stage
                 //100~102 1에서 아버지편지읽고 1-1로 넘어가는 이벤트
                 case 100:
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/ReadFathersLetter");
@@ -204,6 +226,7 @@ public class EventManager : MonoBehaviour
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteBirdCage");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
+                    GameObject.Find("WindowButton").GetComponent<RoomWindow>().PutFeedToBirdCage = false;
                     break;
                 //거미줄로 빗물보석 얻기 이벤트    
                 case 111:
@@ -220,6 +243,7 @@ public class EventManager : MonoBehaviour
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteSpiderJem");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
+                    GameObject.Find("WindowButton").GetComponent<RoomWindow>().PutSpiderWeb = false;
                     break;
 
                 //몽골스테이지(1-2)

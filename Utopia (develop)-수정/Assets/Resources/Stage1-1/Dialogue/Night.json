@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"밤이다. 커튼이 쳐져 밖을 볼 수 없다."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"오늘은 맑은 날이다. 햇살이 따사롭다."
+    }
+  ]
+}

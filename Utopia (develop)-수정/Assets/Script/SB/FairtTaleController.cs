@@ -49,47 +49,67 @@ public class FairtTaleController : MonoBehaviour {
         if (PageNum == 1)
         {
             Page.sprite = Resources.Load<Sprite>("Stage1-3/FairyTale/01");
+            RoseCol.SetActive(false);
+            OwlCol.SetActive(false);
+            TreeCol.SetActive(false);
         }
         else if (PageNum == 2)
         {
             if (!RoseName.activeSelf)
             {
                 Page.sprite = Resources.Load<Sprite>("Stage1-3/FairyTale/02(NotRose)");
-                //RoseCol.SetActive(true);
-                
+                RoseCol.SetActive(true);
+                OwlCol.SetActive(false);
+                TreeCol.SetActive(false);
             }
             else if (RoseName.activeSelf)
             {
                 Page.sprite = Resources.Load<Sprite>("Stage1-3/FairyTale/02");
+                RoseCol.SetActive(false);
+                OwlCol.SetActive(false);
+                TreeCol.SetActive(false);
             }
         }
         else if (PageNum == 3)
         {
             if (!OwlName.activeSelf)
             {
-                //OwlCol.SetActive(true);
                 Page.sprite = Resources.Load<Sprite>("Stage1-3/FairyTale/03(NotOwl)");
+                RoseCol.SetActive(false);
+                OwlCol.SetActive(true);
+                TreeCol.SetActive(false);
             }
             else if (OwlName.activeSelf)
             {
                 Page.sprite = Resources.Load<Sprite>("Stage1-3/FairyTale/03");
+                RoseCol.SetActive(false);
+                OwlCol.SetActive(false);
+                TreeCol.SetActive(false);
             }
         }
         else if (PageNum == 4)
         {
             if (!TreeName.activeSelf)
             {
-                //TreeCol.SetActive(true);
                 Page.sprite = Resources.Load<Sprite>("Stage1-3/FairyTale/04(NotTree)");
+                RoseCol.SetActive(false);
+                OwlCol.SetActive(false);
+                TreeCol.SetActive(true);
             }
             else if (TreeName.activeSelf)
             {
                 Page.sprite = Resources.Load<Sprite>("Stage1-3/FairyTale/04");
+                RoseCol.SetActive(false);
+                OwlCol.SetActive(false);
+                TreeCol.SetActive(false);
             }
         }
         else if (PageNum == 5)
         {
             Page.sprite = Resources.Load<Sprite>("Stage1-3/FairyTale/05");
+            RoseCol.SetActive(false);
+            OwlCol.SetActive(false);
+            TreeCol.SetActive(false);
         }
     }
 

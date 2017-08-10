@@ -6,6 +6,14 @@ using UnityEngine;
 public class RoomWindow2 : MonoBehaviour {
 
     public Image WindowCurtainImage;
+
+    public Image Hammer;
+    public Image Pot;
+    public Image O_Empty;
+    public Image O_Feed;
+    public Image O_Full;
+    public Image Clock;
+
     // Use this for initialization
     void Start() {
         // WindowCurtainImage.sprite = Resources.Load<Sprite>("Stage1-3/Window/CurtainOpen");
@@ -18,7 +26,32 @@ public class RoomWindow2 : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        ChangeColor1_3();
+    }
 
+    void ChangeColor1_3()
+    {
+
+        if (IsCurtainOpen == -1)
+        {
+            Hammer.color = new Color32(99, 99, 99, 255);
+            Pot.color = new Color32(99, 99, 99, 255);
+            O_Empty.color = new Color32(99, 99, 99, 255);
+            O_Feed.color = new Color32(99, 99, 99, 255);
+            O_Full.color = new Color32(99, 99, 99, 255);
+            Clock.color = new Color32(99, 99, 99, 255);
+            // WindowCurtainImage.sprite = Resources.Load<Sprite>("Stage1-3/Window/CurtainClose(Night)");
+        }
+        else if (IsCurtainOpen == 1)
+        {
+            Hammer.color = new Color32(255, 255, 255, 255);
+            Pot.color = new Color32(255, 255, 255, 255);
+            O_Empty.color = new Color32(255, 255, 255, 255);
+            O_Feed.color = new Color32(255, 255, 255, 255);
+            O_Full.color = new Color32(255, 255, 255, 255);
+            Clock.color = new Color32(255, 255, 255, 255);
+            //WindowCurtainImage.sprite = Resources.Load<Sprite>("Stage1-3/Window/CurtainOpen");
+        }
     }
 
     public void ChangeCurtainState()
@@ -31,11 +64,11 @@ public class RoomWindow2 : MonoBehaviour {
 
         if (IsCurtainOpen==1)
         {
-            WindowCurtainImage.sprite = Resources.Load<Sprite>("Stage1-3/Window/CurtainClose(Night)");
+            // WindowCurtainImage.sprite = Resources.Load<Sprite>("Stage1-3/Window/CurtainClose(Night)");
         }
         else if (IsCurtainOpen==-1)
         {
-            WindowCurtainImage.sprite = Resources.Load<Sprite>("Stage1-3/Window/CurtainOpen");
+            //WindowCurtainImage.sprite = Resources.Load<Sprite>("Stage1-3/Window/CurtainOpen");
         }
     }
 

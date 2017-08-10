@@ -562,21 +562,24 @@ public class InputManager : MonoBehaviour
             {
                 FairyTale.transform.Find("AddOwlName").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
-                Destroy(hit.transform.gameObject);
+                FairyTale.transform.Find("OwlNameCol").gameObject.SetActive(false);
+                //Destroy(hit.transform.gameObject);
             }
             //나무
             if (obj.transform.name == "7-TreeName" && hit.transform.name == "TreeNameCol")
             {
                 FairyTale.transform.Find("AddTreeName").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
-                Destroy(hit.transform.gameObject);
+                FairyTale.transform.Find("TreeNameCol").gameObject.SetActive(false);
+                //Destroy(hit.transform.gameObject);
             }
             //장미
             if (obj.transform.name == "6-RoseName" && hit.transform.name == "RoseNameCol")
             {
                 FairyTale.transform.Find("AddRoseName").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
-                Destroy(hit.transform.gameObject);
+                FairyTale.transform.Find("RoseNameCol").gameObject.SetActive(false);
+                //Destroy(hit.transform.gameObject);
             }
             
 
