@@ -60,7 +60,7 @@ public class Stage3 : MonoBehaviour {
         if(Piece1.activeSelf && Piece2.activeSelf && Piece3.activeSelf && Piece4.activeSelf && Piece5.activeSelf)
         {
 			Round2.Find ("Black").gameObject.SetActive (true);
-			Event.EventnumberSet (306);
+			Event.EventnumberSet (310);
         }
     }
 

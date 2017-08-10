@@ -393,25 +393,31 @@ public class EventManager : MonoBehaviour
 				
 				case 304:
 					StartCoroutine(Fadeing(false, 1.5f));
+					Stage3.Find ("1Round").gameObject.SetActive (false);
+					break;
+
+				case 305:
+					Stage3.Find ("2Round").gameObject.SetActive (true);
+					StartCoroutine (Fadeing (false, 1.5f));
 					break;
 
 				// *************************************************************************************
 
 
 
-				case 306:
+				case 310:
 					inventory.gameObject.SetActive (false);
 					Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/2Round/FinishRound");
 					Json_Data = JsonMapper.ToObject(Text_Data.text);
 					CD.LoadJSON(Json_Data);
 					break;
 
-				case 307:	
+				case 311:	
 					StartCoroutine(Fadeing(true, 1.5f));
 					Stage3.Find ("2Round").gameObject.SetActive (false);
 					break;
 
-				case 308:
+				case 312:
 					Stage3.Find ("3Round").gameObject.SetActive (true);
 					StartCoroutine (Fadeing (false, 1.5f));
 					break;
