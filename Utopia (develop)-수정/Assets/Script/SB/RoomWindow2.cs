@@ -11,7 +11,7 @@ public class RoomWindow2 : MonoBehaviour {
         // WindowCurtainImage.sprite = Resources.Load<Sprite>("Stage1-3/Window/CurtainOpen");
     }
     
-    //1:Open -1:Close
+    //1:Open(day) -1:Close(night)
     public int IsCurtainOpen = 1;
 
     public bool PutFeedToOwlCage = false;

@@ -36,6 +36,29 @@ public class FlowerpotControl : MonoBehaviour {
     //배경 화분 이미지
     public Image FlowerEnter2;
 
+    //1-3 배경 화분 이미지
+    public Image FlowerEnter3;
+
+    public GameObject RosePlant;
+    public GameObject TreePlant;
+
+
+    public void CheckBackPot()
+    {
+        if (RosePlant.activeSelf)
+        {
+            FlowerEnter3.sprite = Resources.Load<Sprite>("Stage1-3/BackPotState/RoseBack");
+        }
+        else if (TreePlant.activeSelf)
+        {
+            FlowerEnter3.sprite = Resources.Load<Sprite>("Stage1-3/BackPotState/TreeBack");
+        }
+        else
+        {
+            FlowerEnter3.sprite = Resources.Load<Sprite>("Stage1-3/BackPotState/FlowerPotBack");
+        }
+
+    }
 
     void Start()
     {
@@ -46,6 +69,7 @@ public class FlowerpotControl : MonoBehaviour {
     void Update()
     {
         EmptyAreaSet();
+        CheckBackPot();
     }
 
     //작물이 심어져있는 상태일때 씨앗에 투명이미지를 씌워서 씨앗을 심지못하게 방지
