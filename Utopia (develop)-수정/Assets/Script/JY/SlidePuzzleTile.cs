@@ -48,7 +48,7 @@ public class SlidePuzzleTile : MonoBehaviour {
                 for (i = 0; i < 38; i++)
                 {
                     Vector3 Vec = gameObject.transform.localPosition;
-                    Vec.x = Vec.x - 5f;
+                    Vec.x = Vec.x - 5*2f;
                     gameObject.transform.localPosition = Vec;
                     yield return new WaitForSecondsRealtime(0.001f);
                 }
