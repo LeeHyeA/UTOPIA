@@ -58,16 +58,16 @@ public class MoveManager : MonoBehaviour {
             }
 
         }
-        Debug.Log("탈추르");
     }
 
     public void RightButton()
     {
-        control = StartCoroutine(Move(BG, -960.0f, 400.0f));
+		//if(BG.localPosition.x == 1920)
+        	control = StartCoroutine(Move(BG, -1920.0f, 400.0f));
     }
 
     public void LeftButton()
     {
-        control = StartCoroutine(Move(BG, 960.0f, 400.0f));
+        control = StartCoroutine(Move(BG, 1920.0f, 400.0f));
     }
 }
