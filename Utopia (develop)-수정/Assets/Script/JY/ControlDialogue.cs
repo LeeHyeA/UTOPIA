@@ -166,6 +166,7 @@ public class ControlDialogue : MonoBehaviour
         Dialogue_Text.text = "";
 
         End_of_Line = ConvertedData["dialogues"].Count - 1;
+        Empty.SetActive(true);
 
         is_event_plus = true;
         Debug.Log(currentIndex);
