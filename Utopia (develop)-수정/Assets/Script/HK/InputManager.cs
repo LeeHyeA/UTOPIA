@@ -751,6 +751,36 @@ public class InputManager : MonoBehaviour
 				}
 			}
 
+			if (obj.transform.name == "16-Dreamcatcher" && hit.transform.name == "CarrierNimal")
+			{
+				Stage3.Find("3Round").Find("Carrier").Find("Dreamcatcher").gameObject.SetActive(true);
+				Destroy(obj.transform.gameObject);
+			}
+
+			if (obj.transform.name == "18-Rose" && hit.transform.name == "CarrierNimal")
+			{
+				Stage3.Find("3Round").Find("Carrier").Find("Rose").gameObject.SetActive(true);
+				Destroy(obj.transform.gameObject);
+			}
+
+			if (obj.transform.name == "19-Orgel" && hit.transform.name == "CarrierNimal")
+			{
+				Stage3.Find("3Round").Find("Carrier").Find("Orgel").gameObject.SetActive(true);
+				Destroy(obj.transform.gameObject);
+			}
+
+			if (obj.transform.name == "20-Book" && hit.transform.name == "CarrierNimal")
+			{
+				Stage3.Find("3Round").Find("Carrier").Find("Book").gameObject.SetActive(true);
+				Destroy(obj.transform.gameObject);
+			}
+
+			if (obj.transform.name == "21-Picture" && hit.transform.name == "CarrierNimal")
+			{
+				Stage3.Find("3Round").Find("Carrier").Find("Picture").gameObject.SetActive(true);
+				Destroy(obj.transform.gameObject);
+			}
+
 			else if (touches.Length == 1)
 				touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));
 

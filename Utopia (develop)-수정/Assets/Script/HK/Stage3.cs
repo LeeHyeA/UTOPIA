@@ -71,6 +71,30 @@ public class Stage3 : MonoBehaviour {
 		{
 			// 음악 들리고
 			// 재규어 잠듦
+			// 아이템 얻는 거 이벤트 매니져로 변경하기
+			Round3.Find("Jaguar").gameObject.SetActive(false);
+			Transform click = Round3.Find ("BG").Find ("ClickObject").transform;
+
+			click.Find ("OrgelButton").gameObject.SetActive (false);
+			click.Find ("OrgelGet").gameObject.SetActive (true);
 		}
 	}
+
+	public void carrierChk()
+	{
+		GameObject Dreamcatcher = Round3.Find("Carrier").Find("Dreamcatcher").gameObject;
+		GameObject Rose = Round3.Find("Carrier").Find("Rose").gameObject;
+		GameObject Book = Round3.Find("Carrier").Find("Book").gameObject;
+		GameObject Orgel = Round3.Find("Carrier").Find("Orgel").gameObject;
+		GameObject Picture = Round3.Find("Carrier").Find("Picture").gameObject;
+
+		if (Dreamcatcher.activeSelf && Rose.activeSelf && Book.activeSelf && Orgel.activeSelf && Picture.activeSelf) 
+		{
+			Transform click = Round3.Find ("BG").Find ("ClickObject").transform;
+
+			click.Find ("CarrierButton").gameObject.SetActive (false);
+			click.Find ("CarrierGet").gameObject.SetActive (true);
+		}
+	}
+
 }
