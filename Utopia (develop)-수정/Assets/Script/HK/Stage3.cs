@@ -7,6 +7,7 @@ public class Stage3 : MonoBehaviour {
     Transform Round1;
     Transform Round2;
     Transform Round3;
+	public EventManager Event;
 
     // Use this for initialization
     void Start () {
@@ -43,6 +44,8 @@ public class Stage3 : MonoBehaviour {
             Transform Garden = Round1.Find("Change").Find("Garden");
             Garden.Find("Grass").gameObject.SetActive(true);
             Garden.Find("Flower").gameObject.SetActive(false);
+			Event.EventnumberSet (302);
+
         }
     }
 
@@ -56,8 +59,18 @@ public class Stage3 : MonoBehaviour {
 
         if(Piece1.activeSelf && Piece2.activeSelf && Piece3.activeSelf && Piece4.activeSelf && Piece5.activeSelf)
         {
-            Round2.gameObject.SetActive(false);
-            Round3.gameObject.SetActive(true);
+			Round2.Find ("Black").gameObject.SetActive (true);
+			Event.EventnumberSet (306);
         }
     }
+
+	public void Orgel()
+	{
+		Transform orgel = Round3.Find ("3Round").Find ("Orgel");
+		if(orgel.Find("Finish").gameObject.activeSelf && orgel.Find("Cover").gameObject.activeSelf)
+		{
+			// 음악 들리고
+			// 재규어 잠듦
+		}
+	}
 }

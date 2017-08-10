@@ -25,7 +25,10 @@ public class EventManager : MonoBehaviour
 
     // 현경
     public Transform Main;
+	public Transform Stage3;
     Transform Click;
+	bool FirstSea = false;
+
 
     //SB꺼
     public GameObject Panel1_1_defalut;
@@ -368,9 +371,54 @@ public class EventManager : MonoBehaviour
                     Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Door");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
-                    break;      
-                default:
-                    break;
+                    break;  
+
+				// 300~399 3Stage
+				case 300:
+					if (!FirstSea) 
+					{
+						Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/1Round/FirstSea");
+						Json_Data = JsonMapper.ToObject(Text_Data.text);
+						CD.LoadJSON(Json_Data);
+			
+						FirstSea = true;
+					}
+					break;
+
+				case 302:
+				Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/1Round/Flower");
+					Json_Data = JsonMapper.ToObject(Text_Data.text);
+					CD.LoadJSON(Json_Data);
+					break;
+				
+				case 304:
+					StartCoroutine(Fadeing(false, 1.5f));
+					break;
+
+				// *************************************************************************************
+
+
+
+				case 306:
+					inventory.gameObject.SetActive (false);
+					Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/2Round/FinishRound");
+					Json_Data = JsonMapper.ToObject(Text_Data.text);
+					CD.LoadJSON(Json_Data);
+					break;
+
+				case 307:	
+					StartCoroutine(Fadeing(true, 1.5f));
+					Stage3.Find ("2Round").gameObject.SetActive (false);
+					break;
+
+				case 308:
+					Stage3.Find ("3Round").gameObject.SetActive (true);
+					StartCoroutine (Fadeing (false, 1.5f));
+					break;
+
+			
+	   	       default:
+	   	           break;
             }
             Event_Number_1 = Event_Number;
         }

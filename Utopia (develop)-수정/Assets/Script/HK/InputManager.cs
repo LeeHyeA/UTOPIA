@@ -12,6 +12,7 @@ public class InputManager : MonoBehaviour
     public Transform UICanvas;
     public Transform MainStage;
     public Transform Stage3;
+	public EventManager Event;
     Item item;
 
     //1-1
@@ -723,19 +724,27 @@ public class InputManager : MonoBehaviour
 				Stage3.Find("3Round").Find("BG").Find("ClickObject").Find("Rose").gameObject.SetActive(true);
 			}
 
-			if (obj.transform.name == "17-Seed" && hit.transform.name == "Orgel")
+			if (obj.transform.name == "17-RoseSeed" && hit.transform.name == "OrgelC")
 			{
-				RoseSeed = true;
-				Destroy(obj.transform.gameObject);
+				Transform orgel = Stage3.Find ("3Round").Find ("Orgel");
+				if (orgel.gameObject.activeSelf && !orgel.Find ("Cover").gameObject.activeSelf) 
+				{
+					RoseSeed = true;
+					Destroy (obj.transform.gameObject);
+				}
 			}
 
-			if (obj.transform.name == "15-FullWateringCan" && hit.transform.name == "Orgel")
+			if (obj.transform.name == "15-FullWateringCan" && hit.transform.name == "OrgelC")
 			{
+				Transform orgel = Stage3.Find ("3Round").Find ("Orgel");
 				if (RoseSeed) 
 				{
-					Destroy (obj.transform.gameObject);
-					// 음악 들리고
-					// 재규어 잠듦
+					if (orgel.gameObject.activeSelf && !orgel.Find ("Cover").gameObject.activeSelf) 
+					{
+						Destroy (obj.transform.gameObject);
+						orgel.Find ("Nomal").gameObject.SetActive (false);
+						orgel.Find ("Finish").gameObject.SetActive (true);
+					}
 				}
 			}
 
@@ -750,6 +759,7 @@ public class InputManager : MonoBehaviour
         if (FlowerRing == true && Shell == true)
         {
             Stage3.Find("1Round").gameObject.SetActive(false);
+			Event.EventnumberSet (304);
             Stage3.Find("2Round").gameObject.SetActive(true);
             Inventory.gameObject.SetActive(false);
         }
