@@ -10,6 +10,8 @@ public class ChangeStage1_1 : MonoBehaviour
     public Image Stage1_1Background;
     public Image Stage1_2Background;
     public Image Stage1_1WindowPanel;
+
+    public Image Stage1_3Background;
     //public Image FlowerPotState;
 
     void Start()
@@ -21,6 +23,7 @@ public class ChangeStage1_1 : MonoBehaviour
 
         Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/MonggoalDefault");
 
+        Stage1_3Background.sprite = Resources.Load<Sprite>("Stage1-3/FairyDay");
         //맨처음 화분상태(아무것도 안심음)
         //FlowerPotState.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/FlowerPot");
 
@@ -103,6 +106,21 @@ public class ChangeStage1_1 : MonoBehaviour
             Stage1_1Background.sprite = Resources.Load<Sprite>("Stage1-1/1_RosaNight");
             Stage1_1WindowPanel.sprite = Resources.Load<Sprite>("Stage1-1/Window/NothingImage");
             //Stage1_2Background.sprite = Resources.Load<Sprite>("Stage1-2/1_MonggoalRosaNight");
+        }
+
+    }
+    public void ChangeStage3Back()
+    {
+        int StateTemp = GameObject.Find("WindowButton1-3").GetComponent<RoomWindow2>().IsCurtainOpen;
+
+        //1:낮 -1:밤
+        if(StateTemp == 1)
+        {
+            Stage1_3Background.sprite = Resources.Load<Sprite>("Stage1-3/FairyDay");
+        }
+        else if(StateTemp == -1)
+        {
+            Stage1_3Background.sprite = Resources.Load<Sprite>("Stage1-3/FairyNight");
         }
     }
 }
