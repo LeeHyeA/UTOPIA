@@ -11,6 +11,7 @@ public class InputFieldManager : MonoBehaviour
     public GameObject Main;
     public GameObject Stage1;
     public GameObject Stage3;
+	public Item item;
 
     // Use this for initialization
     void Start()
@@ -68,7 +69,7 @@ public class InputFieldManager : MonoBehaviour
                     stage = 1;
                 break;
 
-            case "523":
+            case "5132":
                 stage = 99;
                 break;
 
@@ -102,13 +103,15 @@ public class InputFieldManager : MonoBehaviour
                 Stage1.SetActive(true);
                 break;
 
-            case 99:
+			case 99:
                 // 창끄기
-				Transform BG = Stage3.transform.Find("3Round").Find("BG");
-                BG.Find("Lock").gameObject.SetActive(false);
-				BG.Find("ClickObject").Find("Drawer(lock)").gameObject.SetActive(false);
-				BG.Find("ClickObject").Find("Drawer(open)").gameObject.SetActive(true);
-                Debug.Log("물뿌리개 획득");
+				Transform BG = Stage3.transform.Find ("3Round").Find ("BG");
+				BG.Find ("Lock").gameObject.SetActive (false);
+				BG.Find ("ClickObject").Find ("Drawer(lock)").gameObject.SetActive (false);
+				item.GetNumber (12);
+				item.LoadJson ("3Stage");
+				item.GetNumber (13);
+				item.LoadJson ("3Stage");
                 break;
 
             default:

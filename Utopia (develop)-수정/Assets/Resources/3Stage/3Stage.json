@@ -142,6 +142,20 @@
     },
     {
       "Item_Number":20,
+      "Item_Name":"Book",
+      "Item_Place":"3Stage-3",
+      "Item_Image":"Book",
+      "Item_Text":"책상위의 동화책"
+    },
+    {
+      "Item_Number":21,
+      "Item_Name":"Picture",
+      "Item_Place":"3Stage-3",
+      "Item_Image":"Picture",
+      "Item_Text":"겐지스강 그림을 담은 액자"
+    },
+    {
+      "Item_Number":22,
       "Item_Name":"Carrier",
       "Item_Place":"3Stage-3",
       "Item_Image":"Carrier",

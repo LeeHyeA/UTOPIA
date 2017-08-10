@@ -703,12 +703,14 @@ public class InputManager : MonoBehaviour
 				item.LoadJson("3Stage");
 
 				Destroy(obj.transform.gameObject);
+				Destroy(hit.transform.gameObject);
 			}
 
 			if (obj.transform.name == "14-Feather" && hit.transform.name == "DreamcatcherC")
 			{
 				Stage3.Find("3Round").Find("BG").Find("ClickObject").Find("Dreamcatcher").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
+				Destroy(hit.transform.gameObject);
 			}
 
 			if (obj.transform.name == "12-WateringCan" && hit.transform.parent.name == "SeaC")
@@ -722,6 +724,7 @@ public class InputManager : MonoBehaviour
 			if (obj.transform.name == "15-FullWateringCan" && hit.transform.name == "RoseC")
 			{
 				Stage3.Find("3Round").Find("BG").Find("ClickObject").Find("Rose").gameObject.SetActive(true);
+				Destroy(hit.transform.gameObject);
 			}
 
 			if (obj.transform.name == "17-RoseSeed" && hit.transform.name == "OrgelC")
