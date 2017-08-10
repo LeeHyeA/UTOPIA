@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"강아지 씨앗을 심었다. 무엇이 자랄까? 궁금하다.."
+    }
+  ]
+}

@@ -473,24 +473,28 @@ public class InputManager : MonoBehaviour
                     FlowerPotPlantState.transform.Find("Carrot").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                     FlowerEnter.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotRabbit01");
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 128;
                 }
                 if (TempPotatoState)
                 {
                     FlowerPotPlantState.transform.Find("Potato").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                     FlowerEnter.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotPig01");
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 130;
                 }
                 if (TempFoxTailState)
                 {
                     FlowerPotPlantState.transform.Find("Foxtail").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                     FlowerEnter.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotDog01");
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 132;
                 }
                 if (TempBeanState)
                 {
                     FlowerPotPlantState.transform.Find("Bean").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                     FlowerEnter.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotBird01");
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 134;
                 }
             }
             //잘못심은 작물 칼로 자르기 (강아지풀,콩)
@@ -501,6 +505,7 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantFoxtail = false;
                 obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                 FlowerEnter.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/Pot01");
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 136;
             }
             if (obj.transform.name == "0-Knife" && hit.transform.name == "Bean")
             {
@@ -509,6 +514,7 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantBean = false;
                 obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                 FlowerEnter.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/Pot01");
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 138;
             }
 
 

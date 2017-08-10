@@ -79,6 +79,12 @@ public class FlowerpotControl : MonoBehaviour {
         {
             EmptyArea.transform.Find("EmptyArea1").gameObject.SetActive(true);
             EmptyArea.transform.Find("EmptyArea2").gameObject.SetActive(true);
+            //Area1(토끼+개) Area2(새,돼지)
+            //씨앗을 둘다 사용했을경우 EmptyArea끄기
+            if (!CarrotSeed.activeSelf && !FoxtailSeed.activeSelf)
+                EmptyArea.transform.Find("EmptyArea1").gameObject.SetActive(false);
+            if (!PotatoSeed.activeSelf && !BeanSeed.activeSelf)
+                EmptyArea.transform.Find("EmptyArea2").gameObject.SetActive(false);
         }
         //else if(!IsPlanted)
         else

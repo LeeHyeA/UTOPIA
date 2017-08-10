@@ -15,7 +15,6 @@ public class RoomWindow : MonoBehaviour
 
     public Image DreamEnter;
     public Image BirdCageEmptyImage;
-    public Image BirdFeedImage;
     public Image BirdCagePutFeed;
     public Image BirdCageFull;
     public Image SpiderImage;
@@ -262,7 +261,6 @@ public class RoomWindow : MonoBehaviour
                 DarkWindow.SetActive(false);
                 DreamEnter.color = new Color32(148, 148, 148, 255);
                 BirdCageEmptyImage.color = new Color32(148, 148, 148, 255);
-                BirdFeedImage.color = new Color32(148, 148, 148, 255);
                 SpiderImage.color = new Color32(148, 148, 148, 255);
                 BirdCagePutFeed.color = new Color32(148, 148, 148, 255);
                 BirdCageFull.color = new Color32(148, 148, 148, 255);
@@ -276,7 +274,6 @@ public class RoomWindow : MonoBehaviour
                 DarkWindow.SetActive(false);
                 DreamEnter.color = new Color32(255, 255, 255, 255);
                 BirdCageEmptyImage.color = new Color32(255, 255, 255, 255);
-                BirdFeedImage.color = new Color32(255, 255, 255, 255);
                 SpiderImage.color = new Color32(255, 255, 255, 255);
                 BirdCagePutFeed.color = new Color32(255, 255, 255, 255);
                 BirdCageFull.color = new Color32(255, 255, 255, 255);
@@ -307,7 +304,6 @@ public class RoomWindow : MonoBehaviour
                 CleanWindow.SetActive(false);
                 DreamEnter.color = new Color32(99, 99, 99, 255);
                 BirdCageEmptyImage.color = new Color32(99, 99, 99, 255);
-                BirdFeedImage.color = new Color32(99, 99, 99, 255);
                 SpiderImage.color = new Color32(99, 99, 99, 255);
                 BirdCagePutFeed.color = new Color32(99, 99, 99, 255);
                 BirdCageFull.color = new Color32(99, 99, 99, 255);

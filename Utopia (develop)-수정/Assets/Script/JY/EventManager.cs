@@ -304,6 +304,43 @@ public class EventManager : MonoBehaviour
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
+                //(128-134) 씨앗에 물을 줬을시 이벤트대사
+                case 128:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/CompleteCarrot");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
+                case 130:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/CompletePotato");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
+                case 132:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/CompleteFoxtail");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
+                case 134:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/CompleteBean");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                //(136-139) 강아지풀 & 콩 을 잘라냈을시 이벤트 대사
+                case 136:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/CutFoxtail");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
+                case 138:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/CutBean");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
 
                 //(1-3)
                 //디폴트방에서 대사 넘기기
