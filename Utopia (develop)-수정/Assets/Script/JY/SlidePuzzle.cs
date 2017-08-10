@@ -63,20 +63,64 @@ public class SlidePuzzle : MonoBehaviour {
         {
             if (blank_Tile.Hor - SPT.Hor == 1)
             {
-                SPT.triggerMoving(3);
-                blank_Tile.triggerMoving(1);
-                blank_Tile.Hor--;
-                SPT.Hor++;
+                SPT.triggerMoving(3,1);
+                blank_Tile.triggerMoving(1,1);
                 Debug.Log("↑");
-
+                SPT.Hor++;
+                blank_Tile.Hor--;
             }
             else if (SPT.Hor - blank_Tile.Hor == 1)
             {
-                SPT.triggerMoving(1);
-                blank_Tile.triggerMoving(3);
-                blank_Tile.Hor++;
-                SPT.Hor--;
+                SPT.triggerMoving(1, 1);
+                blank_Tile.triggerMoving(3, 1);
                 Debug.Log("↓");
+                SPT.Hor--;
+                blank_Tile.Hor++;
+            }
+
+            if (blank_Tile.Hor - SPT.Hor > 1)
+            {
+                int middle = blank_Tile.Hor - SPT.Hor;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (Tiles[i, j].Ver == SPT.Ver && Tiles[i, j].Hor < blank_Tile.Hor&& Tiles[i, j].Hor >= SPT.Hor)
+                        {
+                            Tiles[i, j].triggerMoving(3, 1);
+                            Tiles[i, j].Hor++;
+                        }
+                        continue;
+                    }
+                    continue;
+                }
+                Debug.Log("2↑");
+                blank_Tile.triggerMoving(1, middle);
+                blank_Tile.Hor -= middle;
+            }
+
+
+            else if (SPT.Hor - blank_Tile.Hor > 1)
+            {
+                int middle = SPT.Hor- blank_Tile.Hor;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (Tiles[i, j].Ver == SPT.Ver && Tiles[i, j].Hor > blank_Tile.Hor && Tiles[i, j].Hor <= SPT.Hor) 
+                        {
+                            Tiles[i, j].triggerMoving(1, 1);
+                            Tiles[i, j].Hor--;
+                        }
+                        continue;
+                    }
+                    continue;
+                }
+                Debug.Log("2↓");
+                blank_Tile.triggerMoving(3, middle);
+                blank_Tile.Hor += middle;
             }
         }
 
@@ -84,19 +128,61 @@ public class SlidePuzzle : MonoBehaviour {
         {
             if (blank_Tile.Ver - SPT.Ver == 1)
             {
-                SPT.triggerMoving(2);
-                blank_Tile.triggerMoving(0);
+                SPT.triggerMoving(2,1);
+                blank_Tile.triggerMoving(0,1);
                 SPT.Ver++;
                 blank_Tile.Ver--;
                 Debug.Log("<-");
             }
             else if (SPT.Ver - blank_Tile.Ver == 1)
             {
-                SPT.triggerMoving(0);
-                blank_Tile.triggerMoving(2);
+                SPT.triggerMoving(0,1);
+                blank_Tile.triggerMoving(2,1);
                 SPT.Ver--;
                 blank_Tile.Ver++;
                 Debug.Log("->");
+            }
+            if (blank_Tile.Ver - SPT.Ver > 1)
+            {
+                int middle = blank_Tile.Ver - SPT.Ver;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (Tiles[i, j].Hor == SPT.Hor && Tiles[i, j].Ver < blank_Tile.Ver && Tiles[i, j].Ver >= SPT.Ver)
+                        {
+                            Tiles[i, j].triggerMoving(2, 1);
+                            Tiles[i, j].Ver++;
+                        }
+                        continue;
+                    }
+                    continue;
+                }
+                Debug.Log("2<-");
+                blank_Tile.triggerMoving(0, middle);
+                blank_Tile.Ver -= middle;
+            }
+            else if (SPT.Ver - blank_Tile.Ver > 1) 
+            {
+                int middle = SPT.Ver - blank_Tile.Ver;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (Tiles[i, j].Hor == SPT.Hor && Tiles[i, j].Ver > blank_Tile.Ver && Tiles[i, j].Ver <= SPT.Ver)
+                        {
+                            Tiles[i, j].triggerMoving(0, 1);
+                            Tiles[i, j].Ver--;
+                        }
+                        continue;
+                    }
+                    continue;
+                }
+                Debug.Log("2->");
+                blank_Tile.triggerMoving(2, middle);
+                blank_Tile.Ver += middle;
             }
         }
         return;

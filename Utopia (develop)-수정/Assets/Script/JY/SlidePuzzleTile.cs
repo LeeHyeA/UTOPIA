@@ -28,18 +28,17 @@ public class SlidePuzzleTile : MonoBehaviour {
     }
     private void OnMouseDown()
     {
-        Debug.Log("클릭");
         SP.CheckDirection(this);
         return;
     }
 
-    public void triggerMoving(int dir)
+    public void triggerMoving(int dir, int block)
     {
         direction = dir;
-        StartCoroutine(moving(direction));
+        StartCoroutine(moving(direction,block));
     }
 
-    IEnumerator moving(int direction)
+    IEnumerator moving(int direction, int block)
     {
         int i = 0;
         switch(direction)
@@ -48,7 +47,7 @@ public class SlidePuzzleTile : MonoBehaviour {
                 for (i = 0; i < 38; i++)
                 {
                     Vector3 Vec = gameObject.transform.localPosition;
-                    Vec.x = Vec.x - 5*2f;
+                    Vec.x -= (float)5*block;
                     gameObject.transform.localPosition = Vec;
                     yield return new WaitForSecondsRealtime(0.001f);
                 }
@@ -57,7 +56,7 @@ public class SlidePuzzleTile : MonoBehaviour {
                 for (i = 0; i < 41; i++)
                 {
                     Vector3 Vec = gameObject.transform.localPosition;
-                    Vec.y = Vec.y + 5f;
+                    Vec.y += (float)5 * block;
                     gameObject.transform.localPosition = Vec;
                     yield return new WaitForSecondsRealtime(0.001f);
                 }
@@ -66,7 +65,7 @@ public class SlidePuzzleTile : MonoBehaviour {
                 for (i = 0; i < 38; i++)
                 {
                     Vector3 Vec = gameObject.transform.localPosition;
-                    Vec.x = Vec.x + 5f;
+                    Vec.x += (float)5 * block;
 
                     gameObject.transform.localPosition = Vec;
 
@@ -77,7 +76,7 @@ public class SlidePuzzleTile : MonoBehaviour {
                 for (i = 0; i < 41; i++)
                 {
                     Vector3 Vec = gameObject.transform.localPosition;
-                    Vec.y = Vec.y - 5f;
+                    Vec.y -= (float)5 * block;
                     gameObject.transform.localPosition = Vec;
 
                     yield return new WaitForSecondsRealtime(0.001f);
