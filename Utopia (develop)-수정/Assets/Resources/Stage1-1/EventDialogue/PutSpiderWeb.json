@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"얻은 거미줄을 창문에 붙였다."
+    }
+  ]
+}

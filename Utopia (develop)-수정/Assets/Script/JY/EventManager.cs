@@ -150,7 +150,34 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
 
-                // 90번부터 쓸게 미안 ㅜ
+                // 50번부터 쓸게 ㅜㅜ
+                //50-
+                case 50:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/PutFeed");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 52:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/PutSpiderWeb");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 54:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/PutSpiderJem");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 56:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/PutFeather");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 58:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/PutStarPowder");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                // 90-94 1-1 방안 상태 변경시마다 대사 발생
                 case 90:
                     FirstDay += 1;
                     if (FirstDay >= 2)
@@ -340,26 +367,44 @@ public class EventManager : MonoBehaviour
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
-
-
-                //(1-3)
-                //디폴트방에서 대사 넘기기
-                case 150:
-                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/StartFairyTale");
+                //(140-141) 모닥불에 돌을 놨을시 대사
+                case 140:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/PutStoneTofire");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
-                case 151:
-                    StartCoroutine(Fadeing(true, 1.5f));
+                //(142-151) 테이블에 음식 재료들 놓기
+                case 142:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/PutHotStone");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
                     break;
-                case 152:
-                    //패널1-3디폴트 비활성화 시킴
-                    Panel1_3_defalut.SetActive(false);
-                    //패널1-3 활성화시킴
-                    Panel1_3.SetActive(true);
-                    StartCoroutine(Fadeing(false, 1.5f));
+                case 144:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/PutMeat");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 146:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/PutMilkBottle");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 148:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/PutPotato");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 150:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/PutCarrot");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
                     break;
 
+
+
+
+                //(1-3)
+          
                 
                 /*
                 //망치로 금시계에서 금침을 획득했을시 (154-155)
@@ -395,6 +440,65 @@ public class EventManager : MonoBehaviour
                     //StartCoroutine(Fadeing(true, 1.5f));
                     break;
                 case 162:
+                    StartCoroutine(Fadeing(false, 1.5f));
+                    break;
+
+                case 164:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/GoldClockBroke");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 166:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/PutOwlFeed");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 168:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/PutRoseSeed");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 170:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/PutTreeSeed");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 172:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/PutGoldNeedle");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 174:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/PutOwlName");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 176:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/PutTreeName");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 178:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/PutRoseName");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
+
+                //1-3 디폴트방에서 대사 넘기기
+                case 180:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/StartFairyTale");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                case 181:
+                    StartCoroutine(Fadeing(true, 1.5f));
+                    break;
+                case 182:
+                    //패널1-3디폴트 비활성화 시킴
+                    Panel1_3_defalut.SetActive(false);
+                    //패널1-3 활성화시킴
+                    Panel1_3.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.5f));
                     break;
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RoomWindow2 : MonoBehaviour {
 
-    public Image WindowCurtainImage;
+    //public Image WindowCurtainImage;
 
     public Image Hammer;
     public Image Pot;

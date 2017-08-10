@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"화분에 금침을 놓자 시간이 빠르게 흐르는듯싶더니 순식간에 나무가 자라났다."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"달군 돌을 그릇에 담았다."
+    }
+  ]
+}

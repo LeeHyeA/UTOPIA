@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"동화책의 빠진 부분을 채웠다."
+    }
+  ]
+}

@@ -29,6 +29,7 @@ public class InputManager : MonoBehaviour
     public Image FlowerEnter;
 
     //1-3
+    public GameObject GoldClock;
     public GameObject GoldNeedle;
     public GameObject OwlCage;
     public GameObject PotState;
@@ -261,7 +262,7 @@ public class InputManager : MonoBehaviour
                 BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
                 GameObject.Find("WindowButton").GetComponent<RoomWindow>().SetPutFeedToBirdCage();
                 Destroy(obj.transform.gameObject);
-
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 50;
             }
 
             //일단 보류
@@ -280,6 +281,7 @@ public class InputManager : MonoBehaviour
                 CleanWindowOBJ.transform.Find("PutSpiderWeb").gameObject.SetActive(true);
                 GameObject.Find("WindowButton").GetComponent<RoomWindow>().SetPutSpiderWeb();
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 52;
             }
 
             //일단 보류
@@ -304,6 +306,7 @@ public class InputManager : MonoBehaviour
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 2;
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
                     Destroy(obj.transform.gameObject);
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 54;
                 }
                 //기본+깃털상태(1)에서 거미줄보석 붙일때
                 else if (tempNum == 1)
@@ -313,6 +316,7 @@ public class InputManager : MonoBehaviour
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 3;
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
                     Destroy(obj.transform.gameObject);
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 54;
                 }
             }
             //DreamCatcher(Feather)
@@ -327,6 +331,7 @@ public class InputManager : MonoBehaviour
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 1;
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
                     Destroy(obj.transform.gameObject);
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 56;
                 }
                 //기본+거미줄보석(2)상태에서 깃털 붙일때
                 else if (tempNum2 == 2)
@@ -336,6 +341,7 @@ public class InputManager : MonoBehaviour
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 3;
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
                     Destroy(obj.transform.gameObject);
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 56;
                 }
             }
             //DreamCatcher(StarPowder)
@@ -352,6 +358,7 @@ public class InputManager : MonoBehaviour
                     //Event_Manager의 드림캐처 얻은 후 이벤트 발생시키는 변수를 true로
                     GameObject.Find("Event_Manager").GetComponent<EventManager>().MakeDreamCatcher = true;
                     Destroy(obj.transform.gameObject);
+                    GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 58;
                 }
             }
 
@@ -408,6 +415,7 @@ public class InputManager : MonoBehaviour
 
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutStone = true;
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowBonfire();
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 140;
                 Destroy(obj.transform.gameObject);
             }
 
@@ -420,6 +428,7 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutHotStone = true;
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowTable();
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 142;
             }
             //고기를 테이블에 놓기
             if (obj.transform.name == "7-Ingredient(Meat)" && hit.transform.name == "TableDefalut")
@@ -429,6 +438,7 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutMeat = true;
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowTable();
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 144;
             }
             //우유를 테이블에 놓기
             if (obj.transform.name == "4-Ingredient(Milk)" && hit.transform.name == "TableDefalut")
@@ -438,6 +448,7 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutMilkBottle = true;
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowTable();
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 146;
             }
             //감자를 테이블에 놓기
             if (obj.transform.name == "6-Ingredient(Potato)" && hit.transform.name == "TableDefalut")
@@ -447,6 +458,7 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutPotato = true;
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowTable();
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 148;
             }
 
             //당근을 테이블에 놓기
@@ -457,6 +469,7 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutCarrot = true;
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().ShowTable();
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 150;
             }
 
             //채운 물뿌리개로 화분에 물뿌리기
@@ -524,9 +537,11 @@ public class InputManager : MonoBehaviour
             if(obj.transform.name == "1-Hammer" && hit.transform.name == "GoldClock")
             {
                 GoldNeedle.gameObject.SetActive(true);
-                Destroy(hit.transform.gameObject);
+                //Destroy(hit.transform.gameObject);
                 Destroy(obj.transform.gameObject);
-               // obj.transform.SetParent(Inventory.transform.Find("2_Grid")); //제자리로!
+                GoldClock.SetActive(false);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 164;
+                // obj.transform.SetParent(Inventory.transform.Find("2_Grid")); //제자리로!
             }
 
             //육포를 새장에 놓기
@@ -536,6 +551,7 @@ public class InputManager : MonoBehaviour
                 OwlCage.transform.Find("OwlCageFeed").gameObject.SetActive(true);
                 GameObject.Find("WindowButton1-3").GetComponent<RoomWindow2>().SetPutFeedToOwlCage();
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 166;
             }
 
             //장미씨앗을 화분에 놓기
@@ -545,6 +561,7 @@ public class InputManager : MonoBehaviour
                 //장미활성화
                 PotState.transform.Find("Rose").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 168;
             }
 
             //화분에 나무 심기
@@ -553,6 +570,7 @@ public class InputManager : MonoBehaviour
                 Debug.Log("나무심기 완료");
                 PotState.transform.Find("Tree(before)").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 170;
             }
             //심어진 나무에 금침 놓기
             if(obj.transform.name == "2-GoldNeedle" && hit.transform.name =="Tree(before)")
@@ -561,6 +579,7 @@ public class InputManager : MonoBehaviour
                 PotState.transform.Find("Tree(before)").gameObject.SetActive(false);
                 PotState.transform.Find("Tree(after)").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 172;
             }
             //동화책에 이름표 놓기
             //올빼미
@@ -569,6 +588,7 @@ public class InputManager : MonoBehaviour
                 FairyTale.transform.Find("AddOwlName").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
                 FairyTale.transform.Find("OwlNameCol").gameObject.SetActive(false);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 174;
                 //Destroy(hit.transform.gameObject);
             }
             //나무
@@ -577,6 +597,7 @@ public class InputManager : MonoBehaviour
                 FairyTale.transform.Find("AddTreeName").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
                 FairyTale.transform.Find("TreeNameCol").gameObject.SetActive(false);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 176;
                 //Destroy(hit.transform.gameObject);
             }
             //장미
@@ -585,6 +606,7 @@ public class InputManager : MonoBehaviour
                 FairyTale.transform.Find("AddRoseName").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
                 FairyTale.transform.Find("RoseNameCol").gameObject.SetActive(false);
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 178;
                 //Destroy(hit.transform.gameObject);
             }
             

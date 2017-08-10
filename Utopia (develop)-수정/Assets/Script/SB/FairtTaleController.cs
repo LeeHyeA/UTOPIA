@@ -37,7 +37,7 @@ public class FairtTaleController : MonoBehaviour {
 
     public void CheckPage()
     {
-        if(PageNum == 2 &&!RoseName.activeSelf && !GetRoseSeed)
+        if (PageNum == 2 && !RoseName.activeSelf && !GetRoseSeed)
         {
             RoseSeed.SetActive(true);
         }
@@ -111,6 +111,14 @@ public class FairtTaleController : MonoBehaviour {
             OwlCol.SetActive(false);
             TreeCol.SetActive(false);
         }
+
+        //동화책이 전부 완성되면
+        if (OwlName.activeSelf && TreeName.activeSelf && RoseName.activeSelf)
+        {
+            //마지막 페이지를 보여줌
+            PageNum = 5;
+            Page.sprite = Resources.Load<Sprite>("Stage1-3/FairyTale/05");
+        }
     }
 
     public void PageUp()
@@ -129,6 +137,10 @@ public class FairtTaleController : MonoBehaviour {
         //모든 이름표 채웠을시
        if(OwlName.activeSelf && TreeName.activeSelf && RoseName.activeSelf)
         {
+            //마지막 페이지를 보여줌
+            PageNum = 5;
+            Page.sprite = Resources.Load<Sprite>("Stage1-3/FairyTale/05");
+
             Debug.Log("동화책 완성");
             GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 160;
         }

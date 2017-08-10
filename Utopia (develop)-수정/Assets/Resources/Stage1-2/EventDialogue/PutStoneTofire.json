@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"알렉스",
+      "standImage_Name":"Nothing",
+      "script_Text":"모닥불에 돌을 두었다. 돌은 뜨겁게 달구어졌다."
+    }
+  ]
+}
