@@ -48,6 +48,10 @@ public class EventManager : MonoBehaviour
     bool FirstRain = false;
     bool FirstNight = false;
 
+    public GameObject MainStage;
+    public GameObject Stage_1;
+    public GameObject Stage_2;
+    public GameObject Stage_3;
 
     // Use this for initialization
     void Start ()
@@ -440,6 +444,8 @@ public class EventManager : MonoBehaviour
                     //StartCoroutine(Fadeing(true, 1.5f));
                     break;
                 case 162:
+                    Stage_1.SetActive(false);
+                    MainStage.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.5f));
                     break;
 
@@ -537,10 +543,19 @@ public class EventManager : MonoBehaviour
                     Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Door");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
-                    break;  
+                    break;
 
-				// 300~399 3Stage
-				case 300:
+                case 209:
+                    StartCoroutine(Fadeing(true, 1.0f));
+                    break;
+                case 210:
+                    Stage_2.SetActive(false);
+                    MainStage.SetActive(true);
+                    StartCoroutine(Fadeing(false, 1.0f));
+                    break;
+
+                // 300~399 3Stage
+                case 300:
 					if (!FirstSea) 
 					{
 						Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/1Round/FirstSea");

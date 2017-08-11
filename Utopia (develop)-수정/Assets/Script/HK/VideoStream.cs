@@ -29,8 +29,9 @@ public class VideoStream : MonoBehaviour {
         {
             if (videoPlayer.transform.name == "PrologueVideo")
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
                 PlayerPrefs.SetInt("StartMain", 1);
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+                
             }
 
             ///if (videoPlayer.transform.name == "EndVideo")

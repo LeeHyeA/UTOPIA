@@ -36,7 +36,7 @@ public class InputManager : MonoBehaviour
     public GameObject FairyTale;
 
     HangedMan HM;
-    GangesRiver GR;
+    public GangesRiver GR;
     //   public AudioSource audioSource;
 
     GameObject HeadGear;
@@ -625,13 +625,13 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
 
             }
-            if (obj.transform.name == "1-Blue_Color" && hit.transform.name == "Ganges_river")
+            if (obj.transform.name == "1-Blue_Color" && hit.transform.name == "Ganges_river" && GR.getRed())
             {
                 GR.On_Blue();
                 Destroy(obj.transform.gameObject);
 
             }
-            if (obj.transform.name == "3-Yellow_Color" && hit.transform.name == "Ganges_river")
+            if (obj.transform.name == "3-Yellow_Color" && hit.transform.name == "Ganges_river" && GR.getRed() && GR.getBlue())
             {
                 GR.On_Yellow();
                 Destroy(obj.transform.gameObject);

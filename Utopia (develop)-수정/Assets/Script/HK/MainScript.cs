@@ -14,14 +14,9 @@ public class MainScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Debug.Log(PlayerPrefs.GetInt("StartMain", 0).ToString());
         //PlayerPrefs.DeleteAll();
-        if (PlayerPrefs.GetInt("StartMain", 0) == 1)
-        {
-            this.gameObject.transform.Find("Panel(Start)").gameObject.SetActive(false);
-            this.gameObject.transform.Find("Panel").gameObject.SetActive(true);
-            Event.EventnumberSet(5);
-            
-        }
+        
 
         
     }
@@ -30,10 +25,21 @@ public class MainScript : MonoBehaviour
     void Update()
     {
         item = Inventory.GetComponent<Item>();
+
+        if (PlayerPrefs.GetInt("StartMain", 0) == 1)
+        {
+            this.gameObject.transform.Find("Panel(Start)").gameObject.SetActive(false);
+            this.gameObject.transform.Find("Panel").gameObject.SetActive(true);
+            Event.EventnumberSet(5);
+
+            PlayerPrefs.SetInt("StartMain", 2);
+
+        }
     }
 
     public void PrologueStart()
     {
+        //PlayerPrefs.SetInt("StartMain", 1);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Prologue");
     }
 

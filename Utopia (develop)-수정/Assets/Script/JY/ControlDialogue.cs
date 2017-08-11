@@ -42,6 +42,7 @@ public class ControlDialogue : MonoBehaviour
 
     bool is_event_plus = false;
 
+    public string[] BackLog = new string[50];
 
     // Use this for initialization
   

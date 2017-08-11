@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class Door : MonoBehaviour {
 
+    EventManager EM;
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	    	
+        EM = FindObjectOfType<EventManager>();
 	}
     public void to_Next_Stage()
     {
-        Debug.Log("다음스테이지로꼬우꼬우");
+        EM.EventnumberSet(209);
     }
 
     
