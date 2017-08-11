@@ -728,17 +728,21 @@ public class InputManager : MonoBehaviour
 				
 			// ******************************************************************************** 3Round
 
-			if (obj.transform.name == "13-Feed" && hit.transform.name == "Bird")
+			if (obj.transform.name == "13-Feed" && hit.transform.name == "BirdC")
 			{
 				item.GetNumber(14);
 				item.LoadJson("3Stage");
 
 				Destroy(obj.transform.gameObject);
 				Destroy(hit.transform.gameObject);
+
+				Stage3.Find("3Round").Find("BG").Find("TextObject").Find("Bird").gameObject.SetActive(false);
+				Event.EventnumberSet (320);
 			}
 
 			if (obj.transform.name == "14-Feather" && hit.transform.name == "DreamcatcherC")
 			{
+				Stage3.Find("3Round").Find("BG").Find("TextObject").Find("NonDreamcatcher").gameObject.SetActive(false);
 				Stage3.Find("3Round").Find("BG").Find("ClickObject").Find("Dreamcatcher").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
 				Destroy(hit.transform.gameObject);
@@ -754,6 +758,7 @@ public class InputManager : MonoBehaviour
 
 			if (obj.transform.name == "15-FullWateringCan" && hit.transform.name == "RoseC")
 			{
+				Stage3.Find("3Round").Find("BG").Find("TextObject").Find("NonRose").gameObject.SetActive(false);
 				Stage3.Find("3Round").Find("BG").Find("ClickObject").Find("Rose").gameObject.SetActive(true);
 				Destroy(hit.transform.gameObject);
 			}
@@ -782,31 +787,31 @@ public class InputManager : MonoBehaviour
 				}
 			}
 
-			if (obj.transform.name == "16-Dreamcatcher" && hit.transform.name == "CarrierNimal")
+			if (obj.transform.name == "16-Dreamcatcher" && hit.transform.name == "CarrierNomal")
 			{
 				Stage3.Find("3Round").Find("Carrier").Find("Dreamcatcher").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
 			}
 
-			if (obj.transform.name == "18-Rose" && hit.transform.name == "CarrierNimal")
+			if (obj.transform.name == "18-Rose" && hit.transform.name == "CarrierNomal")
 			{
 				Stage3.Find("3Round").Find("Carrier").Find("Rose").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
 			}
 
-			if (obj.transform.name == "19-Orgel" && hit.transform.name == "CarrierNimal")
+			if (obj.transform.name == "19-Orgel" && hit.transform.name == "CarrierNomal")
 			{
 				Stage3.Find("3Round").Find("Carrier").Find("Orgel").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
 			}
 
-			if (obj.transform.name == "20-Book" && hit.transform.name == "CarrierNimal")
+			if (obj.transform.name == "20-Book" && hit.transform.name == "CarrierNomal")
 			{
 				Stage3.Find("3Round").Find("Carrier").Find("Book").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
 			}
 
-			if (obj.transform.name == "21-Picture" && hit.transform.name == "CarrierNimal")
+			if (obj.transform.name == "21-Picture" && hit.transform.name == "CarrierNomal")
 			{
 				Stage3.Find("3Round").Find("Carrier").Find("Picture").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);

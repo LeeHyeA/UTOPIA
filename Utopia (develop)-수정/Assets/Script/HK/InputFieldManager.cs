@@ -10,6 +10,7 @@ public class InputFieldManager : MonoBehaviour
     int stage = -1;
     public GameObject Main;
     public GameObject Stage1;
+	public GameObject Stage2;
     public GameObject Stage3;
 	public Item item;
 
@@ -69,6 +70,15 @@ public class InputFieldManager : MonoBehaviour
                     stage = 1;
                 break;
 
+			case "A002":
+				stage = 2;
+				break;
+		
+			case "A003":
+				stage = 3;
+				break;
+		
+
             case "5132":
                 stage = 99;
                 break;
@@ -95,6 +105,7 @@ public class InputFieldManager : MonoBehaviour
 
 
                 break;
+			// main -> 1stage
             case 1:
                 this.gameObject.SetActive(false);
                 field.text = "";
@@ -102,12 +113,34 @@ public class InputFieldManager : MonoBehaviour
                 computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
                 Stage1.SetActive(true);
                 break;
+		
+			// main -> 2stage
+			case 2:
+				this.gameObject.SetActive (false);
+				field.text = "";
+			
+				computer.Find ("7_Result").transform.Find ("2_AccessApproved").gameObject.SetActive (true);
+				Main.SetActive (false);
+				Stage2.SetActive(true);
+				break;
+
+			// main -> 3stage
+			case 3:
+				this.gameObject.SetActive (false);
+				field.text = "";
+			
+				computer.Find ("7_Result").transform.Find ("2_AccessApproved").gameObject.SetActive (true);
+				Main.SetActive (false);
+				Stage3.SetActive(true);
+				break;
+
 
 			case 99:
                 // 창끄기
 				Transform BG = Stage3.transform.Find ("3Round").Find ("BG");
 				BG.Find ("Lock").gameObject.SetActive (false);
 				BG.Find ("ClickObject").Find ("Drawer(lock)").gameObject.SetActive (false);
+				GameObject.Find ("Event_Manager").GetComponent<EventManager> ().EventnumberSet (324);
 				item.GetNumber (12);
 				item.LoadJson ("3Stage");
 				item.GetNumber (13);

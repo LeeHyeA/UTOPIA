@@ -8,6 +8,7 @@ public class Stage3 : MonoBehaviour {
     Transform Round2;
     Transform Round3;
 	public EventManager Event;
+	public Item item;
 
     // Use this for initialization
     void Start () {
@@ -66,17 +67,22 @@ public class Stage3 : MonoBehaviour {
 
 	public void Orgel()
 	{
-		Transform orgel = Round3.Find ("3Round").Find ("Orgel");
+		Transform orgel = Round3.Find ("Orgel");
 		if(orgel.Find("Finish").gameObject.activeSelf && orgel.Find("Cover").gameObject.activeSelf)
 		{
 			// 음악 들리고
 			// 재규어 잠듦
 			// 아이템 얻는 거 이벤트 매니져로 변경하기
-			Round3.Find("Jaguar").gameObject.SetActive(false);
-			Transform click = Round3.Find ("BG").Find ("ClickObject").transform;
+			Round3.Find("BG").Find("Jaguar").gameObject.SetActive(false);
+			Event.EventnumberSet (322);
 
-			click.Find ("OrgelButton").gameObject.SetActive (false);
-			click.Find ("OrgelGet").gameObject.SetActive (true);
+			Round3.Find ("BG").Find ("TextObject").Find ("OrgelButton").gameObject.SetActive (false);
+			Round3.Find ("BG").Find ("ClickObject").Find ("OrgelGet").gameObject.SetActive (true);
+
+
+			//OpenDoor ();
+			//item.GetNumber (19);
+			//item.LoadJson ("3Stage");
 		}
 	}
 
@@ -90,10 +96,16 @@ public class Stage3 : MonoBehaviour {
 
 		if (Dreamcatcher.activeSelf && Rose.activeSelf && Book.activeSelf && Orgel.activeSelf && Picture.activeSelf) 
 		{
-			Transform click = Round3.Find ("BG").Find ("ClickObject").transform;
+			Round3.Find ("BG").Find ("TextObject").Find ("CarrierButton").gameObject.SetActive (false);
+			Round3.Find ("BG").Find ("ClickObject").Find ("CarrierGet").gameObject.SetActive (true);
+		}
+	}
 
-			click.Find ("CarrierButton").gameObject.SetActive (false);
-			click.Find ("CarrierGet").gameObject.SetActive (true);
+	public void OpenDoor()
+	{
+		if(!Round3.Find("BG").Find("ClickObject").Find("CarrierGet").gameObject.activeSelf)
+		{
+			Round3.Find ("BG").Find ("TextObject").Find ("Door").gameObject.SetActive (true);
 		}
 	}
 

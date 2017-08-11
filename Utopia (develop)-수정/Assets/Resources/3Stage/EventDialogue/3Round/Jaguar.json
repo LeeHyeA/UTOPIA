@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"재규어가 길을 막고 있다. 이대로는 지나갈 수 없다."
+    }
+  ]
+}

@@ -106,7 +106,7 @@ namespace DigitalRuby.RainMaker
                 {
                     WindZone.gameObject.SetActive(false);
                 }
-                audioSourceWind.Stop();
+                //audioSourceWind.Stop();
             }
 
             audioSourceWind.Update();
