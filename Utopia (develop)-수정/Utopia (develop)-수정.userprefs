@@ -4,12 +4,13 @@
     <Files>
       <File FileName="Assets\Script\HK\MoveManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Script\HK\VideoStream.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\HK\MainScript.cs" Line="32" Column="9" />
-      <File FileName="Assets\Script\HK\InputManager.cs" Line="772" Column="53" />
-      <File FileName="Assets\Script\HK\Stage3.cs" Line="96" Column="24" />
-      <File FileName="Assets\Script\JY\EventManager.cs" Line="425" Column="5" />
-      <File FileName="Assets\Script\HK\InputFieldManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\HK\MainScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\HK\InputManager.cs" Line="814" Column="78" />
+      <File FileName="Assets\Script\HK\Stage3.cs" Line="110" Column="3" />
+      <File FileName="Assets\Script\JY\EventManager.cs" Line="162" Column="30" />
+      <File FileName="Assets\Script\HK\InputFieldManager.cs" Line="106" Column="4" />
       <File FileName="Assets\Script\HK\HintManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\RainMaker\Prefab\BaseRainScript.cs" Line="109" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

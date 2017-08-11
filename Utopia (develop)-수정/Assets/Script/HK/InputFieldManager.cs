@@ -108,6 +108,7 @@ public class InputFieldManager : MonoBehaviour
 				Transform BG = Stage3.transform.Find ("3Round").Find ("BG");
 				BG.Find ("Lock").gameObject.SetActive (false);
 				BG.Find ("ClickObject").Find ("Drawer(lock)").gameObject.SetActive (false);
+				GameObject.Find ("Event_Manager").GetComponent<EventManager> ().EventnumberSet (324);
 				item.GetNumber (12);
 				item.LoadJson ("3Stage");
 				item.GetNumber (13);

@@ -1,0 +1,10 @@
+﻿{
+  "dialogues": [
+    {
+      "characterType":0,
+      "character_name":"???",
+      "standImage_Name":"Nothing",
+      "script_Text":"제목없는 동화책을 얻었다."
+    }
+  ]
+}

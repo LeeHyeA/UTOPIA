@@ -588,7 +588,24 @@ public class EventManager : MonoBehaviour
 					StartCoroutine (Fadeing (false, 1.5f));
 					break;
 
-			
+				case 320:
+					Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/3Round/GetFeather");
+					Json_Data = JsonMapper.ToObject(Text_Data.text);
+					CD.LoadJSON(Json_Data);
+					break;
+
+				case 322:
+					Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/3Round/SleepJaguar");
+					Json_Data = JsonMapper.ToObject(Text_Data.text);
+					CD.LoadJSON(Json_Data);
+					break;
+
+				case 324:
+					Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/3Round/OpenLock");
+					Json_Data = JsonMapper.ToObject(Text_Data.text);
+					CD.LoadJSON(Json_Data);
+					break;
+
 	   	       default:
 	   	           break;
             }
