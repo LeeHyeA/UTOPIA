@@ -54,6 +54,8 @@ public class SlidePuzzle : MonoBehaviour {
 
     public void CheckDirection(SlidePuzzleTile SPT)
     {
+        if (Answerd)
+            return;
         if (SPT.Ver == blank_Tile.Ver && SPT.Hor == blank_Tile.Hor)
         {
             Debug.Log("위치가같음");

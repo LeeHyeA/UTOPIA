@@ -111,6 +111,7 @@ public class InputFieldManager : MonoBehaviour
                 field.text = "";
 
                 computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+                Main.SetActive(false);
                 Stage1.SetActive(true);
                 break;
 		

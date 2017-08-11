@@ -445,7 +445,7 @@ public class EventManager : MonoBehaviour
                     break;
                 case 162:
                     Stage_1.SetActive(false);
-                    MainStage.SetActive(true);
+                    Stage_2.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.5f));
                     break;
 
@@ -550,7 +550,7 @@ public class EventManager : MonoBehaviour
                     break;
                 case 210:
                     Stage_2.SetActive(false);
-                    MainStage.SetActive(true);
+                    Stage_3.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.0f));
                     break;
 
@@ -652,7 +652,7 @@ public class EventManager : MonoBehaviour
             while (isInTransition)
             {
                 fadeImage_.SetActive(true);
-                transition += (Showing) ? Time.deltaTime * (1 / duration) : -Time.deltaTime * (1 / duration);
+                transition += (Showing) ? 0.01f : -0.01f;
                 fadeImage.color = Color.Lerp(new Color(0, 0, 0, 0), Color.black, transition);
 
                 if (transition > 1 || transition < 0)

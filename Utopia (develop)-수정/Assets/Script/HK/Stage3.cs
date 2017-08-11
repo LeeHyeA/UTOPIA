@@ -15,12 +15,13 @@ public class Stage3 : MonoBehaviour {
         Round1 = transform.Find("1Round");
         Round2 = transform.Find("2Round");
         Round3 = transform.Find("3Round");
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        //PlayerPrefs.DeleteAll();
+    }
 
 	public void TrueRain()
 	{
@@ -32,6 +33,8 @@ public class Stage3 : MonoBehaviour {
 
     public void FlowerRain()
     {
+        
+
         if(PlayerPrefs.GetString("Seed", "false") == "true")
         {
             Transform Garden = Round1.Find("Change").Find("Garden");
