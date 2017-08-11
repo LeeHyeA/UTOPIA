@@ -552,7 +552,7 @@ public class EventManager : MonoBehaviour
 					break;
 
 				case 302:
-				Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/1Round/Flower");
+					Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/1Round/Flower");
 					Json_Data = JsonMapper.ToObject(Text_Data.text);
 					CD.LoadJSON(Json_Data);
 					break;
