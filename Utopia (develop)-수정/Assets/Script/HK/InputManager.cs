@@ -32,6 +32,7 @@ public class InputManager : MonoBehaviour
     public GameObject GoldClock;
     public GameObject GoldNeedle;
     public GameObject OwlCage;
+    public GameObject FirstPotColbox;
     public GameObject PotState;
     public GameObject FairyTale;
 
@@ -553,20 +554,22 @@ public class InputManager : MonoBehaviour
             }
 
             //장미씨앗을 화분에 놓기
-            if(obj.transform.name == "4-RoseSeed" && hit.transform.name == "Pot")
+            if(obj.transform.name == "4-RoseSeed" && hit.transform.name == "PotCol")
             {
                 Debug.Log("장미씨앗 심기완료");
                 //장미활성화
                 PotState.transform.Find("Rose").gameObject.SetActive(true);
+                FirstPotColbox.gameObject.SetActive(false); //심어져있는상태일때 다른씨앗 심기 방지
                 Destroy(obj.transform.gameObject);
                 GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 168;
             }
 
             //화분에 나무 심기
-            if(obj.transform.name == "3-TreeSeed" && hit.transform.name == "Pot")
+            if(obj.transform.name == "3-TreeSeed" && hit.transform.name == "PotCol")
             {
                 Debug.Log("나무심기 완료");
                 PotState.transform.Find("Tree(before)").gameObject.SetActive(true);
+                FirstPotColbox.gameObject.SetActive(false); //심어져있는상태일때 다른씨앗 심기 방지
                 Destroy(obj.transform.gameObject);
                 GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 170;
             }
@@ -579,9 +582,28 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
                 GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 172;
             }
+            //(화분예외처리)
+            //심어진 나무에 장미씨앗을 놨을경우
+            if (obj.transform.name == "4-RoseSeed" && hit.transform.name == "Tree(before)")
+            {
+                //잘못심었다는 내용의 대사이벤트
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 154;
+            }
+            if (obj.transform.name == "4-RoseSeed" && hit.transform.name == "Tree(after)")
+            {
+                //잘못심었다는 내용의 대사이벤트
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 154;
+            }
+            //심어진 장미에 나무씨앗을 놨을경우
+            if (obj.transform.name == "3-TreeSeed" && hit.transform.name == "Rose")
+            {
+                //잘못심었다는 내용의 대사이벤트
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 156;
+            }
+
             //동화책에 이름표 놓기
             //올빼미
-            if(obj.transform.name == "5-OwlName" && hit.transform.name == "OwlNameCol")
+            if (obj.transform.name == "5-OwlName" && hit.transform.name == "OwlNameCol")
             {
                 FairyTale.transform.Find("AddOwlName").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);

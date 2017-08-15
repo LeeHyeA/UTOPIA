@@ -39,18 +39,23 @@ public class FlowerpotControl : MonoBehaviour {
     //1-3 배경 화분 이미지
     public Image FlowerEnter3;
 
-    public GameObject RosePlant;
-    public GameObject TreePlant;
+    public GameObject RosePlant; // 장미가 심어졌을시 바로 활성화
+    public GameObject TreePlant; // 나무에 금침을 놓아서 다자란상태
 
+    //1-3 화분에 심어져있는 상태
+    public bool IsPlantTree = false;
+    public bool IsPlantRose = false;
 
     public void CheckBackPot()
     {
         if (RosePlant.activeSelf)
         {
+            IsPlantRose = true;
             FlowerEnter3.sprite = Resources.Load<Sprite>("Stage1-3/BackPotState/RoseBack");
         }
         else if (TreePlant.activeSelf)
         {
+            IsPlantTree = true;
             FlowerEnter3.sprite = Resources.Load<Sprite>("Stage1-3/BackPotState/TreeBack");
         }
         else
@@ -221,4 +226,16 @@ public class FlowerpotControl : MonoBehaviour {
     {
         FlowerLayer.SetActive(false);
     }
+
+
+    //1-3
+    public void GetRose()
+    {
+        IsPlantRose = false;
+    }
+    public void GetTree()
+    {
+        IsPlantTree = false;
+    }
+
 }

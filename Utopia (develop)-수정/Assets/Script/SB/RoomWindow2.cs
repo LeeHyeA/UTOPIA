@@ -86,7 +86,7 @@ public class RoomWindow2 : MonoBehaviour {
             if (PutFeedToOwlCage)
             {
                 //154번 이벤트 발생
-                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 154;
+                GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 152;
                 PutFeedToOwlCage = false;
             }
         }

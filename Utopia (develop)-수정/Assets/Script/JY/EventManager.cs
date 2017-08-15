@@ -419,8 +419,8 @@ public class EventManager : MonoBehaviour
                     break;
                 */
 
-                //맑은날 부엉이를 얻음(154-155)
-                case 154:
+                //맑은날 올빼미를 얻음(154-155)
+                case 152:
                     inventory.SetActive(false);
                     GameObject OwlCageFeed = Owl_Cage.transform.Find("OwlCageFeed").gameObject;
                     OwlCageFeed.SetActive(false);
@@ -431,6 +431,20 @@ public class EventManager : MonoBehaviour
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
+                
+                //나무씨앗이 심어져 있는 상황에서 장미씨앗 심었을 경우(154-155)
+                case 154:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/WrongRose");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+                //장미가 심어져 있는 상황에서 나무씨앗을 심을경우(156-158)
+                case 156:
+                    Text_Data = Resources.Load<TextAsset>("Stage1-3/EventDialogue/WrongTree");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
 
                 //동화책을 완성했을시
                 case 160:
