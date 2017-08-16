@@ -4,13 +4,7 @@
       "characterType":0,
       "character_name":"알렉스",
       "standImage_Name":"Nothing",
-      "script_Text":"창문을 열자."
-    },
-	{
-	  "characterType":0,
-      "character_name":"알렉스",
-      "standImage_Name":"Nothing",
-      "script_Text":"부엉이가 새장에 들어왔다."
-	}
+      "script_Text":"창문을 열자, 올빼미가 새장에 들어왔다."
+    }
   ]
 }

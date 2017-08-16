@@ -381,9 +381,13 @@ public class InputManager : MonoBehaviour
             }
 
             //칼을 양에 놓아 고기얻기
-            if (obj.transform.name == "0-Knife" && hit.transform.name == "sheep")
+            if (obj.transform.name == "0-Knife" && hit.transform.name == "sheepCol")
             {
                 Debug.Log("칼로 고기얻기 완료");
+
+                //양 충돌박스 삭제
+                Destroy(hit.transform.gameObject);
+                
 
                 //AnimalControl의 칼을 놓았음을 알려주는 변수를 참으로
                 GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().PutKnife = true;

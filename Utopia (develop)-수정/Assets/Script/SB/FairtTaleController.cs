@@ -35,6 +35,11 @@ public class FairtTaleController : MonoBehaviour {
         GetRoseSeed = true;
     }
 
+    public void InitPage()
+    {
+        PageNum = 1;
+    }
+
     public void CheckPage()
     {
         if (PageNum == 2 && !RoseName.activeSelf && !GetRoseSeed)

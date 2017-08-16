@@ -53,6 +53,9 @@ public class EventManager : MonoBehaviour
     public GameObject Stage_2;
     public GameObject Stage_3;
 
+    //인벤토리 아이템 삭제용
+    public GameObject Grid;
+
     // Use this for initialization
     void Start ()
     {
@@ -243,8 +246,10 @@ public class EventManager : MonoBehaviour
                     Panel1_2_defalut.SetActive(true);
                     Window.SetActive(false);
                     StartCoroutine(Fadeing(false, 1.5f));
+                    /*
                     //몽골스테이지 첫대사 발생
                     Event_Number = 115;
+                    */
                     break;
                 //새장에 모이를 두고난 후 창문상태가 변할때 맑은날이면 새가 들어오는 이벤트
                 case 109:
@@ -305,6 +310,8 @@ public class EventManager : MonoBehaviour
                 //허르헉을 완성시 대사후 1-3 디폴트방으로 이동 (118-121)
                 case 118:
                     inventory.SetActive(false);
+                    Destroy(Grid.transform.Find("0-Knife").gameObject); //칼 삭제
+                    Destroy(Grid.transform.Find("2-FullWateringCan").gameObject); //물뿌리개 삭제
                     Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/CompleteTable");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
