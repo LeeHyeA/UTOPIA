@@ -101,7 +101,7 @@ public class LogicPuzzle : MonoBehaviour
         {
             for (int i = 0; i < 100; i++)
             {
-                t[i].is_Cliked = false;
+                t[i].clear();
             }
         }
         return;
