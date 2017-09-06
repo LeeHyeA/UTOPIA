@@ -19,7 +19,7 @@ public class PlayerControl : MonoBehaviour {
     public AudioSource bgm;
     public AudioClip Walk;
     public AudioClip Door;
-
+    AudioClip test;
     public bool canMove;
     //public Transform ScreenFader;
 
