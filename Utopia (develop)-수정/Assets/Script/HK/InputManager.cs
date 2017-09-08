@@ -691,6 +691,7 @@ public class InputManager : MonoBehaviour
                 Round1.Find("Image").gameObject.SetActive(true);
                 Round1.Find("Change").Find("Garden").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Canvas(3Stage)").GetComponent<Stage3>().SunsetChk = true;
             }
 
             if (obj.transform.name == "1-Seed" && hit.transform.name == "Grass")
@@ -707,6 +708,8 @@ public class InputManager : MonoBehaviour
                 item.GetNumber(6);
                 item.LoadJson("3Stage");
                 Destroy(obj.transform.gameObject);
+
+                PlayerPrefs.SetString("Seed", "Finish");
             }
 
             if (obj.transform.name == "6-FlowerRing" && hit.transform.name == "Statuette")
