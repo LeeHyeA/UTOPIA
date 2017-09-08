@@ -224,6 +224,10 @@ public class EventManager : MonoBehaviour
                     StartCoroutine(Fadeing(false, 1.5f));
                     break;
                 case 103:
+                    //1-1BGM재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_Number = 2;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_ListPlay();
+
                     //1-1 시작시 혼잣말
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/StartBrazilStage");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
@@ -246,6 +250,10 @@ public class EventManager : MonoBehaviour
                     Panel1_2_defalut.SetActive(true);
                     Window.SetActive(false);
                     StartCoroutine(Fadeing(false, 1.5f));
+                    //1-2디폴트방 BGM재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 3;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                     /*
                     //몽골스테이지 첫대사 발생
                     Event_Number = 115;
@@ -301,6 +309,10 @@ public class EventManager : MonoBehaviour
 
                 //몽골 되고나서 첫대사(116-117)
                 case 116:
+                    //1-2BGM재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 4;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                     Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/StartMongGoalStage");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);

@@ -384,7 +384,7 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 124;
                 //효과음재생
                 GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 1;
-                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_List();
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             //칼을 양에 놓아 고기얻기
