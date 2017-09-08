@@ -40,7 +40,9 @@ public class Stage3 : MonoBehaviour {
             Transform Garden = Round1.Find("Change").Find("Garden");
             Garden.Find("Grass").gameObject.SetActive(false);
             Garden.Find("Flower").gameObject.SetActive(true);
-            
+            Event.EventnumberSet(302);
+            PlayerPrefs.SetString("Seed", "Finish");
+
         }
 
         else
@@ -48,7 +50,7 @@ public class Stage3 : MonoBehaviour {
             Transform Garden = Round1.Find("Change").Find("Garden");
             Garden.Find("Grass").gameObject.SetActive(true);
             Garden.Find("Flower").gameObject.SetActive(false);
-			Event.EventnumberSet (302);
+			
 
         }
     }

@@ -113,6 +113,7 @@ public class InputFieldManager : MonoBehaviour
                 computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
                 Main.SetActive(false);
                 Stage1.SetActive(true);
+                item.DeleteInventory();
                 break;
 		
 			// main -> 2stage
@@ -123,7 +124,8 @@ public class InputFieldManager : MonoBehaviour
 				computer.Find ("7_Result").transform.Find ("2_AccessApproved").gameObject.SetActive (true);
 				Main.SetActive (false);
 				Stage2.SetActive(true);
-				break;
+                item.DeleteInventory();
+                break;
 
 			// main -> 3stage
 			case 3:
@@ -133,7 +135,8 @@ public class InputFieldManager : MonoBehaviour
 				computer.Find ("7_Result").transform.Find ("2_AccessApproved").gameObject.SetActive (true);
 				Main.SetActive (false);
 				Stage3.SetActive(true);
-				break;
+                item.DeleteInventory();
+                break;
 
 
 			case 99:

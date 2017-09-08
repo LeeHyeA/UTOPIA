@@ -53,7 +53,7 @@ public class InputManager : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         HeadGear = MainStage.Find("HeadGear").gameObject;
         Inventory = UICanvas.Find("2_Inventory").gameObject;
         Hint = UICanvas.Find("3_Hint").gameObject;
