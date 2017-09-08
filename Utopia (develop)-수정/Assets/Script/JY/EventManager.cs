@@ -251,8 +251,8 @@ public class EventManager : MonoBehaviour
                     Window.SetActive(false);
                     StartCoroutine(Fadeing(false, 1.5f));
                     //1-2디폴트방 BGM재생
-                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 3;
-                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_Number = 3;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_ListPlay();
 
                     /*
                     //몽골스테이지 첫대사 발생
@@ -261,6 +261,10 @@ public class EventManager : MonoBehaviour
                     break;
                 //새장에 모이를 두고난 후 창문상태가 변할때 맑은날이면 새가 들어오는 이벤트
                 case 109:
+                    //새지저귐 효과음 재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 11;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                     inventory.SetActive(false);
                     GameObject BirdCagePutFeed = BirdCage.transform.Find("BirdCagePutFeed").gameObject;
                     BirdCagePutFeed.SetActive(false);
@@ -310,14 +314,12 @@ public class EventManager : MonoBehaviour
                 //몽골 되고나서 첫대사(116-117)
                 case 116:
                     //1-2BGM재생
-                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 4;
-                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
-
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_Number = 4;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_ListPlay();
                     Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/StartMongGoalStage");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
                     break;
-
                     
                 //허르헉을 완성시 대사후 1-3 디폴트방으로 이동 (118-121)
                 case 118:
@@ -333,6 +335,9 @@ public class EventManager : MonoBehaviour
                     break;
                 case 120:
                     Panel1_2.SetActive(false);
+                    //1-3디폴트방 BGM재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_Number = 10;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_ListPlay();
                     Panel1_3_defalut.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.5f));
                     break;
@@ -440,6 +445,9 @@ public class EventManager : MonoBehaviour
 
                 //맑은날 올빼미를 얻음(154-155)
                 case 152:
+                    //효과음재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 11;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                     inventory.SetActive(false);
                     GameObject OwlCageFeed = Owl_Cage.transform.Find("OwlCageFeed").gameObject;
                     OwlCageFeed.SetActive(false);
@@ -536,6 +544,9 @@ public class EventManager : MonoBehaviour
                 case 182:
                     //패널1-3디폴트 비활성화 시킴
                     Panel1_3_defalut.SetActive(false);
+                    //1-3 BGM재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_Number = 11;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_ListPlay();
                     //패널1-3 활성화시킴
                     Panel1_3.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.5f));

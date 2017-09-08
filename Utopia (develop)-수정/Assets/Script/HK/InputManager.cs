@@ -259,6 +259,9 @@ public class InputManager : MonoBehaviour
             //모이를 빈새장으로
             if (obj.transform.name == "4-1_1BirdFeed" && hit.transform.name == "BirdCageEmptyCol")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 15;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 BridCage.transform.Find("BirdCageEmpty").gameObject.SetActive(false);
                 BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
                 GameObject.Find("WindowButton").GetComponent<RoomWindow>().SetPutFeedToBirdCage();
@@ -303,6 +306,9 @@ public class InputManager : MonoBehaviour
                 if (tempNum == 0)
                 {
                     Debug.Log("거미줄+보석완성을 드림캐쳐 기본 상태에 붙임");
+                    //효과음재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 12;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                     //상태를 기본+거미줄보석(2)로 바꿈
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 2;
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
@@ -313,6 +319,9 @@ public class InputManager : MonoBehaviour
                 else if (tempNum == 1)
                 {
                     Debug.Log("거미줄+보석완성을 드림캐쳐 기본+깃털 상태에 붙임");
+                    //효과음재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 12;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                     //상태를 기본+깃털+거미줄보석(3)로 바꿈
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 3;
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
@@ -328,6 +337,9 @@ public class InputManager : MonoBehaviour
                 if (tempNum2 == 0)
                 {
                     Debug.Log("깃털을 드림캐쳐 기본 상태에 붙임");
+                    //효과음재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 12;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                     //상태를 기본+깃털(1)로 바꿈
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 1;
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
@@ -338,6 +350,9 @@ public class InputManager : MonoBehaviour
                 else if (tempNum2 == 2)
                 {
                     Debug.Log("깃털을 드림캐쳐 기본+거미줄 상태에 붙임");
+                    //효과음재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 12;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                     //상태를 기본+깃털+거미줄보석(3)로 바꿈
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 3;
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
@@ -355,6 +370,9 @@ public class InputManager : MonoBehaviour
                 if (tempNum3 == 3 && CuttonTempNum ==1)
                 {
                     Debug.Log("별가루를 드림캐쳐 기본+깃털+거미줄 상태에 붙임");
+                    //효과음재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 12;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                     //상태를 드림캐쳐 최종형태(4)로 바꿈
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState = 4;
                     GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().ShowDreamCatcher();
@@ -362,6 +380,7 @@ public class InputManager : MonoBehaviour
                     GameObject.Find("Event_Manager").GetComponent<EventManager>().MakeDreamCatcher = true;
                     Destroy(obj.transform.gameObject);
                     GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 58;
+
                 }
             }
 
@@ -374,6 +393,10 @@ public class InputManager : MonoBehaviour
             {
                 Debug.Log("빈우유병 채우기 완료");
 
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 1;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                 //AnimalControl의 빈우유병을 놓았음을 알려주는 변수를 참으로
                 GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().PutEmptyMilk = true;
                 //그후 다시 갱신해서 보여줌
@@ -382,15 +405,16 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
 
                 GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 124;
-                //효과음재생
-                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 1;
-                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             //칼을 양에 놓아 고기얻기
             if (obj.transform.name == "0-Knife" && hit.transform.name == "sheepCol")
             {
                 Debug.Log("칼로 고기얻기 완료");
+
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 14;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
 
                 //양 충돌박스 삭제
                 Destroy(hit.transform.gameObject);
@@ -409,6 +433,10 @@ public class InputManager : MonoBehaviour
             {
                 Debug.Log("하마에 빈물뿌리개 놓기 완료");
 
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 5;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                 //AnimalControl의 물뿌리개를 놓았음을 알려주는 변수를 참으로
                 GameObject.Find("AnimalContoller").GetComponent<AnimalContol>().PutWateringCan = true;
                 //그후 다시 갱신해서 보여줌
@@ -421,6 +449,9 @@ public class InputManager : MonoBehaviour
             //돌을 모닥불에 옮겨 달군돌 얻기
             if (obj.transform.name == "8-Ingredient(Stone)" && hit.transform.name == "Picture3(bonfire)")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 15;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 Debug.Log("달군돌 얻기 완료");
 
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutStone = true;
@@ -433,6 +464,10 @@ public class InputManager : MonoBehaviour
             //달군돌을 테이블에 놓기
             if (obj.transform.name == "9-Ingredient(HotStone)" && hit.transform.name == "TableDefalut")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 15;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                 Debug.Log("달군돌 놓기 완료");
 
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutHotStone = true;
@@ -443,6 +478,10 @@ public class InputManager : MonoBehaviour
             //고기를 테이블에 놓기
             if (obj.transform.name == "7-Ingredient(Meat)" && hit.transform.name == "TableDefalut")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 15;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                 Debug.Log("고기 놓기 완료");
 
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutMeat = true;
@@ -453,6 +492,10 @@ public class InputManager : MonoBehaviour
             //우유를 테이블에 놓기
             if (obj.transform.name == "4-Ingredient(Milk)" && hit.transform.name == "TableDefalut")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 6;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                 Debug.Log("우유 놓기 완료");
 
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutMilkBottle = true;
@@ -463,6 +506,10 @@ public class InputManager : MonoBehaviour
             //감자를 테이블에 놓기
             if (obj.transform.name == "6-Ingredient(Potato)" && hit.transform.name == "TableDefalut")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 15;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                 Debug.Log("감자 놓기 완료");
 
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutPotato = true;
@@ -474,6 +521,9 @@ public class InputManager : MonoBehaviour
             //당근을 테이블에 놓기
             if (obj.transform.name == "5-Ingredient(Carrot)" && hit.transform.name == "TableDefalut")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 15;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 Debug.Log("당근 놓기 완료");
 
                 GameObject.Find("PolaroidController").GetComponent<PictureControl>().PutCarrot = true;
@@ -493,6 +543,9 @@ public class InputManager : MonoBehaviour
                 //if 당근이 심어져있을때, if강아지풀, if감자
                 if (TempCarrotState)
                 {
+                    //효과음재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 5;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                     FlowerPotPlantState.transform.Find("Carrot").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                     FlowerEnter.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotRabbit01");
@@ -500,6 +553,9 @@ public class InputManager : MonoBehaviour
                 }
                 if (TempPotatoState)
                 {
+                    //효과음재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 5;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                     FlowerPotPlantState.transform.Find("Potato").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                     FlowerEnter.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotPig01");
@@ -507,6 +563,9 @@ public class InputManager : MonoBehaviour
                 }
                 if (TempFoxTailState)
                 {
+                    //효과음재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 5;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                     FlowerPotPlantState.transform.Find("Foxtail").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                     FlowerEnter.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotDog01");
@@ -514,6 +573,9 @@ public class InputManager : MonoBehaviour
                 }
                 if (TempBeanState)
                 {
+                    //효과음재생
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 5;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                     FlowerPotPlantState.transform.Find("Bean").gameObject.SetActive(true);
                     obj.transform.SetParent(Inventory.transform.Find("2_Grid"));
                     FlowerEnter.sprite = Resources.Load<Sprite>("Stage1-2/Flowerpot/PotBird01");
@@ -523,6 +585,9 @@ public class InputManager : MonoBehaviour
             //잘못심은 작물 칼로 자르기 (강아지풀,콩)
             if (obj.transform.name == "0-Knife" && hit.transform.name == "Foxtail")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 14;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 FlowerPotPlantState.transform.Find("Foxtail").gameObject.SetActive(false);
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlanted = false;
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantFoxtail = false;
@@ -532,6 +597,9 @@ public class InputManager : MonoBehaviour
             }
             if (obj.transform.name == "0-Knife" && hit.transform.name == "Bean")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 14;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 FlowerPotPlantState.transform.Find("Bean").gameObject.SetActive(false);
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlanted = false;
                 GameObject.Find("FlowerpotController").GetComponent<FlowerpotControl>().IsPlantBean = false;
@@ -546,6 +614,9 @@ public class InputManager : MonoBehaviour
             //망치를 금시계에 놓기
             if(obj.transform.name == "1-Hammer" && hit.transform.name == "GoldClock")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 17;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 GoldNeedle.gameObject.SetActive(true);
                 //Destroy(hit.transform.gameObject);
                 Destroy(obj.transform.gameObject);
@@ -557,6 +628,9 @@ public class InputManager : MonoBehaviour
             //육포를 새장에 놓기
             if(obj.transform.name == "0-OwlFeed" &&hit.transform.name == "OwlCageEmpty")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 15;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 OwlCage.transform.Find("OwlCageEmpty").gameObject.SetActive(false);
                 OwlCage.transform.Find("OwlCageFeed").gameObject.SetActive(true);
                 GameObject.Find("WindowButton1-3").GetComponent<RoomWindow2>().SetPutFeedToOwlCage();
@@ -567,6 +641,9 @@ public class InputManager : MonoBehaviour
             //장미씨앗을 화분에 놓기
             if(obj.transform.name == "4-RoseSeed" && hit.transform.name == "PotCol")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 4;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 Debug.Log("장미씨앗 심기완료");
                 //장미활성화
                 PotState.transform.Find("Rose").gameObject.SetActive(true);
@@ -578,6 +655,9 @@ public class InputManager : MonoBehaviour
             //화분에 나무 심기
             if(obj.transform.name == "3-TreeSeed" && hit.transform.name == "PotCol")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 4;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 Debug.Log("나무심기 완료");
                 PotState.transform.Find("Tree(before)").gameObject.SetActive(true);
                 FirstPotColbox.gameObject.SetActive(false); //심어져있는상태일때 다른씨앗 심기 방지
@@ -587,6 +667,9 @@ public class InputManager : MonoBehaviour
             //심어진 나무에 금침 놓기
             if(obj.transform.name == "2-GoldNeedle" && hit.transform.name =="Tree(before)")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 16;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 Debug.Log("심은 나무에 금침놓기");
                 PotState.transform.Find("Tree(before)").gameObject.SetActive(false);
                 PotState.transform.Find("Tree(after)").gameObject.SetActive(true);
@@ -616,6 +699,9 @@ public class InputManager : MonoBehaviour
             //올빼미
             if (obj.transform.name == "5-OwlName" && hit.transform.name == "OwlNameCol")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 15;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 FairyTale.transform.Find("AddOwlName").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
                 FairyTale.transform.Find("OwlNameCol").gameObject.SetActive(false);
@@ -625,6 +711,9 @@ public class InputManager : MonoBehaviour
             //나무
             if (obj.transform.name == "7-TreeName" && hit.transform.name == "TreeNameCol")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 15;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 FairyTale.transform.Find("AddTreeName").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
                 FairyTale.transform.Find("TreeNameCol").gameObject.SetActive(false);
@@ -634,6 +723,9 @@ public class InputManager : MonoBehaviour
             //장미
             if (obj.transform.name == "6-RoseName" && hit.transform.name == "RoseNameCol")
             {
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 15;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 FairyTale.transform.Find("AddRoseName").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
                 FairyTale.transform.Find("RoseNameCol").gameObject.SetActive(false);

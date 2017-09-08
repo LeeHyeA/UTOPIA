@@ -49,12 +49,12 @@ public class SoundManager : MonoBehaviour {
                 AudioClip LdresserOpen = Resources.Load("Sound/Stage1/SE/OpenDrawer") as AudioClip;
                 SE.PlayOneShot(LdresserOpen);
                 break;
-            //씨앗심었을시
+            //씨앗심었을시 & 씨앗 얻었을시
             case 4:
                 AudioClip PlantSeed = Resources.Load("Sound/Stage1/SE/PlantSeed") as AudioClip;
                 SE.PlayOneShot(PlantSeed);
                 break;
-            //물뿌리개사용
+            //물뿌리개사용 and 하마한테서 물채워질시
             case 5:
                 AudioClip Wateringcan = Resources.Load("Sound/Stage1/SE/Wateringcan") as AudioClip;
                 SE.PlayOneShot(Wateringcan);
@@ -73,6 +73,51 @@ public class SoundManager : MonoBehaviour {
             case 8:
                 AudioClip ObjectClick = Resources.Load("Sound/Stage1/SE/ObjectClick") as AudioClip;
                 SE.PlayOneShot(ObjectClick);
+                break;
+            //일반적인 아이템 얻는 소리
+            case 9:
+                AudioClip GetItem = Resources.Load("Sound/Stage1/SE/GetItem") as AudioClip;
+                SE.PlayOneShot(GetItem);
+                break;
+            //커튼 여닫는 소리
+            case 10:
+                AudioClip OpenCurtain = Resources.Load("Sound/Stage1/SE/OpenCurtain") as AudioClip;
+                SE.PlayOneShot(OpenCurtain);
+                break;
+            //새지저귐 효과음
+            case 11:
+                AudioClip BirdCage = Resources.Load("Sound/Stage1/SE/BirdCage") as AudioClip;
+                SE.PlayOneShot(BirdCage);
+                break;
+            //아이템 사용시 (샤샥) -like 칼소리
+            case 12:
+                AudioClip UseItem = Resources.Load("Sound/Stage1/SE/UseItem") as AudioClip;
+                SE.PlayOneShot(UseItem);
+                break;
+            //물뿌리개 얻었을시
+            case 13:
+                AudioClip GetWateringcan = Resources.Load("Sound/Stage1/SE/GetWateringcan") as AudioClip;
+                SE.PlayOneShot(GetWateringcan);
+                break;
+            //양머리 칼로 자를시
+            case 14:
+                AudioClip MeatSlap = Resources.Load("Sound/Stage1/SE/MeatSlap") as AudioClip;
+                SE.PlayOneShot(MeatSlap);
+                break;
+            //아이템 놓았을시 (테이블에다가) & 돌을 모닥불에 놓기 & 새장에 모이,먹이놓기 & 이름표 동화책에 놓기
+            case 15:
+                AudioClip PutItem = Resources.Load("Sound/Stage1/SE/PutItem") as AudioClip;
+                SE.PlayOneShot(PutItem);
+                break;
+            //금시계침 사용 및 얻음
+            case 16:
+                AudioClip UseGoldNeedle = Resources.Load("Sound/Stage1/SE/UseGoldNeedle") as AudioClip;
+                SE.PlayOneShot(UseGoldNeedle);
+                break;
+            //망치사용
+            case 17:
+                AudioClip UseHammer = Resources.Load("Sound/Stage1/SE/UseHammer") as AudioClip;
+                SE.PlayOneShot(UseHammer);
                 break;
         }
     }
@@ -117,8 +162,7 @@ public class SoundManager : MonoBehaviour {
                 BGM.loop = true;
                 break;
 
-
-            /*
+                
         //test2(모닥불사진브금)
         case 5:
             AudioClip BonFire = Resources.Load("Sound/Stage1/Bgm/Picture(BonFire)") as AudioClip;
@@ -140,25 +184,21 @@ public class SoundManager : MonoBehaviour {
             BGM.Play();
             BGM.loop = true;
             break;
-            */
+         //(1-3Defalut브금)
+         case 10:
+             AudioClip Stage3Defalut = Resources.Load("Sound/Stage1/Bgm/Bgm(1-3Defalut)") as AudioClip;
+             BGM.clip = Stage3Defalut;
+             BGM.Play();
+             BGM.loop = true;
+             break;
 
-
-
-            //(1-3Defalut브금)
-            case 10:
-                AudioClip Stage3Defalut = Resources.Load("Sound/Stage1/Bgm/Bgm(1-3Defalut)") as AudioClip;
-                BGM.clip = Stage3Defalut;
-                BGM.Play();
-                BGM.loop = true;
-                break;
-
-            //(1-3Stage브금)
-            case 11:
-                AudioClip Stage1_3 = Resources.Load("Sound/Stage1/Bgm/Bgm(1-3)") as AudioClip;
-                BGM.clip = Stage1_3;
-                BGM.Play();
-                BGM.loop = true;
-                break;
+         //(1-3Stage브금)
+         case 11:
+             AudioClip Stage1_3 = Resources.Load("Sound/Stage1/Bgm/Bgm(1-3)") as AudioClip;
+             BGM.clip = Stage1_3;
+             BGM.Play();
+             BGM.loop = true;
+             break;
 
 
 
