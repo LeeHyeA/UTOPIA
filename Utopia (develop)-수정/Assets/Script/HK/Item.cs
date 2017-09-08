@@ -79,6 +79,17 @@ public class Item : MonoBehaviour
         //}
     }
 
+
+    public void DeleteInventory()
+    {
+        if (transform.Find("2_Grid").transform.childCount > 0)
+        {
+            for (int i = 0; i < transform.Find("2_Grid").transform.childCount; i++)
+            {
+                transform.Find("2_Grid").transform.GetChild(i).SetParent(transform.Find("1_ObjectSet").transform);
+            }
+        }
+    }
 }
 
 public class Data

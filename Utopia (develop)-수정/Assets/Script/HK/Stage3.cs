@@ -9,6 +9,7 @@ public class Stage3 : MonoBehaviour {
     Transform Round3;
 	public EventManager Event;
 	public Item item;
+    public bool SunsetChk = false;
 
     // Use this for initialization
     void Start () {
@@ -23,33 +24,62 @@ public class Stage3 : MonoBehaviour {
         //PlayerPrefs.DeleteAll();
     }
 
-	public void TrueRain()
+	public void Image()
 	{
+        // 바다 버튼을 누르지 않을 때만 콜리더폴더 true
+        if(!Round1.Find("Change").Find("Sea").gameObject.activeSelf)
+        {
+            Round1.Find("Collider").gameObject.SetActive(true);
+        }
 	}
 
-	public void FalseRain()
-	{
-	}
+    public void SunsetFalse()
+    {
+        // 석양 사진이 걸렸을 때 바다로 이동하면 석양사진 false
+        if(SunsetChk)
+        {
+            Round1.Find("Image").gameObject.SetActive(false);
+            Round1.Find("Change").Find("Garden").gameObject.SetActive(false);
+        }
+    }
+
+    public void SunsetTrue()
+    {
+        // 다시 현재로 돌아오면 석양사진 true
+        if (SunsetChk)
+        {
+            Round1.Find("Image").gameObject.SetActive(true);
+            Round1.Find("Change").Find("Garden").gameObject.SetActive(true);
+        }
+    }
 
     public void FlowerRain()
     {
-        
 
-        if(PlayerPrefs.GetString("Seed", "false") == "true")
+
+        if (PlayerPrefs.GetString("Seed", "false") == "true")
         {
             Transform Garden = Round1.Find("Change").Find("Garden");
             Garden.Find("Grass").gameObject.SetActive(false);
             Garden.Find("Flower").gameObject.SetActive(true);
-            
+            Event.EventnumberSet(302);
+            PlayerPrefs.SetString("Seed", "finish");
+
         }
 
-        else
+        if (PlayerPrefs.GetString("Seed", "false") == "false")
         {
+
             Transform Garden = Round1.Find("Change").Find("Garden");
             Garden.Find("Grass").gameObject.SetActive(true);
             Garden.Find("Flower").gameObject.SetActive(false);
-			Event.EventnumberSet (302);
+        }
 
+        if (PlayerPrefs.GetString("Seed", "false") == "finish")
+        {
+            Transform Garden = Round1.Find("Change").Find("Garden");
+            Garden.Find("Grass").gameObject.SetActive(false);
+            Garden.Find("Flower").gameObject.SetActive(true);
         }
     }
 

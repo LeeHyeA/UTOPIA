@@ -45,13 +45,15 @@ public class InputManager : MonoBehaviour
     GameObject Hint;
     //Transform Grid;
 
+    
+
     bool FlowerRing = false;
     bool Shell = false;
 	bool RoseSeed = false;
 
     void Start()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         HeadGear = MainStage.Find("HeadGear").gameObject;
         Inventory = UICanvas.Find("2_Inventory").gameObject;
         Hint = UICanvas.Find("3_Hint").gameObject;
@@ -347,8 +349,10 @@ public class InputManager : MonoBehaviour
             if (obj.transform.name == "3-1_1StarPowder" && hit.transform.name == "DreamCatcherCol")
             {
                 int tempNum3 = GameObject.Find("DreamCatcherManager").GetComponent<DreamCatcher>().DreamCatcherState;
+                int CuttonTempNum = GameObject.Find("WindowButton").GetComponent<RoomWindow>().Curtain_State;
                 //기본+깃털+거미줄보석(3) 상태 일때만 접촉후 변하게함
-                if (tempNum3 == 3)
+                //09.06 추가로 밤상태일때 별가루가 적용됨
+                if (tempNum3 == 3 && CuttonTempNum ==1)
                 {
                     Debug.Log("별가루를 드림캐쳐 기본+깃털+거미줄 상태에 붙임");
                     //상태를 드림캐쳐 최종형태(4)로 바꿈
@@ -378,6 +382,9 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
 
                 GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 124;
+                //효과음재생
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 1;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_List();
             }
 
             //칼을 양에 놓아 고기얻기
@@ -684,6 +691,7 @@ public class InputManager : MonoBehaviour
                 Round1.Find("Image").gameObject.SetActive(true);
                 Round1.Find("Change").Find("Garden").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
+                GameObject.Find("Canvas(3Stage)").GetComponent<Stage3>().SunsetChk = true;
             }
 
             if (obj.transform.name == "1-Seed" && hit.transform.name == "Grass")
@@ -700,6 +708,8 @@ public class InputManager : MonoBehaviour
                 item.GetNumber(6);
                 item.LoadJson("3Stage");
                 Destroy(obj.transform.gameObject);
+
+                PlayerPrefs.SetString("Seed", "Finish");
             }
 
             if (obj.transform.name == "6-FlowerRing" && hit.transform.name == "Statuette")
