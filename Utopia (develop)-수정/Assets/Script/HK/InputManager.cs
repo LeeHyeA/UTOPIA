@@ -45,7 +45,7 @@ public class InputManager : MonoBehaviour
     GameObject Hint;
     //Transform Grid;
 
-    
+    AudioManager AM;
 
     bool FlowerRing = false;
     bool Shell = false;
@@ -53,6 +53,7 @@ public class InputManager : MonoBehaviour
 
     void Start()
     {
+        AM = FindObjectOfType<AudioManager>();
         //PlayerPrefs.DeleteAll();
         HeadGear = MainStage.Find("HeadGear").gameObject;
         Inventory = UICanvas.Find("2_Inventory").gameObject;
@@ -744,18 +745,23 @@ public class InputManager : MonoBehaviour
             }
             if (obj.transform.name == "0-Red_Color" && hit.transform.name == "Ganges_river")
             {
+                AM.PlayAudio("Stage2/use");
+
                 GR.On_Red();
                 Destroy(obj.transform.gameObject);
 
             }
             if (obj.transform.name == "1-Blue_Color" && hit.transform.name == "Ganges_river" && GR.getRed())
             {
+                AM.PlayAudio("Stage2/use");
+
                 GR.On_Blue();
                 Destroy(obj.transform.gameObject);
 
             }
             if (obj.transform.name == "3-Yellow_Color" && hit.transform.name == "Ganges_river" && GR.getRed() && GR.getBlue())
             {
+                AM.PlayAudio("Stage2/use");
                 GR.On_Yellow();
                 Destroy(obj.transform.gameObject);
             }

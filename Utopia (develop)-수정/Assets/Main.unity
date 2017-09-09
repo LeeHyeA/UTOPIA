@@ -27057,6 +27057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51c9ce623491df4d92856c89564090e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slideSound: {fileID: 8300000, guid: 262929ee0cee8d4458409ec56be2422a, type: 3}
   SlidepuzzleControl: {fileID: 1169676710}
   Answerd: 0
   Activated: 0
@@ -51856,6 +51857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7396424f04f8de74bb3386884e4dfb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hanged_Man_Sound: {fileID: 8300000, guid: aa47da740878a34428d885c93262fa86, type: 3}
   is_Turning: 0
   Activated: 0
   HangedMan_Control: {fileID: 1799810932}
@@ -65473,7 +65475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1792837922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67070,7 +67072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1824654921
 MonoBehaviour:
   m_ObjectHideFlags: 0

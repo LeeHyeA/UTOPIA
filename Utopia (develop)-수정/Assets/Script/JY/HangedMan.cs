@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class HangedMan : MonoBehaviour {
 
     // Use this for initialization
-
+    AudioManager AM;
+    public AudioClip Hanged_Man_Sound;
     public bool is_Turning=false;
     public bool Activated = false;
     public GameObject HangedMan_Control;
@@ -20,6 +21,7 @@ public class HangedMan : MonoBehaviour {
 
 	void Start ()
     {
+        AM = FindObjectOfType<AudioManager>();
         EM = FindObjectOfType<EventManager>();
         Box = gameObject.transform.GetChild(0).GetComponent<BoxCollider2D>();
     }
@@ -51,6 +53,7 @@ public class HangedMan : MonoBehaviour {
     }
     IEnumerator Rot()
     {
+        AM.PlaySound(Hanged_Man_Sound);
         Debug.Log("코루틴시작");
 
         for (int i = 0; i < 45; i++)

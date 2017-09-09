@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SlidePuzzleTile : MonoBehaviour {
 
+    AudioManager AM;
     SlidePuzzle SP;
-    Transform Tf;
     public int Hor;    //가로
     public int Ver;    //세로
     int OriginHor;
@@ -17,8 +17,8 @@ public class SlidePuzzleTile : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        AM = FindObjectOfType<AudioManager>();
         SP = FindObjectOfType<SlidePuzzle>();
-        Tf = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -41,6 +41,7 @@ public class SlidePuzzleTile : MonoBehaviour {
     IEnumerator moving(int direction, int block)
     {
         int i = 0;
+        AM.PlaySound(SP.slideSound);
         switch(direction)
         {
             case 0:

@@ -64,9 +64,11 @@ public class Circle_Puzzle : MonoBehaviour {
 
     IEnumerator RotLeft()
     {
+
         AM.PlayAudio("Stage2/GetRope");
 
         GameObject TurningObj = Selected_Piece;
+        TurningObj.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats - 1) % 8;
 
         Debug.Log("코루틴시작");
 
@@ -78,13 +80,14 @@ public class Circle_Puzzle : MonoBehaviour {
         }
         Debug.Log("코루틴끝");
         //     turning = false;
-        TurningObj.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats - 1) % 8;
     }
     IEnumerator RotRight()
     {
+
         AM.PlayAudio("Stage2/GetRope");
 
         GameObject TurningObj = Selected_Piece;
+        TurningObj.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats + 1) % 8;
 
         Debug.Log("코루틴시작");
 
@@ -96,7 +99,6 @@ public class Circle_Puzzle : MonoBehaviour {
         }
         Debug.Log("코루틴끝");
         //        turning = false;
-        TurningObj.GetComponent<Circle_Puzzle_Tile>().tile_stats = (Selected_Piece.GetComponent<Circle_Puzzle_Tile>().tile_stats + 1) % 8;
     }
 
     public void Turn_ON()

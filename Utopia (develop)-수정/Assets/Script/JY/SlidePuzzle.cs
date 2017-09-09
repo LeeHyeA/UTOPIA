@@ -7,6 +7,7 @@ public class SlidePuzzle : MonoBehaviour {
     //int width = 190;
     //int height = 206;
 
+    public AudioClip slideSound;
     EventManager EM;
     public GameObject SlidepuzzleControl;
     public SlidePuzzleTile[,] Tiles = new SlidePuzzleTile[4,3];

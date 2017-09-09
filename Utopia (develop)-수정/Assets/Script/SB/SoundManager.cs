@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour {
     public AudioSource BGM;
     public int SE_Number = 0;
     public int BGM_Number = 1;
+    bool isChanging = false;
     // Use this for initialization
     void Start () {
         BGM_ListPlay();
@@ -179,11 +180,14 @@ public class SoundManager : MonoBehaviour {
    
     public void ChangeBGM_Fun(string NextBGM)
     {
+        if (isChanging)
+            StopAllCoroutines();
         StartCoroutine(ChangeBGM(NextBGM));
     }
    IEnumerator ChangeBGM(string NextBGM)
     {
-        while(BGM.volume>0)
+        isChanging = true;
+        while (BGM.volume>0)
         {
             BGM.volume = BGM.volume - 0.1f;
             yield return new WaitForSeconds(0.1f);
