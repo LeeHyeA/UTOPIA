@@ -137,6 +137,7 @@
     <Compile Include="Assets\Script\SB\RoomWindow.cs" />
     <Compile Include="Assets\Script\SB\RoomWindow2.cs" />
     <Compile Include="Assets\Script\SB\ScreenFader.cs" />
+    <Compile Include="Assets\Script\SB\SoundManager.cs" />
     <Compile Include="Assets\Script\SB\Warp.cs" />
   </ItemGroup>
   <ItemGroup>
