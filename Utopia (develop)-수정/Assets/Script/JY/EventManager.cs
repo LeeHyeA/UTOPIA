@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    public SoundManager SM;
     public Image fadeImage;
     public GameObject fadeImage_;
     private bool isInTransition = false;
@@ -59,6 +60,7 @@ public class EventManager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        SM = FindObjectOfType<SoundManager>();
 	}
 	
 	// Update is called once per frame
@@ -488,6 +490,7 @@ public class EventManager : MonoBehaviour
                     Stage_1.SetActive(false);
                     Stage_2.SetActive(true);
                     StartCoroutine(Fadeing(false, 1.5f));
+                    SM.ChangeBGM_Fun("Stage2/Main");    
                     break;
 
                 case 164:

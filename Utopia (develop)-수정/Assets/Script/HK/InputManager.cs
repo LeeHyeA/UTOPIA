@@ -736,7 +736,7 @@ public class InputManager : MonoBehaviour
 
             //2스테이지
 
-            if (obj.transform.name == "2-Rope" && hit.transform.name == "Hanged_Man")
+            if (obj.transform.name == "2-Rope" && hit.transform.name == "Hanged_Man_Control")
             {
                 Debug.Log("밧줄맨");
                 HM.Answer();

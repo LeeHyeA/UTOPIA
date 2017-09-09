@@ -15,13 +15,13 @@ public class HangedMan : MonoBehaviour {
     EventManager EM;
     public GameObject Exit_Button;
     public int stat=0;
-
+    BoxCollider2D Box;
     public bool Answerd=false;
 
 	void Start ()
     {
         EM = FindObjectOfType<EventManager>();
-
+        Box = gameObject.transform.GetChild(0).GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -29,10 +29,10 @@ public class HangedMan : MonoBehaviour {
     {
         if (stat==0||Answerd)
         {
-            GetComponent<BoxCollider2D>().enabled = false;
+            Box.enabled = false;
         }
         else
-            GetComponent<BoxCollider2D>().enabled = true;
+            Box.enabled = true;
 
         if (Activated)
             Exit_Button.SetActive(true);

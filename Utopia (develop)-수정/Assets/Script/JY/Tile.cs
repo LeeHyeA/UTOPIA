@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class Tile : MonoBehaviour {
-
+    AudioManager AM;
     public bool is_Cliked = false;
     public bool Xmarkerd = false;
 
@@ -16,6 +16,7 @@ public class Tile : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        AM = FindObjectOfType<AudioManager>();
         Tile_Image = GetComponent<Image>();
         LP = FindObjectOfType<LogicPuzzle>();
         Xmark = Resources.Load<Sprite>("2_Stage/Xmark");

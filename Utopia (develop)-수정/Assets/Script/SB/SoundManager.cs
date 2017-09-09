@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         BGM_ListPlay();
-
+        BGM.loop = true;
         //if 효과음일때
         //SE = GetComponent<AudioSource>();
         // AudioClip GoatMilk = (AudioClip)Resources.Load("Sound/Stage1/SE/GoatMilk");
@@ -132,78 +132,73 @@ public class SoundManager : MonoBehaviour {
         BGM = GetComponent<AudioSource>();
         switch (BGM_Number)
         {
-
             //(1-1Defalut브금)
             case 1:
-                AudioClip Stage1Defalut = Resources.Load("Sound/Stage1/Bgm/Bgm(1-1Defalut)") as AudioClip;
-                BGM.clip = Stage1Defalut;
-                BGM.Play();
-                BGM.loop = true;
+                ChangeBGM_Fun("Stage1/Bgm/Bgm(1-1Defalut)");
                 break;
             //(1-1Stage브금)
             case 2:
-                AudioClip Stage1_1 = Resources.Load("Sound/Stage1/Bgm/Bgm(1-1)") as AudioClip;
-                BGM.clip = Stage1_1;
-                BGM.Play();
-                BGM.loop = true;
+                ChangeBGM_Fun("Stage1/Bgm/Bgm(1-1)");
                 break;
             //(1-2Defalut브금)
             case 3:
-                AudioClip Stage2Defalut = Resources.Load("Sound/Stage1/Bgm/Bgm(1-2Defalut)") as AudioClip;
-                BGM.clip = Stage2Defalut;
-                BGM.Play();
-                BGM.loop = true;
+                ChangeBGM_Fun("Stage1/Bgm/Bgm(1-2Defalut)");
                 break;
             //(1-2Stage브금)
             case 4:
-                AudioClip Stage1_2 = Resources.Load("Sound/Stage1/Bgm/Bgm(1-2)") as AudioClip;
-                BGM.clip = Stage1_2;
-                BGM.Play();
-                BGM.loop = true;
+                ChangeBGM_Fun("Stage1/Bgm/Bgm(1-2)");
                 break;
 
                 
         //test2(모닥불사진브금)
-        case 5:
-            AudioClip BonFire = Resources.Load("Sound/Stage1/Bgm/Picture(BonFire)") as AudioClip;
-            BGM.clip = BonFire;
-            BGM.Play();
-            BGM.loop = true;
-            break;
-        //test3(바다사진브금)
-        case 6:
-            AudioClip Sea = Resources.Load("Sound/Stage1/Bgm/Picture(Sea)") as AudioClip;
-            BGM.clip = Sea;
-            BGM.Play();
-            BGM.loop = true;
-            break;
-        //test4(테이블사진브금)
-        case 7:
-            AudioClip Table = Resources.Load("Sound/Stage1/Bgm/Picture(Table)") as AudioClip;
-            BGM.clip = Table;
-            BGM.Play();
-            BGM.loop = true;
-            break;
-         //(1-3Defalut브금)
-         case 10:
-             AudioClip Stage3Defalut = Resources.Load("Sound/Stage1/Bgm/Bgm(1-3Defalut)") as AudioClip;
-             BGM.clip = Stage3Defalut;
-             BGM.Play();
-             BGM.loop = true;
-             break;
+            case 5:
+                ChangeBGM_Fun("Stage1/Bgm/Picture(BonFire)");
+                break;
+            //test3(바다사진브금)
+            case 6:
+                ChangeBGM_Fun("Stage1/Bgm/Picture(Sea)");
+                break;
+            //test4(테이블사진브금)
+            case 7:
+                ChangeBGM_Fun("Stage1/Bgm/Picture(Table)");
+                break;
+             //(1-3Defalut브금)
+             case 10:
+                ChangeBGM_Fun("Stage1/Bgm/Bgm(1-3Defalut)");
+                 break;
 
-         //(1-3Stage브금)
-         case 11:
-             AudioClip Stage1_3 = Resources.Load("Sound/Stage1/Bgm/Bgm(1-3)") as AudioClip;
-             BGM.clip = Stage1_3;
-             BGM.Play();
-             BGM.loop = true;
-             break;
+             //(1-3Stage브금)
+             case 11:
+                ChangeBGM_Fun("Stage1/Bgm/Bgm(1-3)");
+                 break;
 
 
 
         }
     }
-    
    
+    public void ChangeBGM_Fun(string NextBGM)
+    {
+        StartCoroutine(ChangeBGM(NextBGM));
+    }
+   IEnumerator ChangeBGM(string NextBGM)
+    {
+        while(BGM.volume>0)
+        {
+            BGM.volume = BGM.volume - 0.1f;
+            yield return new WaitForSeconds(0.1f);
+        }
+        BGM.Stop();
+
+        AudioClip Nextclip = Resources.Load("Sound/" + NextBGM) as AudioClip;
+
+        BGM.clip = Nextclip;
+        BGM.Play();
+
+        while (BGM.volume < 1)
+        {
+            BGM.volume = BGM.volume + 0.1f;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 }

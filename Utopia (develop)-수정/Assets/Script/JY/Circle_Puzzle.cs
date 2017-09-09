@@ -64,7 +64,7 @@ public class Circle_Puzzle : MonoBehaviour {
 
     IEnumerator RotLeft()
     {
-        AM.PlaySound(AC);
+        AM.PlayAudio("Stage2/GetRope");
 
         GameObject TurningObj = Selected_Piece;
 
@@ -82,7 +82,7 @@ public class Circle_Puzzle : MonoBehaviour {
     }
     IEnumerator RotRight()
     {
-        AM.PlaySound(AC);
+        AM.PlayAudio("Stage2/GetRope");
 
         GameObject TurningObj = Selected_Piece;
 

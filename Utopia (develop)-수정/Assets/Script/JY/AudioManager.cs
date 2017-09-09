@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour {
 	void Start ()
     {
         AS = GetComponent<AudioSource>();
-
+        AS.loop = false;
 	}
 	
 	// Update is called once per frame
@@ -23,17 +23,18 @@ public class AudioManager : MonoBehaviour {
         AS.PlayOneShot(AC);
     }
 
-    public void PlayAudio(string name)
+    public void PlayAudio(string name)          //함수 호출할때 매개변수로 파일이름 넣으면 그거 플레이됨
     {
-        var addAS = this.gameObject.AddComponent<AudioSource>();
+        //var addAS = this.gameObject.AddComponent<AudioSource>();
              
-        AudioClip audio = Resources.Load("Soundd/" + name) as AudioClip;
+        AudioClip audio = Resources.Load("Sound/" + name) as AudioClip;
 
-        addAS.loop = false;
-        addAS.PlayOneShot(audio); 
+        //addAS.loop = false;
+        //addAS.PlayOneShot(audio);
+        AS.PlayOneShot(audio);
     }
 
-    public void PlayBGM(string name)
+    public void PlayBGM(string name)            //이건쓰지마셈
     {
         AudioClip audio = Resources.Load("Soundd/" + name) as AudioClip;
 
@@ -41,7 +42,7 @@ public class AudioManager : MonoBehaviour {
         AS.PlayOneShot(audio);
     }
 
-    public void StopBGM(string name)
+    public void StopBGM(string name)            //이것도
     {
         AS.Stop();
     }
