@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     public Transform MainStage;
     public Transform Stage3;
 	public EventManager Event;
+    public SoundManager Sound;
     Item item;
 
     //1-1
@@ -963,6 +964,8 @@ public class InputManager : MonoBehaviour
 			Event.EventnumberSet (304);
             Stage3.Find("2Round").gameObject.SetActive(true);
             Inventory.gameObject.SetActive(false);
+            Sound.BGM_Number = 302;
+            Sound.BGM_ListPlay();
         }
     }
 }

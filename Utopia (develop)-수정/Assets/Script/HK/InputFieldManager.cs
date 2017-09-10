@@ -136,6 +136,9 @@ public class InputFieldManager : MonoBehaviour
 				Main.SetActive (false);
 				Stage3.SetActive(true);
                 item.DeleteInventory();
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_Number = 301;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_ListPlay();
                 break;
 
 

@@ -120,6 +120,39 @@ public class SoundManager : MonoBehaviour {
                 AudioClip UseHammer = Resources.Load("Sound/Stage1/SE/UseHammer") as AudioClip;
                 SE.PlayOneShot(UseHammer);
                 break;
+
+
+            // *************************************************************** 3Stage
+
+            // 꽃이 필때
+            case 300:
+                AudioClip Flower = Resources.Load("Sound/Stage3/1Round/FinishFlower") as AudioClip;
+                SE.PlayOneShot(Flower);
+                break;
+
+            // 재규어
+            case 320:
+                AudioClip Jaguar = Resources.Load("Sound/Stage3/3Round/Jaguar") as AudioClip;
+                SE.PlayOneShot(Jaguar);
+                break;
+
+            // 좌물쇠 잠금 소리
+            case 321:
+                AudioClip Rock = Resources.Load("Sound/Stage3/3Round/Rock") as AudioClip;
+                SE.PlayOneShot(Rock);
+                break;
+
+            // 오르골 소리
+            case 322:
+                AudioClip Orgel = Resources.Load("Sound/Stage3/3Round/Orgel") as AudioClip;
+                SE.PlayOneShot(Orgel);
+                break;
+
+            // 문 여는 소리
+            case 323:
+                AudioClip Door = Resources.Load("Sound/Stage3/3Round/open-door") as AudioClip;
+                SE.PlayOneShot(Door);
+                break;
         }
     }
 
@@ -173,7 +206,20 @@ public class SoundManager : MonoBehaviour {
                 ChangeBGM_Fun("Stage1/Bgm/Bgm(1-3)");
                  break;
 
+            // 3-1 BGM
+            case 301:
+                ChangeBGM_Fun("Stage3/1Round/3-1 BGM");
+                break;
 
+            // 3-2 BGM
+            case 302:
+                ChangeBGM_Fun("Stage3/2Round/3-2 BGM");
+                break;
+
+            // 3-3 BGM
+            case 303:
+                ChangeBGM_Fun("Stage3/3Round/3-3 BGM");
+                break;
 
         }
     }

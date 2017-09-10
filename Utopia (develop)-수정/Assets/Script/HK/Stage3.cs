@@ -63,6 +63,8 @@ public class Stage3 : MonoBehaviour {
             Garden.Find("Grass").gameObject.SetActive(false);
             Garden.Find("Flower").gameObject.SetActive(true);
             Event.EventnumberSet(302);
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 300;
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             PlayerPrefs.SetString("Seed", "finish");
 
         }
@@ -95,6 +97,8 @@ public class Stage3 : MonoBehaviour {
         {
 			Round2.Find ("Black").gameObject.SetActive (true);
 			Event.EventnumberSet (310);
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_Number = 303;
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_ListPlay();
         }
     }
 
@@ -112,11 +116,13 @@ public class Stage3 : MonoBehaviour {
 			Round3.Find ("BG").Find ("TextObject").Find ("OrgelButton").gameObject.SetActive (false);
 			Round3.Find ("BG").Find ("ClickObject").Find ("OrgelGet").gameObject.SetActive (true);
 
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 322;
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
 
-			//OpenDoor ();
-			//item.GetNumber (19);
-			//item.LoadJson ("3Stage");
-		}
+            //OpenDoor ();
+            //item.GetNumber (19);
+            //item.LoadJson ("3Stage");
+        }
 	}
 
 	public void carrierChk()
