@@ -83,6 +83,38 @@ public class InputFieldManager : MonoBehaviour
                 stage = 99;
                 break;
 
+            // ************************************** 치트키
+
+            case "1-1":
+                stage = 40;
+                break;
+
+            case "1-2":
+                stage = 41;
+                break;
+
+            case "1-3":
+                stage = 42;
+                break;
+
+            case "2-0":
+                stage = 43;
+                break;
+
+            case "3-1":
+                stage = 44;
+                break;
+
+            case "3-2":
+                stage = 45;
+                break;
+
+            case "3-3":
+                stage = 46;
+                break;
+
+            // **************************************************************
+
             default:
                 stage = -1;
                 break;
@@ -142,7 +174,134 @@ public class InputFieldManager : MonoBehaviour
                 break;
 
 
-			case 99:
+            // *********************************************** 새로운 치트키
+
+            // 1-1
+            case 40:
+                this.gameObject.SetActive(false);
+                field.text = "";
+
+                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+
+                Main.SetActive(false);
+                Stage1.SetActive(true);
+                Stage2.SetActive(false);
+                Stage3.SetActive(false);
+
+                Stage1.transform.Find("Panel(Defalut1-1)").gameObject.SetActive(true);
+                Stage1.transform.Find("Panel(Defalut1-2)").gameObject.SetActive(false);
+                Stage1.transform.Find("Panel(Defalut1-3)").gameObject.SetActive(false);
+                item.DeleteInventory();
+                break;
+            
+            // 1-2
+            case 41:
+                this.gameObject.SetActive(false);
+                field.text = "";
+
+                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+
+                Main.SetActive(false);
+                Stage1.SetActive(true);
+                Stage2.SetActive(false);
+                Stage3.SetActive(false);
+
+                Stage1.transform.Find("Panel(Defalut1-1)").gameObject.SetActive(false);
+                Stage1.transform.Find("Panel(Defalut1-2)").gameObject.SetActive(true);
+                Stage1.transform.Find("Panel(Defalut1-3)").gameObject.SetActive(false);
+                item.DeleteInventory();
+                break;
+
+            // 1-3
+            case 42:
+                this.gameObject.SetActive(false);
+                field.text = "";
+
+                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+
+                Main.SetActive(false);
+                Stage1.SetActive(true);
+                Stage2.SetActive(false);
+                Stage3.SetActive(false);
+
+                Stage1.transform.Find("Panel(Defalut1-1)").gameObject.SetActive(false);
+                Stage1.transform.Find("Panel(Defalut1-2)").gameObject.SetActive(false);
+                Stage1.transform.Find("Panel(Defalut1-3)").gameObject.SetActive(true);
+                item.DeleteInventory();
+                break;
+
+            // 2
+            case 43:
+                this.gameObject.SetActive(false);
+                field.text = "";
+
+                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+
+                Main.SetActive(false);
+                Stage1.SetActive(false);
+                Stage2.SetActive(true);
+                Stage3.SetActive(false);
+
+                item.DeleteInventory();
+                break;
+
+            // 3-1
+            case 44:
+                this.gameObject.SetActive(false);
+                field.text = "";
+
+                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+
+                Main.SetActive(false);
+                Stage1.SetActive(false);
+                Stage2.SetActive(false);
+                Stage3.SetActive(true);
+
+                Stage1.transform.Find("1Round").gameObject.SetActive(true);
+                Stage1.transform.Find("2Round").gameObject.SetActive(false);
+                Stage1.transform.Find("3Round").gameObject.SetActive(false);
+                item.DeleteInventory();
+                break;
+
+            // 3-2
+            case 45:
+                this.gameObject.SetActive(false);
+                field.text = "";
+
+                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+
+                Main.SetActive(false);
+                Stage1.SetActive(false);
+                Stage2.SetActive(false);
+                Stage3.SetActive(true);
+
+                Stage1.transform.Find("1Round").gameObject.SetActive(false);
+                Stage1.transform.Find("2Round").gameObject.SetActive(true);
+                Stage1.transform.Find("3Round").gameObject.SetActive(false);
+                item.DeleteInventory();
+                break;
+
+            // 3-3
+            case 46:
+                this.gameObject.SetActive(false);
+                field.text = "";
+
+                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+
+                Main.SetActive(false);
+                Stage1.SetActive(false);
+                Stage2.SetActive(false);
+                Stage3.SetActive(true);
+
+                Stage1.transform.Find("1Round").gameObject.SetActive(false);
+                Stage1.transform.Find("2Round").gameObject.SetActive(false);
+                Stage1.transform.Find("3Round").gameObject.SetActive(true);
+                item.DeleteInventory();
+                break;
+
+            // **************************************************************
+
+            case 99:
                 // 창끄기
 				Transform BG = Stage3.transform.Find ("3Round").Find ("BG");
 				BG.Find ("Lock").gameObject.SetActive (false);
