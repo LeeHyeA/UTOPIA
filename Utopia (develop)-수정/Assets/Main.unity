@@ -9661,7 +9661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Main: {fileID: 597955292}
   Stage1: {fileID: 1792837921}
-  Stage2: {fileID: 0}
+  Stage2: {fileID: 1824654920}
   Stage3: {fileID: 1385572684}
   item: {fileID: 2044830651}
 --- !u!1 &320623454
@@ -16067,7 +16067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &509569458
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49032,7 +49032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1385572685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59598,17 +59598,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1669494736}
-  m_LocalRotation: {x: 0, y: 0, z: -0.043619405, w: 0.9990483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 278037938}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -239, y: 478}
-  m_SizeDelta: {x: 250, y: 173}
+  m_AnchoredPosition: {x: -283.69, y: 488.1}
+  m_SizeDelta: {x: 419.71, y: 213.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669494738
 MonoBehaviour:
@@ -59685,14 +59685,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.22190814, g: 0.222, b: 0.221334, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ad7f3a3ef4bac844abc612bbbe17fed5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0fb104ba4f93a81469f7272b03841817, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
