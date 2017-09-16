@@ -65,7 +65,6 @@ public class Circle_Puzzle_Tile : MonoBehaviour {
         if (CP.Answerd)
             return;
         Ima.color = new Color(0, 144, 60);
-        Debug.Log("Enter");
         return;
     }
     private void OnMouseExit()
@@ -74,7 +73,6 @@ public class Circle_Puzzle_Tile : MonoBehaviour {
             clear_color();
         if (CP.Answerd)
             return;
-        Debug.Log("EXit");
         return;
     }
     public void clear_color()

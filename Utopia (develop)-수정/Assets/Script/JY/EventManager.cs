@@ -215,7 +215,7 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
                 case 101:
-                    StartCoroutine(Fadeing(true, 1.5f));
+                    StartCoroutine(Fadeing(true, 1.5f, false));
                     //Fade(true, 1.5f);
                     break;
                 case 102:
@@ -223,7 +223,7 @@ public class EventManager : MonoBehaviour
                     Panel1_1.SetActive(true);
                     //BirdCage.SetActive(true);
                     //Window.SetActive(true);
-                    StartCoroutine(Fadeing(false, 1.5f));
+                    StartCoroutine(Fadeing(false, 1.5f, false));
                     break;
                 case 103:
                     //1-1BGM재생
@@ -244,14 +244,14 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
                 case 106:
-                    StartCoroutine(Fadeing(true, 1.5f));
+                    StartCoroutine(Fadeing(true, 1.5f, false));
                     break;
                 case 107:
                     Panel1_1.SetActive(false);
                     BirdCage.SetActive(false);
                     Panel1_2_defalut.SetActive(true);
                     Window.SetActive(false);
-                    StartCoroutine(Fadeing(false, 1.5f));
+                    StartCoroutine(Fadeing(false, 1.5f, false));
                     //1-2디폴트방 BGM재생
                     GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_Number = 3;
                     GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_ListPlay();
@@ -304,13 +304,13 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
                 case 114:
-                    StartCoroutine(Fadeing(true, 1.5f));
+                    StartCoroutine(Fadeing(true, 1.5f, false));
                     //Fade(true, 1.5f);
                     break;
                 case 115:
                     Panel1_2_defalut.SetActive(false);
                     Panel1_2.SetActive(true);
-                    StartCoroutine(Fadeing(false, 1.5f));
+                    StartCoroutine(Fadeing(false, 1.5f, false));
                     break;
 
                 //몽골 되고나서 첫대사(116-117)
@@ -333,7 +333,7 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
                 case 119:
-                    StartCoroutine(Fadeing(true, 1.5f));
+                    StartCoroutine(Fadeing(true, 1.5f, false));
                     break;
                 case 120:
                     Panel1_2.SetActive(false);
@@ -341,7 +341,7 @@ public class EventManager : MonoBehaviour
                     GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_Number = 10;
                     GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_ListPlay();
                     Panel1_3_defalut.SetActive(true);
-                    StartCoroutine(Fadeing(false, 1.5f));
+                    StartCoroutine(Fadeing(false, 1.5f, false));
                     break;
 
                 case 122:
@@ -477,7 +477,7 @@ public class EventManager : MonoBehaviour
 
                 //동화책을 완성했을시
                 case 160:
-                    StartCoroutine(Fadeing(true, 1.5f));
+                    StartCoroutine(Fadeing(true, 1.5f, false));
                     break;
                 case 161:
                     inventory.SetActive(false);
@@ -489,7 +489,7 @@ public class EventManager : MonoBehaviour
                 case 162:
                     Stage_1.SetActive(false);
                     Stage_2.SetActive(true);
-                    StartCoroutine(Fadeing(false, 1.5f));
+                    StartCoroutine(Fadeing(false, 1.5f, false));
                     SM.ChangeBGM_Fun("Stage2/Main");    
                     break;
 
@@ -542,7 +542,7 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
                 case 181:
-                    StartCoroutine(Fadeing(true, 1.5f));
+                    StartCoroutine(Fadeing(true, 1.5f, false));
                     break;
                 case 182:
                     //패널1-3디폴트 비활성화 시킴
@@ -552,7 +552,7 @@ public class EventManager : MonoBehaviour
                     GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_ListPlay();
                     //패널1-3 활성화시킴
                     Panel1_3.SetActive(true);
-                    StartCoroutine(Fadeing(false, 1.5f));
+                    StartCoroutine(Fadeing(false, 1.5f, false));
                     break;
 
 
@@ -571,7 +571,7 @@ public class EventManager : MonoBehaviour
                     StartCoroutine(WaitASecond(1.0f));
                     break;
                 case 203:
-                    StartCoroutine(Fadeing(true, 1.0f));
+                    StartCoroutine(Fadeing(true, 1.0f, true));
                     Debug.Log("문이똭!");
                     break;
                 case 204:
@@ -584,7 +584,7 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
                 case 206:
-                    StartCoroutine(Fadeing(false, 1.0f));
+                    StartCoroutine(Fadeing(false, 1.0f, false));
                     break;
                 case 207:
                     Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Door");
@@ -593,12 +593,12 @@ public class EventManager : MonoBehaviour
                     break;
 
                 case 209:
-                    StartCoroutine(Fadeing(true, 1.0f));
+                    StartCoroutine(Fadeing(true, 1.0f, false));
                     break;
                 case 210:
                     Stage_2.SetActive(false);
                     Stage_3.SetActive(true);
-                    StartCoroutine(Fadeing(false, 1.0f));
+                    StartCoroutine(Fadeing(false, 1.0f, false));
                     break;
 
                 // 300~399 3Stage
@@ -620,13 +620,13 @@ public class EventManager : MonoBehaviour
 					break;
 				
 				case 304:
-					StartCoroutine(Fadeing(false, 1.5f));
+					StartCoroutine(Fadeing(false, 1.5f, false));
 					Stage3.Find ("1Round").gameObject.SetActive (false);
 					break;
 
 				case 305:
 					Stage3.Find ("2Round").gameObject.SetActive (true);
-					StartCoroutine (Fadeing (false, 1.5f));
+					StartCoroutine (Fadeing (false, 1.5f, false));
 					break;
 
 				// *************************************************************************************
@@ -641,13 +641,13 @@ public class EventManager : MonoBehaviour
 					break;
 
 				case 311:	
-					StartCoroutine(Fadeing(true, 1.5f));
+					StartCoroutine(Fadeing(true, 1.5f, false));
 					Stage3.Find ("2Round").gameObject.SetActive (false);
 					break;
 
 				case 312:
 					Stage3.Find ("3Round").gameObject.SetActive (true);
-					StartCoroutine (Fadeing (false, 1.5f));
+					StartCoroutine (Fadeing (false, 1.5f, false));
 					break;
 
 				case 320:
@@ -688,8 +688,9 @@ public class EventManager : MonoBehaviour
 
     }
 
-    IEnumerator Fadeing(bool Showing, float duration)
+    IEnumerator Fadeing(bool Showing, float duration, bool isWhite)
     {
+
         Debug.Log("코루틴 진입");
 
         if (!isInTransition)
@@ -700,7 +701,10 @@ public class EventManager : MonoBehaviour
             {
                 fadeImage_.SetActive(true);
                 transition += (Showing) ? 0.01f : -0.01f;
-                fadeImage.color = Color.Lerp(new Color(0, 0, 0, 0), Color.black, transition);
+                if(isWhite)
+                    fadeImage.color = Color.Lerp(new Color(255, 255, 255, 0), Color.white, transition);
+                else
+                    fadeImage.color = Color.Lerp(new Color(0, 0, 0, 0), Color.black, transition);
 
                 if (transition > 1 || transition < 0)
                 {
@@ -712,7 +716,7 @@ public class EventManager : MonoBehaviour
                     Debug.Log("페이드끄읕");
                     yield break;
                 }
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.01f* Time.deltaTime);
                 Debug.Log("페이드중");
             }
 

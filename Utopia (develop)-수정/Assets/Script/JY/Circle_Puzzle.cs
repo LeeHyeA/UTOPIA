@@ -134,4 +134,13 @@ public class Circle_Puzzle : MonoBehaviour {
         EM.Event_Number = 200;
         return;
     }
+
+    public void cheat()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            CPT[i].GetComponent<Circle_Puzzle_Tile>().tile_stats = 0;
+        }
+
+    }
 }

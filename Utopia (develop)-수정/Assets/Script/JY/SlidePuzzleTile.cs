@@ -124,4 +124,9 @@ public class SlidePuzzleTile : MonoBehaviour {
         Answerd_Obj.GetComponent<Fade>().StartFade();
         yield break;
     }
+    public void cheat()
+    {
+        Hor = OriginHor;
+        Ver = OriginVer;
+    }
 }

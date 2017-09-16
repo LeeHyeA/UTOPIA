@@ -35,7 +35,7 @@ public class ControlDialogue : MonoBehaviour
 
     public JsonData ConvertedData;          //Json의 객체로, 캐릭터의 이름, 대사, 이미지의 상태 정보
 
-    public int currentIndex;
+    public int currentIndex=0;
     public GameObject Empty;
 
     EventManager EM;
@@ -58,53 +58,22 @@ public class ControlDialogue : MonoBehaviour
     {
         if (isActive)
         {
-            SetChat.gameObject.SetActive(true);
-
-            if (currentIndex > End_of_Line)
-            {
-                currentIndex = 0;
-                isActive = false;
-                Debug.Log("끝");
-
-                EM.Doing_Event = false;
-                Empty.SetActive(false);
-                if (is_event_plus)
-                    EM.Event_Number++;
-                return;
-            }
-            else
-            {
-                Dialogue_Text.text = TextForAnmiate;
-                
-                scriptstring = ConvertedData["dialogues"][currentIndex]["script_Text"].ToString();
-                Name_Text.text = ConvertedData["dialogues"][currentIndex]["character_name"].ToString();
-                imagestring = ConvertedData["dialogues"][currentIndex]["standImage_Name"].ToString();
-
-                Stand_Image.sprite = Resources.Load<Sprite>("StandImage/" + imagestring);
-                Stand_Image.color = new Color(Stand_Image.color.r, Stand_Image.color.g, Stand_Image.color.b, 255);
-                Panel_Image.color = new Color(Panel_Image.  color.r, Panel_Image.color.g, Panel_Image.color.b,Panel_Image.color.a);
-
-            }
-
-            if (TextForAnmiate != scriptstring)
+                        /*if (TextForAnmiate != scriptstring)
             {
                 TextForAnmiate += scriptstring[cntForAnimate];
                 cntForAnimate++;
                 isScriptEnd = false;
-
             }
             else
             {
                 cntForAnimate = 0;
                 isScriptEnd = true;
-            }
+            }*/
             if (isScriptEnd == false)                  //대사가 진행중인 상황에서
             {
                 if (Input.GetKeyDown(KeyCode.R) || Input.GetMouseButtonDown(0))         //r키를 누르면
                 {
-                    //Debug.Log("짠");
-                    TextForAnmiate = scriptstring;          //모든 대사가 한번에 표시
-                    isScriptEnd = true;
+                    StopTextAnime();
                 }
 
             }
@@ -113,24 +82,13 @@ public class ControlDialogue : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.R) || Input.GetMouseButtonDown(0))        //r키를 누르면
                 {
                     //Debug.Log("Next");
-                    TextForAnmiate = "";
-                    currentIndex++;                              //다음대사로
-                    isScriptEnd = false;
+                    ChangeSettings();
                 }
             }
 
-
-
         }
         else
-        {
-            SetChat.gameObject.SetActive(false);
-            TextForAnmiate = "";
-            Dialogue_Text.text = "";
-            Name_Text.text = "";
-            currentIndex = 0;
-            cntForAnimate = 0;
-        }
+            return;
 
     }
 
@@ -147,11 +105,14 @@ public class ControlDialogue : MonoBehaviour
         TextForAnmiate = "";
         Dialogue_Text.text = "";
 
-        End_of_Line = ConvertedData["dialogues"].Count - 1;
+        End_of_Line = ConvertedData["dialogues"].Count;
         Empty.SetActive(true);
 
         is_event_plus = false;
-        Debug.Log(currentIndex);
+
+        ChangeSettings();
+        SetChat.gameObject.SetActive(true);
+
     }
     public void LoadJSON(JsonData ConvertedData_of_Object)         //객체와 상호작용할때마다 호출되는 함수 (해당 객체의 JSON을 로드함)  **이벤트넘버올릴때**
     {
@@ -166,11 +127,83 @@ public class ControlDialogue : MonoBehaviour
         TextForAnmiate = "";
         Dialogue_Text.text = "";
 
-        End_of_Line = ConvertedData["dialogues"].Count - 1;
+        End_of_Line = ConvertedData["dialogues"].Count;
         Empty.SetActive(true);
 
         is_event_plus = true;
-        Debug.Log(currentIndex);
+
+        ChangeSettings();
+
+        SetChat.gameObject.SetActive(true);
+
+    }
+
+    void ChangeSettings()
+    {
+        if (currentIndex == End_of_Line)
+        {
+            currentIndex = 0;
+            isActive = false;
+
+            EM.Doing_Event = false;
+            Empty.SetActive(false);
+            if (is_event_plus)
+                EM.Event_Number++;
+            SetChat.gameObject.SetActive(false);
+            TextForAnmiate = "";
+            Dialogue_Text.text = "";
+            Name_Text.text = "";
+            currentIndex = 0;
+            cntForAnimate = 0;
+
+            return;
+        }
+        scriptstring = ConvertedData["dialogues"][currentIndex]["script_Text"].ToString();
+        Name_Text.text = ConvertedData["dialogues"][currentIndex]["character_name"].ToString();
+        imagestring = ConvertedData["dialogues"][currentIndex]["standImage_Name"].ToString();
+
+        Stand_Image.sprite = Resources.Load<Sprite>("StandImage/" + imagestring);
+
+        isScriptEnd = false;
+
+        StartCoroutine(TextAnimation(1f));
+        currentIndex++;                              //다음대사로
+
+    }
+    void StopTextAnime()
+    {
+        StopAllCoroutines();
+        Dialogue_Text.text = scriptstring;          //모든 대사가 한번에 표시
+        isScriptEnd = true;
+        cntForAnimate = 0;
+    }
+    IEnumerator TextAnimation(float stringspeed)
+    {
+        Debug.Log("진입");
+        if (!isScriptEnd)
+        {
+            Dialogue_Text.text = "";
+            while (Dialogue_Text.text != scriptstring)
+            {
+                Dialogue_Text.text += scriptstring[cntForAnimate];
+                cntForAnimate++;
+                Debug.Log("진행");
+
+                yield return new WaitForSeconds(stringspeed * Time.deltaTime);
+            }
+            cntForAnimate = 0;
+            isScriptEnd = true;
+
+            Debug.Log("끝");
+
+            yield break;
+        }
+        else
+        {
+            Debug.Log("도중뻥");
+
+            yield break;
+        }
     }
 }
     

@@ -230,6 +230,15 @@ public class SlidePuzzle : MonoBehaviour {
         Answerd = true;
         blank_Tile.StartFade(Answerd_Obj);
     }
+    public void cheat()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {   
+                Tiles[i, j].cheat();
+            }
+        }
+    }
 
-    
 }
