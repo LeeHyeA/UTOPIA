@@ -105,11 +105,12 @@
      <Compile Include="Assets\Script\SB\RoomWindow2.cs" />
      <Compile Include="Assets\Script\SB\ScreenFader.cs" />
      <Compile Include="Assets\Script\SB\SoundManager.cs" />
+     <Compile Include="Assets\Script\SB\TextChange.cs" />
      <Compile Include="Assets\Script\SB\Warp.cs" />
      <None Include="Assets\RainMaker\Prefab\RainShader.shader" />
      <None Include="Assets\RainMaker\Readme.txt" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/LHK/Desktop/UTOPIA/Utopia (develop)-수정/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>D:/UtopiaWork/Utopia (develop)-수정/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -133,7 +134,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>C:/Users/LHK/Desktop/UTOPIA/Utopia (develop)-수정/Assets/Resources/LitJson.dll</HintPath>
+ <HintPath>D:/UtopiaWork/Utopia (develop)-수정/Assets/Resources/LitJson.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
