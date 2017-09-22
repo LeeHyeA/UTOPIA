@@ -14,7 +14,7 @@ public class MouseCursor : MonoBehaviour {
 
     void Start()
     {
-        hotSpot.x = 12.0f;
+        hotSpot.x = 10.0f;
         hotSpot.y = 33.0f;
     }
 
