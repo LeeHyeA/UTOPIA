@@ -10419,6 +10419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29dca532ca875645a0b58f27819f3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SM: {fileID: 0}
   Main: {fileID: 597955292}
   Stage1: {fileID: 1792837921}
   Stage2: {fileID: 1824654920}
@@ -10575,6 +10576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29dca532ca875645a0b58f27819f3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SM: {fileID: 0}
   Main: {fileID: 597955292}
   Stage1: {fileID: 1792837921}
   Stage2: {fileID: 1824654920}
@@ -62948,6 +62950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29dca532ca875645a0b58f27819f3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SM: {fileID: 0}
   Main: {fileID: 597955292}
   Stage1: {fileID: 1792837921}
   Stage2: {fileID: 0}
@@ -65100,7 +65103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1666662363
 RectTransform:
   m_ObjectHideFlags: 0

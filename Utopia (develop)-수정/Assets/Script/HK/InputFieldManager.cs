@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InputFieldManager : MonoBehaviour
 {
-
+    public SoundManager SM;
     InputField field;
     int stage = -1;
     public GameObject Main;
@@ -17,6 +17,7 @@ public class InputFieldManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        SM = FindObjectOfType<SoundManager>();
 
         GameObject inputObj = GameObject.Find("0_InputField");
 
@@ -68,15 +69,18 @@ public class InputFieldManager : MonoBehaviour
             case "A001":
                 if(PlayerPrefs.GetString("HeadGear", "false") == "true")
                     stage = 1;
+                SM.ChangeBGM_Fun("Stage1/Bgm/Bgm(1-1)");
                 break;
 
 			case "A002":
 				stage = 2;
-				break;
+                SM.ChangeBGM_Fun("Stage1/Bgm/Bgm(1-2)");
+                break;
 		
 			case "A003":
 				stage = 3;
-				break;
+                SM.ChangeBGM_Fun("Stage1/Bgm/Bgm(1-3)");
+                break;
 		
 
             case "5132":
@@ -87,14 +91,18 @@ public class InputFieldManager : MonoBehaviour
 
             case "1-1":
                 stage = 40;
+                SM.ChangeBGM_Fun("Stage1/Bgm/Bgm(1-1)");
                 break;
 
             case "1-2":
                 stage = 41;
+                SM.ChangeBGM_Fun("Stage1/Bgm/Bgm(1-2)");
+
                 break;
 
             case "1-3":
                 stage = 42;
+                SM.ChangeBGM_Fun("Stage1/Bgm/Bgm(1-3)");
                 break;
 
             case "2-0":

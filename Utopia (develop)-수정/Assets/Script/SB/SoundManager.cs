@@ -166,18 +166,23 @@ public class SoundManager : MonoBehaviour {
         BGM = GetComponent<AudioSource>();
         switch (BGM_Number)
         {
+            /*
             //(1-1Defalut브금)
             case 1:
                 ChangeBGM_Fun("Stage1/Bgm/Bgm(1-1Defalut)");
                 break;
+            */
+            
             //(1-1Stage브금)
             case 2:
                 ChangeBGM_Fun("Stage1/Bgm/Bgm(1-1)");
                 break;
+            /*
             //(1-2Defalut브금)
             case 3:
                 ChangeBGM_Fun("Stage1/Bgm/Bgm(1-2Defalut)");
                 break;
+            */
             //(1-2Stage브금)
             case 4:
                 ChangeBGM_Fun("Stage1/Bgm/Bgm(1-2)");
@@ -196,10 +201,13 @@ public class SoundManager : MonoBehaviour {
             case 7:
                 ChangeBGM_Fun("Stage1/Bgm/Picture(Table)");
                 break;
+
+             /*
              //(1-3Defalut브금)
              case 10:
                 ChangeBGM_Fun("Stage1/Bgm/Bgm(1-3Defalut)");
                  break;
+             */
 
              //(1-3Stage브금)
              case 11:
