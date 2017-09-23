@@ -2,37 +2,37 @@
   "dialogues": [
     {
       "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"아버지가 브라질로 떠나셨다. 한참 무더운 7월이었다."
     },
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"나는 시원한 집에 틀어박혀 아이스티를 홀짝였다."
 	},
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"그때 내 하루 일과는 책 읽기, 가끔 만화 보기, 어머니에게 요리 배우기가 다였다. 평화롭고 지루한 일상이 계속됐다."
 	},
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"그런 나에게 있어서 삶의 낙은 아버지에게서 온 편지를 읽는 것이었다."
 	},
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"그 편지들을 읽을 때만큼은 나도 아버지를 따라 그 나라에 여행 가있는 것처럼 느껴졌다."
 	},
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"마치 내가 리우를 끌어 앉는 예수상 아래에 있는 것처럼 말이다..."
 	}

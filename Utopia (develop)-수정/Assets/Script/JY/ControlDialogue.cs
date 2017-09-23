@@ -13,6 +13,9 @@ public class ControlDialogue : MonoBehaviour
     //  private string Imagename;
     //  private Sprite currentStandImage;
 
+    public bool isSpecial;
+    public AlertItem At;
+
     public Text Name_Text;                  //이름
     public Text Dialogue_Text;              //대사
     public Image Stand_Image;                //이미지
@@ -44,6 +47,8 @@ public class ControlDialogue : MonoBehaviour
 
     public string[] BackLog = new string[50];
 
+
+    public 
     // Use this for initialization
   
 
@@ -112,8 +117,33 @@ public class ControlDialogue : MonoBehaviour
 
         ChangeSettings();
         SetChat.gameObject.SetActive(true);
+        isSpecial = false;
 
     }
+    public void LoadJSON(JsonData ConvertedData_of_Object, bool WaitForClick, bool isspecial)   //특별아이템 획득시
+    {
+        currentIndex = 0;
+
+        isActive = true;
+
+        isScriptEnd = false;
+
+        ConvertedData = ConvertedData_of_Object;
+
+        TextForAnmiate = "";
+        Dialogue_Text.text = "";
+
+        End_of_Line = ConvertedData["dialogues"].Count;
+        Empty.SetActive(true);
+
+        is_event_plus = false;
+
+        ChangeSettings();
+        SetChat.gameObject.SetActive(true);
+
+        isSpecial = isspecial;
+    }
+
     public void LoadJSON(JsonData ConvertedData_of_Object)         //객체와 상호작용할때마다 호출되는 함수 (해당 객체의 JSON을 로드함)  **이벤트넘버올릴때**
     {
         currentIndex = 0;
@@ -135,7 +165,7 @@ public class ControlDialogue : MonoBehaviour
         ChangeSettings();
 
         SetChat.gameObject.SetActive(true);
-
+        isSpecial = false;
     }
 
     void ChangeSettings()
@@ -155,7 +185,11 @@ public class ControlDialogue : MonoBehaviour
             Name_Text.text = "";
             currentIndex = 0;
             cntForAnimate = 0;
-
+            if (isSpecial)
+            {
+                Debug.Log(At.ItemName_String);
+                At.PopUp();
+            }
             return;
         }
         scriptstring = ConvertedData["dialogues"][currentIndex]["script_Text"].ToString();
@@ -179,7 +213,6 @@ public class ControlDialogue : MonoBehaviour
     }
     IEnumerator TextAnimation(float stringspeed)
     {
-        Debug.Log("진입");
         if (!isScriptEnd)
         {
             Dialogue_Text.text = "";
@@ -187,14 +220,12 @@ public class ControlDialogue : MonoBehaviour
             {
                 Dialogue_Text.text += scriptstring[cntForAnimate];
                 cntForAnimate++;
-                Debug.Log("진행");
 
                 yield return new WaitForSeconds(stringspeed * Time.deltaTime);
             }
             cntForAnimate = 0;
             isScriptEnd = true;
 
-            Debug.Log("끝");
 
             yield break;
         }

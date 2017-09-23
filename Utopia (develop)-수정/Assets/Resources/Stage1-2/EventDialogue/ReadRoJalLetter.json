@@ -2,49 +2,49 @@
   "dialogues": [
     {
       "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"안녕, 라라 잘 지내고 있니? 나는 지금 방학을 맞아 몽골에 왔어. 아, 이곳은 정말 대단한 곳이야!."
     },
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"이곳의 광활하고 아득한 초원의 지평선을 보고 있으면, 눈앞에 생생하게 그려지곤 해. 비릿한 초원의 냄새, 시큼한 양젖 냄새, 뛰노는 아이들의 냄새, 말의 냄새, 양 떼들의 냄새, 저무는 노을의 냄새...냄새가 눈앞에 그려진다니 이상하니?"
 	},
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"하지만 그런 표현만이 이 풍경을 설명할 수 있는걸! 밤에는 별이 뜬 하늘을 봤어."
 	},
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"워싱턴에선 그렇게 별이 많은 하늘을 보기 힘들지. 이 곳 몽골의 밤하늘은 정말 장관이야!"
 	},
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"하느님이 온 하늘에 흩뿌려야할 별가루를 여기에만 흩뿌려놓은 것 같아. 쏟아진다는 말이 딱 어울려."
 	},
   {
       "characterType": 0,
-      "character_name": "알렉스",
+      "character_name": "",
       "standImage_Name": "Nothing",
       "script_Text": "나는 여기에서 은하수를 처음 봤단다. 이번 여름은 정말 잊지 못할 추억이 될 것 같아. 집에 돌아가기 싫을 정도라니까!"
   },
   {
       "characterType": 0,
-      "character_name": "알렉스",
+      "character_name": "",
       "standImage_Name": "Nothing",
       "script_Text": "어른이 되면 같이 이곳으로 오자 라라. 내 편지가 네게 즐거웠길 바라며. 이만 쓸게. 학교에서 봐!"
   },
   {
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"ps. 라라! 너 허르헉이라고 아니? 몽골의 전통음식인데 양고기와 다진 야채를 달궈진 돌과 함께 쪄내는 음식이야. 그걸 방금 짜낸 염소젖과 함께 먹었지. 정말 맛있었단다! 레시피를 얻어왔어. 허르헉 먹으러 우리집에 와!"
 	}

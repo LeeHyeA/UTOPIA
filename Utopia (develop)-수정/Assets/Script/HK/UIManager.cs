@@ -33,7 +33,10 @@ public class UIManager : MonoBehaviour
                 gameObject.transform.Find("1_Menu").GetComponent<AudioSource>().Play();
                 return;
             }
-            
+            else
+                gameObject.transform.Find("1_Menu").gameObject.SetActive(false);
+
+
         }
     }
 
@@ -109,7 +112,7 @@ public class UIManager : MonoBehaviour
     {
         if (gameObject.transform.childCount > 0)
         {
-            for (int i = 2; i < gameObject.transform.childCount; i++)
+            for (int i = 2; i < gameObject.transform.childCount-1; i++)
             {
                 if (gameObject.transform.GetChild(i).gameObject.activeSelf)
                 {

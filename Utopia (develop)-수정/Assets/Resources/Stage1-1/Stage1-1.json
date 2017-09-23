@@ -16,42 +16,42 @@
     },
     {
       "Item_Number":2,
-      "Item_Name":"SpiderWeb",
+      "Item_Name":"거미줄",
       "Item_Place":"Stage1-1",
       "Item_Image":"1_1SpiderWeb",
       "Item_Text":"드림캐쳐 재료(거미줄)"
     },
     {
       "Item_Number":3,
-      "Item_Name":"StarPowder",
+      "Item_Name":"별가루",
       "Item_Place":"Stage1-1",
       "Item_Image":"1_1StarPowder",
       "Item_Text":"드림캐쳐 재료(별가루)"
     },
     {
       "Item_Number":4,
-      "Item_Name":"BirdFeed",
+      "Item_Name":"새 모이",
       "Item_Place":"Stage1-1",
       "Item_Image":"1_1BirdFeed",
       "Item_Text":"새모이"
     },
     {
       "Item_Number":5,
-      "Item_Name":"BirdCagePutFeed",
+      "Item_Name":"새 모이를 채운 새장",
       "Item_Place":"Stage1-1",
       "Item_Image":"1_1BirdCagePutFeed",
       "Item_Text":"새모이를채운 새장"
     },
     {
       "Item_Number":6,
-      "Item_Name":"Feather",
+      "Item_Name":"깃털",
       "Item_Place":"Stage1-1",
       "Item_Image":"1_1Feather",
       "Item_Text":"드림캐쳐 재료(깃털)"
     },
     {
       "Item_Number":7,
-      "Item_Name":"SpiderJem",
+      "Item_Name":"빗방울이 맺힌 거미줄",
       "Item_Place":"Stage1-1",
       "Item_Image":"1_1SpiderJem",
       "Item_Text":"드림캐쳐 재료(거미줄+빗물보석)"

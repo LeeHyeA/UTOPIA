@@ -2,7 +2,7 @@
   "dialogues": [
     {
       "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"이미 씨앗을 심은 상태라 더 이상 심을 수 없다."
     }

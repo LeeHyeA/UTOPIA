@@ -7,12 +7,16 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
+    public AlertItem At;
+    string Itemname;
 
     TextAsset data;
     JsonData ItemData;
     JsonData SaveData;
     GameObject obj;
 
+    public bool isSpecial=false;
+    
     public Data[] saveDate;
 
     public GameObject ItemClone;
@@ -20,8 +24,6 @@ public class Item : MonoBehaviour
     public int ItemNumber = -1;
 
     public string ImageString = "";
-
-    public Image ItemImage;
 
     // Use this for initialization
     void Start()
@@ -49,7 +51,7 @@ public class Item : MonoBehaviour
             ItemData = JsonMapper.ToObject(data.text);
 
             ImageString = ItemData["Item"][ItemNumber]["Item_Image"].ToString();
-
+            Itemname = ItemData["Item"][ItemNumber]["Item_Name"].ToString();
             if (transform.Find("1_ObjectSet").transform.childCount >= 0 &&
                 transform.Find("2_Grid").transform.childCount <= 10)
             {
@@ -62,9 +64,40 @@ public class Item : MonoBehaviour
             obj.GetComponent<Image>().color = new Color(obj.GetComponent<Image>().color.r, obj.GetComponent<Image>().color.g, obj.GetComponent<Image>().color.b, 255);
 
             obj.transform.SetParent(transform.Find("2_Grid").transform);
+
+            At.SetMember(Itemname, ItemStage + "/" + ImageString);
+
+            if (!isSpecial)
+            { 
+                At.PopUp();
+            }
         }
     }
+    public void LoadJsonSpecial(string ItemStage)
+    {
+        if (ItemNumber >= 0 && ItemStage != "")
+        {
+            data = Resources.Load<TextAsset>(ItemStage + "/" + ItemStage);
+            ItemData = JsonMapper.ToObject(data.text);
 
+            ImageString = ItemData["Item"][ItemNumber]["Item_Image"].ToString();
+            Itemname = ItemData["Item"][ItemNumber]["Item_Name"].ToString();
+            if (transform.Find("1_ObjectSet").transform.childCount >= 0 &&
+                transform.Find("2_Grid").transform.childCount <= 10)
+            {
+                obj = Instantiate(ItemClone, Vector3.zero, Quaternion.identity) as GameObject;
+                obj.transform.SetParent(transform.Find("1_ObjectSet").transform);
+                obj.transform.localScale = Vector3.one;
+                obj.transform.name = ItemNumber.ToString() + "-" + ImageString;
+            }
+            obj.GetComponent<Image>().sprite = Resources.Load<Sprite>(ItemStage + "/" + ImageString);
+            obj.GetComponent<Image>().color = new Color(obj.GetComponent<Image>().color.r, obj.GetComponent<Image>().color.g, obj.GetComponent<Image>().color.b, 255);
+
+            obj.transform.SetParent(transform.Find("2_Grid").transform);
+
+            At.SetMember(Itemname, ItemStage + "/" + ImageString);
+        }
+    }
     // 아이템 사용은 그냥 Destroy 해주면 될 것 같음.
     // 계속 사용가능한 Item은 재생성하기.
 
@@ -79,6 +112,10 @@ public class Item : MonoBehaviour
         //}
     }
 
+    public void setSpecial()
+    {
+        isSpecial = true;
+    }
 
     public void DeleteInventory()
     {

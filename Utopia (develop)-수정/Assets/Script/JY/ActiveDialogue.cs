@@ -53,6 +53,25 @@ public class ActiveDialogue : MonoBehaviour
         else
             return; 
     }
+    public void SpecialItem()
+    {
+        if (WaitForClick)
+        {
+            if (control.isActive == false)                            //충돌처리 구현필요
+            {
+                NotNum = true;
+                control.LoadJSON(ConvertedData, WaitForClick,true);
+
+                if (DestroyActivated)
+                    Destroy(gameObject);
+            }
+
+            else
+                return;
+        }
+        else
+            return;
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

@@ -2,15 +2,15 @@
   "dialogues": [
     {
       "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"칼을 얻었다."
     },
 	{
       "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
-      "script_Text":"아주 날카롭당."
+      "script_Text":"아주 날카롭다."
     }
   ]
 }

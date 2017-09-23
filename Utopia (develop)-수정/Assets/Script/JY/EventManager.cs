@@ -579,9 +579,6 @@ public class EventManager : MonoBehaviour
                 case 201:                                               //로프획득
                     GameObject.Find("Circle_Puzzle_Control").transform.GetChild(9).gameObject.SetActive(true);
                     GameObject.Find("Circle_Puzzle_Control").transform.GetChild(9).gameObject.GetComponent<Fade>().StartFade();
-                    Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Get_Rope");
-                    Json_Data = JsonMapper.ToObject(Text_Data.text);
-                    CD.LoadJSON(Json_Data,false);
                     break;
                 case 202:
                     StartCoroutine(WaitASecond(1.0f));
@@ -591,7 +588,7 @@ public class EventManager : MonoBehaviour
                     Debug.Log("문이똭!");
                     break;
                 case 204:
-                    StartCoroutine("WaitASecond", 1.0);
+                    StartCoroutine("WaitASecond", 0.5);
                     GameObject.Find("Ganges_river").GetComponent<GangesRiver>().Activate_Door();
                     break;
                 case 205:
@@ -600,7 +597,7 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
                 case 206:
-                    StartCoroutine(Fadeing(false, 1.0f, false));
+                    StartCoroutine(Fadeing(false, 1.0f, true));
                     break;
                 case 207:
                     Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Door");

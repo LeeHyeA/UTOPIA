@@ -2,25 +2,25 @@
   "dialogues": [
     {
       "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"-----드림캐쳐 설계도-----."
     },
     {
       "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"1.동그라 한 원형 물체를 준비합니다."
     },
 	  {
       "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"2.원형 물체에 실을 수놓고, 깃털을 붙여 장식해 줍시다."
     },
 	  {
       "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"3.마지막으로 별가루를 뿌려주면 완성~!."
     }

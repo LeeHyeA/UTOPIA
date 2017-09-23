@@ -2,31 +2,31 @@
   "dialogues": [
     {
       "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"중학생 때부터 나는 아버지와 몇 번의 여행을 갔었는데, 처음 간 곳이 이곳 몽골이었다."
     },
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"문화, 양식, 언어... 문명에 구애받지 않는 유목민들, 자유롭게 뛰어노는 양들, 푸른 대지, 쏟아질 것 같은 하늘, 노래하는 별..."
 	},
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"고작 15시간 떨어진 거리에 내가 알던 세계와 너무나도 다른 세계가 있었다. 아... 그 초원에 처음 발을 디뎠을 때의 기분은..."
 	},
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"그때부터 아마 나도 아버지처럼 여행을 사랑하게 되었을 것이다."
 	},
 	{
 	  "characterType":0,
-      "character_name":"알렉스",
+      "character_name":"",
       "standImage_Name":"Nothing",
       "script_Text":"그 신비하고 즐거운 일을 어떻게 사랑하지 않을 수 있을까."
 	}

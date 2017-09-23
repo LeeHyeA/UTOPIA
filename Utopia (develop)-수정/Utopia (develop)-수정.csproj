@@ -104,6 +104,7 @@
     <Compile Include="Assets\Script\HK\UIManager.cs" />
     <Compile Include="Assets\Script\HK\VideoStream.cs" />
     <Compile Include="Assets\Script\JY\ActiveDialogue.cs" />
+    <Compile Include="Assets\Script\JY\AlertItem.cs" />
     <Compile Include="Assets\Script\JY\AudioManager.cs" />
     <Compile Include="Assets\Script\JY\Circle_Puzzle.cs" />
     <Compile Include="Assets\Script\JY\Circle_Puzzle_Tile.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Assets\Script\SB\SoundManager.cs" />
     <Compile Include="Assets\Script\SB\TextChange.cs" />
     <Compile Include="Assets\Script\SB\Warp.cs" />
+    <Compile Include="Assets\SortGrid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\RainMaker\Prefab\RainShader.shader" />

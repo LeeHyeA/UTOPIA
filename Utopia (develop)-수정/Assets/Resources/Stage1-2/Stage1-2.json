@@ -2,70 +2,70 @@
   "Item": [
     {
       "Item_Number": 0,
-      "Item_Name":"Knife",
+      "Item_Name":"칼",
       "Item_Place":"Stage1-2",
       "Item_Image":"Knife",
       "Item_Text": "몽골스테이지 나이프"
     },
     {
       "Item_Number": 1,
-      "Item_Name": "EmptyWateringCan",
+      "Item_Name": "빈 물뿌리개",
       "Item_Place": "Stage1-2",
       "Item_Image": "EmptyWateringCan",
       "Item_Text": "물뿌리개(비어있음)"
     },
     {
       "Item_Number":2,
-      "Item_Name":"FullWateringCan",
+      "Item_Name":"물이 담긴 물뿌리개",
       "Item_Place":"Stage1-2",
       "Item_Image":"FullWateringCan",
       "Item_Text":"물뿌리개(채워져있음)"
     },
     {
       "Item_Number":3,
-      "Item_Name":"Ingredient(EmptyMilk)",
+      "Item_Name":"빈 우유병",
       "Item_Place":"Stage1-2",
       "Item_Image":"Ingredient(EmptyMilk)",
       "Item_Text":"음식 재료(빈우유병)"
     },
     {
       "Item_Number":4,
-      "Item_Name":"Ingredient(Milk)",
+      "Item_Name":"우유가 담긴 우유병",
       "Item_Place":"Stage1-2",
       "Item_Image":"Ingredient(Milk)",
       "Item_Text":"음식 재료(채워진 우유병)"
     },
     {
       "Item_Number":5,
-      "Item_Name":"Ingredient(Carrot)",
+      "Item_Name":"당근",
       "Item_Place":"Stage1-2",
       "Item_Image":"Ingredient(Carrot)",
       "Item_Text":"음식 재료(당근)"
     },
     {
       "Item_Number":6,
-      "Item_Name":"Ingredient(Potato)",
+      "Item_Name":"감자",
       "Item_Place":"Stage1-2",
       "Item_Image":"Ingredient(Potato)",
       "Item_Text":"음식 재료(감자)"
     },
     {
       "Item_Number": 7,
-      "Item_Name": "Ingredient(Meat)",
+      "Item_Name": "양고기",
       "Item_Place": "Stage1-2",
       "Item_Image": "Ingredient(Meat)",
       "Item_Text": "음식 재료(양고기)"
     },
     {
       "Item_Number":8,
-      "Item_Name":"Ingredient(Stone)",
+      "Item_Name":"돌",
       "Item_Place":"Stage1-2",
       "Item_Image":"Ingredient(Stone)",
       "Item_Text":"음식 재료(돌)"
     },
     {
       "Item_Number":9,
-      "Item_Name":"Ingredient(HotStone)",
+      "Item_Name":"뜨거운 돌",
       "Item_Place":"Stage1-2",
       "Item_Image":"Ingredient(HotStone)",
       "Item_Text":"음식 재료(달궈진돌)"

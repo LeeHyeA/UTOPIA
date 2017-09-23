@@ -2,56 +2,56 @@
   "Item": [
     {
       "Item_Number": 0,
-      "Item_Name":"OwlFeed",
+      "Item_Name":"올빼미 모이",
       "Item_Place":"Stage1-3",
       "Item_Image":"OwlFeed",
       "Item_Text": "올빼미 모이"
     },
     {
       "Item_Number": 1,
-      "Item_Name": "Hammer",
+      "Item_Name": "작은 망치",
       "Item_Place": "Stage1-3",
       "Item_Image": "Hammer",
       "Item_Text": "작은망치"
     },
     {
       "Item_Number":2,
-      "Item_Name":"GoldNeedle",
+      "Item_Name":"금 침",
       "Item_Place":"Stage1-3",
       "Item_Image":"GoldNeedle",
       "Item_Text":"시계에 있던 금침"
     },
     {
       "Item_Number":3,
-      "Item_Name":"TreeSeed",
+      "Item_Name":"나무 씨앗",
       "Item_Place":"Stage1-3",
       "Item_Image":"TreeSeed",
       "Item_Text":"나무 씨앗"
     },
     {
       "Item_Number":4,
-      "Item_Name":"RoseSeed",
+      "Item_Name":"장미 씨앗",
       "Item_Place":"Stage1-3",
       "Item_Image":"RoseSeed",
       "Item_Text":"장미 씨앗"
     },
     {
       "Item_Number":5,
-      "Item_Name":"OwlName",
+      "Item_Name":"이름표 - 올빼미",
       "Item_Place":"Stage1-3",
       "Item_Image":"OwlName",
       "Item_Text":"올빼미 이름표"
     },
     {
       "Item_Number":6,
-      "Item_Name":"RoseName",
+      "Item_Name":"이름표 - 장미",
       "Item_Place":"Stage1-3",
       "Item_Image":"RoseName",
       "Item_Text":"장미 이름표"
     },
     {
       "Item_Number":7,
-      "Item_Name":"TreeName",
+      "Item_Name":"이름표 - 나무",
       "Item_Place":"Stage1-3",
       "Item_Image":"TreeName",
       "Item_Text":"나무 이름표"
