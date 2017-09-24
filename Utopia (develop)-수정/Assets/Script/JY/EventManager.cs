@@ -281,9 +281,11 @@ public class EventManager : MonoBehaviour
                     GameObject BirdCageFull = BirdCage.transform.Find("BirdCageFull").gameObject;
                     BirdCageFull.SetActive(true);
                     //대사진행
+                    /*
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteBirdCage");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
+                    */
                     GameObject.Find("WindowButton").GetComponent<RoomWindow>().PutFeedToBirdCage = false;
 
                     break;
@@ -300,9 +302,11 @@ public class EventManager : MonoBehaviour
                         SpiderJem.SetActive(true);
                     */
                     //대사진행
+                    /*
                     Text_Data = Resources.Load<TextAsset>("Stage1-1/EventDialogue/CompleteSpiderJem");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
+                    */
                     GameObject.Find("WindowButton").GetComponent<RoomWindow>().PutSpiderWeb = false;
 
                     break;

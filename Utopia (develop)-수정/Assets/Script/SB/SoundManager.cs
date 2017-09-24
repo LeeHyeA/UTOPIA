@@ -45,9 +45,9 @@ public class SoundManager : MonoBehaviour {
                 AudioClip RdresserOpen = Resources.Load("Sound/Stage1/SE/OpenDrawer2") as AudioClip;
                 SE.PlayOneShot(RdresserOpen);
                 break;
-            //좌측서랍 열었을시
+            //거미줄 창문에 붙일때
             case 3:
-                AudioClip LdresserOpen = Resources.Load("Sound/Stage1/SE/OpenDrawer") as AudioClip;
+                AudioClip LdresserOpen = Resources.Load("Sound/Stage1/SE/UseItem2") as AudioClip;
                 SE.PlayOneShot(LdresserOpen);
                 break;
             //씨앗심었을시 & 씨앗 얻었을시

@@ -262,7 +262,7 @@ public class InputManager : MonoBehaviour
             if (obj.transform.name == "4-1_1BirdFeed" && hit.transform.name == "BirdCageEmptyCol")
             {
                 //효과음재생
-                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 15;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 4;
                 GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 BridCage.transform.Find("BirdCageEmpty").gameObject.SetActive(false);
                 BridCage.transform.Find("BirdCagePutFeed").gameObject.SetActive(true);
@@ -288,6 +288,9 @@ public class InputManager : MonoBehaviour
                 GameObject.Find("WindowButton").GetComponent<RoomWindow>().SetPutSpiderWeb();
                 Destroy(obj.transform.gameObject);
                 GameObject.Find("Event_Manager").GetComponent<EventManager>().Event_Number = 52;
+                //효과음
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 3;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             //일단 보류
