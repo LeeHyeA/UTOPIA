@@ -17,7 +17,7 @@ public class InputFieldManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        SM = FindObjectOfType<SoundManager>();
+        SoundManager SM = FindObjectOfType<SoundManager>();
 
         GameObject inputObj = GameObject.Find("0_InputField");
 
@@ -319,6 +319,9 @@ public class InputFieldManager : MonoBehaviour
 				item.LoadJson ("3Stage");
 				item.GetNumber (13);
 				item.LoadJson ("3Stage");
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 324;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
                 break;
 
             default:

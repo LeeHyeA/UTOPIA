@@ -123,12 +123,78 @@ public class SoundManager : MonoBehaviour {
 
 
             // *************************************************************** 3Stage
-
+            // ********************************1Round
+            
             // 꽃이 필때
             case 300:
                 AudioClip Flower = Resources.Load("Sound/Stage3/1Round/FinishFlower") as AudioClip;
                 SE.PlayOneShot(Flower);
                 break;
+
+            // 물고기먹이 획득,사용
+            // 씨앗 획득, 사용
+            case 301:
+                AudioClip FeedSeed = Resources.Load("Sound/Stage3/1Round/FeedSeed") as AudioClip;
+                SE.PlayOneShot(FeedSeed);
+                break;
+
+            // 달력, 진단서 등 획득사용
+            case 302:
+                AudioClip Paper = Resources.Load("Sound/Stage3/1Round/Paper") as AudioClip;
+                SE.PlayOneShot(Paper);
+                break;
+            
+            // 카메라 획득, 소라 획득
+            case 303:
+                AudioClip CameraSora = Resources.Load("Sound/Stage3/1Round/177054__woodmoose__lowerguncock") as AudioClip;
+                SE.PlayOneShot(CameraSora);
+                break;
+
+            // 은반지 획득,꽃반지 사용, 소라 사용
+            case 304:
+                AudioClip Ring = Resources.Load("Sound/Stage3/1Round/397608__swordofkings128__scissors-cutting-paper-1") as AudioClip;
+                SE.PlayOneShot(Ring);
+                break;
+
+            // 서랍 클릭시
+            case 305:
+                AudioClip Drawer = Resources.Load("Sound/Stage3/1Round/서랍열때2") as AudioClip;
+                SE.PlayOneShot(Drawer);
+                break;
+
+            // 그림 획득 및 사용
+            case 306:
+                AudioClip Picture = Resources.Load("Sound/Stage3/1Round/335751__j1987__put-item") as AudioClip;
+                SE.PlayOneShot(Picture);
+                break;
+
+            // 바다 방문 시
+            case 307:
+                AudioClip Sea = Resources.Load("Sound/Stage3/1Round/바다") as AudioClip;
+                SE.PlayOneShot(Sea);
+                break;
+
+            // 꽃반지 획득
+            case 308:
+                AudioClip FlowerRing = Resources.Load("Sound/Stage3/1Round/266947__ulfhubert__tiny-ping") as AudioClip;
+                SE.PlayOneShot(FlowerRing);
+                break;
+
+            // 피아노 클릭
+            case 309:
+                AudioClip Piano = Resources.Load("Sound/Stage3/1Round/68447__pinkyfinger__piano-g") as AudioClip;
+                SE.PlayOneShot(Piano);
+                break;
+
+            // ********************************3Round
+
+            // 진단서 조각 진단서에 넣을 때
+            case 310:
+                AudioClip Push = Resources.Load("Sound/Stage3/2Round/397608__swordofkings128__scissors-cutting-paper-1") as AudioClip;
+                SE.PlayOneShot(Push);
+                break;
+
+            // ********************************3Round
 
             // 재규어
             case 320:
@@ -152,6 +218,24 @@ public class SoundManager : MonoBehaviour {
             case 323:
                 AudioClip Door = Resources.Load("Sound/Stage3/3Round/open-door") as AudioClip;
                 SE.PlayOneShot(Door);
+                break;
+
+            // 물뿌리개 획득, 씨앗 획득
+            case 324:
+                AudioClip WaterCan = Resources.Load("Sound/Stage3/3Round/371217__morganpurkis__pickup") as AudioClip;
+                SE.PlayOneShot(WaterCan);
+                break;
+
+            // 캐리어 여닫기, 캐리어 획득
+            case 325:
+                AudioClip Carrier = Resources.Load("Sound/Stage3/3Round/377559__yudena__bag-bymondfisch89") as AudioClip;
+                SE.PlayOneShot(Carrier);
+                break;
+
+            // 물뿌리개 사용
+            case 326:
+                AudioClip UseWaterCan = Resources.Load("Sound/Stage3/3Round/물뿌리개 사용") as AudioClip;
+                SE.PlayOneShot(UseWaterCan);
                 break;
         }
     }

@@ -775,9 +775,20 @@ public class InputManager : MonoBehaviour
 
             if (obj.transform.name == "3-FishFeed" && hit.transform.name == "SeaCollision")
             {
+
+                // 먹이  사용
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 301;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                 item.GetNumber(4);
                 item.LoadJson("3Stage");
                 Destroy(obj.transform.gameObject);
+
+                
+
+                // 소라획득
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 303;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             if (obj.transform.name == "2-Camera" && hit.transform.name == "SunCollision")
@@ -785,6 +796,9 @@ public class InputManager : MonoBehaviour
                 item.GetNumber(5);
                 item.LoadJson("3Stage");
                 Destroy(obj.transform.gameObject);
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 306;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             if (obj.transform.name == "5-Sunset" && hit.transform.name == "Picture")
@@ -794,12 +808,18 @@ public class InputManager : MonoBehaviour
                 Round1.Find("Change").Find("Garden").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
                 GameObject.Find("Canvas(3Stage)").GetComponent<Stage3>().SunsetChk = true;
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 306;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             if (obj.transform.name == "1-Seed" && hit.transform.name == "Grass")
             {
                 PlayerPrefs.SetString("Seed", "true");
                 Destroy(obj.transform.gameObject);
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 301;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             if (obj.transform.name == "0-Ring" && hit.transform.name == "Flower")
@@ -812,10 +832,16 @@ public class InputManager : MonoBehaviour
                 Destroy(obj.transform.gameObject);
 
                 PlayerPrefs.SetString("Seed", "Finish");
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 308;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             if (obj.transform.name == "6-FlowerRing" && hit.transform.name == "Statuette")
             {
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 304;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                 FlowerRing = true;
 				Stage3.Find ("1Round").Find ("FlowerRing").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
@@ -824,6 +850,9 @@ public class InputManager : MonoBehaviour
 
             if (obj.transform.name == "4-Shell" && hit.transform.name == "Statuette")
             {
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 304;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
                 Shell = true;
 				Stage3.Find ("1Round").Find ("Shell").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
@@ -836,30 +865,45 @@ public class InputManager : MonoBehaviour
             {
                 Stage3.Find("2Round").Find("Medical").Find("Piece1").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 310;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             if (obj.transform.name == "8-MedicalCertificate2" && hit.transform.name == "Basic")
             {
                 Stage3.Find("2Round").Find("Medical").Find("Piece2").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 310;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             if (obj.transform.name == "9-MedicalCertificate3" && hit.transform.name == "Basic")
             {
                 Stage3.Find("2Round").Find("Medical").Find("Piece3").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 310;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             if (obj.transform.name == "10-MedicalCertificate4" && hit.transform.name == "Basic")
             {
                 Stage3.Find("2Round").Find("Medical").Find("Piece4").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 310;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 
             if (obj.transform.name == "11-MedicalCertificate5" && hit.transform.name == "Basic")
             {
                 Stage3.Find("2Round").Find("Medical").Find("Piece5").gameObject.SetActive(true);
                 Destroy(obj.transform.gameObject);
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 310;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             }
 				
 			// ******************************************************************************** 3Round
@@ -882,7 +926,10 @@ public class InputManager : MonoBehaviour
 				Stage3.Find("3Round").Find("BG").Find("ClickObject").Find("Dreamcatcher").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
 				Destroy(hit.transform.gameObject);
-			}
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 303;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+            }
 
 			if (obj.transform.name == "12-WateringCan" && hit.transform.parent.name == "SeaC")
 			{
@@ -890,14 +937,20 @@ public class InputManager : MonoBehaviour
 				item.LoadJson("3Stage");
 
 				Destroy(obj.transform.gameObject);
-			}
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 324;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+            }
 
 			if (obj.transform.name == "15-FullWateringCan" && hit.transform.name == "RoseC")
 			{
 				Stage3.Find("3Round").Find("BG").Find("TextObject").Find("NonRose").gameObject.SetActive(false);
 				Stage3.Find("3Round").Find("BG").Find("ClickObject").Find("Rose").gameObject.SetActive(true);
 				Destroy(hit.transform.gameObject);
-			}
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 326;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+            }
 
 			if (obj.transform.name == "17-RoseSeed" && hit.transform.name == "OrgelC")
 			{
@@ -906,12 +959,16 @@ public class InputManager : MonoBehaviour
 				{
 					RoseSeed = true;
 					Destroy (obj.transform.gameObject);
-				}
+
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 301;
+                    GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+
+                }
 			}
 
 			if (obj.transform.name == "15-FullWateringCan" && hit.transform.name == "OrgelC")
 			{
-				Transform orgel = Stage3.Find ("3Round").Find ("Orgel");
+                Transform orgel = Stage3.Find ("3Round").Find ("Orgel");
 				if (RoseSeed) 
 				{
 					if (orgel.gameObject.activeSelf && !orgel.Find ("Cover").gameObject.activeSelf) 
@@ -919,7 +976,10 @@ public class InputManager : MonoBehaviour
 						Destroy (obj.transform.gameObject);
 						orgel.Find ("Nomal").gameObject.SetActive (false);
 						orgel.Find ("Finish").gameObject.SetActive (true);
-					}
+
+                        GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 326;
+                        GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+                    }
 				}
 			}
 
@@ -927,31 +987,46 @@ public class InputManager : MonoBehaviour
 			{
 				Stage3.Find("3Round").Find("Carrier").Find("Dreamcatcher").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
-			}
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 303;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+            }
 
 			if (obj.transform.name == "18-Rose" && hit.transform.name == "CarrierNomal")
 			{
 				Stage3.Find("3Round").Find("Carrier").Find("Rose").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
-			}
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 304;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+            }
 
 			if (obj.transform.name == "19-Orgel" && hit.transform.name == "CarrierNomal")
 			{
 				Stage3.Find("3Round").Find("Carrier").Find("Orgel").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
-			}
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 303;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+            }
 
 			if (obj.transform.name == "20-Book" && hit.transform.name == "CarrierNomal")
 			{
 				Stage3.Find("3Round").Find("Carrier").Find("Book").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
-			}
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 303;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+            }
 
 			if (obj.transform.name == "21-Picture" && hit.transform.name == "CarrierNomal")
 			{
 				Stage3.Find("3Round").Find("Carrier").Find("Picture").gameObject.SetActive(true);
 				Destroy(obj.transform.gameObject);
-			}
+
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 306;
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
+            }
 
 			else if (touches.Length == 1)
 				touches[0].transform.SetParent(Inventory.transform.Find("2_Grid"));

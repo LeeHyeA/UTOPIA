@@ -97,8 +97,8 @@ public class Stage3 : MonoBehaviour {
         {
 			Round2.Find ("Black").gameObject.SetActive (true);
 			Event.EventnumberSet (310);
-            GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_Number = 303;
-            GameObject.Find("SoundManager").GetComponent<SoundManager>().BGM_ListPlay();
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 304;
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
         }
     }
 
