@@ -9,6 +9,8 @@ public class HangedMan : MonoBehaviour {
     // Use this for initialization
     AudioManager AM;
     public AudioClip Hanged_Man_Sound;
+    public AudioClip ClearSound;
+
     public bool is_Turning=false;
     public bool Activated = false;
     public GameObject HangedMan_Control;
@@ -53,7 +55,6 @@ public class HangedMan : MonoBehaviour {
     }
     IEnumerator Rot()
     {
-        AM.PlaySound(Hanged_Man_Sound);
         Debug.Log("코루틴시작");
 
         for (int i = 0; i < 45; i++)
@@ -89,5 +90,7 @@ public class HangedMan : MonoBehaviour {
         Answerd_obj.SetActive(true);
         Answerd_obj.GetComponent<Fade>().StartFade();
         Answerd = true;
+        AM.PlaySound(Hanged_Man_Sound);
+        AM.PlaySound(ClearSound);
     }
 }

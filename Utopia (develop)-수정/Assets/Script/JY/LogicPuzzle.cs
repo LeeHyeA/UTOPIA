@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class LogicPuzzle : MonoBehaviour
 {
-
+    public AudioManager AM;
+    public AudioClip PuzzleClear;
+    public AudioClip Clicked;
     GameObject[] Tile_Obj = new GameObject[100];
     public Tile[] t = new Tile[100];
 
@@ -68,7 +70,7 @@ public class LogicPuzzle : MonoBehaviour
             }
             Debug.Log("정답");
             Answerd = true;
-
+            AM.PlaySound(PuzzleClear);
             //gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("2_Stage/Logic_Answerd");
             Button.SetActive(false);
 
@@ -106,7 +108,11 @@ public class LogicPuzzle : MonoBehaviour
         }
         return;
     }
-
+    public void PlayClickedSound()
+    {
+        AM.PlaySound(Clicked);
+        return;
+    }
     IEnumerator Fading()
     {
         AnswerdImage.SetActive(true);

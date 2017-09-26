@@ -7,6 +7,8 @@ public class SlidePuzzle : MonoBehaviour {
     //int width = 190;
     //int height = 206;
 
+    public AudioClip ClearSound;
+    public AudioManager AM;
     public AudioClip slideSound;
     EventManager EM;
     public GameObject SlidepuzzleControl;
@@ -227,6 +229,7 @@ public class SlidePuzzle : MonoBehaviour {
             }
         }
         Debug.Log("정답");
+        AM.PlaySound(ClearSound);
         Answerd = true;
         blank_Tile.StartFade(Answerd_Obj);
     }
