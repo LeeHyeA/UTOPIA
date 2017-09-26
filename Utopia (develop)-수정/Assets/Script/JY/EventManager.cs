@@ -588,7 +588,7 @@ public class EventManager : MonoBehaviour
                     StartCoroutine(WaitASecond(1.0f));
                     break;
                 case 203:
-                    StartCoroutine(Fadeing(true, 1.0f, true));
+                    StartCoroutine(Fadeing(true, 3.0f, true));
                     Debug.Log("문이똭!");
                     break;
                 case 204:
@@ -601,7 +601,7 @@ public class EventManager : MonoBehaviour
                     CD.LoadJSON(Json_Data);
                     break;
                 case 206:
-                    StartCoroutine(Fadeing(false, 1.0f, true));
+                    StartCoroutine(Fadeing(false, 3.0f, true));
                     break;
                 case 207:
                     Text_Data = Resources.Load<TextAsset>("2_Stage/Event_Script/Door");
@@ -610,12 +610,12 @@ public class EventManager : MonoBehaviour
                     break;
 
                 case 209:
-                    StartCoroutine(Fadeing(true, 1.0f, false));
+                    StartCoroutine(Fadeing(true, 2.0f, false));
                     break;
                 case 210:
                     Stage_2.SetActive(false);
                     Stage_3.SetActive(true);
-                    StartCoroutine(Fadeing(false, 1.0f, false));
+                    StartCoroutine(Fadeing(false, 2.0f, false));
                     break;
 
                 // 300~399 3Stage

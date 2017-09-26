@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GangesRiver : MonoBehaviour {
 
+    public AudioManager AM;
+    public AudioClip ClearSound;
+
     public GameObject Red;
     public GameObject Blue;
     public GameObject Yellow;
@@ -27,6 +30,7 @@ public class GangesRiver : MonoBehaviour {
         {
             EM.Event_Number = 202;
             Answerd = true;
+            AM.PlaySound(ClearSound);
         }
 	}
 

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class Tile : MonoBehaviour {
-    AudioManager AM;
+    
     public bool is_Cliked = false;
     public bool Xmarkerd = false;
 
@@ -16,7 +16,6 @@ public class Tile : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        AM = FindObjectOfType<AudioManager>();
         Tile_Image = GetComponent<Image>();
         LP = FindObjectOfType<LogicPuzzle>();
         Xmark = Resources.Load<Sprite>("2_Stage/Xmark");
@@ -25,12 +24,6 @@ public class Tile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (is_Cliked&&!Xmarkerd)
-        {
-            Tile_Image.color = new Color(0, 0, 0);
-            return;
-        }
-        Tile_Image.color = new Color(255, 255, 255);
         return;
 	}
 
@@ -39,10 +32,22 @@ public class Tile : MonoBehaviour {
         if (LP.Answerd || Xmarkerd)
             return;
         else
+        {
             is_Cliked = !is_Cliked;
-        return;
+            if (is_Cliked)
+            {
+                Tile_Image.color = new Color(0, 0, 0);
+            }
+            else
+            {
+                Tile_Image.color = new Color(255, 255, 255);
+            }
+
+            LP.PlayClickedSound();
+            return;
+        }
     }
-    private void OnMouseOver()
+    private void OnMouseOver()              //오른쪽 클릭
     {
         if(Input.GetMouseButtonDown(1))
         {
@@ -55,6 +60,7 @@ public class Tile : MonoBehaviour {
             }
             else
                 Tile_Image.sprite = origin;
+            LP.PlayClickedSound();
         }
     }
     public void clear()
