@@ -62,7 +62,7 @@ public class Stage3 : MonoBehaviour {
             Transform Garden = Round1.Find("Change").Find("Garden");
             Garden.Find("Grass").gameObject.SetActive(false);
             Garden.Find("Flower").gameObject.SetActive(true);
-            Event.EventnumberSet(302);
+            Event.EventnumberSet(300);
             GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 300;
             GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();
             PlayerPrefs.SetString("Seed", "finish");
@@ -95,7 +95,6 @@ public class Stage3 : MonoBehaviour {
 
         if(Piece1.activeSelf && Piece2.activeSelf && Piece3.activeSelf && Piece4.activeSelf && Piece5.activeSelf)
         {
-			Round2.Find ("Black").gameObject.SetActive (true);
 			Event.EventnumberSet (310);
             GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_Number = 304;
             GameObject.Find("SoundManager").GetComponent<SoundManager>().SE_ListPlay();

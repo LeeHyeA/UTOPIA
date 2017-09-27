@@ -13,6 +13,7 @@ public class InputFieldManager : MonoBehaviour
 	public GameObject Stage2;
     public GameObject Stage3;
 	public Item item;
+    public GameObject UIobj;
 
     // Use this for initialization
     void Start()
@@ -20,6 +21,7 @@ public class InputFieldManager : MonoBehaviour
         SoundManager SM = FindObjectOfType<SoundManager>();
 
         GameObject inputObj = GameObject.Find("0_InputField");
+        
 
         field = inputObj.GetComponent<InputField>();
 
@@ -111,14 +113,17 @@ public class InputFieldManager : MonoBehaviour
 
             case "3-1":
                 stage = 44;
+                SM.ChangeBGM_Fun("Stage3/1Round/3-1 BGM");
                 break;
 
             case "3-2":
                 stage = 45;
+                SM.ChangeBGM_Fun("Stage3/2Round/3-2 BGM");
                 break;
 
             case "3-3":
                 stage = 46;
+                SM.ChangeBGM_Fun("Stage3/3Round/3-3 BGM");
                 break;
 
             // **************************************************************
@@ -131,7 +136,9 @@ public class InputFieldManager : MonoBehaviour
 
     public void StageChange()
     {
-        Transform computer = Main.transform.Find("Computer");
+
+        
+        Transform computer = Main.transform.Find("Panel").Find("Computer");
         switch (stage)
         {
             case 0:
@@ -141,7 +148,7 @@ public class InputFieldManager : MonoBehaviour
                 computer.Find("3_AccessButton").gameObject.SetActive(true);
                 computer.Find("4_AccessButton(Before)").gameObject.SetActive(false);
                 
-                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+                computer.Find("5_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
 
 
                 break;
@@ -150,7 +157,7 @@ public class InputFieldManager : MonoBehaviour
                 this.gameObject.SetActive(false);
                 field.text = "";
 
-                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+                computer.Find("5_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
                 Main.SetActive(false);
                 Stage1.SetActive(true);
                 item.DeleteInventory();
@@ -161,7 +168,7 @@ public class InputFieldManager : MonoBehaviour
 				this.gameObject.SetActive (false);
 				field.text = "";
 			
-				computer.Find ("7_Result").transform.Find ("2_AccessApproved").gameObject.SetActive (true);
+				computer.Find ("5_Result").transform.Find ("2_AccessApproved").gameObject.SetActive (true);
 				Main.SetActive (false);
 				Stage2.SetActive(true);
                 item.DeleteInventory();
@@ -172,7 +179,7 @@ public class InputFieldManager : MonoBehaviour
 				this.gameObject.SetActive (false);
 				field.text = "";
 			
-				computer.Find ("7_Result").transform.Find ("2_AccessApproved").gameObject.SetActive (true);
+				computer.Find ("5_Result").transform.Find ("2_AccessApproved").gameObject.SetActive (true);
 				Main.SetActive (false);
 				Stage3.SetActive(true);
                 item.DeleteInventory();
@@ -189,7 +196,7 @@ public class InputFieldManager : MonoBehaviour
                 this.gameObject.SetActive(false);
                 field.text = "";
 
-                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+                computer.Find("5_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
 
                 Main.SetActive(false);
                 Stage1.SetActive(true);
@@ -200,6 +207,8 @@ public class InputFieldManager : MonoBehaviour
                 Stage1.transform.Find("Panel(Defalut1-2)").gameObject.SetActive(false);
                 Stage1.transform.Find("Panel(Defalut1-3)").gameObject.SetActive(false);
                 item.DeleteInventory();
+
+                UIobj.SetActive(true);
                 break;
             
             // 1-2
@@ -207,7 +216,7 @@ public class InputFieldManager : MonoBehaviour
                 this.gameObject.SetActive(false);
                 field.text = "";
 
-                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+                computer.Find("5_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
 
                 Main.SetActive(false);
                 Stage1.SetActive(true);
@@ -218,6 +227,8 @@ public class InputFieldManager : MonoBehaviour
                 Stage1.transform.Find("Panel(Defalut1-2)").gameObject.SetActive(true);
                 Stage1.transform.Find("Panel(Defalut1-3)").gameObject.SetActive(false);
                 item.DeleteInventory();
+
+                UIobj.SetActive(true);
                 break;
 
             // 1-3
@@ -225,7 +236,7 @@ public class InputFieldManager : MonoBehaviour
                 this.gameObject.SetActive(false);
                 field.text = "";
 
-                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+                computer.Find("5_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
 
                 Main.SetActive(false);
                 Stage1.SetActive(true);
@@ -236,6 +247,8 @@ public class InputFieldManager : MonoBehaviour
                 Stage1.transform.Find("Panel(Defalut1-2)").gameObject.SetActive(false);
                 Stage1.transform.Find("Panel(Defalut1-3)").gameObject.SetActive(true);
                 item.DeleteInventory();
+
+                UIobj.SetActive(true);
                 break;
 
             // 2
@@ -243,7 +256,7 @@ public class InputFieldManager : MonoBehaviour
                 this.gameObject.SetActive(false);
                 field.text = "";
 
-                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+                computer.Find("5_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
 
                 Main.SetActive(false);
                 Stage1.SetActive(false);
@@ -251,6 +264,8 @@ public class InputFieldManager : MonoBehaviour
                 Stage3.SetActive(false);
 
                 item.DeleteInventory();
+
+                UIobj.SetActive(true);
                 break;
 
             // 3-1
@@ -258,17 +273,19 @@ public class InputFieldManager : MonoBehaviour
                 this.gameObject.SetActive(false);
                 field.text = "";
 
-                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+                computer.Find("5_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
 
                 Main.SetActive(false);
                 Stage1.SetActive(false);
                 Stage2.SetActive(false);
                 Stage3.SetActive(true);
 
-                Stage1.transform.Find("1Round").gameObject.SetActive(true);
-                Stage1.transform.Find("2Round").gameObject.SetActive(false);
-                Stage1.transform.Find("3Round").gameObject.SetActive(false);
+                Stage3.transform.Find("1Round").gameObject.SetActive(true);
+                Stage3.transform.Find("2Round").gameObject.SetActive(false);
+                Stage3.transform.Find("3Round").gameObject.SetActive(false);
                 item.DeleteInventory();
+
+                UIobj.SetActive(true);
                 break;
 
             // 3-2
@@ -276,17 +293,19 @@ public class InputFieldManager : MonoBehaviour
                 this.gameObject.SetActive(false);
                 field.text = "";
 
-                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+                computer.Find("5_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
 
                 Main.SetActive(false);
                 Stage1.SetActive(false);
                 Stage2.SetActive(false);
                 Stage3.SetActive(true);
 
-                Stage1.transform.Find("1Round").gameObject.SetActive(false);
-                Stage1.transform.Find("2Round").gameObject.SetActive(true);
-                Stage1.transform.Find("3Round").gameObject.SetActive(false);
+                Stage3.transform.Find("1Round").gameObject.SetActive(false);
+                Stage3.transform.Find("2Round").gameObject.SetActive(true);
+                Stage3.transform.Find("3Round").gameObject.SetActive(false);
                 item.DeleteInventory();
+
+                UIobj.SetActive(true);
                 break;
 
             // 3-3
@@ -294,17 +313,19 @@ public class InputFieldManager : MonoBehaviour
                 this.gameObject.SetActive(false);
                 field.text = "";
 
-                computer.Find("7_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
+                computer.Find("5_Result").transform.Find("2_AccessApproved").gameObject.SetActive(true);
 
                 Main.SetActive(false);
                 Stage1.SetActive(false);
                 Stage2.SetActive(false);
                 Stage3.SetActive(true);
 
-                Stage1.transform.Find("1Round").gameObject.SetActive(false);
-                Stage1.transform.Find("2Round").gameObject.SetActive(false);
-                Stage1.transform.Find("3Round").gameObject.SetActive(true);
+                Stage3.transform.Find("1Round").gameObject.SetActive(false);
+                Stage3.transform.Find("2Round").gameObject.SetActive(false);
+                Stage3.transform.Find("3Round").gameObject.SetActive(true);
                 item.DeleteInventory();
+
+                UIobj.SetActive(true);
                 break;
 
             // **************************************************************
@@ -328,7 +349,7 @@ public class InputFieldManager : MonoBehaviour
                 this.gameObject.SetActive(false);
                 field.text = "";
 
-                computer.Find("7_Result").transform.Find("3_WrongPassword").gameObject.SetActive(true);
+                computer.Find("5_Result").transform.Find("3_WrongPassword").gameObject.SetActive(true);
                 break;
         }
     }

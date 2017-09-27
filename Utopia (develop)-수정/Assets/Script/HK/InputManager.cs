@@ -1041,9 +1041,10 @@ public class InputManager : MonoBehaviour
             Stage3.Find("1Round").gameObject.SetActive(false);
 			Event.EventnumberSet (304);
             Stage3.Find("2Round").gameObject.SetActive(true);
-            Inventory.gameObject.SetActive(false);
             Sound.BGM_Number = 302;
             Sound.BGM_ListPlay();
+
+
         }
     }
 }
