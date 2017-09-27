@@ -227,12 +227,12 @@ public class TextChange : MonoBehaviour {
     public void OutputText()
     {
         //HintText에있는 모든 자식 오브젝트 들을 받아옴
-        GameObject[] trSphereList = HintText.gameObject.GetComponentsInChildren<GameObject>();
+        /*GameObject[] trSphereList = HintText.gameObject.GetComponentsInChildren<GameObject>();
         //받아와서 일단 모든 자식 오브젝트를 꺼줌
         for(int i=0;i<3;i++)
         {
             trSphereList[i].SetActive(false);
-        }
+        }*/
 
     
         //그 후 선택된 오브젝트 텍스트만 활성화 시켜서 띄움
