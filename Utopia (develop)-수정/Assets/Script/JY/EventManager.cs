@@ -619,7 +619,12 @@ public class EventManager : MonoBehaviour
                     break;
 
                 // 300~399 3Stage
-                case 300:
+                // 바다에 처음갔을때 화이트 인아웃 
+                case 350:
+                    StartCoroutine(Fadeing(true, 1.5f, true));
+                    break;
+
+                case 351:
 					if (!FirstSea) 
 					{
 						Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/1Round/FirstSea");
@@ -630,20 +635,35 @@ public class EventManager : MonoBehaviour
 					}
 					break;
 
-				case 302:
+                case 352:
+                    StartCoroutine(Fadeing(false, 1.5f, true)); 
+                    break;
+
+                // 꽃밭 만들때 
+                case 300:
+                    StartCoroutine(Fadeing(true, 1.5f, true));
+                    break;
+
+                case 301:
 					Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/1Round/Flower");
 					Json_Data = JsonMapper.ToObject(Text_Data.text);
 					CD.LoadJSON(Json_Data);
 					break;
-				
-				case 304:
-					StartCoroutine(Fadeing(false, 1.5f, false));
+
+               case 302:
+                    StartCoroutine(Fadeing(false, 1.5f, true));
+                    break;
+                    
+
+                case 304:
+					StartCoroutine(Fadeing(false, 1.5f, true));
+                    GameObject.Find("Rain").SetActive(false);
 					Stage3.Find ("1Round").gameObject.SetActive (false);
 					break;
 
 				case 305:
-					Stage3.Find ("2Round").gameObject.SetActive (true);
-					StartCoroutine (Fadeing (false, 1.5f, false));
+                    StartCoroutine(Fadeing(false, 1.5f, false));
+                    Stage3.Find ("2Round").gameObject.SetActive (true);					
 					break;
 
 				// *************************************************************************************
@@ -658,14 +678,15 @@ public class EventManager : MonoBehaviour
 					break;
 
 				case 311:	
-					StartCoroutine(Fadeing(true, 1.5f, false));
+					StartCoroutine(Fadeing(true, 1.5f, true));
 					Stage3.Find ("2Round").gameObject.SetActive (false);
 					break;
 
-				case 312:
-					Stage3.Find ("3Round").gameObject.SetActive (true);
-					StartCoroutine (Fadeing (false, 1.5f, false));
-					break;
+				case 312:                   
+                    Stage3.Find ("3Round").gameObject.SetActive (true);
+					StartCoroutine (Fadeing (false, 1.5f, true));
+                    inventory.gameObject.SetActive(true);
+                    break;
 
 				case 320:
 					Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/3Round/GetFeather");
@@ -685,7 +706,22 @@ public class EventManager : MonoBehaviour
 					CD.LoadJSON(Json_Data);
 					break;
 
-	   	       default:
+                // 3stage 클리어
+                case 326:
+                    StartCoroutine(Fadeing(true, 1.5f, true));
+                    break;
+
+                case 327:
+                    Text_Data = Resources.Load<TextAsset>("3Stage/EventDialogue/1Round/Flower");
+                    Json_Data = JsonMapper.ToObject(Text_Data.text);
+                    CD.LoadJSON(Json_Data);
+                    break;
+
+                case 328:
+                    StartCoroutine(Fadeing(false, 1.5f, true));
+                    break;
+
+                default:
 	   	           break;
             }
             Event_Number_1 = Event_Number;
