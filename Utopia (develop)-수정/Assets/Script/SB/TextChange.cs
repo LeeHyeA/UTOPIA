@@ -24,7 +24,14 @@ public class TextChange : MonoBehaviour {
     public Text test;
 
     // bool IsItemUnlock = false;
+    [HideInInspector]
+    public int SelectTextNumber = 0;
 
+
+    //언락될 아이템 넘버
+    public int ToUnlockTextNumber = 0;
+
+    public GameObject HintText;
 
 
     public struct HighlightText
@@ -38,6 +45,7 @@ public class TextChange : MonoBehaviour {
             this.HT_filename = HT_filename;
             this.IsUnlock = IsUnlock;
         }
+       
     }
     const int HightlightText_SIZE = 4;
     //강조 아이템 텍스트 구조체 배열 선언
@@ -50,12 +58,6 @@ public class TextChange : MonoBehaviour {
     };
     
 
-    [HideInInspector]
-    public int SelectTextNumber = 0;
-
-
-    //언락될 아이템 넘버
-    public int ToUnlockTextNumber = 0;
 
 
 
@@ -70,6 +72,8 @@ public class TextChange : MonoBehaviour {
     {
         UpdateSR();
         ChangeText(); // 아이템 내용창 내용 업데이트
+
+        OutputText(); //왼쪽에 띄울 텍스트 내용업데이트
     }
 
 
@@ -216,6 +220,35 @@ public class TextChange : MonoBehaviour {
                 HT[2].HT_filename = "RoJalsLetter";
                 HT[2].IsUnlock = true;
                 SelectTextNumber = 2;
+                break;
+        }
+    }
+
+    public void OutputText()
+    {
+        //HintText에있는 모든 자식 오브젝트 들을 받아옴
+        GameObject[] trSphereList = HintText.gameObject.GetComponentsInChildren<GameObject>();
+        //받아와서 일단 모든 자식 오브젝트를 꺼줌
+        for(int i=0;i<3;i++)
+        {
+            trSphereList[i].SetActive(false);
+        }
+
+    
+        //그 후 선택된 오브젝트 텍스트만 활성화 시켜서 띄움
+        switch (SelectTextNumber)
+        {
+            case 0:
+                if (HT[SelectTextNumber].IsUnlock)
+                    HintText.transform.Find("1_Brazilletter").gameObject.SetActive(true);
+                break;
+            case 1:
+                if (HT[SelectTextNumber].IsUnlock)
+                    HintText.transform.Find("2_DreamCatcherBluePrint").gameObject.SetActive(true);
+                break;
+            case 2:
+                if (HT[SelectTextNumber].IsUnlock)
+                    HintText.transform.Find("3_Mongoalletter").gameObject.SetActive(true);
                 break;
         }
     }

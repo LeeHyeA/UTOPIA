@@ -8873,6 +8873,7 @@ MonoBehaviour:
   test: {fileID: 2051476290}
   SelectTextNumber: 0
   ToUnlockTextNumber: 0
+  HintText: {fileID: 1965696923}
 --- !u!1 &249095358
 GameObject:
   m_ObjectHideFlags: 0
@@ -11556,7 +11557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &341669195
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12277,7 +12278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &376895357
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48879,7 +48880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1251559321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -74653,7 +74654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1792837922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87339,7 +87340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2044830647
 RectTransform:
   m_ObjectHideFlags: 0
