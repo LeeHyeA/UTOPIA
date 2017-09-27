@@ -23,7 +23,9 @@ public class TextChange : MonoBehaviour {
     public Text Mongoal;
     public Text test;
 
-   // bool IsItemUnlock = false;
+    // bool IsItemUnlock = false;
+
+
 
     public struct HighlightText
     {
@@ -37,15 +39,16 @@ public class TextChange : MonoBehaviour {
             this.IsUnlock = IsUnlock;
         }
     }
-    const int HightlightText_SIZE = 3;
+    const int HightlightText_SIZE = 4;
     //강조 아이템 텍스트 구조체 배열 선언
     public HighlightText[] HT = new HighlightText[HightlightText_SIZE]
     {
         new HighlightText("??????","Unknown",false),
-        new HighlightText("아버지의 편지(브라질)","FathersLetter",true),
-        new HighlightText("로잘린의 편지(몽골)","RoJalsLetter",true)
+        new HighlightText("??????","Unknown",false),
+        new HighlightText("??????","Unknown",false),
+        new HighlightText("??????","Unknown",false)
     };
-
+    
 
     [HideInInspector]
     public int SelectTextNumber = 0;
@@ -76,7 +79,9 @@ public class TextChange : MonoBehaviour {
     {
         SR.content = CurrentTextContent;
 
-        //아이템 목록 볼때 왼쪽밑 아이템 이름 텍스트창 업데이트
+        //아이템 목록 볼때 오른쪽밑 아이템 이름 텍스트창 업데이트
+        SimpleNameText.text = HT[SelectTextNumber].HT_name;
+        /*
         if (!HT[SelectTextNumber].IsUnlock)
             SimpleNameText.text = "??????";
         else if (HT[SelectTextNumber].IsUnlock)
@@ -86,10 +91,11 @@ public class TextChange : MonoBehaviour {
             else
                 SimpleNameText.text = " ";
         }
+        */
 
 
         //현재 아이템 넘버링 텍스트 업데이트
-            CurrentItemNumberText.text = "Item No." + SelectTextNumber;
+        CurrentItemNumberText.text = "Item No." + SelectTextNumber;
 
 
         //아이템 아이콘 이미지 업데이트
@@ -103,15 +109,18 @@ public class TextChange : MonoBehaviour {
         CurrentTextContent.gameObject.SetActive(false);
         switch (SelectTextNumber)
         {
-            case 1:
+            //아버지의 편지(브라질)
+            case 0:
                 CurrentTextContent = Brazil.rectTransform;
                 CurrentTextContent.gameObject.SetActive(true);
                 break;
-            case 2:
+            //로잘린의 편지(몽골)
+            case 1:
                 CurrentTextContent = Mongoal.rectTransform;
                 CurrentTextContent.gameObject.SetActive(true);
                 break;
-            case 3:
+            //드림캐처 설계도
+            case 2:
                 CurrentTextContent = test.rectTransform;
                 CurrentTextContent.gameObject.SetActive(true);
                 break;
@@ -134,8 +143,16 @@ public class TextChange : MonoBehaviour {
         switch (SelectTextNumber)
         {
             //아버지편지(브라질)
-            case 1:
+            case 0:
                 //아이템이 Unlock이 되었다면
+                if (HT[SelectTextNumber].IsUnlock)
+                {
+                    TextScrollArea.SetActive(true);
+                    ButtonScrollList.SetActive(false);
+                }
+                break;
+            //드림캐쳐 설계도
+            case 1:
                 if (HT[SelectTextNumber].IsUnlock)
                 {
                     TextScrollArea.SetActive(true);
@@ -169,20 +186,49 @@ public class TextChange : MonoBehaviour {
     }
 
 
-    //언락넘버 설정
+    //언락넘버 설정 후 언락
     public void ToUnlockTextNumberSet(int num)
     {
         ToUnlockTextNumber = num;
+        ItemUnlock();
     }
     //아이템 언락시 실행함수
-    public void ItemUnlock()
+    void ItemUnlock()
     {
         switch(ToUnlockTextNumber)
         {
-            case 1:
+            case 0:
+                HT[0].HT_name = "아버지의 편지(브라질)";
+                HT[0].HT_filename = "FathersLetter";
+                HT[0].IsUnlock = true;
+                SelectTextNumber = 0;
                 //Lock Text를 setactive(false) 시키고
                 //ItemName Text를 Setactive(true) 시킨다
                 break;
+            case 1:
+                HT[1].HT_name = "드림캐쳐설계도";
+                HT[1].HT_filename = "DreamCatcherBluePrint";
+                HT[1].IsUnlock = true;
+                SelectTextNumber = 1;
+                break;
+            case 2:
+                HT[2].HT_name = "로잘린의 편지(몽골)";
+                HT[2].HT_filename = "RoJalsLetter";
+                HT[2].IsUnlock = true;
+                SelectTextNumber = 2;
+                break;
         }
+    }
+
+    public void NextHint()
+    {
+        //여기 if문의 숫자는 힌트의 총개수에 따라 나중에 바꿔줘야됨
+        if(SelectTextNumber<3)
+            SelectTextNumber++;
+    }
+    public void BeforeHint()
+    {
+        if(SelectTextNumber>0)
+            SelectTextNumber--;
     }
 }

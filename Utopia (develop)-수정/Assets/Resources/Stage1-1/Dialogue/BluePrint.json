@@ -16,13 +16,13 @@
       "characterType":0,
       "character_name":"",
       "standImage_Name":"Nothing",
-      "script_Text":"2.원형 물체에 실을 수놓고, 깃털을 붙여 장식해 줍시다."
+      "script_Text":"2.원형 물체에 보석이 박힌 거미줄을 장식하고, 깃털도 붙여 장식해 줍시다."
     },
 	  {
       "characterType":0,
       "character_name":"",
       "standImage_Name":"Nothing",
-      "script_Text":"3.마지막으로 별가루를 뿌려주면 완성~!."
+      "script_Text":"3.마지막으로 별가루를 뿌려주면 완성~! (별가루는 밤이되면 활성화가 됩니다.)"
     }
   ]
 }
