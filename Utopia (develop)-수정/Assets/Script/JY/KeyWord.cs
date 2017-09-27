@@ -139,6 +139,8 @@ public class KeyWord : MonoBehaviour {
 
     public void SlectTopic(int index)
     {
+        if (currentpages * 3 - (3 - index) > contents-1)
+            return;
         string Conver;
         Conver = keywords_Json["KeyWord"][chapterindex - 1]["Contents"][currentpages * 3 - (3-index)]["Conver"].ToString();
 
