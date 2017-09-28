@@ -3,8 +3,8 @@
         {
             "characterType": 0,
             "character_name": "???",
-            "standImage_Name": "STAND",
-            "script_Text": "무슨일이야?"
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "뭔가 궁금한게 있니?"
         }
     ]
 }

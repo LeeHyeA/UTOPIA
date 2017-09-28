@@ -119,6 +119,7 @@
     <Compile Include="Assets\Script\JY\Keypad.cs" />
     <Compile Include="Assets\Script\JY\KeyPad_Puz.cs" />
     <Compile Include="Assets\Script\JY\KeyWord.cs" />
+    <Compile Include="Assets\Script\JY\KeyWordTrigger.cs" />
     <Compile Include="Assets\Script\JY\LogicPuzzle.cs" />
     <Compile Include="Assets\Script\JY\MouseSetup.cs" />
     <Compile Include="Assets\Script\JY\NPC.cs" />

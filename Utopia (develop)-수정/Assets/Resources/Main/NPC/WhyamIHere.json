@@ -1,0 +1,46 @@
+﻿{
+    "dialogues": [
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "음... 목적에 의한 납치?"
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "그럴수도 있고, 아니면 애초에 여기서 자란걸 수도 있지."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "경우의 수가 너무 많아. 아무런 정보가 없으니까. 그 어떤 경우도 배제할 수 없어."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "하지만 적어도 우리를 여기에 의도적으로 가뒀다는건 확실한 것 같아."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "대체 무슨 목적인걸까. 우릴 여기 가둔 사람들은."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "일단 이곳부터 먼저 조사해 보는게 좋을것 같아. 뭐라도 얻을 수 있겠지."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "우리 손을 자유롭게 놔둔 걸 봐선, 저쪽도 그걸 원하는것 같은데?"
+        }
+    ]
+}

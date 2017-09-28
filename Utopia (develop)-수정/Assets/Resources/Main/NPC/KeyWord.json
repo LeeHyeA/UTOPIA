@@ -4,34 +4,40 @@
             "Chapter" : "Chapter1",
             "Contents": [
                 {
+                    "isActive": 0,
+                    "KeywordTitle": "어지럽혀진 방",
+                    "KeywordSummary": "방은 서류더미와 각종 기계로 어지럽혀져있다.",
+                    "Conver": "AboutRoom",
+                    "ReadYet": 1
+                },
+                {
+                    "isActive": 0,
+                    "KeywordTitle": "갈색 머리의 소녀",
+                    "KeywordSummary": "신비로운 분위기를 풍기는 소녀다.",
+                    "Conver": "AboutGirl",
+                    "ReadYet": 1
+
+                },
+                {
+                    "isActive": 0,
+                    "KeywordTitle": "이곳에 있는 이유",
+                    "KeywordSummary": "나는 어째서 이곳에 있는걸까?",
+                    "Conver": "WhyamIHere",
+                    "ReadYet": 1
+                },
+                {
                     "isActive": 1,
-                    "KeywordTitle": "챕터1 키워드1",
-                    "KeywordSummary": "챕터1 키워드1에 대해서",
-                    "Conver": "Keyword1"
-                },
-                {
-                    "isActive": 0,
-                    "KeywordTitle": "챕터1 키워드2",
-                    "KeywordSummary": "챕터1 키워드2에 대해서",
-                    "Conver": "Keyword2"
-                },
-                {
-                    "isActive": 0,
-                    "KeywordTitle": "챕터1 키워드3",
-                    "KeywordSummary": "챕터1 키워드3에 대해서",
-                    "Conver": "Keyword3"
-                },
-                {
-                    "isActive": 0,
                     "KeywordTitle": "챕터1 키워드4",
                     "KeywordSummary": "챕터1 키워드4에 대해서",
-                    "Conver": "Keyword4"
+                    "Conver": "Keyword4",
+                    "ReadYet": 1
                 },
                 {
-                    "isActive": 0,
-                    "KeywordTitle": "챕터1 키워드5",
-                    "KeywordSummary": "챕터1 키워드5에 대해서",
-                    "Conver": "Keyword5"
+                    "isActive": 1,
+                    "KeywordTitle": "수상한 기계",
+                    "KeywordSummary": "방 한가운데에 수상한 기계가 있다.",
+                    "Conver": "Machine(1)",
+                    "ReadYet": 1
                 }
             ]
         },
@@ -42,19 +48,22 @@
                     "isActive": 1,
                     "KeywordTitle": "챕터2 키워드1sss",
                     "KeywordSummary": "챕터2 키워드1에대해서ss",
-                    "Conver": "Keyword1"
+                    "Conver": "Keyword1",
+                    "ReadYet": 1
                 },
                 {
                     "isActive": 1,
                     "KeywordTitle": "챕터2 키워드2sss",
                     "KeywordSummary": "챕터2 키워드2에대해서ss",
-                    "Conver": "Keyword2"
+                    "Conver": "Keyword2",
+                    "ReadYet": 1
                 },
                 {
                     "isActive": 1,
                     "KeywordTitle": "챕터2 키워드3sss",
                     "KeywordSummary": "챕터2 키워드3에대해서ss",
-                    "Conver": "Keyword3"
+                    "Conver": "Keyword3",
+                    "ReadYet": 1
                 }
             ]
         },
@@ -65,13 +74,15 @@
                     "isActive": 1,
                     "KeywordTitle": "챕터3 키워드1sss",
                     "KeywordSummary": "챕터3 키워드1에대해서ss",
-                    "Conver": "Keyword1"
+                    "Conver": "Keyword1",
+                    "ReadYet": 1
                 },
                 {
                     "isActive": 1,
                     "KeywordTitle": "챕터3 키워드2sss",
                     "KeywordSummary": "챕터3 키워드2에대해서ss",
-                    "Conver": "Keyword2"
+                    "Conver": "Keyword2",
+                    "ReadYet": 1
                 }
             ]
         }

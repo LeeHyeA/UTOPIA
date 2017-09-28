@@ -1,0 +1,10 @@
+﻿{
+    "dialogues": [
+        {
+            "characterType": 0,
+            "character_name": "",
+            "standImage_Name": "Nothing",
+            "script_Text": "수상해 보이는 기계다. 함부로 건들면 안될 것 같다."
+        }
+    ]
+}

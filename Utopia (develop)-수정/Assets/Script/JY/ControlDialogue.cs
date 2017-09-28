@@ -8,10 +8,14 @@ using UnityEngine.UI;
 
 public class ControlDialogue : MonoBehaviour
 {
-    // private string script_text;
-    //   private string character_name;
-    //  private string Imagename;
-    //  private Sprite currentStandImage;
+
+    public KeyWord KWcontrol;
+
+    public bool KeyWordMode = false;
+    public bool ChoiceMode = false;
+    public int ChoiceOpt = 0;
+
+    public GameObject[] Options = new GameObject[4];
 
     public bool isSpecial;
     public AlertItem At;
@@ -63,17 +67,6 @@ public class ControlDialogue : MonoBehaviour
     {
         if (isActive)
         {
-                        /*if (TextForAnmiate != scriptstring)
-            {
-                TextForAnmiate += scriptstring[cntForAnimate];
-                cntForAnimate++;
-                isScriptEnd = false;
-            }
-            else
-            {
-                cntForAnimate = 0;
-                isScriptEnd = true;
-            }*/
             if (isScriptEnd == false)                  //대사가 진행중인 상황에서
             {
                 if (Input.GetKeyDown(KeyCode.R) || Input.GetMouseButtonDown(0))         //r키를 누르면
@@ -116,7 +109,7 @@ public class ControlDialogue : MonoBehaviour
         is_event_plus = false;
 
         ChangeSettings();
-        SetChat.gameObject.SetActive(true);
+        SetChat.SetActive(true);
         isSpecial = false;
 
     }
@@ -139,7 +132,7 @@ public class ControlDialogue : MonoBehaviour
         is_event_plus = false;
 
         ChangeSettings();
-        SetChat.gameObject.SetActive(true);
+        SetChat.SetActive(true);
 
         isSpecial = isspecial;
     }
@@ -164,45 +157,179 @@ public class ControlDialogue : MonoBehaviour
 
         ChangeSettings();
 
-        SetChat.gameObject.SetActive(true);
+        SetChat.SetActive(true);
         isSpecial = false;
     }
 
-    void ChangeSettings()
+    public void LoadJson_KeyWord(JsonData KeywordData)
     {
-        if (currentIndex == End_of_Line)
-        {
-            currentIndex = 0;
-            isActive = false;
+        currentIndex = 0;
 
-            EM.Doing_Event = false;
-            Empty.SetActive(false);
-            if (is_event_plus)
-                EM.Event_Number++;
-            SetChat.gameObject.SetActive(false);
-            TextForAnmiate = "";
-            Dialogue_Text.text = "";
-            Name_Text.text = "";
-            currentIndex = 0;
-            cntForAnimate = 0;
-            if (isSpecial)
-            {
-                Debug.Log(At.ItemName_String);
-                At.PopUp();
-            }
-            return;
-        }
-        scriptstring = ConvertedData["dialogues"][currentIndex]["script_Text"].ToString();
-        Name_Text.text = ConvertedData["dialogues"][currentIndex]["character_name"].ToString();
-        imagestring = ConvertedData["dialogues"][currentIndex]["standImage_Name"].ToString();
-
-        Stand_Image.sprite = Resources.Load<Sprite>("StandImage/" + imagestring);
+        isActive = true;
 
         isScriptEnd = false;
 
-        StartCoroutine(TextAnimation(1f));
-        currentIndex++;                              //다음대사로
+        ConvertedData = KeywordData;
 
+        TextForAnmiate = "";
+        Dialogue_Text.text = "";
+
+        End_of_Line = ConvertedData["dialogues"].Count;
+        Debug.Log("EndofLine 설정");
+
+        Empty.SetActive(true);
+
+        is_event_plus = false;
+
+        KeyWordMode = true;
+
+        ChangeSettings();
+
+        SetChat.SetActive(true);
+        isSpecial = false;
+
+    }
+
+    /*public void SetChoiceOption(bool on)
+    {
+        if (on)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                Options[i].transform.GetChild(0).GetComponent<Text>().text = ConvertedData["dialogues"][i + 1]["Choice"].ToString();
+                Options[i].SetActive(true);
+            }
+            Options[3].SetActive(true);
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                Options[i].SetActive(false);
+            }
+            Options[3].SetActive(false);
+        }
+    }*/
+    /*public void Select(int s)
+    {
+        ChoiceOpt = s;
+        currentIndex = 0;
+        End_of_Line = ConvertedData["dialogues"][ChoiceOpt]["Index"].Count;
+
+        SetChoiceOption(false);
+        ChangeSettings();
+    }*/
+    /*public void QuiteSelectDialogue()
+    {
+        currentIndex = 0;
+        isActive = false;
+
+        EM.Doing_Event = false;
+        Empty.SetActive(false);
+
+        SetChat.gameObject.SetActive(false);
+
+        TextForAnmiate = "";
+        Dialogue_Text.text = "";
+        Name_Text.text = "";
+
+        currentIndex = 0;
+        cntForAnimate = 0;
+    }*/
+
+    public void ExitKeywordDialouge()
+    {
+        currentIndex = 0;
+        isActive = false;
+
+        EM.Doing_Event = false;
+        Empty.SetActive(false);
+
+        SetChat.gameObject.SetActive(false);
+
+        TextForAnmiate = "";
+        Dialogue_Text.text = "";
+        Name_Text.text = "";
+
+        currentIndex = 0;
+        cntForAnimate = 0;
+        KeyWordMode = false;
+    }
+    void ChangeSettings()
+    {
+        if (KeyWordMode)
+        {
+            if (currentIndex == End_of_Line)
+            {
+                KWcontrol.KeyWordControl.SetActive(true);
+                return;
+            }
+            //if (ChoiceOpt != 0)
+            //{
+            //   Select(0);
+            // }
+            //currentIndex = 0;
+            //isActive = false;
+
+            //EM.Doing_Event = false;
+            //Empty.SetActive(false);
+            //if (is_event_plus)
+            //   EM.Event_Number++;
+            //SetChat.gameObject.SetActive(false);
+            //TextForAnmiate = "";
+            //Dialogue_Text.text = "";
+            //Name_Text.text = "";
+            //currentIndex = 0;
+            //cntForAnimate = 0;
+
+            scriptstring = ConvertedData["dialogues"][currentIndex]["script_Text"].ToString();
+            Name_Text.text = ConvertedData["dialogues"][currentIndex]["character_name"].ToString();
+            imagestring = ConvertedData["dialogues"][currentIndex]["standImage_Name"].ToString();
+
+            Stand_Image.sprite = Resources.Load<Sprite>("StandImage/" + imagestring);
+
+            isScriptEnd = false;
+
+            StartCoroutine(TextAnimation(1f));
+            currentIndex++;                              //다음대사로
+
+        }
+        else
+        {
+            if (currentIndex == End_of_Line)
+            {
+                currentIndex = 0;
+                isActive = false;
+
+                EM.Doing_Event = false;
+                Empty.SetActive(false);
+                if (is_event_plus)
+                    EM.Event_Number++;
+                SetChat.gameObject.SetActive(false);
+                TextForAnmiate = "";
+                Dialogue_Text.text = "";
+                Name_Text.text = "";
+                currentIndex = 0;
+                cntForAnimate = 0;
+                if (isSpecial)
+                {
+                    Debug.Log(At.ItemName_String);
+                    At.PopUp();
+                }
+                return;
+            }
+            scriptstring = ConvertedData["dialogues"][currentIndex]["script_Text"].ToString();
+            Name_Text.text = ConvertedData["dialogues"][currentIndex]["character_name"].ToString();
+            imagestring = ConvertedData["dialogues"][currentIndex]["standImage_Name"].ToString();
+
+            Stand_Image.sprite = Resources.Load<Sprite>("StandImage/" + imagestring);
+
+            isScriptEnd = false;
+
+            StartCoroutine(TextAnimation(1f));
+            currentIndex++;                              //다음대사로
+
+        }
     }
     void StopTextAnime()
     {
@@ -231,10 +358,7 @@ public class ControlDialogue : MonoBehaviour
         }
         else
         {
-            Debug.Log("도중뻥");
-
             yield break;
         }
     }
 }
-    

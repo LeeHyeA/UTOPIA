@@ -1,0 +1,40 @@
+﻿{
+    "dialogues": [
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "그러고보니... 여기서 유난히 눈에 띄는게 있었지."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "이 커다란 기계 말이야. 도대체 뭐에 쓰는걸까?"
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "일부러 이 기계가 있는 방에 가둔걸 보면 우리랑 아주 관련이 없지는 않을거야."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "문제는 뭐하는 기계인지도, 작동 방법도 모른다는 거지만."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "그래도 다른것 보다는 더 정보를 가지고 있을것 같은데?"
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "한번 조사해 보자."
+        }
+    ]
+}

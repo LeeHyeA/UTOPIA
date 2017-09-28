@@ -1,0 +1,34 @@
+﻿{
+    "dialogues": [
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "여기? 음... 글쎄."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "너도 알다시피... 나도 이곳에 대해 아는건 거의 없어. 아니, 아예 없지."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "나같은 경우는 그냥, 정신 차려보니 여기에 있었다는 느낌이랄까."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "하지만 여긴...정말 대놓고 수상한 곳이야. 그거 하난 확실하지."
+        },
+        {
+            "characterType": 0,
+            "character_name": "???",
+            "standImage_Name": "Subject_Normal",
+            "script_Text": "방 구조만 보면 아마 실험실이 아닐까?"
+        }
+    ]
+}

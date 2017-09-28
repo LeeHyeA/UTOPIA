@@ -6,26 +6,27 @@ using UnityEngine.UI;
 public class NPC : MonoBehaviour {
 
     public ControlDialogue CD;
+
     public JsonData normalConver;
-    TextAsset normalConver_Text;
+    public TextAsset normalConver_Text;
+    public JsonData FirstMeet;
+    public TextAsset FirstMeet_Text;
+
+    TextAsset KeywordFile;
+    JsonData KeywordFileJson;
+
     public KeyWord KW;
 
-    public Image Panel;
-    public Image StandImage;
-
     public Text Conver;
-    public Text Name;   
 
     public bool main_conver;
 
-    int normalIndex;
     // Use this for initialization
 
     private void Awake()
     {
-        normalConver_Text = Resources.Load<TextAsset>("Main/NPC/Normal");
         normalConver = JsonMapper.ToObject(normalConver_Text.text);
-        normalIndex = normalConver["dialogues"].Count;
+        FirstMeet = JsonMapper.ToObject(FirstMeet_Text.text);
     }
     void Start () {
 		
@@ -35,11 +36,25 @@ public class NPC : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    public void StartConver(string Keyword)
+    public void FirstTalk()
     {
-        /* CD.LoadJSON(normalConver);
-         KW.KeyWordControl.SetActive(true);
-     */
+        CD.LoadJson_KeyWord(FirstMeet);
+    }
+    public void StartConver()
+    {
+        KW.OpenKeyWord();
+        CD.LoadJson_KeyWord(normalConver);
+    }
+    public void TalkAboutKeyWord(string Keyword)
+    {
+        Debug.Log(Keyword);
+        KeywordFile = Resources.Load<TextAsset>("Main/NPC/" + Keyword);
+        KeywordFileJson = JsonMapper.ToObject(KeywordFile.text);
+        CD.LoadJson_KeyWord(KeywordFileJson);
+    }
+    public void ExitKeyWord()
+    {
+        CD.ExitKeywordDialouge();
+        KW.CloseKeyWord();
     }
 }
