@@ -44,7 +44,6 @@ public class EventManager : MonoBehaviour
     public GameObject Owl_Cage;
     public GameObject Panel1_3_defalut;
     public GameObject Panel1_3;
-
     int FirstDay = 1;
     bool FirstRain = false;
     bool FirstNight = false;
@@ -336,6 +335,7 @@ public class EventManager : MonoBehaviour
                     Text_Data = Resources.Load<TextAsset>("Stage1-2/EventDialogue/StartMongGoalStage");
                     Json_Data = JsonMapper.ToObject(Text_Data.text);
                     CD.LoadJSON(Json_Data);
+
                     break;
                     
                 //허르헉을 완성시 대사후 1-3 디폴트방으로 이동 (118-121)

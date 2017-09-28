@@ -227,14 +227,15 @@ public class TextChange : MonoBehaviour {
     public void OutputText()
     {
         //HintText에있는 모든 자식 오브젝트 들을 받아옴
-        /*GameObject[] trSphereList = HintText.gameObject.GetComponentsInChildren<GameObject>();
+        Component[] trSphereList = HintText.gameObject.GetComponentsInChildren<Component>();
         //받아와서 일단 모든 자식 오브젝트를 꺼줌
-        for(int i=0;i<3;i++)
+        for (int i = 0; i < trSphereList.Length; i++)
         {
-            trSphereList[i].SetActive(false);
-        }*/
+            if (trSphereList[i].transform.parent == HintText.transform)
+                trSphereList[i].gameObject.SetActive(false);
+        }
 
-    
+
         //그 후 선택된 오브젝트 텍스트만 활성화 시켜서 띄움
         switch (SelectTextNumber)
         {
