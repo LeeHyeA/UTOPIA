@@ -109,6 +109,7 @@ public class InputFieldManager : MonoBehaviour
 
             case "2-0":
                 stage = 43;
+                SM.ChangeBGM_Fun("Stage2/Main");
                 break;
 
             case "3-1":
